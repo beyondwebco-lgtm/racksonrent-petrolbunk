@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React from "react";
 import { CheckCircle2, Building2, Store } from "lucide-react";
@@ -20,15 +20,15 @@ export default function RoleSelection({ onSelectRole }: RoleSelectionProps) {
   };
 
   return (
-    <section className="py-16 sm:py-24 bg-[#F8FAFC]" id="choose-role">
+    <section className="py-16 sm:py-24 bg-[#FFFDF5]" id="choose-role">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="inline-flex rounded-full bg-[#FEF9C3] px-4 py-1.5 text-sm font-extrabold text-[#0B1E36] border border-[#E2E8F0]">
+          <span className="inline-flex rounded-full bg-[#FFF6A3] px-4 py-1.5 text-sm font-extrabold text-[#6B0F1A] border border-[#F0E2E4]">
             Role Selection
           </span>
-          <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-[#0B1E36] md:text-5xl">
+          <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-[#6B0F1A] md:text-5xl">
             Choose What Best Describes You
           </h2>
         </div>
@@ -40,26 +40,26 @@ export default function RoleSelection({ onSelectRole }: RoleSelectionProps) {
             return (
               <div
                 key={card.id}
-                className="rounded-3xl border-2 border-[#E2E8F0] bg-white p-8 shadow-[0_12px_35px_rgba(11,30,54,0.06)] hover:shadow-[0_20px_50px_rgba(11,30,54,0.14)] hover:border-[#0B1E36]/40 transition-all hover:-translate-y-1 flex flex-col justify-between group"
+                className="rounded-3xl border-2 border-[#F0E2E4] bg-white p-8 shadow-[0_12px_35px_rgba(11,30,54,0.06)] hover:shadow-[0_20px_50px_rgba(11,30,54,0.14)] hover:border-[#6B0F1A]/40 transition-all hover:-translate-y-1 flex flex-col justify-between group"
               >
                 <div>
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#FEF9C3] text-[#0B1E36] mb-6 shadow-xs">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#FFF6A3] text-[#6B0F1A] mb-6 shadow-xs">
                     {isBunkOwner ? <Building2 className="w-6 h-6" /> : <Store className="w-6 h-6" />}
                   </div>
 
-                  <h3 className="text-2xl font-black text-[#0B1E36] mb-3">
+                  <h3 className="text-2xl font-black text-[#6B0F1A] mb-3">
                     {card.heading}
                   </h3>
 
-                  <p className="text-base text-[#475569] leading-relaxed mb-6 font-medium">
+                  <p className="text-base text-[#5F5F5F] leading-relaxed mb-6 font-medium">
                     {card.text}
                   </p>
 
                   <div className="space-y-3 mb-8">
                     {card.benefits.map((benefit, idx) => (
                       <div key={idx} className="flex items-center gap-3">
-                        <CheckCircle2 className="w-5 h-5 text-[#15803D] flex-shrink-0" />
-                        <span className="text-sm font-extrabold text-[#0F172A]">{benefit}</span>
+                        <CheckCircle2 className="w-5 h-5 text-[#6B0F1A] flex-shrink-0" />
+                        <span className="text-sm font-extrabold text-[#1F1F1F]">{benefit}</span>
                       </div>
                     ))}
                   </div>
@@ -70,8 +70,8 @@ export default function RoleSelection({ onSelectRole }: RoleSelectionProps) {
                   onClick={() => handleRoleClick(card.role)}
                   className={`w-full py-3.5 px-6 rounded-full font-extrabold transition-all shadow-xs cursor-pointer text-center ${
                     isBunkOwner
-                      ? "bg-[#F4E409] text-[#061221] border border-[#0B1E36]/20 hover:bg-[#061221] hover:text-[#F4E409]"
-                      : "bg-[#0B1E36] text-[#FEF9C3] hover:bg-[#061221] hover:text-[#F4E409]"
+                      ? "bg-[#F4E409] text-[#3D0710] border border-[#6B0F1A]/20 hover:bg-[#3D0710] hover:text-[#F4E409]"
+                      : "bg-[#6B0F1A] text-[#FFF6A3] hover:bg-[#3D0710] hover:text-[#F4E409]"
                   }`}
                 >
                   {card.ctaLabel}

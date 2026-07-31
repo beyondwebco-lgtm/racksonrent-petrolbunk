@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState, useEffect, useCallback, useRef } from "react";
 import Image from "next/image";
@@ -148,7 +148,7 @@ export default function PetrolBunkShowcase({
 
   return (
     <section
-      className="py-16 sm:py-24 bg-[#F8FAFC] border-b border-[#E2E8F0] relative overflow-hidden"
+      className="py-16 sm:py-24 bg-[#FFFDF5] border-b border-[#F0E2E4] relative overflow-hidden"
       id="startups"
       onMouseEnter={() => setIsAutoplayPaused(true)}
       onMouseLeave={() => setIsAutoplayPaused(false)}
@@ -157,13 +157,13 @@ export default function PetrolBunkShowcase({
         
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto mb-10">
-          <span className="inline-flex rounded-full bg-[#FEF9C3] px-4 py-1.5 text-xs sm:text-sm font-extrabold text-[#0B1E36] border border-[#E2E8F0]">
+          <span className="inline-flex rounded-full bg-[#FFF6A3] px-4 py-1.5 text-xs sm:text-sm font-extrabold text-[#6B0F1A] border border-[#F0E2E4]">
             For Startups & Retail Brands
           </span>
-          <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-[#0B1E36] md:text-5xl">
+          <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-[#6B0F1A] md:text-5xl">
             <span>Explore Retail Rack Formats at Petrol Pumps</span>
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-[#475569] md:text-lg font-medium">
+          <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-[#5F5F5F] md:text-lg font-medium">
             Launch or expand your offline presence through affordable retail spaces at high-footfall petrol pump locations.
           </p>
         </div>
@@ -186,11 +186,11 @@ export default function PetrolBunkShowcase({
                   }}
                   className={`inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-xs sm:text-sm font-extrabold border transition-all flex-shrink-0 cursor-pointer ${
                     isActive
-                      ? "bg-[#0B1E36] text-[#FEF9C3] border-[#F4E409] shadow-md scale-105"
-                      : "bg-white text-[#0B1E36] border-[#E2E8F0] hover:bg-[#FEF9C3]/50"
+                      ? "bg-[#6B0F1A] text-[#FFF6A3] border-[#F4E409] shadow-md scale-105"
+                      : "bg-white text-[#6B0F1A] border-[#F0E2E4] hover:bg-[#FFF6A3]/50"
                   }`}
                 >
-                  <IconComp className={`w-4 h-4 ${isActive ? "text-[#F4E409]" : "text-[#0B1E36]"}`} />
+                  <IconComp className={`w-4 h-4 ${isActive ? "text-[#F4E409]" : "text-[#6B0F1A]"}`} />
                   <span>{cat.shortName}</span>
                 </button>
               );
@@ -203,7 +203,7 @@ export default function PetrolBunkShowcase({
           ref={showcaseRef}
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
-          className="relative bg-white rounded-3xl border-2 border-[#0B1E36] p-6 sm:p-10 shadow-[0_24px_70px_rgba(11,30,54,0.12)] overflow-hidden"
+          className="relative bg-white rounded-3xl border-2 border-[#6B0F1A] p-6 sm:p-10 shadow-[0_24px_70px_rgba(11,30,54,0.12)] overflow-hidden"
         >
           {/* Arrow Controls */}
           <div className="absolute top-6 right-6 z-20 flex items-center gap-2">
@@ -211,7 +211,7 @@ export default function PetrolBunkShowcase({
               type="button"
               onClick={handlePrev}
               aria-label="Previous category"
-              className="w-10 h-10 rounded-full bg-[#0B1E36] text-[#FEF9C3] border border-[#F4E409] flex items-center justify-center shadow-md hover:bg-[#061221] hover:text-[#F4E409] transition-all cursor-pointer active:scale-95"
+              className="w-10 h-10 rounded-full bg-[#6B0F1A] text-[#FFF6A3] border border-[#F4E409] flex items-center justify-center shadow-md hover:bg-[#3D0710] hover:text-[#F4E409] transition-all cursor-pointer active:scale-95"
             >
               <ChevronLeft className="w-5 h-5 stroke-[2.5]" />
             </button>
@@ -219,7 +219,7 @@ export default function PetrolBunkShowcase({
               type="button"
               onClick={handleNext}
               aria-label="Next category"
-              className="w-10 h-10 rounded-full bg-[#0B1E36] text-[#FEF9C3] border border-[#F4E409] flex items-center justify-center shadow-md hover:bg-[#061221] hover:text-[#F4E409] transition-all cursor-pointer active:scale-95"
+              className="w-10 h-10 rounded-full bg-[#6B0F1A] text-[#FFF6A3] border border-[#F4E409] flex items-center justify-center shadow-md hover:bg-[#3D0710] hover:text-[#F4E409] transition-all cursor-pointer active:scale-95"
             >
               <ChevronRight className="w-5 h-5 stroke-[2.5]" />
             </button>
@@ -234,20 +234,20 @@ export default function PetrolBunkShowcase({
               }`}
             >
               <div>
-                <span className="inline-flex rounded-full bg-[#FEF9C3] px-3.5 py-1 text-xs font-black text-[#0B1E36] border border-[#0B1E36]/20">
+                <span className="inline-flex rounded-full bg-[#FFF6A3] px-3.5 py-1 text-xs font-black text-[#6B0F1A] border border-[#6B0F1A]/20">
                   {activeCategory.eyebrow}
                 </span>
-                <h3 className="mt-3 text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#0B1E36] leading-snug">
+                <h3 className="mt-3 text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#6B0F1A] leading-snug">
                   {activeCategory.title}
                 </h3>
-                <p className="mt-3 text-sm sm:text-base text-[#475569] leading-relaxed font-medium">
+                <p className="mt-3 text-sm sm:text-base text-[#5F5F5F] leading-relaxed font-medium">
                   {activeCategory.description}
                 </p>
               </div>
 
               {/* Suitable Products */}
               <div>
-                <span className="block text-xs font-extrabold text-[#0B1E36] uppercase tracking-wider mb-2 flex items-center gap-1.5">
+                <span className="block text-xs font-extrabold text-[#6B0F1A] uppercase tracking-wider mb-2 flex items-center gap-1.5">
                   <Tag className="w-3.5 h-3.5" />
                   <span>Suitable Products</span>
                 </span>
@@ -255,7 +255,7 @@ export default function PetrolBunkShowcase({
                   {activeCategory.suitableFor.map((item, idx) => (
                     <span
                       key={idx}
-                      className="px-2.5 py-1 rounded-lg bg-[#FEF9C3]/70 text-[#061221] text-xs font-bold border border-[#0B1E36]/10"
+                      className="px-2.5 py-1 rounded-lg bg-[#FFF6A3]/70 text-[#3D0710] text-xs font-bold border border-[#6B0F1A]/10"
                     >
                       {item}
                     </span>
@@ -265,14 +265,14 @@ export default function PetrolBunkShowcase({
 
               {/* Key Benefits */}
               <div>
-                <span className="block text-xs font-extrabold text-[#0B1E36] uppercase tracking-wider mb-2 flex items-center gap-1.5">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-[#15803D]" />
+                <span className="block text-xs font-extrabold text-[#6B0F1A] uppercase tracking-wider mb-2 flex items-center gap-1.5">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[#6B0F1A]" />
                   <span>Key Benefits</span>
                 </span>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                   {activeCategory.benefits.map((benefit, idx) => (
-                    <div key={idx} className="flex items-center gap-2 text-xs sm:text-sm text-[#0F172A] font-extrabold">
-                      <CheckCircle2 className="w-4 h-4 text-[#15803D] flex-shrink-0" />
+                    <div key={idx} className="flex items-center gap-2 text-xs sm:text-sm text-[#1F1F1F] font-extrabold">
+                      <CheckCircle2 className="w-4 h-4 text-[#6B0F1A] flex-shrink-0" />
                       <span>{benefit}</span>
                     </div>
                   ))}
@@ -284,7 +284,7 @@ export default function PetrolBunkShowcase({
                 <button
                   type="button"
                   onClick={handleCtaPrimaryClick}
-                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#F4E409] text-[#061221] border border-[#0B1E36]/30 px-6 py-3 font-extrabold text-xs sm:text-sm shadow-xs hover:bg-[#061221] hover:text-[#F4E409] transition-all cursor-pointer"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#F4E409] text-[#3D0710] border border-[#6B0F1A]/30 px-6 py-3 font-extrabold text-xs sm:text-sm shadow-xs hover:bg-[#3D0710] hover:text-[#F4E409] transition-all cursor-pointer"
                 >
                   <Building2 className="w-4 h-4" />
                   <span>{activeCategory.primaryCta}</span>
@@ -293,7 +293,7 @@ export default function PetrolBunkShowcase({
                 <button
                   type="button"
                   onClick={handleCtaSecondaryClick}
-                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#0B1E36] text-[#FEF9C3] border border-[#0B1E36] px-6 py-3 font-extrabold text-xs sm:text-sm shadow-xs hover:bg-[#061221] hover:text-[#F4E409] transition-all cursor-pointer"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#6B0F1A] text-[#FFF6A3] border border-[#6B0F1A] px-6 py-3 font-extrabold text-xs sm:text-sm shadow-xs hover:bg-[#3D0710] hover:text-[#F4E409] transition-all cursor-pointer"
                 >
                   <Store className="w-4 h-4 text-[#F4E409]" />
                   <span>{activeCategory.secondaryCta}</span>
@@ -304,7 +304,7 @@ export default function PetrolBunkShowcase({
 
             {/* Right Column */}
             <div className="lg:col-span-5 relative">
-              <div className="relative rounded-2xl overflow-hidden border-2 border-[#E2E8F0] bg-[#FEF9C3]/20 shadow-[0_16px_40px_rgba(11,30,54,0.10)] aspect-3/4 sm:aspect-4/3 lg:aspect-3/4 group">
+              <div className="relative rounded-2xl overflow-hidden border-2 border-[#F0E2E4] bg-[#FFF6A3]/20 shadow-[0_16px_40px_rgba(11,30,54,0.10)] aspect-3/4 sm:aspect-4/3 lg:aspect-3/4 group">
                 <Image
                   key={activeCategory.id}
                   src={activeCategory.image}
@@ -318,7 +318,7 @@ export default function PetrolBunkShowcase({
                 
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none" />
 
-                <div className="absolute bottom-4 left-4 right-4 bg-[#061221] text-white px-5 py-3 rounded-2xl border-2 border-[#F4E409] shadow-xl flex items-center justify-between text-sm sm:text-base font-bold tracking-wide z-10">
+                <div className="absolute bottom-4 left-4 right-4 bg-[#3D0710] text-white px-5 py-3 rounded-2xl border-2 border-[#F4E409] shadow-xl flex items-center justify-between text-sm sm:text-base font-bold tracking-wide z-10">
                   <span className="truncate">{activeCategory.title} Space</span>
                   <ArrowRight className="w-5 h-5 text-[#F4E409] flex-shrink-0 ml-2" />
                 </div>
@@ -329,22 +329,22 @@ export default function PetrolBunkShowcase({
         </div>
 
         {/* Supporting Strip */}
-        <div className="mt-12 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 pt-6 border-t border-[#E2E8F0]">
+        <div className="mt-12 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 pt-6 border-t border-[#F0E2E4]">
           {SHOWCASE_TRUST_ITEMS.map((item, idx) => {
             const IconComp = iconMap[item.iconName] || ShieldCheck;
             return (
               <div
                 key={idx}
-                className="flex items-center gap-3 p-3 rounded-2xl bg-white border border-[#E2E8F0] shadow-2xs"
+                className="flex items-center gap-3 p-3 rounded-2xl bg-white border border-[#F0E2E4] shadow-2xs"
               >
-                <div className="p-2 rounded-xl bg-[#FEF9C3] text-[#0B1E36] flex-shrink-0">
+                <div className="p-2 rounded-xl bg-[#FFF6A3] text-[#6B0F1A] flex-shrink-0">
                   <IconComp className="w-4 h-4" />
                 </div>
                 <div>
-                  <h4 className="text-xs font-extrabold text-[#0B1E36] leading-tight">
+                  <h4 className="text-xs font-extrabold text-[#6B0F1A] leading-tight">
                     {item.label}
                   </h4>
-                  <p className="text-[10px] text-[#475569] font-bold mt-0.5">
+                  <p className="text-[10px] text-[#5F5F5F] font-bold mt-0.5">
                     {item.desc}
                   </p>
                 </div>

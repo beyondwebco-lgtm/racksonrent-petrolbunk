@@ -1,14 +1,14 @@
-import React from "react";
+﻿import React from "react";
 import { Users, ShieldCheck, Phone, Mail } from "lucide-react";
 import { SITE_CONFIG } from "@/data/config";
 
 export default function TopBar() {
   return (
-    <div className="bg-[#0B1E36] text-white text-xs border-b border-[#061221] py-2 px-4 sm:px-6 lg:px-8 font-medium">
+    <div className="bg-[#6B0F1A] text-white text-xs border-b border-[#3D0710] py-2 px-4 sm:px-6 lg:px-8 font-medium">
       <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2 sm:gap-4">
         
         {/* Left Side */}
-        <div className="flex items-center gap-1.5 text-[#FEF9C3]">
+        <div className="flex items-center gap-1.5 text-[#FFF6A3]">
           <Users className="w-3.5 h-3.5 text-[#F4E409]" />
           <span>{SITE_CONFIG.topBarTextLeft}</span>
         </div>

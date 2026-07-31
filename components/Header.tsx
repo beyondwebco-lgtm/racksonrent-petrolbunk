@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
@@ -80,7 +80,7 @@ export default function Header({ onSelectRole }: HeaderProps) {
 
   return (
     <header
-      className={`sticky top-0 z-40 transition-all duration-200 border-b border-[#E2E8F0] bg-[#F8FAFC]/95 backdrop-blur-md ${
+      className={`sticky top-0 z-40 transition-all duration-200 border-b border-[#F0E2E4] bg-[#FFFDF5]/95 backdrop-blur-md ${
         scrolled ? "py-2 shadow-xs" : "py-3"
       }`}
     >
@@ -88,7 +88,7 @@ export default function Header({ onSelectRole }: HeaderProps) {
         
         {/* Logo & Brand Name */}
         <Link href="/" className="flex items-center gap-3 group focus:outline-none flex-shrink-0">
-          <div className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-2xl overflow-hidden border-2 border-[#0B1E36]/30 shadow-md flex-shrink-0 bg-white p-1">
+          <div className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-2xl overflow-hidden border-2 border-[#6B0F1A]/30 shadow-md flex-shrink-0 bg-white p-1">
             <Image
               src="/images/logo.jpeg"
               alt="Racks on Rent Logo"
@@ -99,10 +99,10 @@ export default function Header({ onSelectRole }: HeaderProps) {
             />
           </div>
           <div>
-            <span className="text-2xl sm:text-3xl font-black tracking-tight text-[#0B1E36] block leading-none">
-              Racks<span className="text-[#006699]">on</span>Rent
+            <span className="text-2xl sm:text-3xl font-black tracking-tight text-[#6B0F1A] block leading-none">
+              Racks<span className="text-[#6B0F1A]">on</span>Rent
             </span>
-            <span className="text-xs sm:text-sm font-extrabold text-[#0B1E36] tracking-wider uppercase block mt-1">
+            <span className="text-xs sm:text-sm font-extrabold text-[#6B0F1A] tracking-wider uppercase block mt-1">
               Sublet Space. Share Success.
             </span>
           </div>
@@ -115,7 +115,7 @@ export default function Header({ onSelectRole }: HeaderProps) {
               key={link.href}
               href={link.href}
               onClick={(e) => handleNavClick(e, link.href)}
-              className="px-3.5 py-2 rounded-xl text-xs xl:text-sm font-bold text-[#0B1E36] hover:text-[#061221] hover:bg-[#FEF9C3]/70 transition-colors"
+              className="px-3.5 py-2 rounded-xl text-xs xl:text-sm font-bold text-[#6B0F1A] hover:text-[#3D0710] hover:bg-[#FFF6A3]/70 transition-colors"
             >
               {link.label}
             </a>
@@ -127,7 +127,7 @@ export default function Header({ onSelectRole }: HeaderProps) {
           <button
             type="button"
             onClick={handleListYourSpace}
-            className="inline-flex items-center justify-center gap-1.5 rounded-full bg-[#F4E409] px-5 py-2.5 text-xs xl:text-sm font-extrabold text-[#061221] transition hover:bg-[#061221] hover:text-[#F4E409] shadow-xs border border-[#0B1E36]/20 cursor-pointer"
+            className="inline-flex items-center justify-center gap-1.5 rounded-full bg-[#F4E409] px-5 py-2.5 text-xs xl:text-sm font-extrabold text-[#3D0710] transition hover:bg-[#3D0710] hover:text-[#F4E409] shadow-xs border border-[#6B0F1A]/20 cursor-pointer"
           >
             <Store className="w-4 h-4" />
             <span>List Your Space</span>
@@ -139,7 +139,7 @@ export default function Header({ onSelectRole }: HeaderProps) {
           <button
             type="button"
             onClick={handleListYourSpace}
-            className="inline-flex items-center gap-1 px-3 py-2 rounded-full bg-[#F4E409] text-[#061221] text-xs font-extrabold shadow-xs hover:bg-[#061221] hover:text-[#F4E409] transition-colors cursor-pointer"
+            className="inline-flex items-center gap-1 px-3 py-2 rounded-full bg-[#F4E409] text-[#3D0710] text-xs font-extrabold shadow-xs hover:bg-[#3D0710] hover:text-[#F4E409] transition-colors cursor-pointer"
           >
             <Store className="w-3.5 h-3.5" />
             <span className="hidden sm:inline">List Space</span>
@@ -150,7 +150,7 @@ export default function Header({ onSelectRole }: HeaderProps) {
             onClick={() => setMobileMenuOpen(true)}
             aria-expanded={mobileMenuOpen}
             aria-label="Open navigation menu"
-            className="p-2.5 rounded-xl text-[#0B1E36] hover:text-[#061221] hover:bg-[#FEF9C3]/50 border border-[#E2E8F0] transition-colors cursor-pointer"
+            className="p-2.5 rounded-xl text-[#6B0F1A] hover:text-[#3D0710] hover:bg-[#FFF6A3]/50 border border-[#F0E2E4] transition-colors cursor-pointer"
           >
             <Menu className="w-6 h-6" />
           </button>
@@ -161,19 +161,19 @@ export default function Header({ onSelectRole }: HeaderProps) {
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
         <div
-          className="fixed inset-0 z-50 bg-[#F8FAFC] lg:hidden flex flex-col justify-between overflow-y-auto"
+          className="fixed inset-0 z-50 bg-[#FFFDF5] lg:hidden flex flex-col justify-between overflow-y-auto"
           role="dialog"
           aria-modal="true"
           aria-label="Navigation Menu"
         >
           {/* Top Bar inside Drawer */}
-          <div className="py-4 px-4 sm:px-6 flex items-center justify-between border-b border-[#E2E8F0] bg-[#F8FAFC] sticky top-0 z-10">
+          <div className="py-4 px-4 sm:px-6 flex items-center justify-between border-b border-[#F0E2E4] bg-[#FFFDF5] sticky top-0 z-10">
             <Link
               href="/"
               onClick={closeMenu}
               className="flex items-center gap-3 focus:outline-none"
             >
-              <div className="relative w-12 h-12 rounded-2xl overflow-hidden border-2 border-[#0B1E36]/30 shadow-md flex-shrink-0 bg-white p-1">
+              <div className="relative w-12 h-12 rounded-2xl overflow-hidden border-2 border-[#6B0F1A]/30 shadow-md flex-shrink-0 bg-white p-1">
                 <Image
                   src="/images/logo.jpeg"
                   alt="Racks on Rent Logo"
@@ -183,10 +183,10 @@ export default function Header({ onSelectRole }: HeaderProps) {
                 />
               </div>
               <div>
-                <span className="text-2xl font-black tracking-tight text-[#0B1E36] block leading-none">
-                  Racks<span className="text-[#006699]">on</span>Rent
+                <span className="text-2xl font-black tracking-tight text-[#6B0F1A] block leading-none">
+                  Racks<span className="text-[#6B0F1A]">on</span>Rent
                 </span>
-                <span className="text-xs font-extrabold text-[#0B1E36] tracking-wider uppercase block mt-1">
+                <span className="text-xs font-extrabold text-[#6B0F1A] tracking-wider uppercase block mt-1">
                   Sublet Space. Share Success.
                 </span>
               </div>
@@ -197,7 +197,7 @@ export default function Header({ onSelectRole }: HeaderProps) {
                 type="button"
                 onClick={closeMenu}
                 aria-label="Close navigation menu"
-                className="p-2.5 rounded-xl text-[#0B1E36] hover:bg-[#FEF9C3]/50 border border-[#E2E8F0] transition-colors cursor-pointer"
+                className="p-2.5 rounded-xl text-[#6B0F1A] hover:bg-[#FFF6A3]/50 border border-[#F0E2E4] transition-colors cursor-pointer"
               >
                 <X className="w-6 h-6" />
               </button>
@@ -211,7 +211,7 @@ export default function Header({ onSelectRole }: HeaderProps) {
                 key={link.href}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
-                className="block px-4 py-3 rounded-xl font-bold text-lg text-[#0B1E36] hover:bg-[#FEF9C3]/50 transition-colors"
+                className="block px-4 py-3 rounded-xl font-bold text-lg text-[#6B0F1A] hover:bg-[#FFF6A3]/50 transition-colors"
               >
                 {link.label}
               </a>
@@ -219,11 +219,11 @@ export default function Header({ onSelectRole }: HeaderProps) {
           </nav>
 
           {/* Bottom Action CTA button inside Drawer */}
-          <div className="p-6 border-t border-[#E2E8F0] bg-[#FEF9C3]/40">
+          <div className="p-6 border-t border-[#F0E2E4] bg-[#FFF6A3]/40">
             <button
               type="button"
               onClick={handleListYourSpace}
-              className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-[#F4E409] py-3.5 text-base font-extrabold text-[#061221] shadow-xs hover:bg-[#061221] hover:text-[#F4E409] transition-colors"
+              className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-[#F4E409] py-3.5 text-base font-extrabold text-[#3D0710] shadow-xs hover:bg-[#3D0710] hover:text-[#F4E409] transition-colors"
             >
               <Store className="w-5 h-5" />
               <span>List Your Space</span>

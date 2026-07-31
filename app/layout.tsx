@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import "./globals.css";
 import TopBar from "@/components/TopBar";
@@ -80,7 +80,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="min-h-full flex flex-col bg-[#F8FAFC] text-[#0F172A] font-sans">
+      <body className="min-h-full flex flex-col bg-[#FFFDF5] text-[#1F1F1F] font-sans">
         <TopBar />
         <Header />
         <main className="flex-grow">{children}</main>
