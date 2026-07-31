@@ -44,12 +44,13 @@ export default function HowItWorks() {
 
           {/* Right Column: Image */}
           <div className="flex-1 w-full max-w-2xl mx-auto lg:mx-0 lg:sticky lg:top-24">
-            <div className="relative w-full aspect-[4/3] sm:aspect-square lg:aspect-[4/5] xl:aspect-[3/4] rounded-3xl overflow-hidden border-[6px] border-white shadow-[0_20px_50px_rgba(11,30,54,0.1)] group">
+            <div className="relative w-full rounded-3xl overflow-hidden border-[6px] border-white shadow-[0_20px_50px_rgba(11,30,54,0.1)] group bg-white">
               <Image 
                 src="/images/howitworks.jpeg" 
                 alt="How it works model" 
-                fill 
-                className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                width={1200}
+                height={1200}
+                className="w-full h-auto object-contain group-hover:scale-105 transition-transform duration-700 ease-out"
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 priority
               />
