@@ -1,0 +1,210 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary-maroon: #0B1E36;
+  --color-dark-maroon: #061221;
+  --color-lemon-yellow: #F4E409;
+  --color-soft-lemon: #FEF9C3;
+  --color-warm-white: #F8FAFC;
+  --color-dark-text: #0F172A;
+  --color-muted-text: #475569;
+  --color-soft-border: #E2E8F0;
+
+  --font-manrope: var(--font-manrope), sans-serif;
+}
+
+:root {
+  --background: #f8fafc;
+  --background-soft: #f1f5f9;
+  --background-maroon: #061221;
+
+  --primary: #0b1e36;
+  --primary-dark: #061221;
+  --accent: #f4e409;
+  --accent-light: #fef9c3;
+
+  --heading: #0b1e36;
+  --text: #0f172a;
+  --text-muted: #475569;
+
+  --border: #e2e8f0;
+  --surface: #ffffff;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-manrope), system-ui, -apple-system, sans-serif;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-manrope), system-ui, -apple-system, sans-serif;
+  color: var(--heading);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F8FAFC;
+}
+::-webkit-scrollbar-thumb {
+  background: #0B1E36;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #061221;
+}
+
+
+/* Keyframes */
+@keyframes ctaEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(22px) scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes heroVideoEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(18px) scale(0.97);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes ctaAttentionPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.025);
+    opacity: 0.9;
+  }
+}
+
+@keyframes lineReveal {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  100% {
+    width: 4rem;
+    opacity: 1;
+  }
+}
+
+@keyframes sectionReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(24px) scale(0.985);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Reusable Animation Classes */
+.animate-cta-btn-1 {
+  opacity: 0;
+  animation: ctaEntrance 700ms cubic-bezier(0.22, 1, 0.36, 1) 100ms forwards;
+}
+
+.animate-cta-btn-2 {
+  opacity: 0;
+  animation: ctaEntrance 700ms cubic-bezier(0.22, 1, 0.36, 1) 220ms forwards;
+}
+
+.animate-hero-video-entrance {
+  opacity: 0;
+  animation: heroVideoEntrance 1000ms cubic-bezier(0.22, 1, 0.36, 1) 250ms forwards;
+}
+
+.animate-cta-pulse-group {
+  animation: ctaAttentionPulse 800ms cubic-bezier(0.22, 1, 0.36, 1) 1600ms 1 forwards;
+}
+
+.animate-accent-line {
+  opacity: 0;
+  animation: lineReveal 600ms cubic-bezier(0.22, 1, 0.36, 1) 300ms forwards;
+}
+
+/* Nav Link Center Underline Reveal */
+.nav-link-hover {
+  position: relative;
+  transition: color 220ms cubic-bezier(0.22, 1, 0.36, 1), transform 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+@media (hover: hover) and (pointer: fine) {
+  .nav-link-hover:hover {
+    transform: translateY(-2px);
+  }
+  .nav-link-hover::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #F4E409;
+    transition: width 220ms cubic-bezier(0.22, 1, 0.36, 1), left 220ms cubic-bezier(0.22, 1, 0.36, 1);
+    border-radius: 9999px;
+  }
+  .nav-link-hover:hover::after {
+    width: 70%;
+    left: 15%;
+  }
+}
+
+/* Card Hover System */
+.card-hover-system {
+  transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 300ms cubic-bezier(0.22, 1, 0.36, 1), border-color 300ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+@media (hover: hover) and (pointer: fine) {
+  .card-hover-system:hover {
+    transform: translateY(-5px) scale(1.01);
+    box-shadow: 0 16px 40px rgba(107, 15, 26, 0.12);
+    border-color: rgba(107, 15, 26, 0.4);
+  }
+}
+
+/* Button Press Tactile Feedback */
+.btn-press-feedback {
+  transition: transform 140ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 140ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.btn-press-feedback:active {
+  transform: scale(0.97) !important;
+}
+
+/* Reduced Motion Override */
+@media (prefers-reduced-motion: reduce) {
+  .animate-cta-btn-1,
+  .animate-cta-btn-2,
+  .animate-hero-video-entrance,
+  .animate-cta-pulse-group,
+  .animate-accent-line,
+  .card-hover-system,
+  .nav-link-hover {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .nav-link-hover::after {
+    display: none !important;
+  }
+}
