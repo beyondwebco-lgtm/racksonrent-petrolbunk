@@ -1,4 +1,4 @@
-﻿import React from "react";
+import React from "react";
 import Image from "next/image";
 import { Phone, Mail, MessageCircle } from "lucide-react";
 import { SITE_CONFIG, NAV_LINKS } from "@/data/config";
@@ -13,22 +13,14 @@ export default function Footer() {
           
           {/* Prominently Enlarged Brand Logo */}
           <div className="flex items-center gap-3">
-            <div className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-2xl overflow-hidden border-2 border-[#F4E409]/60 shadow-md flex-shrink-0 bg-white p-1">
+            <div className="relative h-14 w-[240px] sm:h-16 sm:w-[280px] flex-shrink-0 bg-white p-2 rounded-xl">
               <Image
                 src="/images/logo.jpeg"
                 alt="Racks on Rent Logo"
                 fill
-                sizes="(max-width: 640px) 56px, 64px"
+                sizes="(max-width: 640px) 240px, 280px"
                 className="object-contain"
               />
-            </div>
-            <div>
-              <span className="text-2xl sm:text-3xl font-black text-white block leading-none">
-                Racks<span className="text-[#F4E409]">on</span>Rent
-              </span>
-              <span className="text-xs sm:text-sm font-extrabold text-[#FFF6A3] uppercase tracking-wider block mt-1">
-                {SITE_CONFIG.tagline}
-              </span>
             </div>
           </div>
 

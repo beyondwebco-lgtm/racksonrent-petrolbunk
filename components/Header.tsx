@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React, { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
@@ -88,23 +88,15 @@ export default function Header({ onSelectRole }: HeaderProps) {
         
         {/* Logo & Brand Name */}
         <Link href="/" className="flex items-center gap-3 group focus:outline-none flex-shrink-0">
-          <div className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-2xl overflow-hidden border-2 border-[#6B0F1A]/30 shadow-md flex-shrink-0 bg-white p-1">
+          <div className="relative h-12 w-[220px] sm:h-14 sm:w-[260px] flex-shrink-0">
             <Image
               src="/images/logo.jpeg"
               alt="Racks on Rent Logo"
               fill
-              sizes="(max-width: 640px) 56px, 64px"
+              sizes="(max-width: 640px) 220px, 260px"
               priority
-              className="object-contain"
+              className="object-contain object-left"
             />
-          </div>
-          <div>
-            <span className="text-2xl sm:text-3xl font-black tracking-tight text-[#6B0F1A] block leading-none">
-              Racks<span className="text-[#6B0F1A]">on</span>Rent
-            </span>
-            <span className="text-xs sm:text-sm font-extrabold text-[#6B0F1A] tracking-wider uppercase block mt-1">
-              Sublet Space. Share Success.
-            </span>
           </div>
         </Link>
 
@@ -173,22 +165,14 @@ export default function Header({ onSelectRole }: HeaderProps) {
               onClick={closeMenu}
               className="flex items-center gap-3 focus:outline-none"
             >
-              <div className="relative w-12 h-12 rounded-2xl overflow-hidden border-2 border-[#6B0F1A]/30 shadow-md flex-shrink-0 bg-white p-1">
+              <div className="relative h-10 w-[180px] flex-shrink-0">
                 <Image
                   src="/images/logo.jpeg"
                   alt="Racks on Rent Logo"
                   fill
-                  sizes="48px"
-                  className="object-contain"
+                  sizes="180px"
+                  className="object-contain object-left"
                 />
-              </div>
-              <div>
-                <span className="text-2xl font-black tracking-tight text-[#6B0F1A] block leading-none">
-                  Racks<span className="text-[#6B0F1A]">on</span>Rent
-                </span>
-                <span className="text-xs font-extrabold text-[#6B0F1A] tracking-wider uppercase block mt-1">
-                  Sublet Space. Share Success.
-                </span>
               </div>
             </Link>
 
