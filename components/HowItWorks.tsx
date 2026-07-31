@@ -1,24 +1,14 @@
-﻿import React from "react";
-import { UserCheck, Maximize2, Store, Eye, MessageCircle, ShoppingBag, TrendingUp, ArrowRight } from "lucide-react";
+import React from "react";
+import Image from "next/image";
 import { JOURNEY_STEPS } from "@/data/journey";
 
 export default function HowItWorks() {
-  const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
-    UserCheck,
-    Maximize2,
-    Store,
-    Eye,
-    MessageCircle,
-    ShoppingBag,
-    TrendingUp,
-  };
-
   return (
     <section className="py-16 sm:py-24 bg-[#FFF6A3]/50 border-y border-[#F0E2E4]" id="how-it-works">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Heading */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
           <span className="inline-flex rounded-full bg-white px-4 py-1.5 text-sm font-extrabold text-[#6B0F1A] border border-[#F0E2E4]">
             7-Step Process
           </span>
@@ -30,41 +20,42 @@ export default function HowItWorks() {
           </p>
         </div>
 
-        {/* 7 Step Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
-          {JOURNEY_STEPS.map((step, idx) => {
-            const IconComp = iconMap[step.iconName] || Store;
-            return (
-              <div key={step.stepNumber} className="relative flex flex-col group">
-                <div className="rounded-3xl border border-[#F0E2E4] bg-white p-6 shadow-[0_12px_35px_rgba(11,30,54,0.06)] flex flex-col items-center text-center relative group-hover:-translate-y-1.5 group-hover:scale-[1.01] group-hover:border-[#6B0F1A]/50 group-hover:shadow-[0_20px_45px_rgba(11,30,54,0.12)] transition-all duration-300 h-full">
-                  
-                  {/* Step Number Circle */}
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#6B0F1A] font-black text-[#FFF6A3] mb-5 shadow-sm text-lg border-2 border-[#F4E409] group-hover:scale-110 group-hover:bg-[#F4E409] group-hover:text-[#3D0710] group-hover:border-[#6B0F1A] transition-all duration-300">
-                    {step.stepNumber}
-                  </div>
-
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#FFF6A3] mb-4 text-[#6B0F1A] group-hover:bg-[#6B0F1A] group-hover:text-[#FFF6A3] transition-colors duration-300">
-                    <IconComp className="w-6 h-6" />
-                  </div>
-
-                  <h3 className="text-lg font-black text-[#6B0F1A] mb-2 group-hover:text-[#3D0710] transition-colors">
+        {/* Two Column Layout */}
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start">
+          
+          {/* Left Column: Steps List */}
+          <div className="flex-1 w-full space-y-8 max-w-2xl mx-auto lg:mx-0">
+            {JOURNEY_STEPS.map((step) => (
+              <div key={step.stepNumber} className="flex gap-4 sm:gap-6 group">
+                <div className="flex-shrink-0 flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-full bg-[#6B0F1A] font-black text-[#FFF6A3] shadow-md text-xl border-2 border-[#F4E409] group-hover:scale-110 group-hover:bg-[#F4E409] group-hover:text-[#3D0710] group-hover:border-[#6B0F1A] transition-all duration-300">
+                  {step.stepNumber}
+                </div>
+                <div className="pt-1 sm:pt-2">
+                  <h3 className="text-lg sm:text-xl font-extrabold text-[#6B0F1A] mb-1.5 group-hover:text-[#3D0710] transition-colors">
                     {step.title}
                   </h3>
-
-                  <p className="text-xs sm:text-sm text-[#5F5F5F] leading-relaxed font-medium">
+                  <p className="text-sm sm:text-base text-[#5F5F5F] leading-relaxed font-medium">
                     {step.shortDescription}
                   </p>
                 </div>
-
-                {/* Desktop Connecting Arrow */}
-                {idx < JOURNEY_STEPS.length - 1 && (idx + 1) % 4 !== 0 && (
-                  <div className="hidden lg:flex absolute -right-4 top-1/2 -translate-y-1/2 z-10 p-1.5 rounded-full bg-[#F4E409] text-[#3D0710] shadow-sm border border-[#6B0F1A]/20 group-hover:translate-x-1.5 group-hover:bg-[#3D0710] group-hover:text-[#F4E409] transition-all duration-300">
-                    <ArrowRight className="w-4 h-4" />
-                  </div>
-                )}
               </div>
-            );
-          })}
+            ))}
+          </div>
+
+          {/* Right Column: Image */}
+          <div className="flex-1 w-full max-w-2xl mx-auto lg:mx-0 lg:sticky lg:top-24">
+            <div className="relative w-full aspect-[4/3] sm:aspect-square lg:aspect-[4/5] xl:aspect-[3/4] rounded-3xl overflow-hidden border-[6px] border-white shadow-[0_20px_50px_rgba(11,30,54,0.1)] group">
+              <Image 
+                src="/images/howitworks.jpeg" 
+                alt="How it works model" 
+                fill 
+                className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                priority
+              />
+            </div>
+          </div>
+
         </div>
 
       </div>
