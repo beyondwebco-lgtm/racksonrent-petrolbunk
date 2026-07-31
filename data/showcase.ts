@@ -41,7 +41,7 @@ export const SHOWCASE_CATEGORIES: ShowcaseCategory[] = [
     ],
     primaryCta: "List Petrol Pump Space",
     secondaryCta: "Find Space for Helmet Brand",
-    image: "/images/categories/rider-helmet.webp",
+    image: "/spaces/space-travel.jpeg", // This is the "Bike Gear" image
     iconName: "ShieldCheck",
     rolePrimary: "bunk-owner",
     spaceTypePrimary: "Auto Care & Helmet Display Stand",
@@ -72,7 +72,7 @@ export const SHOWCASE_CATEGORIES: ShowcaseCategory[] = [
     ],
     primaryCta: "List Space for Snack Racks",
     secondaryCta: "Find Space for Food Brand",
-    image: "/images/categories/packaged-snacks.webp",
+    image: "/spaces/space-snacks.jpeg",
     iconName: "ShoppingBag",
     rolePrimary: "bunk-owner",
     spaceTypePrimary: "Forecourt Canopy Display Rack",
@@ -103,7 +103,7 @@ export const SHOWCASE_CATEGORIES: ShowcaseCategory[] = [
     ],
     primaryCta: "List Auto Display Space",
     secondaryCta: "Find Space for Auto Accessories",
-    image: "/images/categories/car-care.webp",
+    image: "/spaces/space-helmets.jpeg", // This is the "Radium works/tools" image
     iconName: "Zap",
     rolePrimary: "bunk-owner",
     spaceTypePrimary: "Auto Care & Helmet Display Stand",
@@ -134,7 +134,7 @@ export const SHOWCASE_CATEGORIES: ShowcaseCategory[] = [
     ],
     primaryCta: "List Kiosk Space",
     secondaryCta: "Find Space for Travel Brand",
-    image: "/images/categories/phone-mount.webp",
+    image: "/spaces/space-car-care.jpeg", // This is the "Premium Customization" image
     iconName: "Sparkles",
     rolePrimary: "bunk-owner",
     spaceTypePrimary: "Compact Branded Retail Kiosk",
