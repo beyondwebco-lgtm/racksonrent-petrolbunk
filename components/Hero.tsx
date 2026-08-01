@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
@@ -173,12 +173,12 @@ export default function Hero({ onSelectRole }: HeroProps) {
             <div className="relative mx-auto max-w-md lg:max-w-none">
               <div className="animate-hero-video-entrance rounded-[2rem] border-2 border-[#F0E2E4] bg-white p-3 shadow-[0_24px_70px_rgba(11,30,54,0.12)] relative overflow-hidden transition-all duration-350 hover:scale-[1.015] hover:shadow-[0_28px_80px_rgba(11,30,54,0.18)] hover:border-[#F4E409]/60 group">
                 <div className="relative aspect-4/3 w-full rounded-2xl overflow-hidden bg-[#FFF6A3]/30">
-                  <Image
-                    src="/images/hero-petrolbunk.png"
-                    alt="Modern Petrol Bunk Rack Store"
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 45vw"
-                    priority
+                  <video
+                    src="/videos/hero-video.mp4"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
                     className="w-full h-full object-cover transition-transform duration-300 ease-out group-hover:scale-105"
                     style={{
                       transform: `translateY(${scrollY * 0.04}px)`,
