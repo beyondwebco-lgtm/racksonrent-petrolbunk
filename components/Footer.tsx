@@ -13,14 +13,36 @@ export default function Footer() {
           
           {/* Prominently Enlarged Brand Logo */}
           <div className="flex items-center gap-3">
-            <div className="relative h-14 w-[240px] sm:h-16 sm:w-[280px] flex-shrink-0 bg-white p-2 rounded-xl">
-              <Image
-                src="/images/logo.jpeg"
-                alt="Racks on Rent Logo"
-                fill
-                sizes="(max-width: 640px) 240px, 280px"
-                className="object-contain"
-              />
+            <div className="flex items-center gap-2.5 sm:gap-3 flex-shrink-0">
+              {/* Square Rack-Icon Logo */}
+              <div className="relative w-11 h-11 sm:w-12 sm:h-12 rounded-xl overflow-hidden flex-shrink-0 bg-white p-0.5 border border-[#F4E409]/30 shadow-2xs">
+                <Image
+                  src="/images/logo.png"
+                  alt="Racks on Rent Logo Icon"
+                  fill
+                  sizes="(max-width: 640px) 44px, 48px"
+                  priority
+                  className="object-contain"
+                />
+              </div>
+
+              {/* Separate Horizontal Logo Lockup */}
+              <div className="flex flex-col justify-center">
+                {/* Main Brand Title */}
+                <div className="flex items-baseline font-black tracking-tighter leading-none text-xl sm:text-2xl">
+                  <span className="text-[#FFFDF5] font-black italic">Racks</span>
+                  <span className="text-[#F4E409] font-bold italic lowercase mx-1 text-[0.8em]" style={{ fontFamily: "Georgia, serif" }}>on</span>
+                  <span className="text-[#F4E409] font-black italic">Rent</span>
+                </div>
+
+                {/* Tagline */}
+                <div className="flex items-center gap-1 mt-0.5 text-[8px] sm:text-[9px] font-black uppercase tracking-[0.18em] leading-none whitespace-nowrap">
+                  <span className="h-[1.5px] w-3 bg-[#F4E409] inline-block" />
+                  <span className="text-[#FFFDF5]">SUBLET SPACE.</span>
+                  <span className="text-[#F4E409]">SHARE SUCCESS.</span>
+                  <span className="h-[1.5px] w-3 bg-[#F4E409] inline-block" />
+                </div>
+              </div>
             </div>
           </div>
 
