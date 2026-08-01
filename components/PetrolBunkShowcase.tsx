@@ -285,25 +285,25 @@ export default function PetrolBunkShowcase({
             {/* Right Column */}
             <div className="lg:col-span-5 relative">
               <div className="relative rounded-2xl overflow-hidden border-2 border-[#F0E2E4] bg-[#FFF6A3]/20 shadow-[0_16px_40px_rgba(11,30,54,0.10)] aspect-3/4 sm:aspect-4/3 lg:aspect-3/4 group">
-                {/* Arrow Controls Overlaid on Image */}
-                <div className="absolute top-3 right-3 z-20 flex items-center gap-2">
-                  <button
-                    type="button"
-                    onClick={handlePrev}
-                    aria-label="Previous category"
-                    className="w-9 h-9 rounded-full bg-[#6B0F1A]/90 text-[#FFF6A3] border border-[#F4E409] flex items-center justify-center shadow-md hover:bg-[#3D0710] hover:text-[#F4E409] transition-all cursor-pointer active:scale-95 backdrop-blur-xs"
-                  >
-                    <ChevronLeft className="w-5 h-5 stroke-[2.5]" />
-                  </button>
-                  <button
-                    type="button"
-                    onClick={handleNext}
-                    aria-label="Next category"
-                    className="w-9 h-9 rounded-full bg-[#6B0F1A]/90 text-[#FFF6A3] border border-[#F4E409] flex items-center justify-center shadow-md hover:bg-[#3D0710] hover:text-[#F4E409] transition-all cursor-pointer active:scale-95 backdrop-blur-xs"
-                  >
-                    <ChevronRight className="w-5 h-5 stroke-[2.5]" />
-                  </button>
-                </div>
+                {/* Left Navigation Arrow (Positioned on Left Edge) */}
+                <button
+                  type="button"
+                  onClick={handlePrev}
+                  aria-label="Previous category"
+                  className="absolute left-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-[#6B0F1A]/90 text-[#FFF6A3] border-2 border-[#F4E409] flex items-center justify-center shadow-lg hover:bg-[#3D0710] hover:text-[#F4E409] hover:scale-110 transition-all cursor-pointer active:scale-95 backdrop-blur-xs"
+                >
+                  <ChevronLeft className="w-6 h-6 stroke-[2.5]" />
+                </button>
+
+                {/* Right Navigation Arrow (Positioned on Right Edge) */}
+                <button
+                  type="button"
+                  onClick={handleNext}
+                  aria-label="Next category"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-[#6B0F1A]/90 text-[#FFF6A3] border-2 border-[#F4E409] flex items-center justify-center shadow-lg hover:bg-[#3D0710] hover:text-[#F4E409] hover:scale-110 transition-all cursor-pointer active:scale-95 backdrop-blur-xs"
+                >
+                  <ChevronRight className="w-6 h-6 stroke-[2.5]" />
+                </button>
 
                 <Image
                   key={activeCategory.id}
