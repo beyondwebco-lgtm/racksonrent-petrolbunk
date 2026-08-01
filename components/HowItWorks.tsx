@@ -1,62 +1,43 @@
 import React from "react";
-import Image from "next/image";
-import { JOURNEY_STEPS } from "@/data/journey";
+import Link from "next/link";
+import { ArrowRight, Store, Zap } from "lucide-react";
 
 export default function HowItWorks() {
   return (
     <section className="py-16 sm:py-24 bg-[#FFF6A3]/50 border-y border-[#F0E2E4]" id="how-it-works">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Heading */}
-        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-          <span className="inline-flex rounded-full bg-white px-4 py-1.5 text-sm font-extrabold text-[#6B0F1A] border border-[#F0E2E4]">
-            7-Step Process
-          </span>
-          <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-[#6B0F1A] md:text-5xl">
-            How It Works
-          </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-[#5F5F5F] md:text-lg font-medium">
-            A simple, step-by-step model connecting petrol pump owners with startups and retail brands.
-          </p>
-        </div>
+        <div className="relative bg-white rounded-[2rem] border border-[#F0E2E4] shadow-xl overflow-hidden group p-8 sm:p-12 text-center">
+          {/* Decorative Elements */}
+          <div className="absolute top-0 right-0 w-64 h-64 bg-[#F4E409]/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
+          <div className="absolute bottom-0 left-0 w-48 h-48 bg-[#6B0F1A]/5 rounded-full blur-2xl translate-y-1/3 -translate-x-1/4"></div>
 
-        {/* Two Column Layout */}
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start">
-          
-          {/* Left Column: Steps List */}
-          <div className="flex-1 w-full space-y-8 max-w-2xl mx-auto lg:mx-0">
-            {JOURNEY_STEPS.map((step) => (
-              <div key={step.stepNumber} className="flex gap-4 sm:gap-6 group">
-                <div className="flex-shrink-0 flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-full bg-[#6B0F1A] font-black text-[#FFF6A3] shadow-md text-xl border-2 border-[#F4E409] group-hover:scale-110 group-hover:bg-[#F4E409] group-hover:text-[#3D0710] group-hover:border-[#6B0F1A] transition-all duration-300">
-                  {step.stepNumber}
-                </div>
-                <div className="pt-1 sm:pt-2">
-                  <h3 className="text-lg sm:text-xl font-extrabold text-[#6B0F1A] mb-1.5 group-hover:text-[#3D0710] transition-colors">
-                    {step.title}
-                  </h3>
-                  <p className="text-sm sm:text-base text-[#5F5F5F] leading-relaxed font-medium">
-                    {step.shortDescription}
-                  </p>
-                </div>
+          <div className="relative z-10 flex flex-col items-center">
+            <div className="flex gap-4 mb-6">
+              <div className="w-12 h-12 rounded-full bg-[#6B0F1A]/10 flex items-center justify-center text-[#6B0F1A]">
+                <Zap className="w-6 h-6" />
               </div>
-            ))}
-          </div>
-
-          {/* Right Column: Image */}
-          <div className="flex-1 w-full max-w-2xl mx-auto lg:mx-0 lg:sticky lg:top-24">
-            <div className="relative w-full rounded-3xl overflow-hidden border-[6px] border-white shadow-[0_20px_50px_rgba(11,30,54,0.1)] group bg-white">
-              <Image 
-                src="/images/howitworks.jpeg" 
-                alt="How it works model" 
-                width={1200}
-                height={1200}
-                className="w-full h-auto object-contain group-hover:scale-105 transition-transform duration-700 ease-out"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                priority
-              />
+              <div className="w-12 h-12 rounded-full bg-[#F4E409]/30 flex items-center justify-center text-[#3D0710]">
+                <Store className="w-6 h-6" />
+              </div>
             </div>
-          </div>
 
+            <h2 className="text-3xl font-extrabold tracking-tight text-[#6B0F1A] md:text-4xl lg:text-5xl mb-4">
+              See How It Works
+            </h2>
+            
+            <p className="max-w-xl mx-auto text-base leading-relaxed text-[#5F5F5F] md:text-lg font-medium mb-8">
+              Discover how petrol pump spaces become high-visibility product display opportunities.
+            </p>
+
+            <Link 
+              href="/how-it-works"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-[#6B0F1A] px-8 py-4 text-base font-extrabold text-[#FFFDF5] shadow-lg hover:bg-[#3D0710] hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
+            >
+              Explore the Process
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </div>
         </div>
 
       </div>
