@@ -17,12 +17,12 @@ export const SITE_CONFIG = {
 };
 
 export const NAV_LINKS = [
-  { label: "Home", href: "#hero" },
+  { label: "Home", href: "/#hero" },
   { label: "How It Works", href: "/how-it-works" },
-  { label: "For Petrol Pump Owners", href: "#petrol-pump-owners" },
-  { label: "For Startups", href: "#startups" },
-  { label: "Products", href: "#products" },
-  { label: "Benefits", href: "#benefits" },
-  { label: "Contact", href: "#contact" },
+  { label: "For Petrol Pump Owners", href: "/#petrol-pump-owners" },
+  { label: "For Startups", href: "/#startups" },
+  { label: "Products", href: "/#products" },
+  { label: "Benefits", href: "/#benefits" },
+  { label: "Contact", href: "/#contact" },
 ];
 

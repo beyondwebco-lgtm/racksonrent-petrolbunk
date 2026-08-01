@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { Menu, X, Store } from "lucide-react";
 import { NAV_LINKS } from "@/data/config";
 
@@ -13,6 +14,7 @@ interface HeaderProps {
 export default function Header({ onSelectRole }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -53,7 +55,18 @@ export default function Header({ onSelectRole }: HeaderProps) {
   }, []);
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    if (href.startsWith("#")) {
+    if (href.startsWith("/#") && pathname === "/") {
+      e.preventDefault();
+      closeMenu();
+      const targetId = href.substring(2);
+      
+      setTimeout(() => {
+        const element = document.getElementById(targetId);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 50);
+    } else if (href.startsWith("#")) {
       e.preventDefault();
       closeMenu();
       const targetId = href.substring(1);
@@ -64,6 +77,8 @@ export default function Header({ onSelectRole }: HeaderProps) {
           element.scrollIntoView({ behavior: "smooth" });
         }
       }, 50);
+    } else {
+      closeMenu();
     }
   };
 
@@ -103,14 +118,14 @@ export default function Header({ onSelectRole }: HeaderProps) {
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center gap-1 xl:gap-1.5">
           {NAV_LINKS.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
-              onClick={(e) => handleNavClick(e, link.href)}
+              onClick={(e) => handleNavClick(e as any, link.href)}
               className="px-3.5 py-2 rounded-xl text-xs xl:text-sm font-bold text-[#6B0F1A] hover:text-[#3D0710] hover:bg-[#FFF6A3]/70 transition-colors"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
@@ -191,14 +206,14 @@ export default function Header({ onSelectRole }: HeaderProps) {
           {/* Navigation Links */}
           <nav className="p-6 space-y-2 flex-1">
             {NAV_LINKS.map((link) => (
-              <a
+              <Link
                 key={link.href}
                 href={link.href}
-                onClick={(e) => handleNavClick(e, link.href)}
+                onClick={(e) => handleNavClick(e as any, link.href)}
                 className="block px-4 py-3 rounded-xl font-bold text-lg text-[#6B0F1A] hover:bg-[#FFF6A3]/50 transition-colors"
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </nav>
 
