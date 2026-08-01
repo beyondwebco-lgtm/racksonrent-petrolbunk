@@ -102,16 +102,39 @@ export default function Header({ onSelectRole }: HeaderProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
         
         {/* Logo & Brand Name */}
-        <Link href="/" className="flex items-center gap-3 group focus:outline-none flex-shrink-0">
-          <div className="relative h-12 w-[220px] sm:h-14 sm:w-[260px] flex-shrink-0">
+        <Link
+          href="/"
+          className="flex items-center gap-2.5 sm:gap-3 flex-shrink-0 group focus:outline-none"
+          aria-label="Racks on Rent Home"
+        >
+          {/* Square Rack-Icon Logo */}
+          <div className="relative w-11 h-11 sm:w-12 sm:h-12 lg:w-13 lg:h-13 rounded-xl overflow-hidden flex-shrink-0 bg-white p-0.5 border border-[#6B0F1A]/20 shadow-2xs group-hover:scale-[1.03] transition-transform">
             <Image
-              src="/images/logo.jpeg"
-              alt="Racks on Rent Logo"
+              src="/images/logo.png"
+              alt="Racks on Rent Logo Icon"
               fill
-              sizes="(max-width: 640px) 220px, 260px"
+              sizes="(max-width: 640px) 44px, (max-width: 1024px) 48px, 52px"
               priority
-              className="object-contain object-left"
+              className="object-contain"
             />
+          </div>
+
+          {/* Separate Horizontal Logo Lockup */}
+          <div className="flex flex-col justify-center">
+            {/* Main Brand Title */}
+            <div className="flex items-baseline font-black tracking-tighter leading-none text-xl sm:text-2xl lg:text-3xl">
+              <span className="text-[#6B0F1A] font-black italic">Racks</span>
+              <span className="text-[#F4E409] font-bold italic lowercase mx-1 text-[0.8em]" style={{ fontFamily: "Georgia, serif" }}>on</span>
+              <span className="text-[#F4E409] font-black italic">Rent</span>
+            </div>
+
+            {/* Tagline */}
+            <div className="flex items-center gap-1 mt-0.5 text-[8px] sm:text-[9px] lg:text-[10px] font-black uppercase tracking-[0.18em] leading-none whitespace-nowrap">
+              <span className="h-[1.5px] w-3 bg-[#6B0F1A] inline-block" />
+              <span className="text-[#6B0F1A]">SUBLET SPACE.</span>
+              <span className="text-[#F4E409]">SHARE SUCCESS.</span>
+              <span className="h-[1.5px] w-3 bg-[#6B0F1A] inline-block" />
+            </div>
           </div>
         </Link>
 
@@ -178,16 +201,33 @@ export default function Header({ onSelectRole }: HeaderProps) {
             <Link
               href="/"
               onClick={closeMenu}
-              className="flex items-center gap-3 focus:outline-none"
+              className="flex items-center gap-2.5 focus:outline-none group"
+              aria-label="Racks on Rent Home"
             >
-              <div className="relative h-10 w-[180px] flex-shrink-0">
+              {/* Square Icon */}
+              <div className="relative w-10 h-10 rounded-xl overflow-hidden flex-shrink-0 bg-white p-0.5 border border-[#6B0F1A]/20">
                 <Image
-                  src="/images/logo.jpeg"
-                  alt="Racks on Rent Logo"
+                  src="/images/logo.png"
+                  alt="Racks on Rent Logo Icon"
                   fill
-                  sizes="180px"
-                  className="object-contain object-left"
+                  sizes="40px"
+                  className="object-contain"
                 />
+              </div>
+
+              {/* Brand Name */}
+              <div className="flex flex-col justify-center">
+                <div className="flex items-baseline font-black tracking-tighter leading-none text-2xl">
+                  <span className="text-[#6B0F1A] font-black italic">Racks</span>
+                  <span className="text-[#F4E409] font-bold italic lowercase mx-1 text-[0.8em]" style={{ fontFamily: "Georgia, serif" }}>on</span>
+                  <span className="text-[#F4E409] font-black italic">Rent</span>
+                </div>
+                <div className="flex items-center gap-1 mt-0.5 text-[8px] font-black uppercase tracking-[0.18em] leading-none whitespace-nowrap">
+                  <span className="h-[1.5px] w-3 bg-[#6B0F1A] inline-block" />
+                  <span className="text-[#6B0F1A]">SUBLET SPACE.</span>
+                  <span className="text-[#F4E409]">SHARE SUCCESS.</span>
+                  <span className="h-[1.5px] w-3 bg-[#6B0F1A] inline-block" />
+                </div>
               </div>
             </Link>
 
