@@ -76,7 +76,7 @@ export default function Hero({ onSelectRole }: HeroProps) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
           
           {/* Left Column */}
-          <div className="lg:col-span-7 space-y-6">
+          <div className="lg:col-span-6 space-y-6">
             <div>
               <span className="inline-flex items-center rounded-full bg-[#FFF6A3] px-4 py-1.5 text-xs sm:text-sm font-extrabold text-[#6B0F1A] border border-[#F0E2E4]">
                 Small Space. Big Opportunity.
@@ -168,11 +168,11 @@ export default function Hero({ onSelectRole }: HeroProps) {
             </div>
           </div>
 
-          {/* Right Column: Petrol Bunk Image */}
-          <div className="lg:col-span-5 relative mt-6 lg:mt-0">
-            <div className="relative mx-auto max-w-md lg:max-w-none">
-              <div className="animate-hero-video-entrance rounded-[2rem] border-2 border-[#F0E2E4] bg-white p-3 shadow-[0_24px_70px_rgba(11,30,54,0.12)] relative overflow-hidden transition-all duration-350 hover:scale-[1.015] hover:shadow-[0_28px_80px_rgba(11,30,54,0.18)] hover:border-[#F4E409]/60 group">
-                <div className="relative aspect-4/3 w-full rounded-2xl overflow-hidden bg-[#FFF6A3]/30">
+          {/* Right Column: Petrol Bunk Video */}
+          <div className="lg:col-span-6 relative mt-6 lg:mt-0">
+            <div className="relative mx-auto">
+              <div className="animate-hero-video-entrance rounded-[2rem] border-2 border-[#F0E2E4] bg-white p-2 shadow-[0_24px_70px_rgba(11,30,54,0.12)] relative overflow-hidden transition-all duration-350 hover:scale-[1.015] hover:shadow-[0_28px_80px_rgba(11,30,54,0.18)] hover:border-[#F4E409]/60 group">
+                <div className="relative aspect-video w-full rounded-2xl overflow-hidden bg-[#FFF6A3]/30">
                   <video
                     src="/videos/hero-video.mp4"
                     autoPlay

@@ -1,19 +1,69 @@
-﻿import React from "react";
-import { Layers, Grid, Store, Coffee, Gift, Box } from "lucide-react";
+"use client";
+
+import React, { useRef, useState, useEffect, useCallback } from "react";
+import Image from "next/image";
+import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
 import { COMPACT_SPACE_TYPES } from "@/data/spaceTypes";
 
 export default function SpaceTypes() {
-  const iconMap: Record<string, React.ReactNode> = {
-    Layers: <Layers className="w-6 h-6 text-[#6B0F1A] group-hover:text-[#FFF6A3] transition-colors" />,
-    Grid: <Grid className="w-6 h-6 text-[#6B0F1A] group-hover:text-[#FFF6A3] transition-colors" />,
-    Store: <Store className="w-6 h-6 text-[#6B0F1A] group-hover:text-[#FFF6A3] transition-colors" />,
-    Coffee: <Coffee className="w-6 h-6 text-[#6B0F1A] group-hover:text-[#FFF6A3] transition-colors" />,
-    Gift: <Gift className="w-6 h-6 text-[#6B0F1A] group-hover:text-[#FFF6A3] transition-colors" />,
-    Box: <Box className="w-6 h-6 text-[#6B0F1A] group-hover:text-[#FFF6A3] transition-colors" />,
-  };
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+
+  const scrollToIndex = useCallback((index: number) => {
+    if (!scrollContainerRef.current) return;
+    const container = scrollContainerRef.current;
+    
+    // Calculate the width of one item + gap. Assuming consistent sizing.
+    // For a more robust approach, we can get the child element's width.
+    const child = container.children[0] as HTMLElement;
+    if (child) {
+      const scrollPosition = index * (child.offsetWidth + 24); // 24px is gap-6
+      container.scrollTo({
+        left: scrollPosition,
+        behavior: "smooth"
+      });
+      setActiveIndex(index);
+    }
+  }, []);
+
+  const handleNext = useCallback(() => {
+    const nextIndex = (activeIndex + 1) % COMPACT_SPACE_TYPES.length;
+    scrollToIndex(nextIndex);
+  }, [activeIndex, scrollToIndex]);
+
+  const handlePrev = useCallback(() => {
+    const prevIndex = activeIndex === 0 ? COMPACT_SPACE_TYPES.length - 1 : activeIndex - 1;
+    scrollToIndex(prevIndex);
+  }, [activeIndex, scrollToIndex]);
+
+  // Sync active index on manual scroll
+  const handleScroll = useCallback(() => {
+    if (!scrollContainerRef.current) return;
+    const container = scrollContainerRef.current;
+    const scrollPosition = container.scrollLeft;
+    
+    const child = container.children[0] as HTMLElement;
+    if (child) {
+      const itemWidth = child.offsetWidth + 24;
+      const newIndex = Math.round(scrollPosition / itemWidth);
+      if (newIndex !== activeIndex && newIndex >= 0 && newIndex < COMPACT_SPACE_TYPES.length) {
+        setActiveIndex(newIndex);
+      }
+    }
+  }, [activeIndex]);
+
+  // Autoplay functionality
+  useEffect(() => {
+    if (isHovered) return;
+    const timer = setInterval(() => {
+      handleNext();
+    }, 4000);
+    return () => clearInterval(timer);
+  }, [handleNext, isHovered]);
 
   return (
-    <section className="py-16 sm:py-24 bg-[#FFF6A3]/30 border-y border-[#F0E2E4]" id="space-types">
+    <section className="py-16 sm:py-24 bg-[#FFF6A3]/30 border-y border-[#F0E2E4] overflow-hidden" id="space-types">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Heading */}
@@ -29,29 +79,101 @@ export default function SpaceTypes() {
           </p>
         </div>
 
-        {/* Compact Grid with 6 items */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          {COMPACT_SPACE_TYPES.map((item) => (
-            <div
-              key={item.id}
-              className="rounded-3xl border border-[#F0E2E4] bg-white p-6 shadow-[0_12px_35px_rgba(11,30,54,0.06)] hover:shadow-[0_20px_50px_rgba(11,30,54,0.14)] transition-all hover:-translate-y-1 hover:border-[#6B0F1A]/30 flex flex-col justify-between group"
-            >
-              <div>
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#FFF6A3] text-[#6B0F1A] group-hover:bg-[#6B0F1A] transition-colors mb-4">
-                  {iconMap[item.iconName]}
+        {/* Carousel Container */}
+        <div 
+          className="relative max-w-6xl mx-auto"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+          onTouchStart={() => setIsHovered(true)}
+          onTouchEnd={() => setIsHovered(false)}
+        >
+          {/* Navigation Arrows */}
+          <button 
+            onClick={handlePrev}
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 sm:-translate-x-6 z-10 p-3 rounded-full bg-white border border-[#F0E2E4] text-[#6B0F1A] shadow-lg hover:bg-[#6B0F1A] hover:text-[#FFF6A3] transition-colors focus:outline-none focus:ring-2 focus:ring-[#6B0F1A]"
+            aria-label="Previous space type"
+          >
+            <ChevronLeft className="w-6 h-6" />
+          </button>
+          
+          <button 
+            onClick={handleNext}
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 sm:translate-x-6 z-10 p-3 rounded-full bg-white border border-[#F0E2E4] text-[#6B0F1A] shadow-lg hover:bg-[#6B0F1A] hover:text-[#FFF6A3] transition-colors focus:outline-none focus:ring-2 focus:ring-[#6B0F1A]"
+            aria-label="Next space type"
+          >
+            <ChevronRight className="w-6 h-6" />
+          </button>
+
+          {/* Scrollable Track */}
+          <div 
+            ref={scrollContainerRef}
+            onScroll={handleScroll}
+            className="flex gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide py-4 px-2"
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          >
+            {COMPACT_SPACE_TYPES.map((item) => (
+              <div
+                key={item.id}
+                className="snap-center shrink-0 w-[85vw] sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] rounded-[2rem] border border-[#F0E2E4] bg-white shadow-[0_12px_35px_rgba(11,30,54,0.06)] hover:shadow-[0_24px_60px_rgba(107,15,26,0.12)] transition-all duration-300 hover:-translate-y-2 hover:border-[#6B0F1A]/30 flex flex-col group overflow-hidden"
+              >
+                {/* Image Section (Top 55-60%) */}
+                <div className="relative h-64 sm:h-72 w-full overflow-hidden bg-gray-100">
+                  <Image
+                    src={item.image}
+                    alt={item.name}
+                    fill
+                    sizes="(max-width: 640px) 85vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
+                  />
+                  {/* Subtle Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
-                <h3 className="font-extrabold text-lg text-[#6B0F1A] transition-colors mb-2">
-                  {item.name}
-                </h3>
-                <p className="text-sm text-[#5F5F5F] leading-relaxed font-medium">
-                  {item.description}
-                </p>
+                
+                {/* Content Section (Bottom) */}
+                <div className="p-6 flex flex-col flex-grow justify-between">
+                  <div>
+                    <h3 className="font-extrabold text-xl text-[#6B0F1A] mb-3 group-hover:text-[#3D0710] transition-colors">
+                      {item.name}
+                    </h3>
+                    <p className="text-sm text-[#5F5F5F] leading-relaxed font-medium mb-6">
+                      {item.description}
+                    </p>
+                  </div>
+                  
+                  <div className="flex items-center text-sm font-bold text-[#6B0F1A] group-hover:text-[#F4E409] transition-colors mt-auto">
+                    Explore Space <ArrowRight className="w-4 h-4 ml-1.5 transform group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+          
+          {/* Pagination Dots */}
+          <div className="flex justify-center items-center gap-2 mt-8">
+            {COMPACT_SPACE_TYPES.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => scrollToIndex(index)}
+                className={`transition-all duration-300 rounded-full ${
+                  activeIndex === index 
+                    ? 'w-8 h-2.5 bg-[#6B0F1A]' 
+                    : 'w-2.5 h-2.5 bg-[#6B0F1A]/20 hover:bg-[#6B0F1A]/50'
+                }`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
+
         </div>
 
       </div>
+
+      {/* Global Style to hide scrollbar for webkit */}
+      <style dangerouslySetInnerHTML={{__html: `
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+      `}} />
     </section>
   );
 }
