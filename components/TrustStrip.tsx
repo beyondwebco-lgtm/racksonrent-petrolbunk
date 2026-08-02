@@ -1,4 +1,4 @@
-﻿import React from "react";
+import React from "react";
 import { Building2, Store, MapPin, ShieldCheck } from "lucide-react";
 import { TRUST_STRIP_ITEMS } from "@/data/stats";
 
@@ -11,7 +11,7 @@ export default function TrustStrip() {
   };
 
   return (
-    <div className="bg-[#6B0F1A] text-white py-6 border-y border-[#3D0710] shadow-md">
+    <div className="bg-[#6B0F1A] text-white py-3 sm:py-4 border-y border-[#3D0710] shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 text-center">
           {TRUST_STRIP_ITEMS.map((item, idx) => {

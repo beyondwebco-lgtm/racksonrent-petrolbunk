@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React, { useState } from "react";
 import { Search, MapPin, Layers, Maximize2, Tag } from "lucide-react";
@@ -37,7 +37,7 @@ export default function SpaceSearch({ onSearch }: SpaceSearchProps) {
   };
 
   return (
-    <section className="py-6 bg-[#FFFDF5] relative -mt-6 z-20">
+    <section className="py-4 sm:py-5 bg-[#FFFDF5] relative -mt-5 z-20" id="search">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <form
           onSubmit={handleSearchSubmit}

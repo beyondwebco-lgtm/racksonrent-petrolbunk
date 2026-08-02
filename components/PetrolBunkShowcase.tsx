@@ -148,7 +148,7 @@ export default function PetrolBunkShowcase({
 
   return (
     <section
-      className="py-16 sm:py-24 bg-[#FFFDF5] border-b border-[#F0E2E4] relative overflow-hidden"
+      className="py-10 sm:py-14 lg:py-16 bg-[#FFFDF5] border-b border-[#F0E2E4] relative overflow-hidden"
       id="startups"
       onMouseEnter={() => setIsAutoplayPaused(true)}
       onMouseLeave={() => setIsAutoplayPaused(false)}
@@ -156,20 +156,20 @@ export default function PetrolBunkShowcase({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Heading */}
-        <div className="text-center max-w-3xl mx-auto mb-10">
-          <span className="inline-flex rounded-full bg-[#FFF6A3] px-4 py-1.5 text-xs sm:text-sm font-extrabold text-[#6B0F1A] border border-[#F0E2E4]">
+        <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-8">
+          <span className="inline-flex rounded-full bg-[#FFF6A3] px-3.5 py-1 text-xs font-extrabold text-[#6B0F1A] border border-[#F0E2E4]">
             For Startups & Retail Brands
           </span>
-          <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-[#6B0F1A] md:text-5xl">
+          <h2 className="mt-2.5 text-2xl font-extrabold tracking-tight text-[#6B0F1A] md:text-4xl lg:text-[clamp(2.25rem,3.2vw,3.5rem)]">
             <span>Explore Retail Rack Formats at Petrol Pumps</span>
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-[#5F5F5F] md:text-lg font-medium">
+          <p className="mx-auto mt-2 max-w-2xl text-sm leading-relaxed text-[#5F5F5F] md:text-base font-medium">
             Launch or expand your offline presence through affordable retail spaces at high-footfall petrol pump locations.
           </p>
         </div>
 
         {/* Category Tab Bar */}
-        <div className="mb-10 flex items-center justify-center">
+        <div className="mb-6 sm:mb-8 flex items-center justify-center">
           <div className="flex gap-2 overflow-x-auto pb-2 pt-1 px-2 max-w-full [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
             {SHOWCASE_CATEGORIES.map((cat, idx) => {
               const IconComp = iconMap[cat.iconName] || Layers;
@@ -284,7 +284,7 @@ export default function PetrolBunkShowcase({
 
             {/* Right Column */}
             <div className="lg:col-span-5 relative">
-              <div className="relative rounded-2xl overflow-hidden border-2 border-[#F0E2E4] bg-[#FFF6A3]/20 shadow-[0_16px_40px_rgba(11,30,54,0.10)] aspect-3/4 sm:aspect-4/3 lg:aspect-3/4 group">
+              <div className="relative rounded-2xl overflow-hidden border-2 border-[#F0E2E4] bg-[#FFF6A3]/20 shadow-[0_16px_40px_rgba(11,30,54,0.10)] h-[340px] sm:h-[380px] lg:h-[400px] max-[850px]:lg:h-[350px] w-full group">
                 {/* Left Navigation Arrow (Positioned on Left Edge) */}
                 <button
                   type="button"

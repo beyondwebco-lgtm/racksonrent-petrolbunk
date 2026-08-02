@@ -63,18 +63,18 @@ export default function SpaceTypes() {
   }, [handleNext, isHovered]);
 
   return (
-    <section className="py-16 sm:py-24 bg-[#FFF6A3]/30 border-y border-[#F0E2E4] overflow-hidden" id="space-types">
+    <section className="py-10 sm:py-14 lg:py-16 bg-[#FFF6A3]/30 border-y border-[#F0E2E4] overflow-hidden" id="space-types">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Heading */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="inline-flex rounded-full bg-white px-4 py-1.5 text-sm font-extrabold text-[#6B0F1A] border border-[#F0E2E4]">
+        <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-8">
+          <span className="inline-flex rounded-full bg-white px-3.5 py-1 text-xs sm:text-sm font-extrabold text-[#6B0F1A] border border-[#F0E2E4]">
             Available Formats
           </span>
-          <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-[#6B0F1A] md:text-5xl">
+          <h2 className="mt-2.5 text-2xl font-extrabold tracking-tight text-[#6B0F1A] md:text-4xl lg:text-[clamp(2.25rem,3.2vw,3.5rem)]">
             What Kind of Space Can Be Offered?
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-[#5F5F5F] md:text-lg font-medium">
+          <p className="mx-auto mt-2 max-w-2xl text-sm leading-relaxed text-[#5F5F5F] md:text-base font-medium">
             Explore popular petrol pump space options that suit display racks, shelves, counters, and kiosks.
           </p>
         </div>
@@ -90,34 +90,34 @@ export default function SpaceTypes() {
           {/* Navigation Arrows */}
           <button 
             onClick={handlePrev}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 sm:-translate-x-6 z-10 p-3 rounded-full bg-white border border-[#F0E2E4] text-[#6B0F1A] shadow-lg hover:bg-[#6B0F1A] hover:text-[#FFF6A3] transition-colors focus:outline-none focus:ring-2 focus:ring-[#6B0F1A]"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 sm:-translate-x-6 z-10 p-2.5 sm:p-3 rounded-full bg-white border border-[#F0E2E4] text-[#6B0F1A] shadow-lg hover:bg-[#6B0F1A] hover:text-[#FFF6A3] transition-colors focus:outline-none focus:ring-2 focus:ring-[#6B0F1A]"
             aria-label="Previous space type"
           >
-            <ChevronLeft className="w-6 h-6" />
+            <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
           </button>
           
           <button 
             onClick={handleNext}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 sm:translate-x-6 z-10 p-3 rounded-full bg-white border border-[#F0E2E4] text-[#6B0F1A] shadow-lg hover:bg-[#6B0F1A] hover:text-[#FFF6A3] transition-colors focus:outline-none focus:ring-2 focus:ring-[#6B0F1A]"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 sm:translate-x-6 z-10 p-2.5 sm:p-3 rounded-full bg-white border border-[#F0E2E4] text-[#6B0F1A] shadow-lg hover:bg-[#6B0F1A] hover:text-[#FFF6A3] transition-colors focus:outline-none focus:ring-2 focus:ring-[#6B0F1A]"
             aria-label="Next space type"
           >
-            <ChevronRight className="w-6 h-6" />
+            <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
           </button>
 
           {/* Scrollable Track */}
           <div 
             ref={scrollContainerRef}
             onScroll={handleScroll}
-            className="flex gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide py-4 px-2"
+            className="flex gap-5 sm:gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide py-3 px-2"
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
             {COMPACT_SPACE_TYPES.map((item) => (
               <div
                 key={item.id}
-                className="snap-center shrink-0 w-[85vw] sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] rounded-[2rem] border border-[#F0E2E4] bg-white shadow-[0_12px_35px_rgba(11,30,54,0.06)] hover:shadow-[0_24px_60px_rgba(107,15,26,0.12)] transition-all duration-300 hover:-translate-y-2 hover:border-[#6B0F1A]/30 flex flex-col group overflow-hidden"
+                className="snap-center shrink-0 w-[85vw] sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] rounded-3xl border border-[#F0E2E4] bg-white shadow-[0_12px_35px_rgba(11,30,54,0.06)] hover:shadow-[0_24px_60px_rgba(107,15,26,0.12)] transition-all duration-300 hover:-translate-y-1.5 hover:border-[#6B0F1A]/30 flex flex-col group overflow-hidden"
               >
-                {/* Image Section (Top 55-60%) */}
-                <div className="relative h-64 sm:h-72 w-full overflow-hidden bg-gray-100">
+                {/* Image Section */}
+                <div className="relative h-48 sm:h-52 lg:h-56 w-full overflow-hidden bg-gray-100">
                   <Image
                     src={item.image}
                     alt={item.name}
@@ -130,17 +130,17 @@ export default function SpaceTypes() {
                 </div>
                 
                 {/* Content Section (Bottom) */}
-                <div className="p-6 flex flex-col flex-grow justify-between">
+                <div className="p-5 sm:p-6 flex flex-col flex-grow justify-between">
                   <div>
-                    <h3 className="font-extrabold text-xl text-[#6B0F1A] mb-3 group-hover:text-[#3D0710] transition-colors">
+                    <h3 className="font-extrabold text-lg sm:text-xl text-[#6B0F1A] mb-2 group-hover:text-[#3D0710] transition-colors">
                       {item.name}
                     </h3>
-                    <p className="text-sm text-[#5F5F5F] leading-relaxed font-medium mb-6">
+                    <p className="text-xs sm:text-sm text-[#5F5F5F] leading-relaxed font-medium mb-4 line-clamp-3">
                       {item.description}
                     </p>
                   </div>
                   
-                  <div className="flex items-center text-sm font-bold text-[#6B0F1A] group-hover:text-[#F4E409] transition-colors mt-auto">
+                  <div className="flex items-center text-xs sm:text-sm font-bold text-[#6B0F1A] group-hover:text-[#F4E409] transition-colors mt-auto">
                     Explore Space <ArrowRight className="w-4 h-4 ml-1.5 transform group-hover:translate-x-1 transition-transform" />
                   </div>
                 </div>

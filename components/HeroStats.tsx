@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React from "react";
 import { Layers, Store, TrendingUp } from "lucide-react";
@@ -33,7 +33,7 @@ export default function HeroStats() {
   ];
 
   return (
-    <div className="bg-[#6B0F1A] text-white py-6 border-y border-[#3D0710] shadow-md">
+    <div className="bg-[#6B0F1A] text-white py-3 sm:py-4 border-y border-[#3D0710] shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center divide-y sm:divide-y-0 sm:divide-x divide-[#3D0710]/60">
           {statsList.map((stat) => (

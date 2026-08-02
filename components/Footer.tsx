@@ -5,7 +5,7 @@ import { SITE_CONFIG, NAV_LINKS } from "@/data/config";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-[#6B0F1A] bg-[#3D0710] text-white py-12">
+    <footer className="border-t border-[#6B0F1A] bg-[#3D0710] text-white py-8 sm:py-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Main Footer Row */}
