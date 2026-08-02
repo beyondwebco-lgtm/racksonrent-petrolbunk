@@ -22,7 +22,7 @@ export default function TrustStrip() {
                 className="group flex items-center justify-center gap-2.5 p-3 rounded-2xl bg-[#3D0710]/60 border border-[#F4E409]/30 hover:bg-[#3D0710] hover:border-[#F4E409] hover:-translate-y-1 transition-all duration-300 cursor-default"
               >
                 <IconComp className="w-5 h-5 text-[#F4E409] group-hover:scale-110 transition-transform duration-300" />
-                <span className="text-xs sm:text-sm font-extrabold text-[#FFF6A3]">
+                <span className="text-xs sm:text-sm font-bold text-[#FFF6A3]">
                   {item.label}
                 </span>
               </div>
