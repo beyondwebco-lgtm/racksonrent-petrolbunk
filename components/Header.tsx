@@ -139,13 +139,13 @@ export default function Header({ onSelectRole }: HeaderProps) {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-1 xl:gap-1.5">
+        <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1.5">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               onClick={(e) => handleNavClick(e as any, link.href)}
-              className="px-3.5 py-2 rounded-xl text-xs xl:text-sm font-bold text-[#6B0F1A] hover:text-[#3D0710] hover:bg-[#FFF6A3]/70 transition-colors"
+              className="px-2.5 xl:px-3.5 py-2 rounded-xl text-xs xl:text-sm font-bold text-[#6B0F1A] hover:text-[#3D0710] hover:bg-[#FFF6A3]/70 transition-colors whitespace-nowrap"
             >
               {link.label}
             </Link>
@@ -153,13 +153,13 @@ export default function Header({ onSelectRole }: HeaderProps) {
         </nav>
 
         {/* Desktop Action Button */}
-        <div className="hidden lg:flex items-center gap-2">
+        <div className="hidden lg:flex items-center gap-2 flex-shrink-0">
           <button
             type="button"
             onClick={handleListYourSpace}
-            className="inline-flex items-center justify-center gap-1.5 rounded-full bg-[#F4E409] px-5 py-2.5 text-xs xl:text-sm font-extrabold text-[#3D0710] transition hover:bg-[#3D0710] hover:text-[#F4E409] shadow-xs border border-[#6B0F1A]/20 cursor-pointer"
+            className="inline-flex items-center justify-center gap-1.5 rounded-full bg-[#F4E409] px-4 xl:px-5 py-2.5 text-xs xl:text-sm font-extrabold text-[#3D0710] transition hover:bg-[#3D0710] hover:text-[#F4E409] shadow-xs border border-[#6B0F1A]/20 cursor-pointer whitespace-nowrap"
           >
-            <Store className="w-4 h-4" />
+            <Store className="w-4 h-4 flex-shrink-0" />
             <span>List Your Space</span>
           </button>
         </div>
