@@ -1,10 +1,10 @@
-﻿import React from "react";
+import React from "react";
 import { Users, ShieldCheck, Phone, Mail } from "lucide-react";
 import { SITE_CONFIG } from "@/data/config";
 
 export default function TopBar() {
   return (
-    <div className="bg-[#6B0F1A] text-white text-xs border-b border-[#3D0710] py-2 px-4 sm:px-6 lg:px-8 font-medium">
+    <div className="bg-[#6B0F1A] text-white text-xs border-b border-[#3D0710] py-1.5 px-4 sm:px-6 lg:px-8 font-medium">
       <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2 sm:gap-4">
         
         {/* Left Side */}

@@ -96,7 +96,7 @@ export default function Header({ onSelectRole }: HeaderProps) {
   return (
     <header
       className={`sticky top-0 z-40 transition-all duration-200 border-b border-[#F0E2E4] bg-[#FFFDF5]/95 backdrop-blur-md ${
-        scrolled ? "py-2 shadow-xs" : "py-3"
+        scrolled ? "py-1.5 shadow-xs" : "py-2"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
@@ -104,11 +104,11 @@ export default function Header({ onSelectRole }: HeaderProps) {
         {/* Logo & Brand Name */}
         <Link
           href="/"
-          className="flex items-center gap-2.5 sm:gap-3 flex-shrink-0 group focus:outline-none"
+          className="flex items-center gap-2 sm:gap-2.5 flex-shrink-0 group focus:outline-none"
           aria-label="Racks on Rent Home"
         >
           {/* Square Rack-Icon Logo */}
-          <div className="relative w-11 h-11 sm:w-12 sm:h-12 lg:w-13 lg:h-13 rounded-xl overflow-hidden flex-shrink-0 bg-white p-0.5 border border-[#6B0F1A]/20 shadow-2xs group-hover:scale-[1.03] transition-transform">
+          <div className="relative w-9 h-9 sm:w-10 sm:h-10 lg:w-11 lg:h-11 rounded-xl overflow-hidden flex-shrink-0 bg-white p-0.5 border border-[#6B0F1A]/20 shadow-2xs group-hover:scale-[1.03] transition-transform">
             <Image
               src="/images/logo.png"
               alt="Racks on Rent Logo Icon"
