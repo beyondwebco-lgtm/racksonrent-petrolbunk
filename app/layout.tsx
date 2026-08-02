@@ -1,5 +1,5 @@
-﻿import type { Metadata } from "next";
-import { Manrope } from "next/font/google";
+import type { Metadata } from "next";
+import { Manrope, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import TopBar from "@/components/TopBar";
 import Header from "@/components/Header";
@@ -11,6 +11,13 @@ const manrope = Manrope({
   variable: "--font-manrope",
   subsets: ["latin"],
   display: "swap",
+});
+
+const plusJakarta = Plus_Jakarta_Sans({
+  variable: "--font-jakarta",
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["500", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
@@ -72,7 +79,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${manrope.variable} h-full antialiased`}
+      className={`${manrope.variable} ${plusJakarta.variable} h-full antialiased`}
     >
       <head>
         <script

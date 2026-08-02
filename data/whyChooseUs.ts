@@ -3,45 +3,49 @@ export interface WhyChooseUsReason {
   title: string;
   description: string;
   iconName: string;
+  badge?: string;
+  isFeatured?: boolean;
 }
 
 export const WHY_CHOOSE_US_REASONS: WhyChooseUsReason[] = [
   {
     id: "high-footfall",
     title: "High-Footfall Locations",
-    description: "Access customers who regularly visit petrol pumps.",
-    iconName: "Target"
+    description: "Reach customers who already visit petrol pumps throughout the day.",
+    iconName: "MapPin",
   },
   {
     id: "affordable-retail",
     title: "Affordable Retail Model",
-    description: "Start selling offline without opening a complete standalone store.",
-    iconName: "BadgePercent"
+    description: "Start offline selling without investing in a complete standalone store.",
+    iconName: "Store",
+    badge: "Most Accessible",
+    isFeatured: true,
   },
   {
     id: "additional-income",
     title: "Additional Income",
-    description: "Petrol pump owners earn from space that may otherwise remain unused.",
-    iconName: "PieChart"
+    description: "Petrol pump owners can generate revenue from underutilised commercial space.",
+    iconName: "IndianRupee",
   },
   {
     id: "simple-partnership",
     title: "Simple Partnership",
-    description: "A straightforward model connecting space owners and entrepreneurs.",
-    iconName: "HeartHandshake"
+    description: "A straightforward model connecting space owners with growing retail brands.",
+    iconName: "Handshake",
   },
   {
     id: "brand-visibility",
     title: "Brand Visibility",
-    description: "Startups gain real-world exposure in prominent locations.",
-    iconName: "Users"
+    description: "Give products consistent real-world exposure in trusted neighbourhood locations.",
+    iconName: "Megaphone",
   },
   {
     id: "scalable-opportunity",
     title: "Scalable Opportunity",
-    description: "The model can be expanded across multiple petrol pumps and cities.",
-    iconName: "Rocket"
-  }
+    description: "Expand the same retail model across multiple petrol pumps and cities.",
+    iconName: "ChartNoAxesCombined",
+  },
 ];
 
 export const TRUST_BANNER = {

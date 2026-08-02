@@ -284,7 +284,7 @@ export default function PetrolBunkShowcase({
 
             {/* Right Column */}
             <div className="lg:col-span-5 relative">
-              <div className="relative rounded-2xl overflow-hidden border-2 border-[#F0E2E4] bg-[#FFF6A3]/20 shadow-[0_16px_40px_rgba(11,30,54,0.10)] h-[340px] sm:h-[380px] lg:h-[400px] max-[850px]:lg:h-[350px] w-full group">
+              <div className="relative rounded-2xl overflow-hidden border-2 border-[#F0E2E4] bg-[#FFF6A3]/20 shadow-[0_16px_40px_rgba(11,30,54,0.10)] h-[360px] sm:h-[400px] lg:h-[440px] max-[850px]:lg:h-[380px] w-full group">
                 {/* Left Navigation Arrow (Positioned on Left Edge) */}
                 <button
                   type="button"
@@ -311,16 +311,16 @@ export default function PetrolBunkShowcase({
                   alt={activeCategory.title}
                   fill
                   sizes="(max-width: 1024px) 100vw, 45vw"
-                  className={`object-cover transition-all duration-500 group-hover:scale-105 ${
+                  className={`object-cover object-top transition-all duration-500 group-hover:scale-105 ${
                     isAnimating ? "opacity-40 scale-102" : "opacity-100 scale-100"
                   }`}
                 />
                 
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent pointer-events-none" />
 
-                <div className="absolute bottom-4 left-4 right-4 bg-[#3D0710] text-white px-5 py-3 rounded-2xl border-2 border-[#F4E409] shadow-xl flex items-center justify-between text-sm sm:text-base font-bold tracking-wide z-10">
+                <div className="absolute bottom-3 left-3 right-3 bg-[#3D0710] text-white px-4 py-2.5 rounded-xl border-2 border-[#F4E409] shadow-xl flex items-center justify-between text-xs sm:text-sm font-bold tracking-wide z-10">
                   <span className="truncate">{activeCategory.title} Space</span>
-                  <ArrowRight className="w-5 h-5 text-[#F4E409] flex-shrink-0 ml-2" />
+                  <ArrowRight className="w-4 h-4 text-[#F4E409] flex-shrink-0 ml-2" />
                 </div>
               </div>
             </div>

@@ -47,7 +47,7 @@ export default function RoleSelection({ onSelectRole }: RoleSelectionProps) {
                     {isBunkOwner ? <Building2 className="w-5 h-5 sm:w-6 sm:h-6" /> : <Store className="w-5 h-5 sm:w-6 sm:h-6" />}
                   </div>
 
-                  <h3 className="text-xl sm:text-2xl font-black text-[#6B0F1A] mb-2 sm:mb-3">
+                  <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-[#6B0F1A] mb-2 sm:mb-3">
                     {card.heading}
                   </h3>
 
@@ -56,11 +56,11 @@ export default function RoleSelection({ onSelectRole }: RoleSelectionProps) {
                   </p>
 
                   {/* 2-Column Bullet Grid */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mb-6">
                     {card.benefits.map((benefit, idx) => (
-                      <div key={idx} className="flex items-center gap-2">
-                        <CheckCircle2 className="w-4 h-4 text-[#6B0F1A] flex-shrink-0" />
-                        <span className="text-xs font-extrabold text-[#1F1F1F] leading-tight">{benefit}</span>
+                      <div key={idx} className="flex items-start gap-2">
+                        <CheckCircle2 className="w-4 h-4 text-[#6B0F1A] flex-shrink-0 mt-0.5" />
+                        <span className="text-xs sm:text-[13px] font-bold text-[#262626] leading-snug">{benefit}</span>
                       </div>
                     ))}
                   </div>
