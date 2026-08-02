@@ -4,13 +4,12 @@ export interface NavLink {
 }
 
 export const MAIN_NAV_LINKS: NavLink[] = [
-  { label: "Home", href: "#hero" },
-  { label: "How It Works", href: "#how-it-works" },
-  { label: "For Petrol Pump Owners", href: "#petrol-pump-owners" },
-  { label: "For Startups & Brands", href: "#startups" },
-  { label: "Products", href: "#products" },
-  { label: "Benefits", href: "#benefits" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/#hero" },
+  { label: "How It Works", href: "/how-it-works" },
+  { label: "For Petrol Pump Owners", href: "/how-it-works?role=bunk-owner" },
+  { label: "For Startups & Brands", href: "/#startups" },
+  { label: "Products", href: "/#products" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export const FOOTER_QUICK_LINKS: NavLink[] = [

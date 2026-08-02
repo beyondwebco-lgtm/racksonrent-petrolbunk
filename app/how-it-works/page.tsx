@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { 
@@ -22,8 +23,26 @@ import {
 import ScrollReveal from "@/components/ScrollReveal";
 import { JOURNEY_STEPS } from "@/data/journey";
 
-export default function HowItWorksPage() {
+function HowItWorksContent() {
+  const searchParams = useSearchParams();
+  const roleParam = searchParams.get("role");
   const [activeTab, setActiveTab] = useState<"all" | "bunk-owner" | "brand">("all");
+
+  useEffect(() => {
+    if (roleParam === "bunk-owner") {
+      setActiveTab("bunk-owner");
+      setTimeout(() => {
+        const el = document.getElementById("explore-journey");
+        if (el) el.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    } else if (roleParam === "brand") {
+      setActiveTab("brand");
+      setTimeout(() => {
+        const el = document.getElementById("explore-journey");
+        if (el) el.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    }
+  }, [roleParam]);
 
   const stepImages = [
     "/images/step_1_visit.png",
@@ -163,7 +182,7 @@ export default function HowItWorksPage() {
       </section>
 
       {/* Interactive Steps Timeline */}
-      <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mb-24">
+      <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mb-24" id="explore-journey">
         
         {/* Role Filter Tabs */}
         <ScrollReveal>
@@ -322,5 +341,19 @@ export default function HowItWorksPage() {
       </section>
 
     </div>
+  );
+}
+
+export default function HowItWorksPage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="bg-[#FFFDF5] min-h-screen py-24 text-center font-bold text-[#6B0F1A]">
+          Loading How It Works...
+        </div>
+      }
+    >
+      <HowItWorksContent />
+    </Suspense>
   );
 }
