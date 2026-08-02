@@ -310,7 +310,7 @@ function HowItWorksContent() {
                 <Sparkles className="w-3.5 h-3.5" /> Start Today
               </span>
 
-              <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-[#FFFDF5] mb-4 leading-tight">
+              <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-4 leading-tight">
                 Ready to Turn Space Into Opportunity?
               </h2>
               
