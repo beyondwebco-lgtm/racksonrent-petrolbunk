@@ -7,7 +7,7 @@ export const MAIN_NAV_LINKS: NavLink[] = [
   { label: "Home", href: "/#hero" },
   { label: "How It Works", href: "/how-it-works" },
   { label: "For Petrol Pump Owners", href: "/how-it-works?role=bunk-owner" },
-  { label: "For Startups & Brands", href: "/#startups" },
+  { label: "For Startups & Brands", href: "/how-it-works?role=brand" },
   { label: "Products", href: "/#products" },
   { label: "Contact", href: "/#contact" },
 ];

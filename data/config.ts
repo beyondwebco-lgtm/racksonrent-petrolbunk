@@ -20,7 +20,7 @@ export const NAV_LINKS = [
   { label: "Home", href: "/#hero" },
   { label: "How It Works", href: "/how-it-works" },
   { label: "For Petrol Pump Owners", href: "/how-it-works?role=bunk-owner" },
-  { label: "For Startups", href: "/#startups" },
+  { label: "For Startups", href: "/how-it-works?role=brand" },
   { label: "Products", href: "/#products" },
   { label: "Contact", href: "/#contact" },
 ];
