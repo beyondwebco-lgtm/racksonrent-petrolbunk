@@ -73,7 +73,12 @@ export const BUNK_OWNER_STEPS = [
     shortDescription: "Canopy areas, corners, walls or any empty space in your petrol pump that is not fully utilized.",
     detailedDescription: "It's an opportunity!",
     image: "/images/Step_01_Unused_Space.jpg",
-    iconName: "Maximize2"
+    iconName: "Maximize2",
+    highlights: [
+      "Canopy areas, corners, walls, or waiting zones",
+      "Any vacant space can be monetized easily"
+    ],
+    featuredHighlight: "Turn idle space into income"
   },
   {
     stepNumber: 2,
@@ -81,7 +86,12 @@ export const BUNK_OWNER_STEPS = [
     shortDescription: "We help you list your available space. No investment, no setup cost, no maintenance.",
     detailedDescription: "We manage everything! ZERO INVESTMENT, ZERO HASSLE, WE HANDLE EVERYTHING",
     image: "/images/Step_02_List_Your_Space.jpg",
-    iconName: "CheckCircle2"
+    iconName: "CheckCircle2",
+    highlights: [
+      "No setup cost or investment needed",
+      "Complete platform listing management by Racks on Rent"
+    ],
+    featuredHighlight: "Zero Investment • Zero Hassle"
   },
   {
     stepNumber: 3,
@@ -89,7 +99,12 @@ export const BUNK_OWNER_STEPS = [
     shortDescription: "Verified entrepreneurs looking to display and sell their products book your space through us.",
     detailedDescription: "You get a reliable partner.",
     image: "/images/Step_03_Entrepreneurs_Book.jpg",
-    iconName: "UserCheck"
+    iconName: "UserCheck",
+    highlights: [
+      "Get matched with verified, reputable entrepreneurs",
+      "Secure bookings with transparent agreements"
+    ],
+    featuredHighlight: "Get a Reliable Partner"
   },
   {
     stepNumber: 4,
@@ -97,7 +112,12 @@ export const BUNK_OWNER_STEPS = [
     shortDescription: "Entrepreneurs run their business from your space. You don't have to worry about operations.",
     detailedDescription: "More variety for your customers!",
     image: "/images/Step_04_Display_and_Sell.jpg",
-    iconName: "Store"
+    iconName: "Store",
+    highlights: [
+      "Zero operational overhead for the pump owner",
+      "Adds product variety and value for your fuel customers"
+    ],
+    featuredHighlight: "More Variety for Customers"
   },
   {
     stepNumber: 5,
@@ -105,7 +125,12 @@ export const BUNK_OWNER_STEPS = [
     shortDescription: "You earn a fixed rent for your space regularly without any extra effort.",
     detailedDescription: "Extra income. Every month. MONTHLY RENT IN YOUR ACCOUNT, STEADY INCOME, ZERO RISK",
     image: "/images/Step_05_Extra_Income.jpg",
-    iconName: "TrendingUp"
+    iconName: "TrendingUp",
+    highlights: [
+      "Earn a fixed, predictable rental amount monthly",
+      "100% passive income from underutilized real estate"
+    ],
+    featuredHighlight: "Steady Income • Zero Risk"
   },
   {
     stepNumber: 6,
@@ -113,7 +138,12 @@ export const BUNK_OWNER_STEPS = [
     shortDescription: "More businesses at your pump = more footfall, more sales, more growth for everyone.",
     detailedDescription: "Your unused space. Their growth. Your income.",
     image: "/images/Step_06_Grow_Together.jpg",
-    iconName: "Users"
+    iconName: "Users",
+    highlights: [
+      "Increase pump footfall & attract premium shoppers",
+      "Win-win partnership model for shared prosperity"
+    ],
+    featuredHighlight: "One Space. Shared Growth."
   }
 ];
 
@@ -124,7 +154,12 @@ export const BRAND_STEPS = [
     shortDescription: "Search nearby petrol pumps and public places on Racks on Rent platform.",
     detailedDescription: "Find the right space for your business.",
     image: "/images/Entrepreneurs_Infographic~2.jpg",
-    iconName: "Maximize2"
+    iconName: "Maximize2",
+    highlights: [
+      "Access a map of premium high-traffic petrol bunks",
+      "Check space availability and location details instantly"
+    ],
+    featuredHighlight: "Find the Right Space"
   },
   {
     stepNumber: 2,
@@ -132,7 +167,12 @@ export const BRAND_STEPS = [
     shortDescription: "View space details, photos, size, rent and facilities.",
     detailedDescription: "Pick the perfect space that fits your needs.",
     image: "/images/Entrepreneurs_Infographic~3.jpg",
-    iconName: "Eye"
+    iconName: "Eye",
+    highlights: [
+      "Compare dimensions, monthly rent, and footfall statistics",
+      "View actual photos and structural specifications"
+    ],
+    featuredHighlight: "Pick the Perfect Space"
   },
   {
     stepNumber: 3,
@@ -140,7 +180,12 @@ export const BRAND_STEPS = [
     shortDescription: "Book your space securely through the platform.",
     detailedDescription: "We connect you with the petrol pump owner.",
     image: "/images/Entrepreneurs_Infographic~4.jpg",
-    iconName: "UserCheck"
+    iconName: "UserCheck",
+    highlights: [
+      "Secure transaction and agreement process online",
+      "Direct verification and communication with the pump owner"
+    ],
+    featuredHighlight: "Secure Online Booking"
   },
   {
     stepNumber: 4,
@@ -148,7 +193,12 @@ export const BRAND_STEPS = [
     shortDescription: "Set up your rack easily in the allotted space.",
     detailedDescription: "Display your products at a prime location.",
     image: "/images/Entrepreneurs_Infographic~5.jpg",
-    iconName: "Store"
+    iconName: "Store",
+    highlights: [
+      "Professional layout design templates available",
+      "Clean, swift, and non-disruptive physical installation"
+    ],
+    featuredHighlight: "Display at Prime Locations"
   },
   {
     stepNumber: 5,
@@ -156,7 +206,12 @@ export const BRAND_STEPS = [
     shortDescription: "Start selling to thousands of daily customers.",
     detailedDescription: "More sales. More income. Grow your brand.",
     image: "/images/Entrepreneurs_Infographic~6.jpg",
-    iconName: "TrendingUp"
+    iconName: "TrendingUp",
+    highlights: [
+      "Leverage thousands of daily footfall events immediately",
+      "Tap into high-impulse buying behavior of commuters"
+    ],
+    featuredHighlight: "More Sales • More Income"
   },
   {
     stepNumber: 6,
@@ -164,7 +219,12 @@ export const BRAND_STEPS = [
     shortDescription: "Rebook, take more spaces or expand to other locations.",
     detailedDescription: "Scale your business smarter with us.",
     image: "/images/Entrepreneurs_Infographic~7.jpg",
-    iconName: "TrendingUp"
+    iconName: "TrendingUp",
+    highlights: [
+      "Expand effortlessly to multiple locations via one account",
+      "Scale up your retail network step-by-step with ease"
+    ],
+    featuredHighlight: "Scale Smarter & Faster"
   }
 ];
 

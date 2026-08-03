@@ -21,12 +21,30 @@ import {
   Users
 } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
-import { PREMIUM_STEPS } from "@/data/journey";
+import { BUNK_OWNER_STEPS, BRAND_STEPS } from "@/data/journey";
 
 function HowItWorksContent() {
   const searchParams = useSearchParams();
   const roleParam = searchParams.get("role");
-  // Replaced with single unified timeline from PREMIUM_STEPS
+  const [activeTab, setActiveTab] = useState<"bunk-owner" | "brand">("bunk-owner");
+
+  useEffect(() => {
+    if (roleParam === "brand") {
+      setActiveTab("brand");
+      setTimeout(() => {
+        const el = document.getElementById("explore-journey");
+        if (el) el.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    } else {
+      setActiveTab("bunk-owner");
+      if (roleParam === "bunk-owner") {
+        setTimeout(() => {
+          const el = document.getElementById("explore-journey");
+          if (el) el.scrollIntoView({ behavior: "smooth" });
+        }, 100);
+      }
+    }
+  }, [roleParam]);
 
   const featureCards = [
     {
@@ -50,6 +68,8 @@ function HowItWorksContent() {
       description: "Showcase products with minimal overhead and zero permanent construction.",
     },
   ];
+
+  const currentSteps = activeTab === "bunk-owner" ? BUNK_OWNER_STEPS : BRAND_STEPS;
 
   return (
     <div className="bg-[#FFFDF5] min-h-screen pt-8 sm:pt-14 pb-20">
@@ -96,7 +116,7 @@ function HowItWorksContent() {
               {/* Floating Badges */}
               <div className="absolute bottom-4 left-4 sm:left-6 bg-white/95 backdrop-blur-md px-3.5 py-1.5 rounded-xl border border-[#F0E2E4] shadow-md flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-[#6B0F1A]" />
-                <span className="text-xs sm:text-sm font-extrabold text-[#3D0710]">7 Simple Steps</span>
+                <span className="text-xs sm:text-sm font-extrabold text-[#3D0710]">6 Simple Steps</span>
               </div>
 
               <div className="absolute bottom-4 right-4 sm:right-6 bg-[#6B0F1A] text-[#FFF6A3] px-3.5 py-1.5 rounded-xl border border-[#F4E409]/40 shadow-md flex items-center gap-2">
@@ -128,17 +148,43 @@ function HowItWorksContent() {
         </ScrollReveal>
       </section>
 
-      {/* Premium 6-Step Unified Timeline */}
+      {/* Interactive Steps Timeline */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-24" id="explore-journey">
         
+        {/* Role Filter Tabs */}
         <ScrollReveal>
-          <div className="text-center mb-16">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#6B0F1A] mb-3">
+          <div className="text-center mb-12">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#6B0F1A] mb-3">
               Explore the Journey
             </h2>
             <p className="text-sm sm:text-base text-[#5F5F5F] font-medium mb-6">
-              A simple, transparent process for shared growth
+              Select your perspective to see how the process works for you
             </p>
+
+            <div className="inline-flex p-1.5 rounded-2xl bg-white border border-[#F0E2E4] shadow-xs flex-wrap justify-center gap-1">
+              <button
+                type="button"
+                onClick={() => setActiveTab("bunk-owner")}
+                className={`px-5 py-2.5 rounded-xl text-xs sm:text-sm font-extrabold transition-all cursor-pointer ${
+                  activeTab === "bunk-owner"
+                    ? "bg-[#6B0F1A] text-[#FFF6A3] shadow-xs"
+                    : "text-[#5F5F5F] hover:text-[#6B0F1A] hover:bg-[#FFF6A3]/40"
+                }`}
+              >
+                For Petrol Pump Owners
+              </button>
+              <button
+                type="button"
+                onClick={() => setActiveTab("brand")}
+                className={`px-5 py-2.5 rounded-xl text-xs sm:text-sm font-extrabold transition-all cursor-pointer ${
+                  activeTab === "brand"
+                    ? "bg-[#6B0F1A] text-[#FFF6A3] shadow-xs"
+                    : "text-[#5F5F5F] hover:text-[#6B0F1A] hover:bg-[#FFF6A3]/40"
+                }`}
+              >
+                For Retail Brands & Startups
+              </button>
+            </div>
           </div>
         </ScrollReveal>
 
@@ -146,19 +192,20 @@ function HowItWorksContent() {
           {/* Vertical Connecting Line */}
           <div className="hidden md:block absolute left-[30px] top-8 bottom-8 w-1 bg-gradient-to-b from-[#6B0F1A] via-[#F4E409] to-[#6B0F1A] opacity-20 pointer-events-none" />
 
-          {PREMIUM_STEPS.map((step, index) => {
+          {currentSteps.map((step, index) => {
+            const formattedStepNo = step.stepNumber < 10 ? `0${step.stepNumber}` : `${step.stepNumber}`;
             return (
               <ScrollReveal key={step.stepNumber} delayMs={index * 100}>
-                <div className="relative flex flex-col md:flex-row items-stretch gap-8 lg:gap-12 bg-white rounded-3xl p-6 sm:p-8 lg:p-10 border border-[#F0E2E4] shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:border-[#6B0F1A]/20 transition-all duration-500">
+                <div className="relative flex flex-col lg:flex-row items-stretch gap-8 lg:gap-12 bg-white rounded-3xl p-6 sm:p-8 lg:p-10 border border-[#F0E2E4] shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:border-[#6B0F1A]/20 transition-all duration-500">
                   
                   {/* Progress Dot */}
                   <div className="hidden md:flex absolute -left-10 top-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-[#F4E409] border-[3px] border-white shadow-sm z-10" />
 
                   {/* Left Side: Content (45%) */}
-                  <div className="w-full md:w-[45%] flex flex-col justify-center">
+                  <div className="w-full lg:w-[45%] flex flex-col justify-center">
                     <div className="flex items-center gap-3 mb-5">
                       <span className="text-4xl lg:text-5xl font-black text-[#6B0F1A]/20">
-                        {step.stepNumber}
+                        {formattedStepNo}
                       </span>
                       <span className="text-xs font-extrabold uppercase tracking-widest text-[#6B0F1A] bg-[#FFF6A3]/60 px-3 py-1 rounded-full border border-[#F4E409]/30">
                         HOW IT WORKS
@@ -173,36 +220,39 @@ function HowItWorksContent() {
                       {step.shortDescription}
                     </p>
 
-                    <ul className="space-y-3 mb-8">
-                      {step.highlights.map((highlight, hIdx) => (
-                        <li key={hIdx} className="flex items-start gap-3">
-                          <CheckCircle2 className="w-5 h-5 text-[#6B0F1A] shrink-0 mt-0.5" />
-                          <span className="text-sm font-semibold text-[#1F1F1F] leading-snug">
-                            {highlight}
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
+                    {step.highlights && (
+                      <ul className="space-y-3 mb-8">
+                        {step.highlights.map((highlight, hIdx) => (
+                          <li key={hIdx} className="flex items-start gap-3">
+                            <CheckCircle2 className="w-5 h-5 text-[#6B0F1A] shrink-0 mt-0.5" />
+                            <span className="text-sm font-semibold text-[#1F1F1F] leading-snug">
+                              {highlight}
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
 
-                    <div className="inline-flex items-center gap-2 bg-[#FFF6A3]/30 border border-[#F4E409]/40 rounded-2xl px-5 py-3 mt-auto self-start">
-                      <Sparkles className="w-5 h-5 text-[#6B0F1A]" />
-                      <span className="text-sm font-extrabold text-[#3D0710]">
-                        {step.featuredHighlight}
-                      </span>
-                    </div>
+                    {step.featuredHighlight && (
+                      <div className="inline-flex items-center gap-2 bg-[#FFF6A3]/30 border border-[#F4E409]/40 rounded-2xl px-5 py-3 mt-auto self-start">
+                        <Sparkles className="w-5 h-5 text-[#6B0F1A]" />
+                        <span className="text-sm font-extrabold text-[#3D0710]">
+                          {step.featuredHighlight}
+                        </span>
+                      </div>
+                    )}
                   </div>
 
                   {/* Right Side: Image (55%) */}
-                  <div className="w-full md:w-[55%] relative mt-6 md:mt-0">
-                    <div className="relative w-full h-[300px] sm:h-[400px] lg:h-[450px] rounded-2xl overflow-hidden border border-[#F0E2E4] shadow-inner group">
+                  <div className="w-full lg:w-[55%] relative mt-6 lg:mt-0 flex items-center justify-center">
+                    <div className="relative w-full aspect-[3/1] rounded-2xl overflow-hidden border border-[#F0E2E4] shadow-inner group bg-gray-50/50">
                       <Image
                         src={step.image}
                         alt={step.title}
                         fill
-                        className="object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out"
-                        sizes="(max-width: 768px) 100vw, 55vw"
+                        className="object-contain p-1 group-hover:scale-102 transition-transform duration-700 ease-in-out"
+                        sizes="(max-width: 1024px) 100vw, 55vw"
                       />
-                      <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors duration-500" />
                     </div>
                   </div>
 
