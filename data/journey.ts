@@ -66,3 +66,54 @@ export const JOURNEY_STEPS: JourneyStep[] = [
   }
 ];
 
+export const BUNK_OWNER_STEPS = [
+  {
+    stepNumber: 1,
+    title: "You Have Unused Space",
+    shortDescription: "Canopy areas, corners, walls or any empty space in your petrol pump that is not fully utilized.",
+    detailedDescription: "It's an opportunity!",
+    image: "/images/Step_01_Unused_Space.jpg",
+    iconName: "Maximize2"
+  },
+  {
+    stepNumber: 2,
+    title: "List Your Space With Racks On Rent",
+    shortDescription: "We help you list your available space. No investment, no setup cost, no maintenance.",
+    detailedDescription: "We manage everything! ZERO INVESTMENT, ZERO HASSLE, WE HANDLE EVERYTHING",
+    image: "/images/Step_02_List_Your_Space.jpg",
+    iconName: "CheckCircle2"
+  },
+  {
+    stepNumber: 3,
+    title: "Entrepreneurs Book Your Space",
+    shortDescription: "Verified entrepreneurs looking to display and sell their products book your space through us.",
+    detailedDescription: "You get a reliable partner.",
+    image: "/images/Step_03_Entrepreneurs_Book.jpg",
+    iconName: "UserCheck"
+  },
+  {
+    stepNumber: 4,
+    title: "They Display & Sell Their Products",
+    shortDescription: "Entrepreneurs run their business from your space. You don't have to worry about operations.",
+    detailedDescription: "More variety for your customers!",
+    image: "/images/Step_04_Display_and_Sell.jpg",
+    iconName: "Store"
+  },
+  {
+    stepNumber: 5,
+    title: "You Earn Extra Income Every Month",
+    shortDescription: "You earn a fixed rent for your space regularly without any extra effort.",
+    detailedDescription: "Extra income. Every month. MONTHLY RENT IN YOUR ACCOUNT, STEADY INCOME, ZERO RISK",
+    image: "/images/Step_05_Extra_Income.jpg",
+    iconName: "TrendingUp"
+  },
+  {
+    stepNumber: 6,
+    title: "You Grow. They Grow. Together.",
+    shortDescription: "More businesses at your pump = more footfall, more sales, more growth for everyone.",
+    detailedDescription: "Your unused space. Their growth. Your income.",
+    image: "/images/Step_06_Grow_Together.jpg",
+    iconName: "Users"
+  }
+];
+
