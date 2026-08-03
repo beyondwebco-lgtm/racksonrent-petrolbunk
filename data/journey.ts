@@ -168,3 +168,72 @@ export const BRAND_STEPS = [
   }
 ];
 
+export const PREMIUM_STEPS = [
+  {
+    stepNumber: "01",
+    title: "Identify Your Unused Space",
+    shortDescription: "Petrol bunk owners can identify empty or underutilized areas within their property.",
+    highlights: [
+      "Use entrances, side areas, waiting zones or vacant corners",
+      "Convert unused space into a new earning opportunity"
+    ],
+    featuredHighlight: "Turn idle space into income",
+    image: "/images/step_01_unused_space.png"
+  },
+  {
+    stepNumber: "02",
+    title: "List Your Space on Racks on Rent",
+    shortDescription: "The property owner can submit the available space through a simple listing process.",
+    highlights: [
+      "Add location, available area, photos and preferred rent",
+      "No major investment or complicated setup required"
+    ],
+    featuredHighlight: "Zero investment • Simple listing",
+    image: "/images/step_02_list_space.png"
+  },
+  {
+    stepNumber: "03",
+    title: "Connect With Verified Entrepreneurs",
+    shortDescription: "Suitable entrepreneurs and retail brands can discover the listed space.",
+    highlights: [
+      "Receive interest from verified businesses",
+      "Review the business category before accepting"
+    ],
+    featuredHighlight: "Choose the right retail partner",
+    image: "/images/step_03_connect.png"
+  },
+  {
+    stepNumber: "04",
+    title: "Set Up the Retail Display",
+    shortDescription: "The selected entrepreneur installs the rack, kiosk or compact retail setup.",
+    highlights: [
+      "Products are professionally arranged and displayed",
+      "Setup should not disturb regular petrol bunk operations"
+    ],
+    featuredHighlight: "Quick and organised setup",
+    image: "/images/step_04_setup.png"
+  },
+  {
+    stepNumber: "05",
+    title: "Earn Monthly Rental Income",
+    shortDescription: "The space owner receives a fixed monthly rental amount from the selected partner.",
+    highlights: [
+      "Generate additional income from existing property",
+      "Create a predictable recurring revenue stream"
+    ],
+    featuredHighlight: "Steady monthly income • Zero risk",
+    image: "/images/step_05_earn.png"
+  },
+  {
+    stepNumber: "06",
+    title: "Grow Together",
+    shortDescription: "The petrol bunk owner, entrepreneur and customers benefit from the partnership.",
+    highlights: [
+      "Customers receive convenient access to useful products",
+      "Both businesses benefit from increased visibility and sales"
+    ],
+    featuredHighlight: "One space. Two businesses. Shared growth.",
+    image: "/images/step_06_grow.png"
+  }
+];
+

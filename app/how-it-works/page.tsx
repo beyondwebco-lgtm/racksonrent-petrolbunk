@@ -21,65 +21,20 @@ import {
   Users
 } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
-import { JOURNEY_STEPS, BUNK_OWNER_STEPS, BRAND_STEPS } from "@/data/journey";
+import { PREMIUM_STEPS } from "@/data/journey";
 
 function HowItWorksContent() {
   const searchParams = useSearchParams();
   const roleParam = searchParams.get("role");
-  const [activeTab, setActiveTab] = useState<"all" | "bunk-owner" | "brand">("all");
 
   useEffect(() => {
-    if (roleParam === "bunk-owner") {
-      setActiveTab("bunk-owner");
-      setTimeout(() => {
-        const el = document.getElementById("explore-journey");
-        if (el) el.scrollIntoView({ behavior: "smooth" });
-      }, 100);
-    } else if (roleParam === "brand") {
-      setActiveTab("brand");
+    if (roleParam) {
       setTimeout(() => {
         const el = document.getElementById("explore-journey");
         if (el) el.scrollIntoView({ behavior: "smooth" });
       }, 100);
     }
   }, [roleParam]);
-
-  const stepImages = [
-    "/images/step_1_visit.png",
-    "/images/step_2_space.png",
-    "/images/step_3_setup.png",
-    "/images/step_4_showcase.png",
-    "/images/step_5_select.png",
-    "/images/step_6_purchase.png",
-    "/images/step_7_grow.png",
-  ];
-
-  const stepIcons = [
-    <UserCheck key="1" className="w-5 h-5" />,
-    <Maximize2 key="2" className="w-5 h-5" />,
-    <Store key="3" className="w-5 h-5" />,
-    <Eye key="4" className="w-5 h-5" />,
-    <MessageCircle key="5" className="w-5 h-5" />,
-    <ShoppingBag key="6" className="w-5 h-5" />,
-    <TrendingUp key="7" className="w-5 h-5" />,
-  ];
-
-  // Role tag mapping
-  const stepTargetRoles = [
-    "all",          // Step 1
-    "bunk-owner",   // Step 2
-    "brand",        // Step 3
-    "brand",        // Step 4
-    "brand",        // Step 5
-    "all",          // Step 6
-    "all",          // Step 7
-  ];
-
-  const filteredSteps = JOURNEY_STEPS.filter((_, idx) => {
-    if (activeTab === "all") return true;
-    const target = stepTargetRoles[idx];
-    return target === "all" || target === activeTab;
-  });
 
   const featureCards = [
     {
@@ -182,171 +137,84 @@ function HowItWorksContent() {
       </section>
 
       {/* Interactive Steps Timeline */}
-      <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mb-24" id="explore-journey">
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-24" id="explore-journey">
         
-        {/* Role Filter Tabs */}
         <ScrollReveal>
-          <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#6B0F1A] mb-3">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#6B0F1A] mb-4">
               Explore the Journey
             </h2>
-            <p className="text-sm sm:text-base text-[#5F5F5F] font-medium mb-6">
-              Select your perspective to see how the process works for you
+            <p className="text-base sm:text-lg text-[#5F5F5F] font-medium max-w-2xl mx-auto">
+              A streamlined, proven process connecting spaces with brands for mutual success.
             </p>
-
-            <div className="inline-flex p-1.5 rounded-2xl bg-white border border-[#F0E2E4] shadow-xs flex-wrap justify-center gap-1">
-              <button
-                type="button"
-                onClick={() => setActiveTab("all")}
-                className={`px-5 py-2.5 rounded-xl text-xs sm:text-sm font-extrabold transition-all cursor-pointer ${
-                  activeTab === "all"
-                    ? "bg-[#6B0F1A] text-[#FFF6A3] shadow-xs"
-                    : "text-[#5F5F5F] hover:text-[#6B0F1A] hover:bg-[#FFF6A3]/40"
-                }`}
-              >
-                All 7 Steps
-              </button>
-              <button
-                type="button"
-                onClick={() => setActiveTab("bunk-owner")}
-                className={`px-5 py-2.5 rounded-xl text-xs sm:text-sm font-extrabold transition-all cursor-pointer ${
-                  activeTab === "bunk-owner"
-                    ? "bg-[#6B0F1A] text-[#FFF6A3] shadow-xs"
-                    : "text-[#5F5F5F] hover:text-[#6B0F1A] hover:bg-[#FFF6A3]/40"
-                }`}
-              >
-                For Petrol Pump Owners
-              </button>
-              <button
-                type="button"
-                onClick={() => setActiveTab("brand")}
-                className={`px-5 py-2.5 rounded-xl text-xs sm:text-sm font-extrabold transition-all cursor-pointer ${
-                  activeTab === "brand"
-                    ? "bg-[#6B0F1A] text-[#FFF6A3] shadow-xs"
-                    : "text-[#5F5F5F] hover:text-[#6B0F1A] hover:bg-[#FFF6A3]/40"
-                }`}
-              >
-                For Retail Brands & Startups
-              </button>
-            </div>
           </div>
         </ScrollReveal>
 
         {/* Connected Vertical Timeline */}
-        <div className="relative space-y-12 sm:space-y-16">
-          {/* Vertical Connecting Line */}
-          <div className="hidden md:block absolute left-1/2 top-8 bottom-8 w-0.5 -translate-x-1/2 bg-gradient-to-b from-[#6B0F1A] via-[#F4E409] to-[#6B0F1A] opacity-30 pointer-events-none" />
+        <div className="relative space-y-12 sm:space-y-20 lg:space-y-24 pl-6 md:pl-0">
+          
+          {/* Vertical Connecting Line (Hidden on small mobile if preferred, but let's keep it left aligned on mobile, center on desktop) */}
+          <div className="absolute left-[38px] md:left-1/2 top-4 bottom-4 w-1 md:-translate-x-1/2 bg-gradient-to-b from-[#6B0F1A]/20 via-[#F4E409]/80 to-[#6B0F1A]/20 rounded-full" />
 
-          {activeTab === "all" && filteredSteps.map((step, index) => {
-            const isEven = index % 2 === 0;
-            const originalIndex = step.stepNumber - 1;
-
+          {PREMIUM_STEPS.map((step, index) => {
             return (
-              <ScrollReveal key={`all-${step.stepNumber}`}>
-                <div className={`relative flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-8 lg:gap-12`}>
+              <ScrollReveal key={step.stepNumber} delayMs={index * 100}>
+                <div className="relative flex flex-col md:flex-row items-center gap-8 lg:gap-16 group">
                   
-                  {/* Step Card Content */}
-                  <div className="flex-1 w-full">
-                    <div className="bg-white rounded-2xl p-6 sm:p-8 border border-[#F0E2E4] shadow-md hover:shadow-lg transition-all duration-300 relative group overflow-hidden">
-                      <div className="absolute top-0 left-0 w-2 h-full bg-[#6B0F1A] group-hover:bg-[#F4E409] transition-colors duration-300" />
-                      
-                      <div className="flex items-center gap-3 mb-4">
-                        <div className="w-10 h-10 rounded-xl bg-[#6B0F1A] text-[#FFF6A3] flex items-center justify-center font-black text-sm shadow-xs">
-                          {step.stepNumber}
-                        </div>
-                        <div className="p-2 rounded-lg bg-[#FFF6A3] text-[#6B0F1A]">
-                          {stepIcons[originalIndex]}
-                        </div>
-                        <span className="text-xs font-extrabold uppercase tracking-wider text-[#6B0F1A] bg-[#FFF6A3]/60 px-3 py-1 rounded-full border border-[#F0E2E4] ml-auto">
-                          {step.visualTag}
-                        </span>
-                      </div>
+                  {/* Center Dot Indicator */}
+                  <div className="absolute left-0 md:left-1/2 top-8 md:top-1/2 md:-translate-y-1/2 -translate-x-1/2 w-6 h-6 md:w-8 md:h-8 rounded-full bg-[#FFFDF5] border-4 border-[#F4E409] shadow-[0_0_15px_rgba(244,228,9,0.5)] z-10 group-hover:scale-125 group-hover:border-[#6B0F1A] transition-all duration-500 flex items-center justify-center">
+                    <div className="w-2 h-2 md:w-3 md:h-3 rounded-full bg-[#6B0F1A] group-hover:bg-[#F4E409] transition-colors duration-500" />
+                  </div>
 
-                      <h3 className="text-xl sm:text-2xl font-extrabold text-[#6B0F1A] mb-2">
+                  {/* Left Side: Content Box (45%) */}
+                  <div className="w-full md:w-[45%] md:pr-10 lg:pr-14 md:text-right pl-8 md:pl-0 flex flex-col md:items-end z-10 pt-2 md:pt-0">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#F4E409]/20 border border-[#F4E409]/30 rounded-full mb-4">
+                      <Sparkles className="w-3.5 h-3.5 text-[#6B0F1A]" />
+                      <span className="text-[10px] font-bold text-[#6B0F1A] uppercase tracking-wider">How It Works</span>
+                    </div>
+                    
+                    <div className="flex items-center md:flex-row-reverse gap-4 mb-4">
+                      <span className="text-4xl lg:text-6xl font-black text-[#6B0F1A]/10 leading-none">
+                        {step.stepNumber}
+                      </span>
+                      <h3 className="text-2xl lg:text-3xl font-extrabold text-[#3D0710] leading-tight">
                         {step.title}
                       </h3>
-                      
-                      <p className="text-sm sm:text-base text-[#1F1F1F] font-bold mb-3 leading-relaxed">
-                        {step.shortDescription}
+                    </div>
+
+                    <p className="text-base lg:text-lg text-[#5F5F5F] font-medium leading-relaxed mb-6 md:text-right text-left">
+                      {step.shortDescription}
+                    </p>
+
+                    <ul className="space-y-3 mb-8 w-full">
+                      {step.highlights.map((highlight, idx) => (
+                        <li key={idx} className="flex md:flex-row-reverse items-start gap-3">
+                          <CheckCircle2 className="w-5 h-5 text-[#6B0F1A] shrink-0 mt-0.5" />
+                          <span className="text-sm lg:text-base text-[#1F1F1F] font-semibold text-left md:text-right">{highlight}</span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    <div className="bg-[#FFF6A3]/40 border border-[#F4E409]/50 rounded-2xl p-4 w-full md:w-auto shadow-sm">
+                      <p className="text-sm lg:text-base font-extrabold text-[#6B0F1A] text-left md:text-right">
+                        {step.featuredHighlight}
                       </p>
-
-                      <p className="text-xs sm:text-sm text-[#5F5F5F] leading-relaxed font-medium">
-                        {step.detailedDescription}
-                      </p>
                     </div>
                   </div>
 
-                  {/* Step Image Visual Container */}
-                  <div className="flex-1 w-full max-w-sm mx-auto">
-                    <div className="relative bg-white rounded-2xl p-3 border border-[#F0E2E4] shadow-md overflow-hidden group hover:scale-[1.02] transition-transform duration-300">
-                      <div className="relative aspect-[4/3] w-full rounded-xl overflow-hidden bg-[#FFF6A3]/20">
-                        <Image
-                          src={stepImages[originalIndex]}
-                          alt={step.title}
-                          fill
-                          sizes="(max-width: 768px) 100vw, 400px"
-                          className="object-contain p-4 group-hover:scale-108 transition-transform duration-500 ease-out"
-                        />
-                      </div>
+                  {/* Right Side: Image Box (55%) */}
+                  <div className="w-full md:w-[55%] md:pl-10 lg:pl-14 pl-8 md:pl-0">
+                    <div className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden border-2 border-[#F0E2E4] shadow-[0_8px_30px_rgb(0,0,0,0.04)] group-hover:shadow-[0_8px_40px_rgb(107,15,26,0.1)] group-hover:border-[#6B0F1A]/20 transition-all duration-700">
+                      <Image
+                        src={step.image}
+                        alt={step.title}
+                        fill
+                        className="object-cover transition-transform duration-1000 ease-out group-hover:scale-105 group-hover:-rotate-1"
+                        sizes="(max-width: 768px) 100vw, 55vw"
+                      />
                     </div>
                   </div>
 
-                </div>
-              </ScrollReveal>
-            );
-          })}
-
-          {activeTab === "bunk-owner" && BUNK_OWNER_STEPS.map((step, index) => {
-            return (
-              <ScrollReveal key={`owner-${step.stepNumber}`}>
-                <div className="relative flex flex-col items-center gap-6">
-                  {/* Step Image Visual Container - Wide Aspect Ratio */}
-                  <div className="w-full max-w-4xl mx-auto">
-                    <div className="relative bg-white rounded-2xl p-2 sm:p-3 border border-[#F0E2E4] shadow-md overflow-hidden group hover:shadow-lg transition-all duration-300">
-                      <div className="relative w-full overflow-hidden rounded-xl bg-[#FFF6A3]/10" style={{ paddingBottom: '33.33%' }}> {/* roughly 3:1 aspect ratio based on banners */}
-                        <Image
-                          src={step.image}
-                          alt={step.title}
-                          fill
-                          sizes="(max-width: 1024px) 100vw, 1024px"
-                          className="object-cover sm:object-contain group-hover:scale-[1.02] transition-transform duration-500 ease-out"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  
-                  {/* Step Card Content */}
-                  <div className="w-full max-w-4xl mx-auto hidden">
-                    {/* The images already have the text, but we keep this hidden for SEO/accessibility, or optionally show it if needed. The user requested to take content from photos and add photos, maybe they meant using the photos as the main visual. Let's actually show the text below it concisely, just in case. */}
-                  </div>
-                </div>
-              </ScrollReveal>
-            );
-          })}
-
-          {activeTab === "brand" && BRAND_STEPS.map((step, index) => {
-            return (
-              <ScrollReveal key={`brand-${step.stepNumber}`}>
-                <div className="relative flex flex-col items-center gap-6">
-                  {/* Step Image Visual Container - Wide Aspect Ratio */}
-                  <div className="w-full max-w-4xl mx-auto">
-                    <div className="relative bg-white rounded-2xl p-2 sm:p-3 border border-[#F0E2E4] shadow-md overflow-hidden group hover:shadow-lg transition-all duration-300">
-                      <div className="relative w-full overflow-hidden rounded-xl bg-[#FFF6A3]/10" style={{ paddingBottom: '33.33%' }}> {/* roughly 3:1 aspect ratio based on banners */}
-                        <Image
-                          src={step.image}
-                          alt={step.title}
-                          fill
-                          sizes="(max-width: 1024px) 100vw, 1024px"
-                          className="object-cover sm:object-contain group-hover:scale-[1.02] transition-transform duration-500 ease-out"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  
-                  {/* Step Card Content */}
-                  <div className="w-full max-w-4xl mx-auto hidden">
-                    {/* Kept hidden for SEO or screen readers */}
-                  </div>
                 </div>
               </ScrollReveal>
             );
