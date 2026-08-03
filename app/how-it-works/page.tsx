@@ -21,7 +21,7 @@ import {
   Users
 } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
-import { JOURNEY_STEPS, BUNK_OWNER_STEPS } from "@/data/journey";
+import { JOURNEY_STEPS, BUNK_OWNER_STEPS, BRAND_STEPS } from "@/data/journey";
 
 function HowItWorksContent() {
   const searchParams = useSearchParams();
@@ -237,7 +237,7 @@ function HowItWorksContent() {
           {/* Vertical Connecting Line */}
           <div className="hidden md:block absolute left-1/2 top-8 bottom-8 w-0.5 -translate-x-1/2 bg-gradient-to-b from-[#6B0F1A] via-[#F4E409] to-[#6B0F1A] opacity-30 pointer-events-none" />
 
-          {activeTab !== "bunk-owner" && filteredSteps.map((step, index) => {
+          {activeTab === "all" && filteredSteps.map((step, index) => {
             const isEven = index % 2 === 0;
             const originalIndex = step.stepNumber - 1;
 
@@ -318,6 +318,34 @@ function HowItWorksContent() {
                   {/* Step Card Content */}
                   <div className="w-full max-w-4xl mx-auto hidden">
                     {/* The images already have the text, but we keep this hidden for SEO/accessibility, or optionally show it if needed. The user requested to take content from photos and add photos, maybe they meant using the photos as the main visual. Let's actually show the text below it concisely, just in case. */}
+                  </div>
+                </div>
+              </ScrollReveal>
+            );
+          })}
+
+          {activeTab === "brand" && BRAND_STEPS.map((step, index) => {
+            return (
+              <ScrollReveal key={`brand-${step.stepNumber}`}>
+                <div className="relative flex flex-col items-center gap-6">
+                  {/* Step Image Visual Container - Wide Aspect Ratio */}
+                  <div className="w-full max-w-4xl mx-auto">
+                    <div className="relative bg-white rounded-2xl p-2 sm:p-3 border border-[#F0E2E4] shadow-md overflow-hidden group hover:shadow-lg transition-all duration-300">
+                      <div className="relative w-full overflow-hidden rounded-xl bg-[#FFF6A3]/10" style={{ paddingBottom: '33.33%' }}> {/* roughly 3:1 aspect ratio based on banners */}
+                        <Image
+                          src={step.image}
+                          alt={step.title}
+                          fill
+                          sizes="(max-width: 1024px) 100vw, 1024px"
+                          className="object-cover sm:object-contain group-hover:scale-[1.02] transition-transform duration-500 ease-out"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Step Card Content */}
+                  <div className="w-full max-w-4xl mx-auto hidden">
+                    {/* Kept hidden for SEO or screen readers */}
                   </div>
                 </div>
               </ScrollReveal>

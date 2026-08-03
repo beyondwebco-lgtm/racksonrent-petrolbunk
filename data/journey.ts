@@ -117,3 +117,54 @@ export const BUNK_OWNER_STEPS = [
   }
 ];
 
+export const BRAND_STEPS = [
+  {
+    stepNumber: 1,
+    title: "Discover Spaces Near You",
+    shortDescription: "Search nearby petrol pumps and public places on Racks on Rent platform.",
+    detailedDescription: "Find the right space for your business.",
+    image: "/images/Entrepreneurs_Infographic~2.jpg",
+    iconName: "Maximize2"
+  },
+  {
+    stepNumber: 2,
+    title: "Choose & View The Space",
+    shortDescription: "View space details, photos, size, rent and facilities.",
+    detailedDescription: "Pick the perfect space that fits your needs.",
+    image: "/images/Entrepreneurs_Infographic~3.jpg",
+    iconName: "Eye"
+  },
+  {
+    stepNumber: 3,
+    title: "Book & Connect With Owner",
+    shortDescription: "Book your space securely through the platform.",
+    detailedDescription: "We connect you with the petrol pump owner.",
+    image: "/images/Entrepreneurs_Infographic~4.jpg",
+    iconName: "UserCheck"
+  },
+  {
+    stepNumber: 4,
+    title: "Setup Your Rack & Display Products",
+    shortDescription: "Set up your rack easily in the allotted space.",
+    detailedDescription: "Display your products at a prime location.",
+    image: "/images/Entrepreneurs_Infographic~5.jpg",
+    iconName: "Store"
+  },
+  {
+    stepNumber: 5,
+    title: "Sell, Earn & Grow Your Business",
+    shortDescription: "Start selling to thousands of daily customers.",
+    detailedDescription: "More sales. More income. Grow your brand.",
+    image: "/images/Entrepreneurs_Infographic~6.jpg",
+    iconName: "TrendingUp"
+  },
+  {
+    stepNumber: 6,
+    title: "Build Your Brand. Expand Further.",
+    shortDescription: "Rebook, take more spaces or expand to other locations.",
+    detailedDescription: "Scale your business smarter with us.",
+    image: "/images/Entrepreneurs_Infographic~7.jpg",
+    iconName: "TrendingUp"
+  }
+];
+
