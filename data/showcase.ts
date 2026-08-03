@@ -72,7 +72,7 @@ export const SHOWCASE_CATEGORIES: ShowcaseCategory[] = [
     ],
     primaryCta: "List Space for Snack Racks",
     secondaryCta: "Find Space for Food Brand",
-    image: "/spaces/space-snacks.jpeg",
+    image: "/images/petrol_pump_7.png",
     iconName: "ShoppingBag",
     rolePrimary: "bunk-owner",
     spaceTypePrimary: "Forecourt Canopy Display Rack",
