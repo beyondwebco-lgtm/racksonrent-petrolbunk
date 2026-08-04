@@ -245,12 +245,12 @@ function HowItWorksContent() {
 
                   {/* Right Side: Image (55%) */}
                   <div className="w-full lg:w-[55%] relative mt-6 lg:mt-0 flex items-center justify-center">
-                    <div className="relative w-full aspect-[3/1] rounded-2xl overflow-hidden border border-[#F0E2E4] shadow-inner group bg-gray-50/50">
+                    <div className="relative w-full aspect-[16/7] rounded-2xl overflow-hidden border border-[#F0E2E4] shadow-inner group">
                       <Image
                         src={step.image}
                         alt={step.title}
                         fill
-                        className="object-contain p-1 group-hover:scale-102 transition-transform duration-700 ease-in-out"
+                        className="object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out"
                         sizes="(max-width: 1024px) 100vw, 55vw"
                       />
                     </div>
