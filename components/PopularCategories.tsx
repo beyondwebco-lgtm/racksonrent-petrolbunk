@@ -85,24 +85,24 @@ export default function PopularCategories() {
   };
 
   return (
-    <section className="py-10 sm:py-14 lg:py-16 bg-[#FFFDF5] overflow-hidden" id="products">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="section-padding bg-white overflow-hidden" id="products">
+      <div className="container-main">
         
         {/* Section Heading */}
-        <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-8">
-          <span className="inline-flex rounded-full bg-[#FFF6A3] px-3.5 py-1 text-xs sm:text-sm font-extrabold text-[#6B0F1A] border border-[#F0E2E4]">
+        <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-8 animate-reveal-up">
+          <span className="inline-flex rounded-full bg-[var(--yellow-pale)] px-3.5 py-1 text-xs sm:text-sm font-extrabold text-[var(--charcoal)] border border-[var(--border)]">
             Products & Categories
           </span>
-          <h2 className="mt-2.5 text-2xl font-extrabold tracking-tight text-[#6B0F1A] md:text-4xl lg:text-[clamp(2.25rem,3.2vw,3.5rem)]">
+          <h2 className="section-title-dm mt-2.5 text-[var(--maroon)]">
             Popular Product Categories
           </h2>
-          <p className="mx-auto mt-2 max-w-2xl text-sm leading-relaxed text-[#5F5F5F] md:text-base font-medium">
+          <p className="body-copy mx-auto mt-2 max-w-2xl text-[var(--text-muted)]">
             Explore example products and health essentials featured across partner retail spaces.
           </p>
         </div>
 
         {/* Carousel Container */}
-        <div className="relative group/carousel px-2 sm:px-4">
+        <div className="relative group/carousel px-2 sm:px-4 animate-reveal-up-delay-1">
           
           {/* Left Arrow Button */}
           <button
@@ -110,10 +110,10 @@ export default function PopularCategories() {
             onClick={() => handleScroll("left")}
             disabled={!canScrollLeft}
             aria-label="Previous categories"
-            className={`absolute -left-2 sm:left-0 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-[#6B0F1A] text-[#FFF6A3] border-2 border-[#F4E409] flex items-center justify-center shadow-lg transition-all cursor-pointer ${
+            className={`absolute -left-2 sm:left-0 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-[var(--yellow)] text-[var(--black)] border-2 border-[var(--black)] flex items-center justify-center shadow-lg transition-all cursor-pointer ${
               !canScrollLeft
-                ? "opacity-30 cursor-not-allowed pointer-events-none"
-                : "hover:bg-[#3D0710] hover:text-[#F4E409] hover:scale-105"
+                ? "opacity-30 cursor-not-allowed pointer-events-none border-[var(--border)] bg-[var(--border)] text-white"
+                : "hover:bg-[var(--yellow-hover)] hover:scale-105"
             }`}
           >
             <ChevronLeft className="w-6 h-6 stroke-[3]" />
@@ -125,10 +125,10 @@ export default function PopularCategories() {
             onClick={() => handleScroll("right")}
             disabled={!canScrollRight}
             aria-label="Next categories"
-            className={`absolute -right-2 sm:right-0 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-[#6B0F1A] text-[#FFF6A3] border-2 border-[#F4E409] flex items-center justify-center shadow-lg transition-all cursor-pointer ${
+            className={`absolute -right-2 sm:right-0 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-[var(--yellow)] text-[var(--black)] border-2 border-[var(--black)] flex items-center justify-center shadow-lg transition-all cursor-pointer ${
               !canScrollRight
-                ? "opacity-30 cursor-not-allowed pointer-events-none"
-                : "hover:bg-[#3D0710] hover:text-[#F4E409] hover:scale-105"
+                ? "opacity-30 cursor-not-allowed pointer-events-none border-[var(--border)] bg-[var(--border)] text-white"
+                : "hover:bg-[var(--yellow-hover)] hover:scale-105"
             }`}
           >
             <ChevronRight className="w-6 h-6 stroke-[3]" />
@@ -151,39 +151,43 @@ export default function PopularCategories() {
                   type="button"
                   key={cat.id}
                   onClick={handleCategoryClick}
-                  className="category-card flex-shrink-0 w-[82vw] max-w-[280px] sm:w-[calc(50%-10px)] md:w-[calc(33.333%-14px)] lg:w-[calc(25%-15px)] snap-start text-left rounded-3xl border border-[#F0E2E4] bg-white p-5 shadow-[0_8px_25px_rgba(11,30,54,0.05)] hover:shadow-[0_16px_40px_rgba(11,30,54,0.12)] hover:border-[#6B0F1A]/40 transition-all hover:-translate-y-1 flex flex-col justify-between group cursor-pointer relative overflow-hidden h-full min-h-[340px]"
+                  className="category-card flex-shrink-0 w-[82vw] max-w-[280px] sm:w-[calc(50%-10px)] md:w-[calc(33.333%-14px)] lg:w-[calc(25%-15px)] snap-start text-left card-base flex flex-col justify-between group cursor-pointer relative overflow-hidden h-full h-[400px] sm:h-[450px] !p-0 !border-[var(--border)] hover:!border-[var(--black)]"
                 >
                   {cat.badge && (
-                    <span className="absolute top-7 right-7 text-[10px] font-extrabold bg-[#F4E409] text-[#3D0710] px-2.5 py-1 rounded-full border border-[#6B0F1A]/20 z-10 shadow-xs">
+                    <span className="absolute top-4 right-4 text-[10px] font-extrabold bg-[var(--yellow)] text-[var(--black)] px-2.5 py-1 rounded-full border border-[var(--black)] z-20 shadow-sm">
                       {cat.badge}
                     </span>
                   )}
 
-                  <div>
-                    {/* Prominent Studio Product Photo (1:1 Square Container) */}
-                    <div className="relative w-full aspect-square rounded-2xl bg-[#111] border border-[#F0E2E4] overflow-hidden mb-4 group-hover:border-[#6B0F1A]/30 transition-colors">
-                      <Image
-                        src={cat.image}
-                        alt={cat.alt}
-                        fill
-                        sizes="(max-width: 640px) 80vw, (max-width: 1024px) 33vw, 25vw"
-                        loading="lazy"
-                        className="object-cover group-hover:scale-105 transition-transform duration-300"
-                      />
+                  {/* Full-bleed Image */}
+                  <Image
+                    src={cat.image}
+                    alt={cat.alt}
+                    fill
+                    sizes="(max-width: 640px) 80vw, (max-width: 1024px) 33vw, 25vw"
+                    loading="lazy"
+                    className="object-cover object-top group-hover:scale-105 transition-transform duration-500 ease-out z-0"
+                  />
+
+                  {/* Gradient Overlay for text readability */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent transition-opacity duration-300 z-10" />
+
+                  {/* Content Section (Overlaid at Bottom) */}
+                  <div className="absolute inset-0 p-5 sm:p-6 flex flex-col justify-end z-20 text-white">
+                    <div>
+                      <h3 className="font-extrabold text-lg sm:text-xl text-white group-hover:text-[var(--yellow)] transition-colors mb-2 leading-snug">
+                        {cat.name}
+                      </h3>
+
+                      <p className="text-xs sm:text-sm text-white/80 leading-relaxed font-medium line-clamp-3 mb-4">
+                        {cat.description}
+                      </p>
                     </div>
 
-                    <h3 className="font-extrabold text-base text-[#6B0F1A] group-hover:text-[#3D0710] transition-colors mb-1.5 leading-snug">
-                      {cat.name}
-                    </h3>
-
-                    <p className="text-xs text-[#5F5F5F] leading-relaxed font-medium line-clamp-2">
-                      {cat.description}
-                    </p>
-                  </div>
-
-                  <div className="mt-4 pt-3 border-t border-[#F0E2E4] flex items-center justify-between text-xs font-extrabold text-[#6B0F1A] group-hover:text-[#3D0710]">
-                    <span>Explore Spaces</span>
-                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                    <div className="flex items-center text-xs font-extrabold text-[var(--yellow)] group-hover:text-white transition-colors">
+                      <span>Explore Spaces</span>
+                      <ArrowRight className="w-3.5 h-3.5 ml-1.5 group-hover:translate-x-1 transition-transform" />
+                    </div>
                   </div>
                 </button>
               );
