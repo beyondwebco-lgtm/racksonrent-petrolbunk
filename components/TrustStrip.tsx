@@ -11,7 +11,7 @@ export default function TrustStrip() {
   };
 
   return (
-    <div className="bg-[#6B0F1A] text-white py-3 sm:py-4 border-y border-[#3D0710] shadow-md">
+    <div className="bg-[var(--black)] text-white py-3 sm:py-4 border-y border-[var(--charcoal)] shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 text-center">
           {TRUST_STRIP_ITEMS.map((item, idx) => {
@@ -19,10 +19,10 @@ export default function TrustStrip() {
             return (
               <div
                 key={idx}
-                className="group flex items-center justify-center gap-2.5 p-3 rounded-2xl bg-[#3D0710]/60 border border-[#F4E409]/30 hover:bg-[#3D0710] hover:border-[#F4E409] hover:-translate-y-1 transition-all duration-300 cursor-default"
+                className="group flex items-center justify-center gap-2.5 p-3 rounded-2xl bg-[var(--charcoal)]/80 border border-[var(--border)]/10 hover:bg-[var(--charcoal)] hover:border-[var(--yellow)]/30 hover:-translate-y-1 transition-all duration-300 cursor-default"
               >
-                <IconComp className="w-5 h-5 text-[#F4E409] group-hover:scale-110 transition-transform duration-300" />
-                <span className="text-xs sm:text-sm font-bold text-[#FFF6A3]">
+                <IconComp className="w-5 h-5 text-[var(--yellow)] group-hover:scale-110 transition-transform duration-300" />
+                <span className="text-xs sm:text-sm font-bold text-white/90 group-hover:text-white">
                   {item.label}
                 </span>
               </div>
@@ -33,4 +33,3 @@ export default function TrustStrip() {
     </div>
   );
 }
-

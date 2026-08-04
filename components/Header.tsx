@@ -59,23 +59,17 @@ export default function Header({ onSelectRole }: HeaderProps) {
       e.preventDefault();
       closeMenu();
       const targetId = href.substring(2);
-      
       setTimeout(() => {
         const element = document.getElementById(targetId);
-        if (element) {
-          element.scrollIntoView({ behavior: "smooth" });
-        }
+        if (element) element.scrollIntoView({ behavior: "smooth" });
       }, 50);
     } else if (href.startsWith("#")) {
       e.preventDefault();
       closeMenu();
       const targetId = href.substring(1);
-      
       setTimeout(() => {
         const element = document.getElementById(targetId);
-        if (element) {
-          element.scrollIntoView({ behavior: "smooth" });
-        }
+        if (element) element.scrollIntoView({ behavior: "smooth" });
       }, 50);
     } else {
       closeMenu();
@@ -84,19 +78,15 @@ export default function Header({ onSelectRole }: HeaderProps) {
 
   const handleListYourSpace = () => {
     closeMenu();
-    if (onSelectRole) {
-      onSelectRole("bunk-owner");
-    }
+    if (onSelectRole) onSelectRole("bunk-owner");
     const element = document.getElementById("contact");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+    if (element) element.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
     <header
-      className={`sticky top-0 z-40 transition-all duration-200 border-b border-[#F0E2E4] bg-[#FFFDF5]/95 backdrop-blur-md ${
-        scrolled ? "py-1.5 shadow-xs" : "py-2"
+      className={`sticky top-0 z-40 transition-all duration-200 border-b border-[#E8E3D5] bg-white/97 backdrop-blur-md ${
+        scrolled ? "py-1.5 shadow-sm" : "py-2"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
@@ -108,7 +98,7 @@ export default function Header({ onSelectRole }: HeaderProps) {
           aria-label="Racks on Rent Home"
         >
           {/* Square Rack-Icon Logo */}
-          <div className="relative w-9 h-9 sm:w-10 sm:h-10 lg:w-11 lg:h-11 rounded-xl overflow-hidden flex-shrink-0 bg-white p-0.5 border border-[#6B0F1A]/20 shadow-2xs group-hover:scale-[1.03] transition-transform">
+          <div className="relative w-9 h-9 sm:w-10 sm:h-10 lg:w-11 lg:h-11 rounded-xl overflow-hidden flex-shrink-0 bg-white p-0.5 border border-[#E8E3D5] shadow-xs group-hover:scale-[1.03] transition-transform">
             <Image
               src="/images/logo.png"
               alt="Racks on Rent Logo Icon"
@@ -124,15 +114,15 @@ export default function Header({ onSelectRole }: HeaderProps) {
             {/* Main Brand Title */}
             <div className="flex items-baseline font-black tracking-tighter leading-none text-xl sm:text-2xl lg:text-3xl">
               <span className="text-[#6B0F1A] font-black italic">Racks</span>
-              <span className="text-[#F4E409] font-bold italic lowercase mx-1 text-[0.8em]" style={{ fontFamily: "Georgia, serif" }}>on</span>
-              <span className="text-[#F4E409] font-black italic">Rent</span>
+              <span className="text-[#F8D706] font-bold italic lowercase mx-1 text-[0.8em]" style={{ fontFamily: "Georgia, serif" }}>on</span>
+              <span className="text-[#F8D706] font-black italic">Rent</span>
             </div>
 
             {/* Tagline */}
             <div className="flex items-center gap-1 mt-0.5 text-[8px] sm:text-[9px] lg:text-[10px] font-black uppercase tracking-[0.18em] leading-none whitespace-nowrap">
               <span className="h-[1.5px] w-3 bg-[#6B0F1A] inline-block" />
               <span className="text-[#6B0F1A]">SUBLET SPACE.</span>
-              <span className="text-[#F4E409]">SHARE SUCCESS.</span>
+              <span className="text-[#F8D706]">SHARE SUCCESS.</span>
               <span className="h-[1.5px] w-3 bg-[#6B0F1A] inline-block" />
             </div>
           </div>
@@ -145,7 +135,7 @@ export default function Header({ onSelectRole }: HeaderProps) {
               key={link.href}
               href={link.href}
               onClick={(e) => handleNavClick(e as any, link.href)}
-              className="px-2.5 xl:px-3.5 py-2 rounded-xl text-xs xl:text-sm font-bold text-[#6B0F1A] hover:text-[#3D0710] hover:bg-[#FFF6A3]/70 transition-colors whitespace-nowrap"
+              className="nav-link-hover px-2.5 xl:px-3.5 py-2 rounded-xl text-xs xl:text-sm font-bold text-[#111111] hover:text-[#6B0F1A] hover:bg-[#FFF8C7]/60 transition-colors whitespace-nowrap"
             >
               {link.label}
             </Link>
@@ -157,7 +147,8 @@ export default function Header({ onSelectRole }: HeaderProps) {
           <button
             type="button"
             onClick={handleListYourSpace}
-            className="inline-flex items-center justify-center gap-1.5 rounded-full bg-[#F4E409] px-4 xl:px-5 py-2.5 text-xs xl:text-sm font-extrabold text-[#3D0710] transition hover:bg-[#3D0710] hover:text-[#F4E409] shadow-xs border border-[#6B0F1A]/20 cursor-pointer whitespace-nowrap"
+            className="btn-primary text-xs xl:text-sm px-4 xl:px-5 py-2 rounded-full"
+            style={{ borderRadius: "9999px" }}
           >
             <Store className="w-4 h-4 flex-shrink-0" />
             <span>List Your Space</span>
@@ -169,7 +160,7 @@ export default function Header({ onSelectRole }: HeaderProps) {
           <button
             type="button"
             onClick={handleListYourSpace}
-            className="inline-flex items-center gap-1 px-3 py-2 rounded-full bg-[#F4E409] text-[#3D0710] text-xs font-extrabold shadow-xs hover:bg-[#3D0710] hover:text-[#F4E409] transition-colors cursor-pointer"
+            className="inline-flex items-center gap-1 px-3 py-2 rounded-full bg-[#F8D706] text-[#111111] text-xs font-extrabold shadow-xs cursor-pointer"
           >
             <Store className="w-3.5 h-3.5" />
             <span className="hidden sm:inline">List Space</span>
@@ -180,7 +171,7 @@ export default function Header({ onSelectRole }: HeaderProps) {
             onClick={() => setMobileMenuOpen(true)}
             aria-expanded={mobileMenuOpen}
             aria-label="Open navigation menu"
-            className="p-2.5 rounded-xl text-[#6B0F1A] hover:text-[#3D0710] hover:bg-[#FFF6A3]/50 border border-[#F0E2E4] transition-colors cursor-pointer"
+            className="p-2.5 rounded-xl text-[#111111] hover:bg-[#FFF8C7]/60 border border-[#E8E3D5] transition-colors cursor-pointer"
           >
             <Menu className="w-6 h-6" />
           </button>
@@ -191,13 +182,13 @@ export default function Header({ onSelectRole }: HeaderProps) {
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
         <div
-          className="fixed inset-0 z-50 bg-[#FFFDF5] lg:hidden flex flex-col justify-between overflow-y-auto"
+          className="fixed inset-0 z-50 bg-white lg:hidden flex flex-col justify-between overflow-y-auto"
           role="dialog"
           aria-modal="true"
           aria-label="Navigation Menu"
         >
           {/* Top Bar inside Drawer */}
-          <div className="py-4 px-4 sm:px-6 flex items-center justify-between border-b border-[#F0E2E4] bg-[#FFFDF5] sticky top-0 z-10">
+          <div className="py-4 px-4 sm:px-6 flex items-center justify-between border-b border-[#E8E3D5] bg-white sticky top-0 z-10">
             <Link
               href="/"
               onClick={closeMenu}
@@ -205,7 +196,7 @@ export default function Header({ onSelectRole }: HeaderProps) {
               aria-label="Racks on Rent Home"
             >
               {/* Square Icon */}
-              <div className="relative w-10 h-10 rounded-xl overflow-hidden flex-shrink-0 bg-white p-0.5 border border-[#6B0F1A]/20">
+              <div className="relative w-10 h-10 rounded-xl overflow-hidden flex-shrink-0 bg-white p-0.5 border border-[#E8E3D5]">
                 <Image
                   src="/images/logo.png"
                   alt="Racks on Rent Logo Icon"
@@ -219,13 +210,13 @@ export default function Header({ onSelectRole }: HeaderProps) {
               <div className="flex flex-col justify-center">
                 <div className="flex items-baseline font-black tracking-tighter leading-none text-2xl">
                   <span className="text-[#6B0F1A] font-black italic">Racks</span>
-                  <span className="text-[#F4E409] font-bold italic lowercase mx-1 text-[0.8em]" style={{ fontFamily: "Georgia, serif" }}>on</span>
-                  <span className="text-[#F4E409] font-black italic">Rent</span>
+                  <span className="text-[#F8D706] font-bold italic lowercase mx-1 text-[0.8em]" style={{ fontFamily: "Georgia, serif" }}>on</span>
+                  <span className="text-[#F8D706] font-black italic">Rent</span>
                 </div>
                 <div className="flex items-center gap-1 mt-0.5 text-[8px] font-black uppercase tracking-[0.18em] leading-none whitespace-nowrap">
                   <span className="h-[1.5px] w-3 bg-[#6B0F1A] inline-block" />
                   <span className="text-[#6B0F1A]">SUBLET SPACE.</span>
-                  <span className="text-[#F4E409]">SHARE SUCCESS.</span>
+                  <span className="text-[#F8D706]">SHARE SUCCESS.</span>
                   <span className="h-[1.5px] w-3 bg-[#6B0F1A] inline-block" />
                 </div>
               </div>
@@ -236,7 +227,7 @@ export default function Header({ onSelectRole }: HeaderProps) {
                 type="button"
                 onClick={closeMenu}
                 aria-label="Close navigation menu"
-                className="p-2.5 rounded-xl text-[#6B0F1A] hover:bg-[#FFF6A3]/50 border border-[#F0E2E4] transition-colors cursor-pointer"
+                className="p-2.5 rounded-xl text-[#111111] hover:bg-[#FFF8C7]/50 border border-[#E8E3D5] transition-colors cursor-pointer"
               >
                 <X className="w-6 h-6" />
               </button>
@@ -250,7 +241,7 @@ export default function Header({ onSelectRole }: HeaderProps) {
                 key={link.href}
                 href={link.href}
                 onClick={(e) => handleNavClick(e as any, link.href)}
-                className="block px-4 py-3 rounded-xl font-bold text-lg text-[#6B0F1A] hover:bg-[#FFF6A3]/50 transition-colors"
+                className="block px-4 py-3 rounded-xl font-bold text-lg text-[#111111] hover:bg-[#FFF8C7]/60 transition-colors"
               >
                 {link.label}
               </Link>
@@ -258,11 +249,11 @@ export default function Header({ onSelectRole }: HeaderProps) {
           </nav>
 
           {/* Bottom Action CTA button inside Drawer */}
-          <div className="p-6 border-t border-[#F0E2E4] bg-[#FFF6A3]/40">
+          <div className="p-6 border-t border-[#E8E3D5] bg-[#FFF8C7]/30">
             <button
               type="button"
               onClick={handleListYourSpace}
-              className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-[#F4E409] py-3.5 text-base font-extrabold text-[#3D0710] shadow-xs hover:bg-[#3D0710] hover:text-[#F4E409] transition-colors"
+              className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-[#F8D706] py-3.5 text-base font-extrabold text-[#111111] shadow-xs cursor-pointer"
             >
               <Store className="w-5 h-5" />
               <span>List Your Space</span>

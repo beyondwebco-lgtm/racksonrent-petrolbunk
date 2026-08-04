@@ -63,25 +63,25 @@ export default function SpaceTypes() {
   }, [handleNext, isHovered]);
 
   return (
-    <section className="py-10 sm:py-14 lg:py-16 bg-[#FFF6A3]/30 border-y border-[#F0E2E4] overflow-hidden" id="space-types">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="section-padding bg-[var(--surface-warm)] border-y border-[var(--border)] overflow-hidden" id="space-types">
+      <div className="container-main">
         
         {/* Section Heading */}
-        <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-8">
-          <span className="inline-flex rounded-full bg-white px-3.5 py-1 text-xs sm:text-sm font-extrabold text-[#6B0F1A] border border-[#F0E2E4]">
+        <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-8 animate-reveal-up">
+          <span className="inline-flex rounded-full bg-white px-3.5 py-1 text-xs sm:text-sm font-extrabold text-[var(--charcoal)] border border-[var(--border)]">
             Available Formats
           </span>
-          <h2 className="mt-2.5 text-2xl font-extrabold tracking-tight text-[#6B0F1A] md:text-4xl lg:text-[clamp(2.25rem,3.2vw,3.5rem)]">
+          <h2 className="section-title-dm mt-2.5 text-[var(--maroon)]">
             What Kind of Space Can Be Offered?
           </h2>
-          <p className="mx-auto mt-2 max-w-2xl text-sm leading-relaxed text-[#5F5F5F] md:text-base font-medium">
+          <p className="body-copy mx-auto mt-2 max-w-2xl text-[var(--text-muted)]">
             Explore popular petrol pump space options that suit display racks, shelves, counters, and kiosks.
           </p>
         </div>
 
         {/* Carousel Container */}
         <div 
-          className="relative max-w-6xl mx-auto"
+          className="relative max-w-6xl mx-auto animate-reveal-up-delay-1"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
           onTouchStart={() => setIsHovered(true)}
@@ -90,7 +90,7 @@ export default function SpaceTypes() {
           {/* Navigation Arrows */}
           <button 
             onClick={handlePrev}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 sm:-translate-x-6 z-10 p-2.5 sm:p-3 rounded-full bg-white border border-[#F0E2E4] text-[#6B0F1A] shadow-lg hover:bg-[#6B0F1A] hover:text-[#FFF6A3] transition-colors focus:outline-none focus:ring-2 focus:ring-[#6B0F1A]"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 sm:-translate-x-6 z-10 p-2.5 sm:p-3 rounded-full bg-[var(--black)] border-2 border-[var(--yellow)] text-white shadow-lg hover:bg-[var(--yellow)] hover:text-[var(--black)] hover:border-[var(--black)] transition-colors focus:outline-none focus:ring-2 focus:ring-[var(--yellow)]"
             aria-label="Previous space type"
           >
             <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
@@ -98,7 +98,7 @@ export default function SpaceTypes() {
           
           <button 
             onClick={handleNext}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 sm:translate-x-6 z-10 p-2.5 sm:p-3 rounded-full bg-white border border-[#F0E2E4] text-[#6B0F1A] shadow-lg hover:bg-[#6B0F1A] hover:text-[#FFF6A3] transition-colors focus:outline-none focus:ring-2 focus:ring-[#6B0F1A]"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 sm:translate-x-6 z-10 p-2.5 sm:p-3 rounded-full bg-[var(--black)] border-2 border-[var(--yellow)] text-white shadow-lg hover:bg-[var(--yellow)] hover:text-[var(--black)] hover:border-[var(--black)] transition-colors focus:outline-none focus:ring-2 focus:ring-[var(--yellow)]"
             aria-label="Next space type"
           >
             <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
@@ -114,33 +114,32 @@ export default function SpaceTypes() {
             {COMPACT_SPACE_TYPES.map((item) => (
               <div
                 key={item.id}
-                className="snap-center shrink-0 w-[85vw] sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] rounded-3xl border border-[#F0E2E4] bg-white shadow-[0_12px_35px_rgba(11,30,54,0.06)] hover:shadow-[0_24px_60px_rgba(107,15,26,0.12)] transition-all duration-300 hover:-translate-y-1.5 hover:border-[#6B0F1A]/30 flex flex-col group overflow-hidden"
+                className="snap-center shrink-0 w-[85vw] sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] h-[400px] sm:h-[450px] card-base hover:!border-[var(--black)] flex flex-col group overflow-hidden !p-0 relative"
               >
-                {/* Image Section */}
-                <div className="relative h-48 sm:h-52 lg:h-56 w-full overflow-hidden bg-gray-100">
-                  <Image
-                    src={item.image}
-                    alt={item.name}
-                    fill
-                    sizes="(max-width: 640px) 85vw, (max-width: 1024px) 50vw, 33vw"
-                    className="object-cover object-top transform group-hover:scale-105 transition-transform duration-700 ease-out"
-                  />
-                  {/* Subtle Gradient Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </div>
+                {/* Full-bleed Image */}
+                <Image
+                  src={item.image}
+                  alt={item.name}
+                  fill
+                  sizes="(max-width: 640px) 85vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover object-top transform group-hover:scale-105 transition-transform duration-700 ease-out"
+                />
                 
-                {/* Content Section (Bottom) */}
-                <div className="p-5 sm:p-6 flex flex-col flex-grow justify-between">
+                {/* Gradient Overlay for text readability */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent transition-opacity duration-300" />
+                
+                {/* Content Section (Overlaid at Bottom) */}
+                <div className="absolute inset-0 p-5 sm:p-6 flex flex-col justify-end z-10 text-white">
                   <div>
-                    <h3 className="font-extrabold text-lg sm:text-xl text-[#6B0F1A] mb-2 group-hover:text-[#3D0710] transition-colors">
+                    <h3 className="font-extrabold text-lg sm:text-xl text-white mb-2 group-hover:text-[var(--yellow)] transition-colors">
                       {item.name}
                     </h3>
-                    <p className="text-xs sm:text-sm text-[#5F5F5F] leading-relaxed font-medium mb-4 line-clamp-3">
+                    <p className="text-xs sm:text-sm text-white/80 leading-relaxed font-medium mb-4 line-clamp-3">
                       {item.description}
                     </p>
                   </div>
                   
-                  <div className="flex items-center text-xs sm:text-sm font-bold text-[#6B0F1A] group-hover:text-[#F4E409] transition-colors mt-auto">
+                  <div className="flex items-center text-xs sm:text-sm font-bold text-[var(--yellow)] group-hover:text-white transition-colors">
                     Explore Space <ArrowRight className="w-4 h-4 ml-1.5 transform group-hover:translate-x-1 transition-transform" />
                   </div>
                 </div>
@@ -156,8 +155,8 @@ export default function SpaceTypes() {
                 onClick={() => scrollToIndex(index)}
                 className={`transition-all duration-300 rounded-full ${
                   activeIndex === index 
-                    ? 'w-8 h-2.5 bg-[#6B0F1A]' 
-                    : 'w-2.5 h-2.5 bg-[#6B0F1A]/20 hover:bg-[#6B0F1A]/50'
+                    ? 'w-8 h-2.5 bg-[var(--yellow)]' 
+                    : 'w-2.5 h-2.5 bg-[var(--border)] hover:bg-[var(--text-muted)]'
                 }`}
                 aria-label={`Go to slide ${index + 1}`}
               />

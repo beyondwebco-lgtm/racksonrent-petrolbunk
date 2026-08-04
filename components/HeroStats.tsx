@@ -12,7 +12,7 @@ export default function HeroStats() {
       prefix: "",
       suffix: "+",
       label: "Petrol Pump Spaces",
-      icon: <Layers className="w-6 h-6 text-[#F4E409] group-hover:scale-110 transition-transform duration-300" />,
+      icon: <Layers className="w-6 h-6 text-[#F8D706] group-hover:scale-110 transition-transform duration-300" />,
     },
     {
       id: "brands",
@@ -20,7 +20,7 @@ export default function HeroStats() {
       prefix: "",
       suffix: "+",
       label: "Startups Connected",
-      icon: <Store className="w-6 h-6 text-[#F4E409] group-hover:scale-110 transition-transform duration-300" />,
+      icon: <Store className="w-6 h-6 text-[#F8D706] group-hover:scale-110 transition-transform duration-300" />,
     },
     {
       id: "earnings",
@@ -28,23 +28,23 @@ export default function HeroStats() {
       prefix: "₹ ",
       suffix: " Lakhs+",
       label: "Income Generated",
-      icon: <TrendingUp className="w-6 h-6 text-[#F4E409] group-hover:scale-110 transition-transform duration-300" />,
+      icon: <TrendingUp className="w-6 h-6 text-[#F8D706] group-hover:scale-110 transition-transform duration-300" />,
     },
   ];
 
   return (
-    <div className="bg-[#6B0F1A] text-white py-3 sm:py-4 border-y border-[#3D0710] shadow-md">
+    <div className="bg-[#111111] text-white py-3 sm:py-4 border-y border-[#242424] shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center divide-y sm:divide-y-0 sm:divide-x divide-[#3D0710]/60">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center divide-y sm:divide-y-0 sm:divide-x divide-[#242424]">
           {statsList.map((stat) => (
             <div
               key={stat.id}
-              className="pt-4 sm:pt-0 flex flex-col items-center justify-center space-y-1 p-3 rounded-2xl transition-all duration-300 hover:-translate-y-1 hover:bg-[#3D0710]/40 group cursor-default"
+              className="pt-4 sm:pt-0 flex flex-col items-center justify-center space-y-1 p-3 rounded-2xl transition-all duration-300 hover:-translate-y-1 hover:bg-[#242424] group cursor-default"
             >
-              <div className="p-2.5 rounded-2xl bg-[#3D0710]/50 mb-1 group-hover:bg-[#3D0710] transition-colors">
+              <div className="p-2.5 rounded-2xl bg-[#242424] mb-1 group-hover:bg-[#111111] border border-[#242424] group-hover:border-[#F8D706]/30 transition-colors">
                 {stat.icon}
               </div>
-              <span className="text-3xl sm:text-4xl font-black text-[#F4E409] tracking-tight">
+              <span className="font-archivo text-3xl sm:text-4xl font-black text-[#F8D706] tracking-tight">
                 <AnimatedCounter
                   targetNumber={stat.targetNumber}
                   prefix={stat.prefix}
@@ -62,4 +62,3 @@ export default function HeroStats() {
     </div>
   );
 }
-

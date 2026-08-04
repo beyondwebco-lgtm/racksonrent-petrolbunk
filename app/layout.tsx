@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Manrope, Plus_Jakarta_Sans } from "next/font/google";
+import { Manrope, Archivo_Black, DM_Serif_Display } from "next/font/google";
 import "./globals.css";
 import TopBar from "@/components/TopBar";
 import Header from "@/components/Header";
@@ -13,11 +13,18 @@ const manrope = Manrope({
   display: "swap",
 });
 
-const plusJakarta = Plus_Jakarta_Sans({
-  variable: "--font-jakarta",
+const archivoBlack = Archivo_Black({
+  variable: "--font-archivo",
   subsets: ["latin"],
   display: "swap",
-  weight: ["500", "600", "700", "800"],
+  weight: "400",
+});
+
+const dmSerifDisplay = DM_Serif_Display({
+  variable: "--font-dm-serif",
+  subsets: ["latin"],
+  display: "swap",
+  weight: "400",
 });
 
 export const metadata: Metadata = {
@@ -79,7 +86,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${manrope.variable} ${plusJakarta.variable} h-full antialiased`}
+      className={`${manrope.variable} ${archivoBlack.variable} ${dmSerifDisplay.variable} h-full antialiased`}
     >
       <head>
         <script
@@ -87,7 +94,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="min-h-full flex flex-col bg-[#FFFDF5] text-[#1F1F1F] font-sans">
+      <body className="min-h-full flex flex-col bg-white text-[#111111] font-sans">
         <TopBar />
         <Header />
         <main className="flex-grow">{children}</main>
