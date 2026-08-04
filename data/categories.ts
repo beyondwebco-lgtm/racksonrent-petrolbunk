@@ -10,62 +10,67 @@ export interface CategoryItem {
 
 export const POPULAR_CATEGORIES: CategoryItem[] = [
   {
-    id: "packaged-snacks",
-    name: "Packaged Snacks & Munchies",
-    description: "Nutritious nuts, dried fruits, chips, energy bars, and high-margin packaged munchies for drivers.",
-    image: "/images/categories/packaged-snacks.webp",
-    alt: "Packaged snacks and munchies for travelers",
-    badge: "Popular"
+    id: "organic-snacks",
+    name: "Organic & Healthy Snacks",
+    description: "Nutritious snacks, dry fruits, organic munchies, and health bars for drivers and commuters.",
+    image: "/images/categories/organic-snacks.png",
+    alt: "Organic and healthy snacks display rack",
+    badge: "Best Seller"
   },
   {
     id: "cold-beverages",
-    name: "Cold Beverages & Energy Drinks",
-    description: "Chilled juices, iced teas, energy boosters, flavored waters, and cold coffees for quick refreshment.",
-    image: "/images/categories/cold-beverage.webp",
-    alt: "Cold beverages and energy drinks jar",
+    name: "Energy Drinks & Cold Beverages",
+    description: "Chilled energy drinks, juices, iced teas, and cold beverages for instant highway refreshment.",
+    image: "/images/categories/energy-drinks.png",
+    alt: "Energy drinks and cold beverages display",
     badge: "High Demand"
   },
   {
-    id: "auto-care",
-    name: "Car Care & Auto Accessories",
-    description: "Microfiber cloths, car air fresheners, wiper fluids, dashboard shiners, and emergency tools.",
-    image: "/images/categories/car-care.webp",
-    alt: "Car care and auto accessories",
+    id: "vehicle-oils",
+    name: "Engine Oils & Lubricants",
+    description: "Premium synthetic engine oils, high-performance lubricants, and fluids available right at the pump.",
+    image: "/images/categories/vehicles-oil.png",
+    alt: "Vehicle engine oils and lubricants display",
+    badge: "Essential"
+  },
+  {
+    id: "helmet-store",
+    name: "Helmets & Rider Safety Gear",
+    description: "ISI-certified helmets, riding gloves, reflective gear, and safety accessories for commuters.",
+    image: "/images/categories/helmet-store.png",
+    alt: "Helmets and rider gear store setup",
+    badge: "Popular"
+  },
+  {
+    id: "helmet-cleaning",
+    name: "Helmet Cleaning & Maintenance",
+    description: "Automated helmet cleaning, visor care sprays, anti-fog solutions, and sanitization stations.",
+    image: "/images/categories/helmet-cleaning.png",
+    alt: "Helmet cleaning and maintenance station",
+    badge: "New Service"
+  },
+  {
+    id: "car-radium",
+    name: "Car Radium & Auto Styling",
+    description: "High-grade reflective radium stickers, custom graphics, warning tapes, and body striping.",
+    image: "/images/categories/car-radium.png",
+    alt: "Car radium and auto styling accessories",
     badge: "Trending"
   },
   {
-    id: "helmets-safety",
-    name: "Helmets & Rider Safety Gear",
-    description: "ISRO/DOT certified helmets, riding gloves, rain gear, and reflective safety jackets for commuters.",
-    image: "/images/categories/rider-helmet.webp",
-    alt: "Certified helmets and rider safety gear"
+    id: "store-kiosk",
+    name: "Inside Store Kiosks & Display Counters",
+    description: "Compact indoor kiosk counters for high-visibility product placement and retail brand sales.",
+    image: "/images/categories/store-kiosk.png",
+    alt: "Inside store kiosk counter display",
+    badge: "High ROI"
   },
   {
-    id: "travel-gadgets",
-    name: "Travel & Phone Accessories",
-    description: "Fast car chargers, phone mounts, power banks, aux cables, and bluetooth hands-free devices.",
-    image: "/images/categories/phone-mount.webp",
-    alt: "Travel and phone accessory kit"
-  },
-  {
-    id: "bakery-bites",
-    name: "Bakery & Fresh Quick Bites",
-    description: "Packaged cookies, muffins, dry cakes, savory rolls, and baked snacks for road trips.",
-    image: "/images/categories/bakery-bites.webp",
-    alt: "Fresh packaged bakery bites"
-  },
-  {
-    id: "hygiene-grooming",
-    name: "Hygiene & Personal Care",
-    description: "Pocket perfumes, wet wipes, hand sanitizers, tissues, and refreshing face sprays.",
-    image: "/images/categories/personal-care.webp",
-    alt: "Hygiene and personal care items"
-  },
-  {
-    id: "emergency-supplies",
-    name: "Emergency & Car Survival Gear",
-    description: "Multi-tool kits, LED emergency flashlights, tyre pressure gauges, and first-aid pouches.",
-    image: "/images/categories/first-aid-pouch.webp",
-    alt: "Car emergency tools and survival gear"
+    id: "riding-jackets",
+    name: "Riding Jackets & Outdoor Apparel",
+    description: "All-weather protective riding jackets, rain gear, high-vis coats, and commuter apparel racks.",
+    image: "/images/categories/store-jackets.png",
+    alt: "Outdoor riding jackets and apparel display",
+    badge: "Featured"
   }
 ];
