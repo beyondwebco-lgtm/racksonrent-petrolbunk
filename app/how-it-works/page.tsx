@@ -18,15 +18,16 @@ import {
   Building2, 
   Zap, 
   ShieldCheck,
-  Users
+  Users,
+  X
 } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
-import { BUNK_OWNER_STEPS, BRAND_STEPS } from "@/data/journey";
 
 function HowItWorksContent() {
   const searchParams = useSearchParams();
   const roleParam = searchParams.get("role");
   const [activeTab, setActiveTab] = useState<"bunk-owner" | "brand">("bunk-owner");
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     if (roleParam === "brand") {
@@ -68,8 +69,6 @@ function HowItWorksContent() {
       description: "Showcase products with minimal overhead and zero permanent construction.",
     },
   ];
-
-  const currentSteps = activeTab === "bunk-owner" ? BUNK_OWNER_STEPS : BRAND_STEPS;
 
   return (
     <div className="bg-[#FFFDF5] min-h-screen pt-8 sm:pt-14 pb-20">
@@ -148,26 +147,26 @@ function HowItWorksContent() {
         </ScrollReveal>
       </section>
 
-      {/* Interactive Steps Timeline */}
+      {/* Interactive Infographic Section */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-24" id="explore-journey">
         
         {/* Role Filter Tabs */}
         <ScrollReveal>
-          <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#6B0F1A] mb-3">
+          <div className="text-center mb-10">
+            <h2 className="text-2xl sm:text-4xl font-extrabold text-[#6B0F1A] mb-3">
               Explore the Journey
             </h2>
             <p className="text-sm sm:text-base text-[#5F5F5F] font-medium mb-6">
-              Select your perspective to see how the process works for you
+              Select your perspective to view the detailed step-by-step process infographic
             </p>
 
-            <div className="inline-flex p-1.5 rounded-2xl bg-white border border-[#F0E2E4] shadow-xs flex-wrap justify-center gap-1">
+            <div className="inline-flex p-1.5 rounded-2xl bg-white border border-[#F0E2E4] shadow-xs flex-wrap justify-center gap-2">
               <button
                 type="button"
                 onClick={() => setActiveTab("bunk-owner")}
-                className={`px-5 py-2.5 rounded-xl text-xs sm:text-sm font-extrabold transition-all cursor-pointer ${
+                className={`px-6 py-3 rounded-xl text-xs sm:text-sm font-extrabold transition-all cursor-pointer ${
                   activeTab === "bunk-owner"
-                    ? "bg-[#6B0F1A] text-[#FFF6A3] shadow-xs"
+                    ? "bg-[#6B0F1A] text-[#FFF6A3] shadow-md"
                     : "text-[#5F5F5F] hover:text-[#6B0F1A] hover:bg-[#FFF6A3]/40"
                 }`}
               >
@@ -176,91 +175,92 @@ function HowItWorksContent() {
               <button
                 type="button"
                 onClick={() => setActiveTab("brand")}
-                className={`px-5 py-2.5 rounded-xl text-xs sm:text-sm font-extrabold transition-all cursor-pointer ${
+                className={`px-6 py-3 rounded-xl text-xs sm:text-sm font-extrabold transition-all cursor-pointer ${
                   activeTab === "brand"
-                    ? "bg-[#6B0F1A] text-[#FFF6A3] shadow-xs"
+                    ? "bg-[#6B0F1A] text-[#FFF6A3] shadow-md"
                     : "text-[#5F5F5F] hover:text-[#6B0F1A] hover:bg-[#FFF6A3]/40"
                 }`}
               >
-                For Retail Brands & Startups
+                For Retail Brands &amp; Startups
               </button>
             </div>
           </div>
         </ScrollReveal>
 
-        <div className="relative space-y-16 sm:space-y-24">
-          {/* Vertical Connecting Line */}
-          <div className="hidden md:block absolute left-[30px] top-8 bottom-8 w-1 bg-gradient-to-b from-[#6B0F1A] via-[#F4E409] to-[#6B0F1A] opacity-20 pointer-events-none" />
+        {/* Infographic Photo Card Container */}
+        <ScrollReveal delayMs={100}>
+          <div className="bg-white rounded-3xl border-2 border-[#F0E2E4] p-4 sm:p-8 shadow-xl relative overflow-hidden group">
+            
+            {/* Header Badge & Title */}
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-6 pb-4 border-b border-[#F0E2E4]">
+              <div>
+                <span className="inline-flex items-center gap-1.5 text-xs font-extrabold uppercase tracking-widest text-[#6B0F1A] bg-[#FFF6A3] px-3.5 py-1 rounded-full border border-[#F4E409]/40 mb-1.5">
+                  <Sparkles className="w-3.5 h-3.5 text-[#6B0F1A]" />
+                  {activeTab === "bunk-owner" ? "Petrol Pump Owners Guide" : "Entrepreneurs & Brands Guide"}
+                </span>
+                <h3 className="text-xl sm:text-2xl font-black text-[#6B0F1A]">
+                  {activeTab === "bunk-owner"
+                    ? "Sublet Space. Share Success."
+                    : "Your Product. Your Brand. Your Growth."}
+                </h3>
+              </div>
 
-          {currentSteps.map((step, index) => {
-            const formattedStepNo = step.stepNumber < 10 ? `0${step.stepNumber}` : `${step.stepNumber}`;
-            return (
-              <ScrollReveal key={step.stepNumber} delayMs={index * 100}>
-                <div className="relative flex flex-col lg:flex-row items-stretch gap-8 lg:gap-12 bg-white rounded-3xl p-6 sm:p-8 lg:p-10 border border-[#F0E2E4] shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:border-[#6B0F1A]/20 transition-all duration-500">
-                  
-                  {/* Progress Dot */}
-                  <div className="hidden md:flex absolute -left-10 top-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-[#F4E409] border-[3px] border-white shadow-sm z-10" />
+              <div className="flex items-center gap-2">
+                <button
+                  type="button"
+                  onClick={() => setIsModalOpen(true)}
+                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#FFF6A3] text-[#3D0710] border border-[#F4E409] text-xs font-extrabold hover:bg-[#F4E409] transition-all cursor-pointer shadow-xs"
+                >
+                  <Maximize2 className="w-4 h-4 text-[#6B0F1A]" />
+                  <span>Full Screen View</span>
+                </button>
+                
+                <a
+                  href={activeTab === "bunk-owner" ? "/images/how-it-works-owners.jpg" : "/images/how-it-works-entrepreneurs.jpg"}
+                  download={activeTab === "bunk-owner" ? "RacksOnRent_Owners_Infographic.jpg" : "RacksOnRent_Entrepreneurs_Infographic.jpg"}
+                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#6B0F1A] text-white border border-[#520a13] text-xs font-extrabold hover:bg-[#3D0710] transition-all cursor-pointer shadow-xs"
+                >
+                  <ArrowRight className="w-4 h-4 text-[#F4E409]" />
+                  <span>Download Guide</span>
+                </a>
+              </div>
+            </div>
 
-                  {/* Left Side: Content (45%) */}
-                  <div className="w-full lg:w-[45%] flex flex-col justify-center">
-                    <div className="flex items-center gap-3 mb-5">
-                      <span className="text-4xl lg:text-5xl font-black text-[#6B0F1A]/20">
-                        {formattedStepNo}
-                      </span>
-                      <span className="text-xs font-extrabold uppercase tracking-widest text-[#6B0F1A] bg-[#FFF6A3]/60 px-3 py-1 rounded-full border border-[#F4E409]/30">
-                        HOW IT WORKS
-                      </span>
-                    </div>
+            {/* Main Infographic Image */}
+            <div
+              onClick={() => setIsModalOpen(true)}
+              className="relative w-full rounded-2xl overflow-hidden border border-[#F0E2E4] bg-[#FFFDF5] cursor-zoom-in shadow-inner group/img transition-all duration-300 hover:shadow-2xl"
+            >
+              <Image
+                src={activeTab === "bunk-owner" ? "/images/how-it-works-owners.jpg" : "/images/how-it-works-entrepreneurs.jpg"}
+                alt={activeTab === "bunk-owner" ? "How It Works for Petrol Pump Owners Infographic" : "How It Works for Entrepreneurs Infographic"}
+                width={1200}
+                height={1800}
+                priority
+                className="w-full h-auto object-contain transition-transform duration-500 group-hover/img:scale-[1.01]"
+              />
 
-                    <h3 className="text-2xl sm:text-3xl font-extrabold text-[#6B0F1A] mb-4 leading-tight">
-                      {step.title}
-                    </h3>
-                    
-                    <p className="text-base text-[#5F5F5F] font-medium mb-6 leading-relaxed">
-                      {step.shortDescription}
-                    </p>
+              <div className="absolute inset-0 bg-black/0 group-hover/img:bg-black/10 transition-colors flex items-center justify-center pointer-events-none">
+                <span className="opacity-0 group-hover/img:opacity-100 transition-opacity bg-[#3D0710] text-[#FFF6A3] border border-[#F4E409] px-5 py-2.5 rounded-full text-xs font-extrabold shadow-2xl flex items-center gap-2">
+                  <Maximize2 className="w-4 h-4 text-[#F4E409]" />
+                  Click to Expand Full Screen
+                </span>
+              </div>
+            </div>
 
-                    {step.highlights && (
-                      <ul className="space-y-3 mb-8">
-                        {step.highlights.map((highlight, hIdx) => (
-                          <li key={hIdx} className="flex items-start gap-3">
-                            <CheckCircle2 className="w-5 h-5 text-[#6B0F1A] shrink-0 mt-0.5" />
-                            <span className="text-sm font-semibold text-[#1F1F1F] leading-snug">
-                              {highlight}
-                            </span>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
+            {/* Bottom Caption Bar */}
+            <div className="mt-6 pt-4 border-t border-[#F0E2E4] flex flex-col sm:flex-row items-center justify-between text-xs font-bold text-[#5F5F5F] gap-2">
+              <span className="flex items-center gap-1.5">
+                <CheckCircle2 className="w-4 h-4 text-[#6B0F1A]" />
+                <span>6 Easy Steps to Turn Petrol Pump Space Into Steady Income</span>
+              </span>
+              <span className="text-[#6B0F1A] font-extrabold cursor-pointer hover:underline" onClick={() => setIsModalOpen(true)}>
+                Tap Image for High Resolution View →
+              </span>
+            </div>
 
-                    {step.featuredHighlight && (
-                      <div className="inline-flex items-center gap-2 bg-[#FFF6A3]/30 border border-[#F4E409]/40 rounded-2xl px-5 py-3 mt-auto self-start">
-                        <Sparkles className="w-5 h-5 text-[#6B0F1A]" />
-                        <span className="text-sm font-extrabold text-[#3D0710]">
-                          {step.featuredHighlight}
-                        </span>
-                      </div>
-                    )}
-                  </div>
-
-                  {/* Right Side: Image (55%) */}
-                  <div className="w-full lg:w-[55%] relative mt-6 lg:mt-0 flex items-center justify-center">
-                    <div className="relative w-full aspect-[16/7] rounded-2xl overflow-hidden border border-[#F0E2E4] shadow-inner group">
-                      <Image
-                        src={step.image}
-                        alt={step.title}
-                        fill
-                        className="object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out"
-                        sizes="(max-width: 1024px) 100vw, 55vw"
-                      />
-                    </div>
-                  </div>
-
-                </div>
-              </ScrollReveal>
-            );
-          })}
-        </div>
+          </div>
+        </ScrollReveal>
       </section>
 
       {/* Classic Final CTA Section */}
@@ -303,6 +303,42 @@ function HowItWorksContent() {
           </div>
         </ScrollReveal>
       </section>
+      {/* Fullscreen Lightbox Modal */}
+      {isModalOpen && (
+        <div className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-2 sm:p-6 animate-fade-in">
+          
+          {/* Close Button Header */}
+          <div className="absolute top-4 right-4 sm:top-6 sm:right-6 z-50 flex items-center gap-3">
+            <a
+              href={activeTab === "bunk-owner" ? "/images/how-it-works-owners.jpg" : "/images/how-it-works-entrepreneurs.jpg"}
+              download={activeTab === "bunk-owner" ? "RacksOnRent_Owners_Infographic.jpg" : "RacksOnRent_Entrepreneurs_Infographic.jpg"}
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#F4E409] text-[#3D0710] text-xs font-black hover:bg-white transition shadow-lg"
+            >
+              Download High Res
+            </a>
+            <button
+              type="button"
+              onClick={() => setIsModalOpen(false)}
+              className="p-2.5 rounded-full bg-white/20 hover:bg-white text-white hover:text-[#3D0710] transition-all cursor-pointer shadow-lg"
+              aria-label="Close Lightbox"
+            >
+              <X className="w-6 h-6" />
+            </button>
+          </div>
+
+          {/* Image Container */}
+          <div className="relative max-w-5xl w-full max-h-[90vh] overflow-auto rounded-2xl p-2 bg-[#FFFDF5]/10 border border-white/20">
+            <Image
+              src={activeTab === "bunk-owner" ? "/images/how-it-works-owners.jpg" : "/images/how-it-works-entrepreneurs.jpg"}
+              alt="High resolution infographic preview"
+              width={1400}
+              height={2100}
+              className="w-full h-auto object-contain rounded-xl shadow-2xl mx-auto"
+            />
+          </div>
+
+        </div>
+      )}
 
     </div>
   );

@@ -21,6 +21,9 @@ import {
   ArrowRight,
   Store,
   Building2,
+  Palette,
+  Shirt,
+  Droplet,
 } from "lucide-react";
 import {
   SHOWCASE_CATEGORIES,
@@ -56,6 +59,9 @@ export default function PetrolBunkShowcase({
     Layers,
     Headphones,
     MapPin,
+    Palette,
+    Shirt,
+    Droplet,
   };
 
   const activeCategory: ShowcaseCategory = SHOWCASE_CATEGORIES[activeIndex];
