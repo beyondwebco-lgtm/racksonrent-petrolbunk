@@ -26,10 +26,10 @@ export default function Benefits() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           
           {/* Petrol Pump Owner (Maroon Card) */}
-          <div className="rounded-3xl border-2 border-[#520a13] bg-[#6B0F1A] text-white p-8 shadow-xl hover:border-[#FDFF00] transition-all flex flex-col justify-between">
+          <div className="rounded-3xl border-2 border-[#520a13] bg-[#6B0F1A] text-white p-8 shadow-xl hover:border-[#FAFA33] transition-all flex flex-col justify-between">
             <div>
               <div className="flex items-center gap-3 mb-6 border-b border-white/10 pb-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#FDFF00] text-[#3D0710] border border-[#E6D900]">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#FAFA33] text-[#3D0710] border border-[#E6D900]">
                   <Building2 className="w-6 h-6" />
                 </div>
                 <h3 className="text-2xl font-black text-white">
@@ -40,7 +40,7 @@ export default function Benefits() {
               <div className="space-y-4">
                 {petrolPumpOwners.points.map((point, idx) => (
                   <div key={idx} className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-[#FDFF00] flex-shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-5 h-5 text-[#FAFA33] flex-shrink-0 mt-0.5" />
                     <span className="text-sm sm:text-base font-extrabold text-white/95">
                       {point}
                     </span>
@@ -51,7 +51,7 @@ export default function Benefits() {
           </div>
 
           {/* Startup or Retail Entrepreneur (Yellow Card) */}
-          <div className="rounded-3xl border-2 border-[#E6D900] bg-[#FDFF00] text-[#3D0710] p-8 shadow-xl hover:border-[#6B0F1A] transition-all flex flex-col justify-between">
+          <div className="rounded-3xl border-2 border-[#E6D900] bg-[#FAFA33] text-[#3D0710] p-8 shadow-xl hover:border-[#6B0F1A] transition-all flex flex-col justify-between">
             <div>
               <div className="flex items-center gap-3 mb-6 border-b border-[#3D0710]/15 pb-4">
                 <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#6B0F1A] text-white border border-[#520a13]">

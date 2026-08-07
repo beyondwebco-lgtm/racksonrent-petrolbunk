@@ -11,8 +11,8 @@ This document specifies the complete color palette, CSS tokens, Tailwind variabl
 | **Deep Maroon** | `#6B0F1A` | `--color-primary-maroon` | `bg-[#6B0F1A]`, `text-[#6B0F1A]` | Primary Brand Color, Section Headers, Maroon Cards, Primary Buttons |
 | **Dark Maroon** | `#3D0710` | `--color-dark-maroon` | `bg-[#3D0710]`, `text-[#3D0710]` | Primary Headings, Dark Maroon Backgrounds, High-Contrast Text |
 | **Maroon Border / Dark Accent** | `#520a13` | `--color-maroon-dark-border` | `border-[#520a13]` | Card Borders, Hover States on Maroon elements |
-| **Lemon Yellow** | `#FDFF00` | `--color-lemon-yellow` | `bg-[#FDFF00]`, `text-[#FDFF00]` | Accent Brand Color, Yellow Cards, Primary CTA Buttons, Badges |
-| **Flipkart Yellow** | `#FDFF00` | `--color-flipkart-yellow` | `bg-[#FDFF00]`, `text-[#FDFF00]` | Popular Product Category Cards (Vibrant Brand Yellow Theme) |
+| **Lemon Yellow** | `#FAFA33` | `--color-lemon-yellow` | `bg-[#FAFA33]`, `text-[#FAFA33]` | Accent Brand Color, Yellow Cards, Primary CTA Buttons, Badges |
+| **Flipkart Yellow** | `#FAFA33` | `--color-flipkart-yellow` | `bg-[#FAFA33]`, `text-[#FAFA33]` | Popular Product Category Cards (Vibrant Brand Yellow Theme) |
 | **Flipkart Yellow Border** | `#E5CE00` | `--color-flipkart-yellow-border` | `border-[#E5CE00]` | Category Card Border for Flipkart Yellow |
 | **Yellow Border** | `#E6D900` | `--color-yellow-border` | `border-[#E6D900]` | Borders for Lemon Yellow Cards & Buttons |
 | **Hover Lemon Yellow** | `#F2E500` | `--color-yellow-hover` | `hover:bg-[#f2e500]` | Hover States for Yellow Buttons & Interactive Cards |
@@ -41,7 +41,7 @@ This document specifies the complete color palette, CSS tokens, Tailwind variabl
 @theme inline {
   --color-primary-maroon: #6B0F1A;
   --color-dark-maroon: #3D0710;
-  --color-lemon-yellow: #FDFF00;
+  --color-lemon-yellow: #FAFA33;
   --color-soft-lemon: #FFFBCC;
   --color-warm-white: #FFFDF5;
   --color-soft-border: #F0E2E4;
@@ -69,12 +69,12 @@ This document specifies the complete color palette, CSS tokens, Tailwind variabl
 
 1. **Alternating Grid Pattern**:
    When rendering cards in a grid layout (e.g. *Popular Product Categories*, *Platform Benefits*, *Featured Opportunities*, *About Us Stats*), alternate card styling between:
-   - **Maroon Card**: `bg-[#6B0F1A] text-white border-[#520a13]` with Lemon Yellow icon box (`bg-[#FDFF00] text-[#3D0710] border-[#E6D900]`)
-   - **Yellow Card**: `bg-[#FDFF00] text-[#3D0710] border-[#E6D900]` with Deep Maroon icon box (`bg-[#6B0F1A] text-white border-[#520a13]`)
+   - **Maroon Card**: `bg-[#6B0F1A] text-white border-[#520a13]` with Lemon Yellow icon box (`bg-[#FAFA33] text-[#3D0710] border-[#E6D900]`)
+   - **Yellow Card**: `bg-[#FAFA33] text-[#3D0710] border-[#E6D900]` with Deep Maroon icon box (`bg-[#6B0F1A] text-white border-[#520a13]`)
 
 2. **White Background Replacement Rule**:
-   Sections or cards using `#FFFFFF` (`bg-white`) are styled using the brand palette (**Deep Maroon** `#6B0F1A` or **Lemon Yellow** `#FDFF00`), while preserving cream backgrounds (`#FFFDF5`).
+   Sections or cards using `#FFFFFF` (`bg-white`) are styled using the brand palette (**Deep Maroon** `#6B0F1A` or **Lemon Yellow** `#FAFA33`), while preserving cream backgrounds (`#FFFDF5`).
 
 3. **CTA Buttons**:
-   - **Primary Action**: `bg-[#FDFF00] text-[#3D0710] font-bold border border-[#E6D900] hover:bg-[#f2e500]`
+   - **Primary Action**: `bg-[#FAFA33] text-[#3D0710] font-bold border border-[#E6D900] hover:bg-[#f2e500]`
    - **Secondary Action (Dark context)**: `bg-[#6B0F1A] text-white font-bold hover:bg-[#520a13]`

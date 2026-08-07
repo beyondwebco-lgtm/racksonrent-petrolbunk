@@ -12,7 +12,7 @@ export default function HeroStats() {
       prefix: "",
       suffix: "+",
       label: "Petrol Pump Spaces",
-      icon: <Layers className="w-6 h-6 text-[#FDFF00] group-hover:scale-110 transition-transform duration-300" />,
+      icon: <Layers className="w-6 h-6 text-[#FAFA33] group-hover:scale-110 transition-transform duration-300" />,
     },
     {
       id: "brands",
@@ -20,7 +20,7 @@ export default function HeroStats() {
       prefix: "",
       suffix: "+",
       label: "Startups Connected",
-      icon: <Store className="w-6 h-6 text-[#FDFF00] group-hover:scale-110 transition-transform duration-300" />,
+      icon: <Store className="w-6 h-6 text-[#FAFA33] group-hover:scale-110 transition-transform duration-300" />,
     },
     {
       id: "earnings",
@@ -28,7 +28,7 @@ export default function HeroStats() {
       prefix: "₹ ",
       suffix: " Lakhs+",
       label: "Income Generated",
-      icon: <TrendingUp className="w-6 h-6 text-[#FDFF00] group-hover:scale-110 transition-transform duration-300" />,
+      icon: <TrendingUp className="w-6 h-6 text-[#FAFA33] group-hover:scale-110 transition-transform duration-300" />,
     },
   ];
 
@@ -41,10 +41,10 @@ export default function HeroStats() {
               key={stat.id}
               className="pt-4 sm:pt-0 flex flex-col items-center justify-center space-y-1 p-3 rounded-2xl transition-all duration-300 hover:-translate-y-1 hover:bg-[#6B0F1A] group cursor-default"
             >
-              <div className="p-2.5 rounded-2xl bg-[#6B0F1A] mb-1 group-hover:bg-[#3D0710] border border-[#520a13] group-hover:border-[#FDFF00]/30 transition-colors">
+              <div className="p-2.5 rounded-2xl bg-[#6B0F1A] mb-1 group-hover:bg-[#3D0710] border border-[#520a13] group-hover:border-[#FAFA33]/30 transition-colors">
                 {stat.icon}
               </div>
-              <span className="font-archivo text-3xl sm:text-4xl font-black text-[#FDFF00] tracking-tight">
+              <span className="font-archivo text-3xl sm:text-4xl font-black text-[#FAFA33] tracking-tight">
                 <AnimatedCounter
                   targetNumber={stat.targetNumber}
                   prefix={stat.prefix}

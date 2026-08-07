@@ -45,14 +45,14 @@ export default function RoleSelection({ onSelectRole }: RoleSelectionProps) {
                 className={`rounded-3xl p-6 sm:p-8 flex flex-col justify-between group shadow-lg transition-all duration-300 ${
                   isMaroon
                     ? "bg-[#6B0F1A] text-white border-2 border-[#520a13]"
-                    : "bg-[#FDFF00] text-[#3D0710] border-2 border-[#E6D900]"
+                    : "bg-[#FAFA33] text-[#3D0710] border-2 border-[#E6D900]"
                 }`}
               >
                 <div>
                   <div
                     className={`flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-2xl mb-4 sm:mb-5 shadow-xs ${
                       isMaroon
-                        ? "bg-[#FDFF00] text-[#3D0710] border border-[#E6D900]"
+                        ? "bg-[#FAFA33] text-[#3D0710] border border-[#E6D900]"
                         : "bg-[#6B0F1A] text-white border border-[#520a13]"
                     }`}
                   >
@@ -81,7 +81,7 @@ export default function RoleSelection({ onSelectRole }: RoleSelectionProps) {
                       <div key={bIdx} className="flex items-start gap-2">
                         <CheckCircle2
                           className={`w-4 h-4 flex-shrink-0 mt-0.5 ${
-                            isMaroon ? "text-[#FDFF00]" : "text-[#6B0F1A]"
+                            isMaroon ? "text-[#FAFA33]" : "text-[#6B0F1A]"
                           }`}
                         />
                         <span

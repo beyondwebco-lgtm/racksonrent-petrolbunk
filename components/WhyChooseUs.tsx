@@ -56,8 +56,8 @@ export default function WhyChooseUs() {
                 key={item.id}
                 className={`group relative overflow-hidden rounded-3xl p-6 min-h-[210px] lg:min-h-[190px] flex h-full flex-col justify-between shadow-sm hover:shadow-xl transition-all duration-300 ${
                   isMaroon
-                    ? "bg-[#6B0F1A] text-white border border-[#520a13] hover:border-[#FDFF00]"
-                    : "bg-[#FDFF00] text-[#3D0710] border border-[#E6D900] hover:border-[#6B0F1A]"
+                    ? "bg-[#6B0F1A] text-white border border-[#520a13] hover:border-[#FAFA33]"
+                    : "bg-[#FAFA33] text-[#3D0710] border border-[#E6D900] hover:border-[#6B0F1A]"
                 }`}
               >
                 <div>
@@ -66,7 +66,7 @@ export default function WhyChooseUs() {
                     <div
                       className={`flex h-12 w-12 items-center justify-center rounded-xl transition-all duration-300 flex-shrink-0 ${
                         isMaroon
-                          ? "bg-[#FDFF00] text-[#3D0710] border border-[#E6D900] group-hover:bg-white group-hover:scale-105"
+                          ? "bg-[#FAFA33] text-[#3D0710] border border-[#E6D900] group-hover:bg-white group-hover:scale-105"
                           : "bg-[#6B0F1A] text-white border border-[#520a13] group-hover:bg-[#3D0710] group-hover:scale-105"
                       }`}
                     >
@@ -77,7 +77,7 @@ export default function WhyChooseUs() {
                       <span
                         className={`inline-flex items-center rounded-full px-3 py-1 text-[11px] font-bold tracking-wider uppercase shadow-xs ${
                           isMaroon
-                            ? "bg-[#FDFF00] text-[#3D0710] border border-[#E6D900]"
+                            ? "bg-[#FAFA33] text-[#3D0710] border border-[#E6D900]"
                             : "bg-[#6B0F1A] text-white border border-[#520a13]"
                         }`}
                       >
@@ -86,7 +86,7 @@ export default function WhyChooseUs() {
                     ) : (
                       <ArrowUpRight
                         className={`h-5 w-5 opacity-0 transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:opacity-100 ${
-                          isMaroon ? "text-[#FDFF00]" : "text-[#6B0F1A]"
+                          isMaroon ? "text-[#FAFA33]" : "text-[#6B0F1A]"
                         }`}
                       />
                     )}
@@ -95,7 +95,7 @@ export default function WhyChooseUs() {
                   {/* Card Title & Description */}
                   <h3
                     className={`card-title font-black transition-colors ${
-                      isMaroon ? "text-white group-hover:text-[#FDFF00]" : "text-[#3D0710] group-hover:text-[#6B0F1A]"
+                      isMaroon ? "text-white group-hover:text-[#FAFA33]" : "text-[#3D0710] group-hover:text-[#6B0F1A]"
                     }`}
                   >
                     {item.title}

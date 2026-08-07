@@ -125,7 +125,7 @@ export default function SpaceSearch({ onSearch }: SpaceSearchProps) {
             <div className="col-span-1">
               <button
                 type="submit"
-                className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-[#FDFF00] text-[#3D0710] border border-[#6B0F1A]/30 px-4 py-2.5 font-extrabold text-xs sm:text-sm shadow-xs hover:bg-[#3D0710] hover:text-[#FDFF00] transition-all cursor-pointer h-[42px]"
+                className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-[#FAFA33] text-[#3D0710] border border-[#6B0F1A]/30 px-4 py-2.5 font-extrabold text-xs sm:text-sm shadow-xs hover:bg-[#3D0710] hover:text-[#FAFA33] transition-all cursor-pointer h-[42px]"
               >
                 <Search className="w-4 h-4" />
                 <span>Search Spaces</span>

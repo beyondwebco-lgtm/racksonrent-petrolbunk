@@ -114,15 +114,15 @@ export default function Header({ onSelectRole }: HeaderProps) {
             {/* Main Brand Title */}
             <div className="flex items-baseline font-black tracking-tighter leading-none text-xl sm:text-2xl lg:text-3xl">
               <span className="text-[#6B0F1A] font-black italic">Racks</span>
-              <span className="text-[#FDFF00] font-bold italic lowercase mx-1 text-[0.8em]" style={{ fontFamily: "Georgia, serif" }}>on</span>
-              <span className="text-[#FDFF00] font-black italic">Rent</span>
+              <span className="text-[#FAFA33] font-bold italic lowercase mx-1 text-[0.8em]" style={{ fontFamily: "Georgia, serif" }}>on</span>
+              <span className="text-[#FAFA33] font-black italic">Rent</span>
             </div>
 
             {/* Tagline */}
             <div className="flex items-center gap-1 mt-0.5 text-[8px] sm:text-[9px] lg:text-[10px] font-black uppercase tracking-[0.18em] leading-none whitespace-nowrap">
               <span className="h-[1.5px] w-3 bg-[#6B0F1A] inline-block" />
               <span className="text-[#6B0F1A]">SUBLET SPACE.</span>
-              <span className="text-[#FDFF00]">SHARE SUCCESS.</span>
+              <span className="text-[#FAFA33]">SHARE SUCCESS.</span>
               <span className="h-[1.5px] w-3 bg-[#6B0F1A] inline-block" />
             </div>
           </div>
@@ -160,7 +160,7 @@ export default function Header({ onSelectRole }: HeaderProps) {
           <button
             type="button"
             onClick={handleListYourSpace}
-            className="inline-flex items-center gap-1 px-3 py-2 rounded-full bg-[#FDFF00] text-[#3D0710] border border-[#E6D900] text-xs font-extrabold shadow-xs cursor-pointer"
+            className="inline-flex items-center gap-1 px-3 py-2 rounded-full bg-[#FAFA33] text-[#3D0710] border border-[#E6D900] text-xs font-extrabold shadow-xs cursor-pointer"
           >
             <Store className="w-3.5 h-3.5" />
             <span className="hidden sm:inline">List Space</span>
@@ -210,13 +210,13 @@ export default function Header({ onSelectRole }: HeaderProps) {
               <div className="flex flex-col justify-center">
                 <div className="flex items-baseline font-black tracking-tighter leading-none text-2xl">
                   <span className="text-[#6B0F1A] font-black italic">Racks</span>
-                  <span className="text-[#FDFF00] font-bold italic lowercase mx-1 text-[0.8em]" style={{ fontFamily: "Georgia, serif" }}>on</span>
-                  <span className="text-[#FDFF00] font-black italic">Rent</span>
+                  <span className="text-[#FAFA33] font-bold italic lowercase mx-1 text-[0.8em]" style={{ fontFamily: "Georgia, serif" }}>on</span>
+                  <span className="text-[#FAFA33] font-black italic">Rent</span>
                 </div>
                 <div className="flex items-center gap-1 mt-0.5 text-[8px] font-black uppercase tracking-[0.18em] leading-none whitespace-nowrap">
                   <span className="h-[1.5px] w-3 bg-[#6B0F1A] inline-block" />
                   <span className="text-[#6B0F1A]">SUBLET SPACE.</span>
-                  <span className="text-[#FDFF00]">SHARE SUCCESS.</span>
+                  <span className="text-[#FAFA33]">SHARE SUCCESS.</span>
                   <span className="h-[1.5px] w-3 bg-[#6B0F1A] inline-block" />
                 </div>
               </div>
@@ -253,7 +253,7 @@ export default function Header({ onSelectRole }: HeaderProps) {
             <button
               type="button"
               onClick={handleListYourSpace}
-              className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-[#FDFF00] py-3.5 text-base font-extrabold text-[#3D0710] border border-[#E6D900] shadow-xs cursor-pointer"
+              className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-[#FAFA33] py-3.5 text-base font-extrabold text-[#3D0710] border border-[#E6D900] shadow-xs cursor-pointer"
             >
               <Store className="w-5 h-5" />
               <span>List Your Space</span>
