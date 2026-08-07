@@ -16,8 +16,8 @@ The primary action color, providing an energetic and commercial feel.
 Used for typography, dark mode strips, and brand identity retention.
 - **Black:** `#111111` (`var(--black)`) — Used for primary headings and dark strips.
 - **Charcoal:** `#242424` (`var(--charcoal)`) — Used for secondary dark backgrounds.
-- **Maroon:** `#6B0F1A` (`var(--maroon)`) — Legacy brand identity, used selectively for headings on light sections.
-- **Maroon Dark:** `#3D0710` (`var(--maroon-dark)`) — Deep contrast for maroon elements.
+- **Maroon:** `#650000` (`var(--maroon)`) — Legacy brand identity, used selectively for headings on light sections.
+- **Maroon Dark:** `#650000` (`var(--maroon-dark)`) — Deep contrast for maroon elements.
 
 ### Surfaces & Text
 - **Surface (White):** `#FFFFFF` (`var(--surface)`)

@@ -59,16 +59,16 @@ export default function AboutUs() {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-[#FFFBCC] px-4 py-1.5 text-xs sm:text-sm font-bold text-[#6B0F1A] border border-[#F0E2E4]">
-            <Sparkles className="w-3.5 h-3.5 text-[#6B0F1A]" />
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-[#FFFBCC] px-4 py-1.5 text-xs sm:text-sm font-bold text-[#650000] border border-[#F0E2E4]">
+            <Sparkles className="w-3.5 h-3.5 text-[#650000]" />
             <span>For Petrol Pump Owners & Startups</span>
           </span>
           
-          <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-[#6B0F1A] md:text-5xl leading-tight">
-            One Space. Two Businesses. <span className="bg-[#FAFA33] text-[#3D0710] px-3 py-0.5 rounded-xl inline-block border border-[#6B0F1A]/20">Endless Possibilities.</span>
+          <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-[#650000] md:text-5xl leading-tight">
+            One Space. Two Businesses. <span className="bg-[#FAFA33] text-[#650000] px-3 py-0.5 rounded-xl inline-block border border-[#650000]/20">Endless Possibilities.</span>
           </h2>
           
-          <p className="mt-4 text-lg font-bold text-[#3D0710] sm:text-xl max-w-3xl mx-auto">
+          <p className="mt-4 text-lg font-bold text-[#650000] sm:text-xl max-w-3xl mx-auto">
             Racks on Rent transforms unused spaces inside petrol pumps into affordable retail opportunities. Petrol pump owners earn rental income without making a major investment, while startups gain access to high-footfall locations and ready customers.
           </p>
         </div>
@@ -77,16 +77,16 @@ export default function AboutUs() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16 items-stretch">
           
           {/* Main Intro Text */}
-          <div className="lg:col-span-7 bg-white rounded-3xl border-2 border-[#6B0F1A] p-6 sm:p-8 shadow-[0_16px_40px_rgba(11,30,54,0.08)] flex flex-col justify-between">
+          <div className="lg:col-span-7 bg-white rounded-3xl border-2 border-[#650000] p-6 sm:p-8 shadow-[0_16px_40px_rgba(11,30,54,0.08)] flex flex-col justify-between">
             <div>
-              <span className="text-xs font-extrabold text-[#6B0F1A] uppercase tracking-wider block mb-2">
+              <span className="text-xs font-extrabold text-[#650000] uppercase tracking-wider block mb-2">
                 About the Partnership
               </span>
-              <h3 className="text-xl sm:text-2xl font-black text-[#6B0F1A] mb-4">
+              <h3 className="text-xl sm:text-2xl font-black text-[#650000] mb-4">
                 Monetise Space & Empower Retail Startups
               </h3>
               <p className="text-sm sm:text-base text-[#5F5F5F] leading-relaxed font-medium mb-4">
-                At <strong className="text-[#6B0F1A]">RACKS ON RENT</strong>, we connect petrol pump owners who have underutilized commercial space with ambitious startups, helmet brands, safety gear makers, and retail entrepreneurs.
+                At <strong className="text-[#650000]">RACKS ON RENT</strong>, we connect petrol pump owners who have underutilized commercial space with ambitious startups, helmet brands, safety gear makers, and retail entrepreneurs.
               </p>
               <p className="text-sm sm:text-base text-[#5F5F5F] leading-relaxed font-medium">
                 By unlocking unused forecourt space and retail corners, petrol pump owners create an additional source of income while providing customers with valuable products like helmets, riding gear, and accessories.
@@ -95,15 +95,15 @@ export default function AboutUs() {
 
             {/* Supporting Points Badge List */}
             <div className="mt-6 pt-6 border-t border-[#F0E2E4]">
-              <span className="text-xs font-extrabold text-[#6B0F1A] uppercase tracking-wider block mb-3 flex items-center gap-1.5">
-                <Building2 className="w-4 h-4 text-[#6B0F1A]" />
+              <span className="text-xs font-extrabold text-[#650000] uppercase tracking-wider block mb-3 flex items-center gap-1.5">
+                <Building2 className="w-4 h-4 text-[#650000]" />
                 <span>Key Objectives</span>
               </span>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                 {supportingPoints.map((point, idx) => (
-                  <div key={idx} className="flex items-center gap-2 bg-[#FFFBCC]/60 p-2 rounded-xl border border-[#6B0F1A]/10">
-                    <CheckCircle2 className="w-4 h-4 text-[#6B0F1A] flex-shrink-0" />
-                    <span className="text-xs font-bold text-[#3D0710]">{point}</span>
+                  <div key={idx} className="flex items-center gap-2 bg-[#FFFBCC]/60 p-2 rounded-xl border border-[#650000]/10">
+                    <CheckCircle2 className="w-4 h-4 text-[#650000] flex-shrink-0" />
+                    <span className="text-xs font-bold text-[#650000]">{point}</span>
                   </div>
                 ))}
               </div>
@@ -114,10 +114,10 @@ export default function AboutUs() {
           <div className="lg:col-span-5 flex flex-col gap-6">
             
             {/* Our Purpose Card */}
-            <div className="bg-[#6B0F1A] text-[#FFFBCC] rounded-3xl p-6 sm:p-8 shadow-md border-2 border-[#6B0F1A] flex-1 flex flex-col justify-between">
+            <div className="bg-[#650000] text-[#FFFBCC] rounded-3xl p-6 sm:p-8 shadow-md border-2 border-[#650000] flex-1 flex flex-col justify-between">
               <div>
                 <div className="flex items-center gap-2 mb-3">
-                  <div className="p-2 rounded-xl bg-[#FAFA33] text-[#3D0710]">
+                  <div className="p-2 rounded-xl bg-[#FAFA33] text-[#650000]">
                     <Compass className="w-5 h-5" />
                   </div>
                   <span className="text-xs font-extrabold uppercase tracking-wider text-[#FAFA33]">
@@ -134,12 +134,12 @@ export default function AboutUs() {
             </div>
 
             {/* Win-Win Card */}
-            <div className="bg-[#FFFBCC] text-[#3D0710] rounded-3xl p-6 sm:p-8 shadow-md border-2 border-[#6B0F1A]/30">
+            <div className="bg-[#FFFBCC] text-[#650000] rounded-3xl p-6 sm:p-8 shadow-md border-2 border-[#650000]/30">
               <div className="flex items-center gap-2 mb-3">
-                <div className="p-2 rounded-xl bg-[#6B0F1A] text-[#FFFBCC]">
+                <div className="p-2 rounded-xl bg-[#650000] text-[#FFFBCC]">
                   <Store className="w-5 h-5" />
                 </div>
-                <span className="text-xs font-extrabold uppercase tracking-wider text-[#6B0F1A]">
+                <span className="text-xs font-extrabold uppercase tracking-wider text-[#650000]">
                   A Win-Win Partnership
                 </span>
               </div>
@@ -155,9 +155,9 @@ export default function AboutUs() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
           
           {/* Vision (Maroon Card) */}
-          <div className="bg-[#6B0F1A] text-white rounded-3xl border-2 border-[#520a13] p-6 sm:p-8 shadow-md relative overflow-hidden group">
+          <div className="bg-[#650000] text-white rounded-3xl border-2 border-[#650000] p-6 sm:p-8 shadow-md relative overflow-hidden group">
             <div className="flex items-center gap-3 mb-4">
-              <div className="p-3 rounded-2xl bg-[#FAFA33] text-[#3D0710] border border-[#E6D900]">
+              <div className="p-3 rounded-2xl bg-[#FAFA33] text-[#650000] border border-[#E6D900]">
                 <Eye className="w-6 h-6" />
               </div>
               <div>
@@ -173,19 +173,19 @@ export default function AboutUs() {
           </div>
 
           {/* Mission (Yellow Card) */}
-          <div className="bg-[#FAFA33] text-[#3D0710] rounded-3xl border-2 border-[#E6D900] p-6 sm:p-8 shadow-md relative overflow-hidden group">
+          <div className="bg-[#FAFA33] text-[#650000] rounded-3xl border-2 border-[#E6D900] p-6 sm:p-8 shadow-md relative overflow-hidden group">
             <div className="flex items-center gap-3 mb-4">
-              <div className="p-3 rounded-2xl bg-[#6B0F1A] text-white border border-[#520a13]">
+              <div className="p-3 rounded-2xl bg-[#650000] text-white border border-[#650000]">
                 <Target className="w-6 h-6" />
               </div>
               <div>
-                <span className="text-xs font-extrabold text-[#6B0F1A] uppercase tracking-wider block">
+                <span className="text-xs font-extrabold text-[#650000] uppercase tracking-wider block">
                   Our Commitment
                 </span>
-                <h3 className="text-xl font-extrabold text-[#3D0710]">Our Mission</h3>
+                <h3 className="text-xl font-extrabold text-[#650000]">Our Mission</h3>
               </div>
             </div>
-            <p className="text-sm sm:text-base text-[#3D0710]/90 leading-relaxed font-bold">
+            <p className="text-sm sm:text-base text-[#650000]/90 leading-relaxed font-bold">
               To simplify offline retail expansion for startups while creating steady rental income streams for petrol pump owners through transparent, hassle-free space-sharing partnerships.
             </p>
           </div>
@@ -195,10 +195,10 @@ export default function AboutUs() {
         {/* Our Core Values */}
         <div className="mb-16">
           <div className="text-center max-w-2xl mx-auto mb-10">
-            <span className="text-xs font-extrabold text-[#6B0F1A] uppercase tracking-wider block">
+            <span className="text-xs font-extrabold text-[#650000] uppercase tracking-wider block">
               What Drives Us
             </span>
-            <h3 className="mt-1 text-2xl sm:text-3xl font-extrabold text-[#6B0F1A]">
+            <h3 className="mt-1 text-2xl sm:text-3xl font-extrabold text-[#650000]">
               Our Core Values
             </h3>
           </div>
@@ -212,24 +212,24 @@ export default function AboutUs() {
                   key={idx}
                   className={`rounded-2xl p-5 shadow-xs transition-all hover:-translate-y-1 flex flex-col justify-between ${
                     isMaroon
-                      ? "bg-[#6B0F1A] text-white border border-[#520a13]"
-                      : "bg-[#FAFA33] text-[#3D0710] border border-[#E6D900]"
+                      ? "bg-[#650000] text-white border border-[#650000]"
+                      : "bg-[#FAFA33] text-[#650000] border border-[#E6D900]"
                   }`}
                 >
                   <div>
                     <div
                       className={`w-10 h-10 rounded-xl flex items-center justify-center mb-3 ${
                         isMaroon
-                          ? "bg-[#FAFA33] text-[#3D0710] border border-[#E6D900]"
-                          : "bg-[#6B0F1A] text-white border border-[#520a13]"
+                          ? "bg-[#FAFA33] text-[#650000] border border-[#E6D900]"
+                          : "bg-[#650000] text-white border border-[#650000]"
                       }`}
                     >
                       <IconComponent className="w-5 h-5" />
                     </div>
-                    <h4 className={`font-extrabold text-base mb-2 ${isMaroon ? "text-white" : "text-[#3D0710]"}`}>
+                    <h4 className={`font-extrabold text-base mb-2 ${isMaroon ? "text-white" : "text-[#650000]"}`}>
                       {val.name}
                     </h4>
-                    <p className={`text-xs leading-relaxed font-medium ${isMaroon ? "text-white/80" : "text-[#3D0710]/80"}`}>
+                    <p className={`text-xs leading-relaxed font-medium ${isMaroon ? "text-white/80" : "text-[#650000]/80"}`}>
                       {val.desc}
                     </p>
                   </div>

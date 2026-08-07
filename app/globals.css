@@ -5,8 +5,8 @@
    ═══════════════════════════════════════════ */
 @theme {
   /* Core Brand Colors from theme.md */
-  --color-primary-maroon: #6B0F1A;
-  --color-dark-maroon: #3D0710;
+  --color-primary-maroon: #650000;
+  --color-dark-maroon: #650000;
   --color-lemon-yellow: #FAFA33;
   --color-flipkart-yellow: #FAFA33;
   --color-flipkart-yellow-border: #E5CE00;
@@ -17,13 +17,13 @@
   --color-soft-border: #F0E2E4;
   --color-dark-text: #1F1F1F;
   --color-muted-text: #5F5F5F;
-  --color-maroon-dark-border: #520a13;
+  --color-maroon-dark-border: #650000;
 
   /* Mappings */
-  --color-primary: #6B0F1A;
-  --color-heading: #6B0F1A;
-  --color-primary-dark: #3D0710;
-  --color-background-maroon: #3D0710;
+  --color-primary: #650000;
+  --color-heading: #650000;
+  --color-primary-dark: #650000;
+  --color-background-maroon: #650000;
   --color-accent: #FAFA33;
   --color-accent-light: #FFFBCC;
   --color-background-soft: #FFFBCC;
@@ -53,11 +53,11 @@
   --flipkart-yellow: #FAFA33;
 
   /* Maroons (Replacing black/charcoal) */
-  --black:        #3D0710;
-  --charcoal:     #6B0F1A;
-  --maroon:       #6B0F1A;
-  --maroon-dark:  #3D0710;
-  --maroon-border:#520a13;
+  --black:        #650000;
+  --charcoal:     #650000;
+  --maroon:       #650000;
+  --maroon-dark:  #650000;
+  --maroon-border:#650000;
 
   /* Text */
   --text:         #1F1F1F;
@@ -72,8 +72,8 @@
 
   /* Legacy aliases */
   --background:       #FFFDF5;
-  --primary:          #6B0F1A;
-  --primary-dark:     #3D0710;
+  --primary:          #650000;
+  --primary-dark:     #650000;
   --accent:           #FAFA33;
   --accent-light:     #FFFBCC;
 }
@@ -201,7 +201,7 @@ b, strong {
   justify-content: center;
   gap: 0.5rem;
   background-color: #FAFA33;
-  color: #3D0710;
+  color: #650000;
   border: 2px solid #E6D900;
   border-radius: 9999px;
   padding: 0.75rem 1.75rem;
@@ -238,9 +238,9 @@ b, strong {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  background-color: #6B0F1A;
+  background-color: #650000;
   color: #ffffff;
-  border: 2px solid #520a13;
+  border: 2px solid #650000;
   border-radius: 9999px;
   padding: 0.75rem 1.75rem;
   font-family: var(--font-manrope), system-ui, sans-serif;
@@ -256,7 +256,7 @@ b, strong {
 
 @media (hover: hover) and (pointer: fine) {
   .btn-secondary:hover {
-    background-color: #3D0710;
+    background-color: #650000;
     transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(107, 15, 26, 0.35);
   }

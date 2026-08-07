@@ -66,15 +66,15 @@ export default function Hero({ onSelectRole }: HeroProps) {
           {/* Left Column */}
           <div className="lg:col-span-6 space-y-2.5 sm:space-y-3 relative z-10">
             <div>
-              <span className="inline-flex items-center rounded-full bg-[#FFFBCC] px-3 py-0.5 text-[11px] sm:text-xs font-extrabold text-[#6B0F1A] border border-[#F0E2E4]">
+              <span className="inline-flex items-center rounded-full bg-[#FFFBCC] px-3 py-0.5 text-[11px] sm:text-xs font-extrabold text-[#650000] border border-[#F0E2E4]">
                 Small Space. Big Opportunity.
               </span>
             </div>
 
             {/* Archivo Black hero heading */}
-            <h1 className="font-archivo text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-black tracking-tight text-[#3D0710] leading-[1.08]">
+            <h1 className="font-archivo text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-black tracking-tight text-[#650000] leading-[1.08]">
               Turn Unused Petrol Pump Space{" "}
-              <span className="bg-[#FAFA33] text-[#3D0710] px-2 py-0.5 rounded-lg inline-block mt-0.5 border border-[#E6D900]">
+              <span className="bg-[#FAFA33] text-[#650000] px-2 py-0.5 rounded-lg inline-block mt-0.5 border border-[#E6D900]">
                 Into a New Business Opportunity
               </span>
             </h1>
@@ -87,7 +87,7 @@ export default function Hero({ onSelectRole }: HeroProps) {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 pt-0.5">
               {benefitItems.map((item, idx) => (
                 <div key={idx} className="flex items-center gap-1.5 bg-[#FFFDF5] px-2 py-1 rounded-lg border border-[#F0E2E4] shadow-xs">
-                  <div className="p-0.5 rounded-md bg-[#FFFBCC] flex-shrink-0 text-[#6B0F1A]">
+                  <div className="p-0.5 rounded-md bg-[#FFFBCC] flex-shrink-0 text-[#650000]">
                     {item.icon}
                   </div>
                   <span className="text-[11px] sm:text-xs font-bold text-[#1F1F1F] leading-tight">{item.text}</span>
@@ -105,18 +105,18 @@ export default function Hero({ onSelectRole }: HeroProps) {
                   onClick={() => handleRoleClick("bunk-owner")}
                   onMouseMove={(e) => handleMouseMoveBtn(e, setBtn1Pos)}
                   onMouseLeave={() => setBtn1Pos({ x: 0, y: 0 })}
-                  className="animate-cta-btn-1 flex-1 relative overflow-hidden inline-flex flex-col items-center justify-center gap-0.5 rounded-xl bg-[#FAFA33] border-2 border-[#E6D900] px-4 py-2 sm:py-2.5 text-[#3D0710] shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#F2E500] hover:shadow-md active:scale-[0.97] focus:outline-none cursor-pointer group"
+                  className="animate-cta-btn-1 flex-1 relative overflow-hidden inline-flex flex-col items-center justify-center gap-0.5 rounded-xl bg-[#FAFA33] border-2 border-[#E6D900] px-4 py-2 sm:py-2.5 text-[#650000] shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#F2E500] hover:shadow-md active:scale-[0.97] focus:outline-none cursor-pointer group"
                 >
                   <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out bg-gradient-to-r from-transparent via-white/40 to-transparent pointer-events-none" />
                   <div
                     style={{ transform: `translate(${btn1Pos.x}px, ${btn1Pos.y}px)` }}
                     className="transition-transform duration-200 ease-out flex flex-col items-center justify-center w-full"
                   >
-                    <div className="flex items-center gap-1.5 text-xs sm:text-sm font-black text-[#3D0710]">
+                    <div className="flex items-center gap-1.5 text-xs sm:text-sm font-black text-[#650000]">
                       <Building2 className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
                       <span>List Your Space</span>
                     </div>
-                    <span className="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider text-[#3D0710]/80 mt-0.5">
+                    <span className="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider text-[#650000]/80 mt-0.5">
                       For Petrol Pump Owners
                     </span>
                   </div>
@@ -128,7 +128,7 @@ export default function Hero({ onSelectRole }: HeroProps) {
                   onClick={() => handleRoleClick("brand-merchant")}
                   onMouseMove={(e) => handleMouseMoveBtn(e, setBtn2Pos)}
                   onMouseLeave={() => setBtn2Pos({ x: 0, y: 0 })}
-                  className="animate-cta-btn-2 flex-1 relative overflow-hidden inline-flex flex-col items-center justify-center gap-0.5 rounded-xl border-2 border-[#520a13] bg-[#6B0F1A] px-4 py-2 sm:py-2.5 text-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#3D0710] hover:shadow-md active:scale-[0.97] focus:outline-none cursor-pointer group"
+                  className="animate-cta-btn-2 flex-1 relative overflow-hidden inline-flex flex-col items-center justify-center gap-0.5 rounded-xl border-2 border-[#650000] bg-[#650000] px-4 py-2 sm:py-2.5 text-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#650000] hover:shadow-md active:scale-[0.97] focus:outline-none cursor-pointer group"
                 >
                   <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out bg-gradient-to-r from-transparent via-[#FAFA33]/20 to-transparent pointer-events-none" />
                   <div
@@ -164,9 +164,9 @@ export default function Hero({ onSelectRole }: HeroProps) {
                     style={{ transform: `translateY(${scrollY * 0.04}px)` }}
                   />
                   
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#3D0710]/70 via-[#3D0710]/20 to-transparent pointer-events-none" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#650000]/70 via-[#650000]/20 to-transparent pointer-events-none" />
 
-                  <div className="absolute bottom-3 right-3 bg-[#3D0710] text-white px-3 py-1 rounded-full border border-[#FAFA33] shadow-md flex items-center gap-1.5 text-[11px] font-bold tracking-wide z-10">
+                  <div className="absolute bottom-3 right-3 bg-[#650000] text-white px-3 py-1 rounded-full border border-[#FAFA33] shadow-md flex items-center gap-1.5 text-[11px] font-bold tracking-wide z-10">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#FAFA33] animate-ping" />
                     <span>Petrol Bunk Retail Partnership</span>
                   </div>

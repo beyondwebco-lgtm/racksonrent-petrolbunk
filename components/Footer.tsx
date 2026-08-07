@@ -5,11 +5,11 @@ import { SITE_CONFIG, NAV_LINKS } from "@/data/config";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-[#520a13] bg-[#3D0710] text-white py-8 sm:py-10">
+    <footer className="border-t border-[#650000] bg-[#650000] text-white py-8 sm:py-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Main Footer Row */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-8 pb-8 border-b border-[#520a13]">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-8 pb-8 border-b border-[#650000]">
 
           {/* Prominently Enlarged Brand Logo */}
           <div className="flex items-center gap-3">

@@ -78,10 +78,10 @@ export default function PopularCategories() {
         
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12 animate-reveal-up">
-          <span className="inline-flex rounded-full bg-[#FFFBCC] px-3.5 py-1 text-xs sm:text-sm font-extrabold text-[#6B0F1A] border border-[#F0E2E4] shadow-xs">
+          <span className="inline-flex rounded-full bg-[#FFFBCC] px-3.5 py-1 text-xs sm:text-sm font-extrabold text-[#650000] border border-[#F0E2E4] shadow-xs">
             Products &amp; Categories
           </span>
-          <h2 className="section-title-dm mt-4 text-[#3D0710]">
+          <h2 className="section-title-dm mt-4 text-[#650000]">
             Popular Product Categories
           </h2>
           <p className="body-copy mx-auto mt-3 max-w-2xl text-[#5F5F5F]">
@@ -98,10 +98,10 @@ export default function PopularCategories() {
             onClick={() => handleScroll("left")}
             disabled={!canScrollLeft}
             aria-label="Previous categories"
-            className={`absolute -left-2 sm:-left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-[#6B0F1A] text-white border-2 border-[#520a13] flex items-center justify-center shadow-lg transition-all cursor-pointer ${
+            className={`absolute -left-2 sm:-left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-[#650000] text-white border-2 border-[#650000] flex items-center justify-center shadow-lg transition-all cursor-pointer ${
               !canScrollLeft
                 ? "opacity-0 invisible"
-                : "opacity-100 visible hover:bg-[#3D0710] hover:scale-105"
+                : "opacity-100 visible hover:bg-[#650000] hover:scale-105"
             }`}
           >
             <ChevronLeft className="w-7 h-7 stroke-[2.5]" />
@@ -113,10 +113,10 @@ export default function PopularCategories() {
             onClick={() => handleScroll("right")}
             disabled={!canScrollRight}
             aria-label="Next categories"
-            className={`absolute -right-2 sm:-right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-[#6B0F1A] text-white border-2 border-[#520a13] flex items-center justify-center shadow-lg transition-all cursor-pointer ${
+            className={`absolute -right-2 sm:-right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-[#650000] text-white border-2 border-[#650000] flex items-center justify-center shadow-lg transition-all cursor-pointer ${
               !canScrollRight
                 ? "opacity-0 invisible"
-                : "opacity-100 visible hover:bg-[#3D0710] hover:scale-105"
+                : "opacity-100 visible hover:bg-[#650000] hover:scale-105"
             }`}
           >
             <ChevronRight className="w-7 h-7 stroke-[2.5]" />
@@ -140,15 +140,15 @@ export default function PopularCategories() {
                   key={cat.id}
                   className={`category-card flex-shrink-0 w-[85vw] max-w-[300px] sm:w-[calc(50%-12px)] md:w-[calc(33.333%-16px)] lg:w-[calc(25%-18px)] snap-start text-left rounded-[24px] shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group overflow-hidden ${
                     isMaroon
-                      ? "bg-[#6B0F1A] text-white border border-[#520a13] hover:border-[#FAFA33]"
-                      : "bg-[#FAFA33] text-[#3D0710] border border-[#E6D900] hover:border-[#6B0F1A]"
+                      ? "bg-[#650000] text-white border border-[#650000] hover:border-[#FAFA33]"
+                      : "bg-[#FAFA33] text-[#650000] border border-[#E6D900] hover:border-[#650000]"
                   }`}
                 >
                   {/* Image Container */}
                   <div
                     className={`relative w-full aspect-[4/3] p-6 overflow-hidden flex items-center justify-center ${
                       isMaroon
-                        ? "bg-[#3D0710]/40 border-b border-[#520a13]"
+                        ? "bg-[#650000]/40 border-b border-[#650000]"
                         : "bg-white/60 border-b border-[#E6D900]"
                     }`}
                   >
@@ -156,8 +156,8 @@ export default function PopularCategories() {
                       <span
                         className={`absolute top-3 right-3 text-[10px] font-extrabold px-2.5 py-1 rounded-full z-10 shadow-xs ${
                           isMaroon
-                            ? "bg-[#FAFA33] text-[#3D0710] border border-[#E6D900]"
-                            : "bg-[#6B0F1A] text-white border border-[#520a13]"
+                            ? "bg-[#FAFA33] text-[#650000] border border-[#E6D900]"
+                            : "bg-[#650000] text-white border border-[#650000]"
                         }`}
                       >
                         {cat.badge}
@@ -181,7 +181,7 @@ export default function PopularCategories() {
                         className={`font-bold text-lg sm:text-xl transition-colors mb-2 ${
                           isMaroon
                             ? "text-white group-hover:text-[#FAFA33]"
-                            : "text-[#3D0710] group-hover:text-[#6B0F1A]"
+                            : "text-[#650000] group-hover:text-[#650000]"
                         }`}
                       >
                         {cat.name}
@@ -189,7 +189,7 @@ export default function PopularCategories() {
 
                       <p
                         className={`text-sm leading-relaxed font-medium line-clamp-3 mb-5 ${
-                          isMaroon ? "text-white/80" : "text-[#3D0710]/80"
+                          isMaroon ? "text-white/80" : "text-[#650000]/80"
                         }`}
                       >
                         {cat.description}
@@ -200,7 +200,7 @@ export default function PopularCategories() {
                       className={`flex items-center text-sm font-extrabold transition-colors mt-auto pt-2 ${
                         isMaroon
                           ? "text-[#FAFA33] group-hover:text-white border-t border-white/10"
-                          : "text-[#6B0F1A] group-hover:text-[#3D0710] border-t border-[#3D0710]/15"
+                          : "text-[#650000] group-hover:text-[#650000] border-t border-[#650000]/15"
                       }`}
                     >
                       <span>Explore Spaces</span>

@@ -25,10 +25,10 @@ export default function RoleSelection({ onSelectRole }: RoleSelectionProps) {
         
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-8 animate-reveal-up">
-          <span className="inline-flex rounded-full bg-[#FFFBCC] px-3.5 py-1 text-xs sm:text-sm font-extrabold text-[#6B0F1A] border border-[#F0E2E4]">
+          <span className="inline-flex rounded-full bg-[#FFFBCC] px-3.5 py-1 text-xs sm:text-sm font-extrabold text-[#650000] border border-[#F0E2E4]">
             Role Selection
           </span>
-          <h2 className="section-title-archivo mt-2.5 text-[#6B0F1A]">
+          <h2 className="section-title-archivo mt-2.5 text-[#650000]">
             Choose What Best Describes You
           </h2>
         </div>
@@ -44,16 +44,16 @@ export default function RoleSelection({ onSelectRole }: RoleSelectionProps) {
                 key={card.id}
                 className={`rounded-3xl p-6 sm:p-8 flex flex-col justify-between group shadow-lg transition-all duration-300 ${
                   isMaroon
-                    ? "bg-[#6B0F1A] text-white border-2 border-[#520a13]"
-                    : "bg-[#FAFA33] text-[#3D0710] border-2 border-[#E6D900]"
+                    ? "bg-[#650000] text-white border-2 border-[#650000]"
+                    : "bg-[#FAFA33] text-[#650000] border-2 border-[#E6D900]"
                 }`}
               >
                 <div>
                   <div
                     className={`flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-2xl mb-4 sm:mb-5 shadow-xs ${
                       isMaroon
-                        ? "bg-[#FAFA33] text-[#3D0710] border border-[#E6D900]"
-                        : "bg-[#6B0F1A] text-white border border-[#520a13]"
+                        ? "bg-[#FAFA33] text-[#650000] border border-[#E6D900]"
+                        : "bg-[#650000] text-white border border-[#650000]"
                     }`}
                   >
                     {isBunkOwner ? <Building2 className="w-5 h-5 sm:w-6 sm:h-6" /> : <Store className="w-5 h-5 sm:w-6 sm:h-6" />}
@@ -61,7 +61,7 @@ export default function RoleSelection({ onSelectRole }: RoleSelectionProps) {
 
                   <h3
                     className={`text-xl sm:text-2xl font-extrabold tracking-tight mb-2 sm:mb-3 ${
-                      isMaroon ? "text-white" : "text-[#3D0710]"
+                      isMaroon ? "text-white" : "text-[#650000]"
                     }`}
                   >
                     {card.heading}
@@ -69,7 +69,7 @@ export default function RoleSelection({ onSelectRole }: RoleSelectionProps) {
 
                   <p
                     className={`text-xs sm:text-sm leading-relaxed mb-4 sm:mb-5 font-medium ${
-                      isMaroon ? "text-white/80" : "text-[#3D0710]/80"
+                      isMaroon ? "text-white/80" : "text-[#650000]/80"
                     }`}
                   >
                     {card.text}
@@ -81,12 +81,12 @@ export default function RoleSelection({ onSelectRole }: RoleSelectionProps) {
                       <div key={bIdx} className="flex items-start gap-2">
                         <CheckCircle2
                           className={`w-4 h-4 flex-shrink-0 mt-0.5 ${
-                            isMaroon ? "text-[#FAFA33]" : "text-[#6B0F1A]"
+                            isMaroon ? "text-[#FAFA33]" : "text-[#650000]"
                           }`}
                         />
                         <span
                           className={`text-xs sm:text-[13px] font-bold leading-snug ${
-                            isMaroon ? "text-white/95" : "text-[#3D0710]"
+                            isMaroon ? "text-white/95" : "text-[#650000]"
                           }`}
                         >
                           {benefit}

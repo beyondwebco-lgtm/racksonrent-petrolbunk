@@ -56,8 +56,8 @@ export default function WhyChooseUs() {
                 key={item.id}
                 className={`group relative overflow-hidden rounded-3xl p-6 min-h-[210px] lg:min-h-[190px] flex h-full flex-col justify-between shadow-sm hover:shadow-xl transition-all duration-300 ${
                   isMaroon
-                    ? "bg-[#6B0F1A] text-white border border-[#520a13] hover:border-[#FAFA33]"
-                    : "bg-[#FAFA33] text-[#3D0710] border border-[#E6D900] hover:border-[#6B0F1A]"
+                    ? "bg-[#650000] text-white border border-[#650000] hover:border-[#FAFA33]"
+                    : "bg-[#FAFA33] text-[#650000] border border-[#E6D900] hover:border-[#650000]"
                 }`}
               >
                 <div>
@@ -66,8 +66,8 @@ export default function WhyChooseUs() {
                     <div
                       className={`flex h-12 w-12 items-center justify-center rounded-xl transition-all duration-300 flex-shrink-0 ${
                         isMaroon
-                          ? "bg-[#FAFA33] text-[#3D0710] border border-[#E6D900] group-hover:bg-white group-hover:scale-105"
-                          : "bg-[#6B0F1A] text-white border border-[#520a13] group-hover:bg-[#3D0710] group-hover:scale-105"
+                          ? "bg-[#FAFA33] text-[#650000] border border-[#E6D900] group-hover:bg-white group-hover:scale-105"
+                          : "bg-[#650000] text-white border border-[#650000] group-hover:bg-[#650000] group-hover:scale-105"
                       }`}
                     >
                       <IconComp size={23} strokeWidth={1.8} />
@@ -77,8 +77,8 @@ export default function WhyChooseUs() {
                       <span
                         className={`inline-flex items-center rounded-full px-3 py-1 text-[11px] font-bold tracking-wider uppercase shadow-xs ${
                           isMaroon
-                            ? "bg-[#FAFA33] text-[#3D0710] border border-[#E6D900]"
-                            : "bg-[#6B0F1A] text-white border border-[#520a13]"
+                            ? "bg-[#FAFA33] text-[#650000] border border-[#E6D900]"
+                            : "bg-[#650000] text-white border border-[#650000]"
                         }`}
                       >
                         {item.badge}
@@ -86,7 +86,7 @@ export default function WhyChooseUs() {
                     ) : (
                       <ArrowUpRight
                         className={`h-5 w-5 opacity-0 transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:opacity-100 ${
-                          isMaroon ? "text-[#FAFA33]" : "text-[#6B0F1A]"
+                          isMaroon ? "text-[#FAFA33]" : "text-[#650000]"
                         }`}
                       />
                     )}
@@ -95,14 +95,14 @@ export default function WhyChooseUs() {
                   {/* Card Title & Description */}
                   <h3
                     className={`card-title font-black transition-colors ${
-                      isMaroon ? "text-white group-hover:text-[#FAFA33]" : "text-[#3D0710] group-hover:text-[#6B0F1A]"
+                      isMaroon ? "text-white group-hover:text-[#FAFA33]" : "text-[#650000] group-hover:text-[#650000]"
                     }`}
                   >
                     {item.title}
                   </h3>
                   <p
                     className={`mt-2.5 text-[15px] leading-6 font-medium ${
-                      isMaroon ? "text-white/80" : "text-[#3D0710]/80"
+                      isMaroon ? "text-white/80" : "text-[#650000]/80"
                     }`}
                   >
                     {item.description}

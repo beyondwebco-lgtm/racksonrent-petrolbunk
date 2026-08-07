@@ -4,7 +4,7 @@ import { SITE_CONFIG } from "@/data/config";
 
 export default function TopBar() {
   return (
-    <div className="bg-[#3D0710] text-white text-xs border-b border-[#520a13] py-1.5 px-4 sm:px-6 lg:px-8 font-medium">
+    <div className="bg-[#650000] text-white text-xs border-b border-[#650000] py-1.5 px-4 sm:px-6 lg:px-8 font-medium">
       <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2 sm:gap-4">
         
         {/* Left Side */}

@@ -17,10 +17,10 @@ export default function FAQ() {
         
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-8 animate-reveal-up">
-          <span className="inline-flex rounded-full bg-[#FFFBCC] px-3.5 py-1 text-xs sm:text-sm font-extrabold text-[#6B0F1A] border border-[#F0E2E4]">
+          <span className="inline-flex rounded-full bg-[#FFFBCC] px-3.5 py-1 text-xs sm:text-sm font-extrabold text-[#650000] border border-[#F0E2E4]">
             Frequently Asked Questions
           </span>
-          <h2 className="section-title-dm mt-2.5 text-[#6B0F1A]">
+          <h2 className="section-title-dm mt-2.5 text-[#650000]">
             Everything You Need to Know
           </h2>
           <p className="body-copy mx-auto mt-2 max-w-2xl text-[#5F5F5F]">
@@ -42,13 +42,13 @@ export default function FAQ() {
                   onClick={() => toggleFAQ(faq.id)}
                   className="w-full px-5 py-3 sm:py-3.5 flex items-center justify-between text-left gap-3.5 cursor-pointer hover:bg-[#FFFBCC]/50 transition-colors"
                 >
-                  <span className="font-extrabold text-sm sm:text-base text-[#6B0F1A] flex items-center gap-2.5">
-                    <HelpCircle className={`w-5 h-5 flex-shrink-0 ${isOpen ? 'text-[#6B0F1A]' : 'text-[#6B0F1A]'}`} />
+                  <span className="font-extrabold text-sm sm:text-base text-[#650000] flex items-center gap-2.5">
+                    <HelpCircle className={`w-5 h-5 flex-shrink-0 ${isOpen ? 'text-[#650000]' : 'text-[#650000]'}`} />
                     <span>{faq.question}</span>
                   </span>
                   <ChevronDown
                     className={`w-5 h-5 flex-shrink-0 transition-transform duration-300 ${
-                      isOpen ? "rotate-180 text-[#6B0F1A]" : "text-[#6B0F1A]"
+                      isOpen ? "rotate-180 text-[#650000]" : "text-[#650000]"
                     }`}
                   />
                 </button>

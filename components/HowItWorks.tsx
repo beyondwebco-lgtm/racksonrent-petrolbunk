@@ -4,10 +4,10 @@ import { ArrowRight, Store, Zap } from "lucide-react";
 
 export default function HowItWorks() {
   return (
-    <section className="section-padding bg-[#3D0710] overflow-hidden" id="how-it-works">
+    <section className="section-padding bg-[#650000] overflow-hidden" id="how-it-works">
       <div className="container-main">
         
-        <div className="relative rounded-3xl border border-[#520a13] bg-[#6B0F1A] shadow-xl overflow-hidden group p-6 sm:p-10 text-center animate-reveal-up">
+        <div className="relative rounded-3xl border border-[#650000] bg-[#650000] shadow-xl overflow-hidden group p-6 sm:p-10 text-center animate-reveal-up">
           {/* Decorative Elements */}
           <div className="absolute top-0 right-0 w-64 h-64 bg-[#FAFA33]/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
           <div className="absolute bottom-0 left-0 w-48 h-48 bg-[#FAFA33]/5 rounded-full blur-2xl translate-y-1/3 -translate-x-1/4"></div>

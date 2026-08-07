@@ -68,10 +68,10 @@ export default function SpaceTypes() {
         
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-8 animate-reveal-up">
-          <span className="inline-flex rounded-full bg-[#FFFBCC] px-3.5 py-1 text-xs sm:text-sm font-extrabold text-[#6B0F1A] border border-[#F0E2E4]">
+          <span className="inline-flex rounded-full bg-[#FFFBCC] px-3.5 py-1 text-xs sm:text-sm font-extrabold text-[#650000] border border-[#F0E2E4]">
             Available Formats
           </span>
-          <h2 className="section-title-dm mt-2.5 text-[#6B0F1A]">
+          <h2 className="section-title-dm mt-2.5 text-[#650000]">
             What Kind of Space Can Be Offered?
           </h2>
           <p className="body-copy mx-auto mt-2 max-w-2xl text-[#5F5F5F]">
@@ -90,7 +90,7 @@ export default function SpaceTypes() {
           {/* Navigation Arrows */}
           <button 
             onClick={handlePrev}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 sm:-translate-x-6 z-10 p-2.5 sm:p-3 rounded-full bg-[#6B0F1A] border-2 border-[#FAFA33] text-white shadow-lg hover:bg-[#FAFA33] hover:text-[#3D0710] hover:border-[#E6D900] transition-colors focus:outline-none focus:ring-2 focus:ring-[#FAFA33]"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 sm:-translate-x-6 z-10 p-2.5 sm:p-3 rounded-full bg-[#650000] border-2 border-[#FAFA33] text-white shadow-lg hover:bg-[#FAFA33] hover:text-[#650000] hover:border-[#E6D900] transition-colors focus:outline-none focus:ring-2 focus:ring-[#FAFA33]"
             aria-label="Previous space type"
           >
             <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
@@ -98,7 +98,7 @@ export default function SpaceTypes() {
           
           <button 
             onClick={handleNext}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 sm:translate-x-6 z-10 p-2.5 sm:p-3 rounded-full bg-[#6B0F1A] border-2 border-[#FAFA33] text-white shadow-lg hover:bg-[#FAFA33] hover:text-[#3D0710] hover:border-[#E6D900] transition-colors focus:outline-none focus:ring-2 focus:ring-[#FAFA33]"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 sm:translate-x-6 z-10 p-2.5 sm:p-3 rounded-full bg-[#650000] border-2 border-[#FAFA33] text-white shadow-lg hover:bg-[#FAFA33] hover:text-[#650000] hover:border-[#E6D900] transition-colors focus:outline-none focus:ring-2 focus:ring-[#FAFA33]"
             aria-label="Next space type"
           >
             <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
@@ -114,7 +114,7 @@ export default function SpaceTypes() {
             {COMPACT_SPACE_TYPES.map((item) => (
               <div
                 key={item.id}
-                className="snap-center shrink-0 w-[85vw] sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] h-[400px] sm:h-[450px] card-base hover:!border-[#6B0F1A] flex flex-col group overflow-hidden !p-0 relative"
+                className="snap-center shrink-0 w-[85vw] sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] h-[400px] sm:h-[450px] card-base hover:!border-[#650000] flex flex-col group overflow-hidden !p-0 relative"
               >
                 {/* Full-bleed Image */}
                 <Image
@@ -126,7 +126,7 @@ export default function SpaceTypes() {
                 />
                 
                 {/* Gradient Overlay for text readability */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#3D0710]/95 via-[#3D0710]/40 to-transparent transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#650000]/95 via-[#650000]/40 to-transparent transition-opacity duration-300" />
                 
                 {/* Content Section (Overlaid at Bottom) */}
                 <div className="absolute inset-0 p-5 sm:p-6 flex flex-col justify-end z-10 text-white">
