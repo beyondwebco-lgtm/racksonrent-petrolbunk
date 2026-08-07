@@ -18,28 +18,6 @@ export const POPULAR_CATEGORIES: CategoryItem[] = [
     badge: "Trending"
   },
   {
-    id: "yoga-essentials",
-    name: "Yoga Essentials",
-    description: "Quality yoga mats, blocks, and straps perfect for maintaining a balanced lifestyle and wellness routine.",
-    image: "/images/categories/yoga-essentials.svg",
-    alt: "Yoga Essentials",
-  },
-  {
-    id: "wellness-products",
-    name: "Wellness Products",
-    description: "A curated selection of daily wellness products, vitamins, and natural immunity boosters.",
-    image: "/images/categories/wellness-products.svg",
-    alt: "Wellness Products",
-    badge: "Popular"
-  },
-  {
-    id: "supplements",
-    name: "Health Supplements",
-    description: "Premium health supplements, multivitamins, and dietary additions to support active daily living.",
-    image: "/images/categories/supplements.svg",
-    alt: "Health Supplements"
-  },
-  {
     id: "rider-helmet",
     name: "Rider Helmets",
     description: "ISI-certified motorcycle helmets offering maximum safety, comfort, and sleek design for daily commuters.",
@@ -61,13 +39,6 @@ export const POPULAR_CATEGORIES: CategoryItem[] = [
     image: "/images/categories/phone-mount.webp",
     alt: "Mobile Phone Mounts",
     badge: "Best Seller"
-  },
-  {
-    id: "personal-care",
-    name: "Personal Care",
-    description: "Travel-friendly personal care items, wet wipes, sanitizers, and hygiene essentials.",
-    image: "/images/categories/personal-care.webp",
-    alt: "Personal Care"
   },
   {
     id: "packaged-snacks",
@@ -97,14 +68,6 @@ export const POPULAR_CATEGORIES: CategoryItem[] = [
     description: "Essential fitness gear including resistance bands, shaker bottles, and gym gloves.",
     image: "/images/categories/fitness-accessories.svg",
     alt: "Fitness Accessories"
-  },
-  {
-    id: "first-aid-pouch",
-    name: "First Aid Pouches",
-    description: "Compact and complete first aid kits and medical pouches for emergency readiness during travel.",
-    image: "/images/categories/first-aid-pouch.webp",
-    alt: "First Aid Pouches",
-    badge: "Safety First"
   },
   {
     id: "cold-beverage",
