@@ -7,8 +7,8 @@
   /* Core Brand Colors from theme.md */
   --color-primary-maroon: #6B0F1A;
   --color-dark-maroon: #3D0710;
-  --color-lemon-yellow: #FFF100;
-  --color-flipkart-yellow: #FFE500;
+  --color-lemon-yellow: #FDFF00;
+  --color-flipkart-yellow: #FDFF00;
   --color-flipkart-yellow-border: #E5CE00;
   --color-yellow-border: #E6D900;
   --color-yellow-hover: #F2E500;
@@ -24,7 +24,7 @@
   --color-heading: #6B0F1A;
   --color-primary-dark: #3D0710;
   --color-background-maroon: #3D0710;
-  --color-accent: #FFF100;
+  --color-accent: #FDFF00;
   --color-accent-light: #FFFBCC;
   --color-background-soft: #FFFBCC;
   --color-background: #FFFDF5;
@@ -44,13 +44,13 @@
    ═══════════════════════════════════════════ */
 :root {
   /* Yellow scale */
-  --yellow:       #FFF100;
+  --yellow:       #FDFF00;
   --yellow-bright:#FFFBCC;
   --yellow-soft:  #FFFBCC;
   --yellow-pale:  #FFFDF5;
   --yellow-hover: #F2E500;
   --yellow-border:#E6D900;
-  --flipkart-yellow: #FFE500;
+  --flipkart-yellow: #FDFF00;
 
   /* Maroons (Replacing black/charcoal) */
   --black:        #3D0710;
@@ -74,7 +74,7 @@
   --background:       #FFFDF5;
   --primary:          #6B0F1A;
   --primary-dark:     #3D0710;
-  --accent:           #FFF100;
+  --accent:           #FDFF00;
   --accent-light:     #FFFBCC;
 }
 
@@ -200,7 +200,7 @@ b, strong {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  background-color: #FFF100;
+  background-color: #FDFF00;
   color: #3D0710;
   border: 2px solid #E6D900;
   border-radius: 9999px;
@@ -267,7 +267,7 @@ b, strong {
 }
 
 .btn-secondary:focus-visible {
-  outline: 3px solid #FFF100;
+  outline: 3px solid #FDFF00;
   outline-offset: 2px;
 }
 

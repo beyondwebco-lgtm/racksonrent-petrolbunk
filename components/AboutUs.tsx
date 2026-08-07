@@ -65,7 +65,7 @@ export default function AboutUs() {
           </span>
           
           <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-[#6B0F1A] md:text-5xl leading-tight">
-            One Space. Two Businesses. <span className="bg-[#FFF100] text-[#3D0710] px-3 py-0.5 rounded-xl inline-block border border-[#6B0F1A]/20">Endless Possibilities.</span>
+            One Space. Two Businesses. <span className="bg-[#FDFF00] text-[#3D0710] px-3 py-0.5 rounded-xl inline-block border border-[#6B0F1A]/20">Endless Possibilities.</span>
           </h2>
           
           <p className="mt-4 text-lg font-bold text-[#3D0710] sm:text-xl max-w-3xl mx-auto">
@@ -117,10 +117,10 @@ export default function AboutUs() {
             <div className="bg-[#6B0F1A] text-[#FFFBCC] rounded-3xl p-6 sm:p-8 shadow-md border-2 border-[#6B0F1A] flex-1 flex flex-col justify-between">
               <div>
                 <div className="flex items-center gap-2 mb-3">
-                  <div className="p-2 rounded-xl bg-[#FFF100] text-[#3D0710]">
+                  <div className="p-2 rounded-xl bg-[#FDFF00] text-[#3D0710]">
                     <Compass className="w-5 h-5" />
                   </div>
-                  <span className="text-xs font-extrabold uppercase tracking-wider text-[#FFF100]">
+                  <span className="text-xs font-extrabold uppercase tracking-wider text-[#FDFF00]">
                     Our Core Model
                   </span>
                 </div>
@@ -157,11 +157,11 @@ export default function AboutUs() {
           {/* Vision (Maroon Card) */}
           <div className="bg-[#6B0F1A] text-white rounded-3xl border-2 border-[#520a13] p-6 sm:p-8 shadow-md relative overflow-hidden group">
             <div className="flex items-center gap-3 mb-4">
-              <div className="p-3 rounded-2xl bg-[#FFF100] text-[#3D0710] border border-[#E6D900]">
+              <div className="p-3 rounded-2xl bg-[#FDFF00] text-[#3D0710] border border-[#E6D900]">
                 <Eye className="w-6 h-6" />
               </div>
               <div>
-                <span className="text-xs font-extrabold text-[#FFF100] uppercase tracking-wider block">
+                <span className="text-xs font-extrabold text-[#FDFF00] uppercase tracking-wider block">
                   Future Roadmap
                 </span>
                 <h3 className="text-xl font-extrabold text-white">Our Vision</h3>
@@ -173,7 +173,7 @@ export default function AboutUs() {
           </div>
 
           {/* Mission (Yellow Card) */}
-          <div className="bg-[#FFF100] text-[#3D0710] rounded-3xl border-2 border-[#E6D900] p-6 sm:p-8 shadow-md relative overflow-hidden group">
+          <div className="bg-[#FDFF00] text-[#3D0710] rounded-3xl border-2 border-[#E6D900] p-6 sm:p-8 shadow-md relative overflow-hidden group">
             <div className="flex items-center gap-3 mb-4">
               <div className="p-3 rounded-2xl bg-[#6B0F1A] text-white border border-[#520a13]">
                 <Target className="w-6 h-6" />
@@ -213,14 +213,14 @@ export default function AboutUs() {
                   className={`rounded-2xl p-5 shadow-xs transition-all hover:-translate-y-1 flex flex-col justify-between ${
                     isMaroon
                       ? "bg-[#6B0F1A] text-white border border-[#520a13]"
-                      : "bg-[#FFF100] text-[#3D0710] border border-[#E6D900]"
+                      : "bg-[#FDFF00] text-[#3D0710] border border-[#E6D900]"
                   }`}
                 >
                   <div>
                     <div
                       className={`w-10 h-10 rounded-xl flex items-center justify-center mb-3 ${
                         isMaroon
-                          ? "bg-[#FFF100] text-[#3D0710] border border-[#E6D900]"
+                          ? "bg-[#FDFF00] text-[#3D0710] border border-[#E6D900]"
                           : "bg-[#6B0F1A] text-white border border-[#520a13]"
                       }`}
                     >

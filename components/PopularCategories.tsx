@@ -140,8 +140,8 @@ export default function PopularCategories() {
                   key={cat.id}
                   className={`category-card flex-shrink-0 w-[85vw] max-w-[300px] sm:w-[calc(50%-12px)] md:w-[calc(33.333%-16px)] lg:w-[calc(25%-18px)] snap-start text-left rounded-[24px] shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group overflow-hidden ${
                     isMaroon
-                      ? "bg-[#6B0F1A] text-white border border-[#520a13] hover:border-[#FFF100]"
-                      : "bg-[#FFF100] text-[#3D0710] border border-[#E6D900] hover:border-[#6B0F1A]"
+                      ? "bg-[#6B0F1A] text-white border border-[#520a13] hover:border-[#FDFF00]"
+                      : "bg-[#FDFF00] text-[#3D0710] border border-[#E6D900] hover:border-[#6B0F1A]"
                   }`}
                 >
                   {/* Image Container */}
@@ -156,7 +156,7 @@ export default function PopularCategories() {
                       <span
                         className={`absolute top-3 right-3 text-[10px] font-extrabold px-2.5 py-1 rounded-full z-10 shadow-xs ${
                           isMaroon
-                            ? "bg-[#FFF100] text-[#3D0710] border border-[#E6D900]"
+                            ? "bg-[#FDFF00] text-[#3D0710] border border-[#E6D900]"
                             : "bg-[#6B0F1A] text-white border border-[#520a13]"
                         }`}
                       >
@@ -180,7 +180,7 @@ export default function PopularCategories() {
                       <h3
                         className={`font-bold text-lg sm:text-xl transition-colors mb-2 ${
                           isMaroon
-                            ? "text-white group-hover:text-[#FFF100]"
+                            ? "text-white group-hover:text-[#FDFF00]"
                             : "text-[#3D0710] group-hover:text-[#6B0F1A]"
                         }`}
                       >
@@ -199,7 +199,7 @@ export default function PopularCategories() {
                     <button
                       className={`flex items-center text-sm font-extrabold transition-colors mt-auto pt-2 ${
                         isMaroon
-                          ? "text-[#FFF100] group-hover:text-white border-t border-white/10"
+                          ? "text-[#FDFF00] group-hover:text-white border-t border-white/10"
                           : "text-[#6B0F1A] group-hover:text-[#3D0710] border-t border-[#3D0710]/15"
                       }`}
                     >
