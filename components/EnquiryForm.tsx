@@ -109,7 +109,7 @@ ${detailsText}`;
   return (
     <section className="py-10 sm:py-14 lg:py-16 bg-[#FFFDF5] border-t border-[#F0E2E4]" id="contact">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-8">
           <span className="inline-flex rounded-full bg-[#FFFBCC] px-3.5 py-1 text-xs sm:text-sm font-extrabold text-[#6B0F1A] border border-[#F0E2E4]">
@@ -129,11 +129,10 @@ ${detailsText}`;
             <button
               type="button"
               onClick={() => handleRoleSelect("bunk-owner")}
-              className={`flex-1 min-w-[130px] flex items-center justify-center gap-2 py-2.5 px-3.5 rounded-xl text-xs sm:text-sm font-extrabold transition-all cursor-pointer ${
-                role === "bunk-owner"
+              className={`flex-1 min-w-[130px] flex items-center justify-center gap-2 py-2.5 px-3.5 rounded-xl text-xs sm:text-sm font-extrabold transition-all cursor-pointer ${role === "bunk-owner"
                   ? "bg-[#6B0F1A] text-[#FFFBCC] shadow-xs"
                   : "text-[#6B0F1A] hover:bg-[#FFFBCC]"
-              }`}
+                }`}
             >
               <Building2 className="w-4 h-4" />
               <span>Petrol Pump Owner</span>
@@ -142,11 +141,10 @@ ${detailsText}`;
             <button
               type="button"
               onClick={() => handleRoleSelect("brand-merchant")}
-              className={`flex-1 min-w-[130px] flex items-center justify-center gap-2 py-2.5 px-3.5 rounded-xl text-xs sm:text-sm font-extrabold transition-all cursor-pointer ${
-                role === "brand-merchant"
+              className={`flex-1 min-w-[130px] flex items-center justify-center gap-2 py-2.5 px-3.5 rounded-xl text-xs sm:text-sm font-extrabold transition-all cursor-pointer ${role === "brand-merchant"
                   ? "bg-[#6B0F1A] text-[#FFFBCC] shadow-xs"
                   : "text-[#6B0F1A] hover:bg-[#FFFBCC]"
-              }`}
+                }`}
             >
               <Store className="w-4 h-4" />
               <span>Startup & Brand</span>
@@ -155,11 +153,10 @@ ${detailsText}`;
             <button
               type="button"
               onClick={() => handleRoleSelect("general")}
-              className={`flex-1 min-w-[130px] flex items-center justify-center gap-2 py-2.5 px-3.5 rounded-xl text-xs sm:text-sm font-extrabold transition-all cursor-pointer ${
-                role === "general"
+              className={`flex-1 min-w-[130px] flex items-center justify-center gap-2 py-2.5 px-3.5 rounded-xl text-xs sm:text-sm font-extrabold transition-all cursor-pointer ${role === "general"
                   ? "bg-[#6B0F1A] text-[#FFFBCC] shadow-xs"
                   : "text-[#6B0F1A] hover:bg-[#FFFBCC]"
-              }`}
+                }`}
             >
               <HelpCircle className="w-4 h-4" />
               <span>General Enquiry</span>
@@ -190,9 +187,8 @@ ${detailsText}`;
                 value={formData.fullName}
                 onChange={handleChange}
                 placeholder="e.g. Rahul Sharma"
-                className={`w-full rounded-xl border border-[#F0E2E4] bg-white px-3.5 py-2.5 h-11 text-[#1F1F1F] outline-none transition placeholder:text-[#5F5F5F]/70 focus:border-[#6B0F1A] focus:ring-4 focus:ring-[#FFFBCC] text-sm ${
-                  errors.fullName ? "border-red-500 bg-red-50/30" : ""
-                }`}
+                className={`w-full rounded-xl border border-[#F0E2E4] bg-white px-3.5 py-2.5 h-11 text-[#1F1F1F] outline-none transition placeholder:text-[#5F5F5F]/70 focus:border-[#6B0F1A] focus:ring-4 focus:ring-[#FFFBCC] text-sm ${errors.fullName ? "border-red-500 bg-red-50/30" : ""
+                  }`}
               />
               {errors.fullName && <p className="text-xs text-red-600 mt-1 font-semibold">{errors.fullName}</p>}
             </div>
@@ -210,9 +206,8 @@ ${detailsText}`;
                   value={formData.bunkName}
                   onChange={handleChange}
                   placeholder="e.g. Highway Fuel Station (HPCL)"
-                  className={`w-full rounded-xl border border-[#F0E2E4] bg-white px-3.5 py-2.5 h-11 text-[#1F1F1F] outline-none transition placeholder:text-[#5F5F5F]/70 focus:border-[#6B0F1A] focus:ring-4 focus:ring-[#FFFBCC] text-sm ${
-                    errors.bunkName ? "border-red-500 bg-red-50/30" : ""
-                  }`}
+                  className={`w-full rounded-xl border border-[#F0E2E4] bg-white px-3.5 py-2.5 h-11 text-[#1F1F1F] outline-none transition placeholder:text-[#5F5F5F]/70 focus:border-[#6B0F1A] focus:ring-4 focus:ring-[#FFFBCC] text-sm ${errors.bunkName ? "border-red-500 bg-red-50/30" : ""
+                    }`}
                 />
                 {errors.bunkName && <p className="text-xs text-red-600 mt-1 font-semibold">{errors.bunkName}</p>}
               </div>
@@ -231,9 +226,8 @@ ${detailsText}`;
                   value={formData.brandName}
                   onChange={handleChange}
                   placeholder="e.g. Apex Helmets & Rider Gear"
-                  className={`w-full rounded-xl border border-[#F0E2E4] bg-white px-3.5 py-2.5 h-11 text-[#1F1F1F] outline-none transition placeholder:text-[#5F5F5F]/70 focus:border-[#6B0F1A] focus:ring-4 focus:ring-[#FFFBCC] text-sm ${
-                    errors.brandName ? "border-red-500 bg-red-50/30" : ""
-                  }`}
+                  className={`w-full rounded-xl border border-[#F0E2E4] bg-white px-3.5 py-2.5 h-11 text-[#1F1F1F] outline-none transition placeholder:text-[#5F5F5F]/70 focus:border-[#6B0F1A] focus:ring-4 focus:ring-[#FFFBCC] text-sm ${errors.brandName ? "border-red-500 bg-red-50/30" : ""
+                    }`}
                 />
                 {errors.brandName && <p className="text-xs text-red-600 mt-1 font-semibold">{errors.brandName}</p>}
               </div>
@@ -252,9 +246,8 @@ ${detailsText}`;
                   value={formData.phone}
                   onChange={handleChange}
                   placeholder="7995424477"
-                  className={`w-full rounded-xl border border-[#F0E2E4] bg-white px-3.5 py-2.5 h-11 text-[#1F1F1F] outline-none transition placeholder:text-[#5F5F5F]/70 focus:border-[#6B0F1A] focus:ring-4 focus:ring-[#FFFBCC] text-sm ${
-                    errors.phone ? "border-red-500 bg-red-50/30" : ""
-                  }`}
+                  className={`w-full rounded-xl border border-[#F0E2E4] bg-white px-3.5 py-2.5 h-11 text-[#1F1F1F] outline-none transition placeholder:text-[#5F5F5F]/70 focus:border-[#6B0F1A] focus:ring-4 focus:ring-[#FFFBCC] text-sm ${errors.phone ? "border-red-500 bg-red-50/30" : ""
+                    }`}
                 />
                 {errors.phone && <p className="text-xs text-red-600 mt-1 font-semibold">{errors.phone}</p>}
               </div>
@@ -270,9 +263,8 @@ ${detailsText}`;
                   value={formData.city || initialSearchValues?.location || ""}
                   onChange={handleChange}
                   placeholder="e.g. Hyderabad"
-                  className={`w-full rounded-xl border border-[#F0E2E4] bg-white px-3.5 py-2.5 h-11 text-[#1F1F1F] outline-none transition placeholder:text-[#5F5F5F]/70 focus:border-[#6B0F1A] focus:ring-4 focus:ring-[#FFFBCC] text-sm ${
-                    errors.city ? "border-red-500 bg-red-50/30" : ""
-                  }`}
+                  className={`w-full rounded-xl border border-[#F0E2E4] bg-white px-3.5 py-2.5 h-11 text-[#1F1F1F] outline-none transition placeholder:text-[#5F5F5F]/70 focus:border-[#6B0F1A] focus:ring-4 focus:ring-[#FFFBCC] text-sm ${errors.city ? "border-red-500 bg-red-50/30" : ""
+                    }`}
                 />
                 {errors.city && <p className="text-xs text-red-600 mt-1 font-semibold">{errors.city}</p>}
               </div>
