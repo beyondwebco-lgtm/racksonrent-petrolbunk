@@ -1,4 +1,4 @@
-﻿import React from "react";
+import React from "react";
 import { CheckCircle2, Building2, Store } from "lucide-react";
 import { BENEFITS_COMPARISON } from "@/data/benefits";
 
@@ -25,14 +25,14 @@ export default function Benefits() {
         {/* 2-Column Comparison */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           
-          {/* Petrol Pump Owner */}
-          <div className="rounded-3xl border-2 border-[#F0E2E4] bg-white p-8 shadow-[0_12px_35px_rgba(11,30,54,0.06)] hover:border-[#6B0F1A]/30 transition-all flex flex-col justify-between">
+          {/* Petrol Pump Owner (Maroon Card) */}
+          <div className="rounded-3xl border-2 border-[#520a13] bg-[#6B0F1A] text-white p-8 shadow-xl hover:border-[#F4E409] transition-all flex flex-col justify-between">
             <div>
-              <div className="flex items-center gap-3 mb-6 border-b border-[#F0E2E4] pb-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#FFF6A3] text-[#6B0F1A]">
+              <div className="flex items-center gap-3 mb-6 border-b border-white/10 pb-4">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#F4E409] text-[#3D0710] border border-[#E2D308]">
                   <Building2 className="w-6 h-6" />
                 </div>
-                <h3 className="text-2xl font-black text-[#6B0F1A]">
+                <h3 className="text-2xl font-black text-white">
                   {petrolPumpOwners.title}
                 </h3>
               </div>
@@ -40,8 +40,8 @@ export default function Benefits() {
               <div className="space-y-4">
                 {petrolPumpOwners.points.map((point, idx) => (
                   <div key={idx} className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-[#6B0F1A] flex-shrink-0 mt-0.5" />
-                    <span className="text-sm sm:text-base font-extrabold text-[#1F1F1F]">
+                    <CheckCircle2 className="w-5 h-5 text-[#F4E409] flex-shrink-0 mt-0.5" />
+                    <span className="text-sm sm:text-base font-extrabold text-white/95">
                       {point}
                     </span>
                   </div>
@@ -50,14 +50,14 @@ export default function Benefits() {
             </div>
           </div>
 
-          {/* Startup or Retail Entrepreneur */}
-          <div className="rounded-3xl border-2 border-[#F0E2E4] bg-white p-8 shadow-[0_12px_35px_rgba(11,30,54,0.06)] hover:border-[#6B0F1A]/30 transition-all flex flex-col justify-between">
+          {/* Startup or Retail Entrepreneur (Yellow Card) */}
+          <div className="rounded-3xl border-2 border-[#E2D308] bg-[#F4E409] text-[#3D0710] p-8 shadow-xl hover:border-[#6B0F1A] transition-all flex flex-col justify-between">
             <div>
-              <div className="flex items-center gap-3 mb-6 border-b border-[#F0E2E4] pb-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#FFF6A3] text-[#6B0F1A]">
+              <div className="flex items-center gap-3 mb-6 border-b border-[#3D0710]/15 pb-4">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#6B0F1A] text-white border border-[#520a13]">
                   <Store className="w-6 h-6" />
                 </div>
-                <h3 className="text-2xl font-black text-[#6B0F1A]">
+                <h3 className="text-2xl font-black text-[#3D0710]">
                   {startups.title}
                 </h3>
               </div>
@@ -66,7 +66,7 @@ export default function Benefits() {
                 {startups.points.map((point, idx) => (
                   <div key={idx} className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-[#6B0F1A] flex-shrink-0 mt-0.5" />
-                    <span className="text-sm sm:text-base font-extrabold text-[#1F1F1F]">
+                    <span className="text-sm sm:text-base font-extrabold text-[#3D0710]">
                       {point}
                     </span>
                   </div>

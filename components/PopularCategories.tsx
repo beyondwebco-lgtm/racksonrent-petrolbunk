@@ -73,18 +73,18 @@ export default function PopularCategories() {
   };
 
   return (
-    <section className="section-padding bg-[var(--yellow-soft)] overflow-hidden" id="products">
+    <section className="section-padding bg-[#FFFDF5] overflow-hidden" id="products">
       <div className="container-main">
         
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12 animate-reveal-up">
-          <span className="inline-flex rounded-full bg-white px-3.5 py-1 text-xs sm:text-sm font-extrabold text-[var(--charcoal)] border border-[var(--border)] shadow-sm">
-            Products & Categories
+          <span className="inline-flex rounded-full bg-[#FFF6A3] px-3.5 py-1 text-xs sm:text-sm font-extrabold text-[#6B0F1A] border border-[#F0E2E4] shadow-xs">
+            Products &amp; Categories
           </span>
-          <h2 className="section-title-dm mt-4 text-[var(--charcoal)]">
+          <h2 className="section-title-dm mt-4 text-[#3D0710]">
             Popular Product Categories
           </h2>
-          <p className="body-copy mx-auto mt-3 max-w-2xl text-[var(--text-muted)]">
+          <p className="body-copy mx-auto mt-3 max-w-2xl text-[#5F5F5F]">
             Explore example products and health essentials featured across partner retail spaces.
           </p>
         </div>
@@ -98,10 +98,10 @@ export default function PopularCategories() {
             onClick={() => handleScroll("left")}
             disabled={!canScrollLeft}
             aria-label="Previous categories"
-            className={`absolute -left-2 sm:-left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-[var(--yellow)] text-[var(--black)] border-2 border-[var(--black)] flex items-center justify-center shadow-lg transition-all cursor-pointer ${
+            className={`absolute -left-2 sm:-left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-[#6B0F1A] text-white border-2 border-[#520a13] flex items-center justify-center shadow-lg transition-all cursor-pointer ${
               !canScrollLeft
                 ? "opacity-0 invisible"
-                : "opacity-100 visible hover:bg-[var(--yellow-hover)] hover:scale-105"
+                : "opacity-100 visible hover:bg-[#3D0710] hover:scale-105"
             }`}
           >
             <ChevronLeft className="w-7 h-7 stroke-[2.5]" />
@@ -113,10 +113,10 @@ export default function PopularCategories() {
             onClick={() => handleScroll("right")}
             disabled={!canScrollRight}
             aria-label="Next categories"
-            className={`absolute -right-2 sm:-right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-[var(--yellow)] text-[var(--black)] border-2 border-[var(--black)] flex items-center justify-center shadow-lg transition-all cursor-pointer ${
+            className={`absolute -right-2 sm:-right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-[#6B0F1A] text-white border-2 border-[#520a13] flex items-center justify-center shadow-lg transition-all cursor-pointer ${
               !canScrollRight
                 ? "opacity-0 invisible"
-                : "opacity-100 visible hover:bg-[var(--yellow-hover)] hover:scale-105"
+                : "opacity-100 visible hover:bg-[#3D0710] hover:scale-105"
             }`}
           >
             <ChevronRight className="w-7 h-7 stroke-[2.5]" />
@@ -133,16 +133,33 @@ export default function PopularCategories() {
               isDragging ? "cursor-grabbing" : "cursor-grab"
             }`}
           >
-            {POPULAR_CATEGORIES.map((cat: CategoryItem) => {
+            {POPULAR_CATEGORIES.map((cat: CategoryItem, idx: number) => {
+              const isMaroon = idx % 2 === 0;
               return (
                 <div
                   key={cat.id}
-                  className="category-card flex-shrink-0 w-[85vw] max-w-[300px] sm:w-[calc(50%-12px)] md:w-[calc(33.333%-16px)] lg:w-[calc(25%-18px)] snap-start text-left bg-white rounded-[24px] border border-[var(--border)] shadow-sm hover:shadow-xl hover:border-[var(--black)] transition-all duration-300 flex flex-col group overflow-hidden"
+                  className={`category-card flex-shrink-0 w-[85vw] max-w-[300px] sm:w-[calc(50%-12px)] md:w-[calc(33.333%-16px)] lg:w-[calc(25%-18px)] snap-start text-left rounded-[24px] shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group overflow-hidden ${
+                    isMaroon
+                      ? "bg-[#6B0F1A] text-white border border-[#520a13] hover:border-[#F4E409]"
+                      : "bg-[#F4E409] text-[#3D0710] border border-[#E2D308] hover:border-[#6B0F1A]"
+                  }`}
                 >
                   {/* Image Container */}
-                  <div className="relative w-full aspect-[4/3] bg-[#F8F9FA] p-6 border-b border-[var(--border)] overflow-hidden flex items-center justify-center">
+                  <div
+                    className={`relative w-full aspect-[4/3] p-6 overflow-hidden flex items-center justify-center ${
+                      isMaroon
+                        ? "bg-[#3D0710]/40 border-b border-[#520a13]"
+                        : "bg-white/60 border-b border-[#E2D308]"
+                    }`}
+                  >
                     {cat.badge && (
-                      <span className="absolute top-3 right-3 text-[10px] font-extrabold bg-[var(--yellow)] text-[var(--black)] px-2.5 py-1 rounded-full border border-[var(--black)] z-10 shadow-sm">
+                      <span
+                        className={`absolute top-3 right-3 text-[10px] font-extrabold px-2.5 py-1 rounded-full z-10 shadow-xs ${
+                          isMaroon
+                            ? "bg-[#F4E409] text-[#3D0710] border border-[#E2D308]"
+                            : "bg-[#6B0F1A] text-white border border-[#520a13]"
+                        }`}
+                      >
                         {cat.badge}
                       </span>
                     )}
@@ -158,18 +175,34 @@ export default function PopularCategories() {
                   </div>
 
                   {/* Content Section */}
-                  <div className="p-5 sm:p-6 flex flex-col flex-grow justify-between bg-white">
+                  <div className="p-5 sm:p-6 flex flex-col flex-grow justify-between">
                     <div>
-                      <h3 className="font-bold text-lg sm:text-xl text-[var(--charcoal)] group-hover:text-[var(--maroon)] transition-colors mb-2">
+                      <h3
+                        className={`font-bold text-lg sm:text-xl transition-colors mb-2 ${
+                          isMaroon
+                            ? "text-white group-hover:text-[#F4E409]"
+                            : "text-[#3D0710] group-hover:text-[#6B0F1A]"
+                        }`}
+                      >
                         {cat.name}
                       </h3>
 
-                      <p className="text-sm text-[var(--text-muted)] leading-relaxed font-medium line-clamp-3 mb-5">
+                      <p
+                        className={`text-sm leading-relaxed font-medium line-clamp-3 mb-5 ${
+                          isMaroon ? "text-white/80" : "text-[#3D0710]/80"
+                        }`}
+                      >
                         {cat.description}
                       </p>
                     </div>
 
-                    <button className="flex items-center text-sm font-extrabold text-[var(--charcoal)] group-hover:text-[var(--maroon)] transition-colors mt-auto pt-2 border-t border-gray-100">
+                    <button
+                      className={`flex items-center text-sm font-extrabold transition-colors mt-auto pt-2 ${
+                        isMaroon
+                          ? "text-[#F4E409] group-hover:text-white border-t border-white/10"
+                          : "text-[#6B0F1A] group-hover:text-[#3D0710] border-t border-[#3D0710]/15"
+                      }`}
+                    >
                       <span>Explore Spaces</span>
                       <ArrowRight className="w-4 h-4 ml-1.5 group-hover:translate-x-1 transition-transform" />
                     </button>

@@ -4,18 +4,18 @@ import { SITE_CONFIG } from "@/data/config";
 
 export default function TopBar() {
   return (
-    <div className="bg-[#111111] text-white text-xs border-b border-[#242424] py-1.5 px-4 sm:px-6 lg:px-8 font-medium">
+    <div className="bg-[#3D0710] text-white text-xs border-b border-[#520a13] py-1.5 px-4 sm:px-6 lg:px-8 font-medium">
       <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2 sm:gap-4">
         
         {/* Left Side */}
         <div className="flex items-center gap-1.5 text-white/80">
-          <Users className="w-3.5 h-3.5 text-[#F8D706]" />
+          <Users className="w-3.5 h-3.5 text-[#F4E409]" />
           <span>{SITE_CONFIG.topBarTextLeft}</span>
         </div>
 
         {/* Centre Side */}
         <div className="hidden md:flex items-center gap-1.5 text-white/70">
-          <ShieldCheck className="w-3.5 h-3.5 text-[#F8D706]" />
+          <ShieldCheck className="w-3.5 h-3.5 text-[#F4E409]" />
           <span>{SITE_CONFIG.topBarTextCenter}</span>
         </div>
 
@@ -23,17 +23,17 @@ export default function TopBar() {
         <div className="flex items-center gap-4 ml-auto sm:ml-0">
           <a
             href={SITE_CONFIG.telLink}
-            className="flex items-center gap-1 text-white/80 hover:text-[#F8D706] transition-colors"
+            className="flex items-center gap-1 text-white/80 hover:text-[#F4E409] transition-colors"
           >
-            <Phone className="w-3.5 h-3.5 text-[#F8D706]" />
+            <Phone className="w-3.5 h-3.5 text-[#F4E409]" />
             <span>{SITE_CONFIG.phoneFormatted}</span>
           </a>
 
           <a
             href={SITE_CONFIG.mailtoLink}
-            className="hidden sm:flex items-center gap-1 text-white/80 hover:text-[#F8D706] transition-colors"
+            className="hidden sm:flex items-center gap-1 text-white/80 hover:text-[#F4E409] transition-colors"
           >
-            <Mail className="w-3.5 h-3.5 text-[#F8D706]" />
+            <Mail className="w-3.5 h-3.5 text-[#F4E409]" />
             <span>{SITE_CONFIG.email}</span>
           </a>
         </div>

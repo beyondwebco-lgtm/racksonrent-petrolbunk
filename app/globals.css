@@ -4,30 +4,34 @@
    DESIGN SYSTEM TOKENS — Tailwind @theme
    ═══════════════════════════════════════════ */
 @theme {
-  /* Brand Yellow — Flipkart-inspired lemon */
-  --color-brand-yellow: #F8D706;
-  --color-brand-yellow-bright: #F8E831;
-  --color-brand-yellow-soft: #FFF8C7;
-  --color-brand-yellow-pale: #FFFDF0;
-  --color-brand-yellow-hover: #E8C900;
+  /* Core Brand Colors from theme.md */
+  --color-primary-maroon: #6B0F1A;
+  --color-dark-maroon: #3D0710;
+  --color-lemon-yellow: #F4E409;
+  --color-flipkart-yellow: #FFE500;
+  --color-flipkart-yellow-border: #E5CE00;
+  --color-yellow-border: #E2D308;
+  --color-yellow-hover: #EBD904;
+  --color-soft-lemon: #FFF6A3;
+  --color-warm-white: #FFFDF5;
+  --color-soft-border: #F0E2E4;
+  --color-dark-text: #1F1F1F;
+  --color-muted-text: #5F5F5F;
+  --color-maroon-dark-border: #520a13;
 
-  /* Brand Dark */
-  --color-brand-black: #111111;
-  --color-brand-charcoal: #242424;
-  --color-brand-maroon: #6B0F1A;
-  --color-brand-maroon-dark: #3D0710;
-
-  /* Text */
-  --color-text-primary: #111111;
-  --color-text-muted: #66645D;
-  --color-text-on-yellow: #111111;
-
-  /* Surfaces */
-  --color-surface-white: #FFFFFF;
-  --color-surface-warm: #FFFEF8;
-
-  /* Borders */
-  --color-border: #E8E3D5;
+  /* Mappings */
+  --color-primary: #6B0F1A;
+  --color-heading: #6B0F1A;
+  --color-primary-dark: #3D0710;
+  --color-background-maroon: #3D0710;
+  --color-accent: #F4E409;
+  --color-accent-light: #FFF6A3;
+  --color-background-soft: #FFF6A3;
+  --color-background: #FFFDF5;
+  --color-surface: #FFFDF5;
+  --color-border: #F0E2E4;
+  --color-text: #1F1F1F;
+  --color-text-muted: #5F5F5F;
 
   /* Fonts */
   --font-manrope: var(--font-manrope), sans-serif;
@@ -40,35 +44,38 @@
    ═══════════════════════════════════════════ */
 :root {
   /* Yellow scale */
-  --yellow:       #F8D706;
-  --yellow-bright:#F8E831;
-  --yellow-soft:  #FFF8C7;
-  --yellow-pale:  #FFFDF0;
-  --yellow-hover: #E8C900;
+  --yellow:       #F4E409;
+  --yellow-bright:#FFF6A3;
+  --yellow-soft:  #FFF6A3;
+  --yellow-pale:  #FFFDF5;
+  --yellow-hover: #EBD904;
+  --yellow-border:#E2D308;
+  --flipkart-yellow: #FFE500;
 
-  /* Darks */
-  --black:        #111111;
-  --charcoal:     #242424;
+  /* Maroons (Replacing black/charcoal) */
+  --black:        #3D0710;
+  --charcoal:     #6B0F1A;
   --maroon:       #6B0F1A;
   --maroon-dark:  #3D0710;
+  --maroon-border:#520a13;
 
   /* Text */
-  --text:         #111111;
-  --text-muted:   #66645D;
+  --text:         #1F1F1F;
+  --text-muted:   #5F5F5F;
 
   /* Surfaces */
-  --surface:      #FFFFFF;
-  --surface-warm: #FFFEF8;
+  --surface:      #FFFDF5;
+  --surface-warm: #FFFDF5;
 
   /* Borders */
-  --border:       #E8E3D5;
+  --border:       #F0E2E4;
 
-  /* Legacy aliases for components not yet migrated */
-  --background:       #FFFFFF;
+  /* Legacy aliases */
+  --background:       #FFFDF5;
   --primary:          #6B0F1A;
   --primary-dark:     #3D0710;
-  --accent:           #F8D706;
-  --accent-light:     #FFF8C7;
+  --accent:           #F4E409;
+  --accent-light:     #FFF6A3;
 }
 
 /* ═══════════════════════════════════════════
@@ -193,9 +200,9 @@ b, strong {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  background-color: var(--yellow);
-  color: var(--black);
-  border: 2px solid rgba(17, 17, 17, 0.15);
+  background-color: #F4E409;
+  color: #3D0710;
+  border: 2px solid #E2D308;
   border-radius: 9999px;
   padding: 0.75rem 1.75rem;
   font-family: var(--font-manrope), system-ui, sans-serif;
@@ -211,9 +218,9 @@ b, strong {
 
 @media (hover: hover) and (pointer: fine) {
   .btn-primary:hover {
-    background-color: var(--yellow-hover);
+    background-color: #EBD904;
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(248, 215, 6, 0.35);
+    box-shadow: 0 8px 20px rgba(244, 228, 9, 0.35);
   }
 }
 
@@ -222,7 +229,7 @@ b, strong {
 }
 
 .btn-primary:focus-visible {
-  outline: 3px solid var(--yellow-bright);
+  outline: 3px solid #FFF6A3;
   outline-offset: 2px;
 }
 
@@ -231,9 +238,9 @@ b, strong {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  background-color: var(--black);
+  background-color: #6B0F1A;
   color: #ffffff;
-  border: 2px solid var(--charcoal);
+  border: 2px solid #520a13;
   border-radius: 9999px;
   padding: 0.75rem 1.75rem;
   font-family: var(--font-manrope), system-ui, sans-serif;
@@ -249,9 +256,9 @@ b, strong {
 
 @media (hover: hover) and (pointer: fine) {
   .btn-secondary:hover {
-    background-color: var(--charcoal);
+    background-color: #3D0710;
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(17, 17, 17, 0.3);
+    box-shadow: 0 8px 20px rgba(107, 15, 26, 0.35);
   }
 }
 
@@ -260,7 +267,7 @@ b, strong {
 }
 
 .btn-secondary:focus-visible {
-  outline: 3px solid var(--yellow-bright);
+  outline: 3px solid #F4E409;
   outline-offset: 2px;
 }
 

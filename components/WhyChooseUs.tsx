@@ -47,40 +47,64 @@ export default function WhyChooseUs() {
 
         {/* 6 Advantage Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6 animate-reveal-up-delay-1">
-          {WHY_CHOOSE_US_REASONS.map((item: WhyChooseUsReason) => {
+          {WHY_CHOOSE_US_REASONS.map((item: WhyChooseUsReason, idx: number) => {
             const IconComp = iconMap[item.iconName] || ShieldCheck;
-            const isFeatured = item.isFeatured;
+            const isMaroon = idx % 2 === 0;
 
             return (
               <div
                 key={item.id}
-                className={`group relative overflow-hidden card-base min-h-[210px] lg:min-h-[190px] flex h-full flex-col justify-between ${
-                  isFeatured
-                    ? "!border-[var(--maroon)] bg-gradient-to-br from-white to-[var(--yellow-pale)]"
-                    : "hover:!border-[var(--black)]"
+                className={`group relative overflow-hidden rounded-3xl p-6 min-h-[210px] lg:min-h-[190px] flex h-full flex-col justify-between shadow-sm hover:shadow-xl transition-all duration-300 ${
+                  isMaroon
+                    ? "bg-[#6B0F1A] text-white border border-[#520a13] hover:border-[#F4E409]"
+                    : "bg-[#F4E409] text-[#3D0710] border border-[#E2D308] hover:border-[#6B0F1A]"
                 }`}
               >
                 <div>
                   {/* Top Row: Two-Tone Icon + Featured Badge / Hover Arrow */}
                   <div className="flex items-center justify-between mb-4">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[var(--yellow-soft)] text-[var(--maroon)] transition-all duration-300 group-hover:bg-[var(--maroon)] group-hover:text-[var(--yellow)] group-hover:scale-105 flex-shrink-0 border border-[var(--border)]">
+                    <div
+                      className={`flex h-12 w-12 items-center justify-center rounded-xl transition-all duration-300 flex-shrink-0 ${
+                        isMaroon
+                          ? "bg-[#F4E409] text-[#3D0710] border border-[#E2D308] group-hover:bg-white group-hover:scale-105"
+                          : "bg-[#6B0F1A] text-white border border-[#520a13] group-hover:bg-[#3D0710] group-hover:scale-105"
+                      }`}
+                    >
                       <IconComp size={23} strokeWidth={1.8} />
                     </div>
 
-                    {isFeatured && item.badge ? (
-                      <span className="inline-flex items-center rounded-full bg-[var(--maroon)] px-3 py-1 text-[11px] font-bold text-[var(--yellow)] tracking-wider uppercase shadow-xs">
+                    {item.badge ? (
+                      <span
+                        className={`inline-flex items-center rounded-full px-3 py-1 text-[11px] font-bold tracking-wider uppercase shadow-xs ${
+                          isMaroon
+                            ? "bg-[#F4E409] text-[#3D0710] border border-[#E2D308]"
+                            : "bg-[#6B0F1A] text-white border border-[#520a13]"
+                        }`}
+                      >
                         {item.badge}
                       </span>
                     ) : (
-                      <ArrowUpRight className="h-4 w-4 text-[var(--maroon)] opacity-0 transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:opacity-100" />
+                      <ArrowUpRight
+                        className={`h-5 w-5 opacity-0 transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:opacity-100 ${
+                          isMaroon ? "text-[#F4E409]" : "text-[#6B0F1A]"
+                        }`}
+                      />
                     )}
                   </div>
 
                   {/* Card Title & Description */}
-                  <h3 className="card-title font-semibold text-[var(--maroon)]">
+                  <h3
+                    className={`card-title font-black transition-colors ${
+                      isMaroon ? "text-white group-hover:text-[#F4E409]" : "text-[#3D0710] group-hover:text-[#6B0F1A]"
+                    }`}
+                  >
                     {item.title}
                   </h3>
-                  <p className="mt-2.5 text-[15px] leading-6 text-[var(--text-muted)] font-medium">
+                  <p
+                    className={`mt-2.5 text-[15px] leading-6 font-medium ${
+                      isMaroon ? "text-white/80" : "text-[#3D0710]/80"
+                    }`}
+                  >
                     {item.description}
                   </p>
                 </div>

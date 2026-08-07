@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React from "react";
 import {
@@ -154,38 +154,38 @@ export default function AboutUs() {
         {/* Vision & Mission Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
           
-          {/* Vision */}
-          <div className="bg-white rounded-3xl border-2 border-[#6B0F1A] p-6 sm:p-8 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+          {/* Vision (Maroon Card) */}
+          <div className="bg-[#6B0F1A] text-white rounded-3xl border-2 border-[#520a13] p-6 sm:p-8 shadow-md relative overflow-hidden group">
             <div className="flex items-center gap-3 mb-4">
-              <div className="p-3 rounded-2xl bg-[#FFF6A3] text-[#6B0F1A] border border-[#6B0F1A]/20">
+              <div className="p-3 rounded-2xl bg-[#F4E409] text-[#3D0710] border border-[#E2D308]">
                 <Eye className="w-6 h-6" />
               </div>
               <div>
-                <span className="text-xs font-extrabold text-[#6B0F1A] uppercase tracking-wider block">
+                <span className="text-xs font-extrabold text-[#F4E409] uppercase tracking-wider block">
                   Future Roadmap
                 </span>
-                <h3 className="text-xl font-extrabold text-[#6B0F1A]">Our Vision</h3>
+                <h3 className="text-xl font-extrabold text-white">Our Vision</h3>
               </div>
             </div>
-            <p className="text-sm sm:text-base text-[#5F5F5F] leading-relaxed font-medium">
+            <p className="text-sm sm:text-base text-white/90 leading-relaxed font-medium">
               To build India&apos;s leading petrol pump rack rental marketplace, transforming underutilized commercial spaces into thriving retail opportunities for startups and entrepreneurs.
             </p>
           </div>
 
-          {/* Mission */}
-          <div className="bg-white rounded-3xl border-2 border-[#6B0F1A] p-6 sm:p-8 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+          {/* Mission (Yellow Card) */}
+          <div className="bg-[#F4E409] text-[#3D0710] rounded-3xl border-2 border-[#E2D308] p-6 sm:p-8 shadow-md relative overflow-hidden group">
             <div className="flex items-center gap-3 mb-4">
-              <div className="p-3 rounded-2xl bg-[#FFF6A3] text-[#6B0F1A] border border-[#6B0F1A]/20">
+              <div className="p-3 rounded-2xl bg-[#6B0F1A] text-white border border-[#520a13]">
                 <Target className="w-6 h-6" />
               </div>
               <div>
                 <span className="text-xs font-extrabold text-[#6B0F1A] uppercase tracking-wider block">
                   Our Commitment
                 </span>
-                <h3 className="text-xl font-extrabold text-[#6B0F1A]">Our Mission</h3>
+                <h3 className="text-xl font-extrabold text-[#3D0710]">Our Mission</h3>
               </div>
             </div>
-            <p className="text-sm sm:text-base text-[#5F5F5F] leading-relaxed font-medium">
+            <p className="text-sm sm:text-base text-[#3D0710]/90 leading-relaxed font-bold">
               To simplify offline retail expansion for startups while creating steady rental income streams for petrol pump owners through transparent, hassle-free space-sharing partnerships.
             </p>
           </div>
@@ -206,19 +206,30 @@ export default function AboutUs() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
             {coreValues.map((val, idx) => {
               const IconComponent = val.icon;
+              const isMaroon = idx % 2 === 0;
               return (
                 <div
                   key={idx}
-                  className="bg-white rounded-2xl border border-[#F0E2E4] p-5 shadow-xs hover:shadow-md hover:border-[#6B0F1A]/40 transition-all hover:-translate-y-1 flex flex-col justify-between"
+                  className={`rounded-2xl p-5 shadow-xs transition-all hover:-translate-y-1 flex flex-col justify-between ${
+                    isMaroon
+                      ? "bg-[#6B0F1A] text-white border border-[#520a13]"
+                      : "bg-[#F4E409] text-[#3D0710] border border-[#E2D308]"
+                  }`}
                 >
                   <div>
-                    <div className="w-10 h-10 rounded-xl bg-[#FFF6A3] flex items-center justify-center text-[#6B0F1A] mb-3">
+                    <div
+                      className={`w-10 h-10 rounded-xl flex items-center justify-center mb-3 ${
+                        isMaroon
+                          ? "bg-[#F4E409] text-[#3D0710] border border-[#E2D308]"
+                          : "bg-[#6B0F1A] text-white border border-[#520a13]"
+                      }`}
+                    >
                       <IconComponent className="w-5 h-5" />
                     </div>
-                    <h4 className="font-extrabold text-base text-[#6B0F1A] mb-2">
+                    <h4 className={`font-extrabold text-base mb-2 ${isMaroon ? "text-white" : "text-[#3D0710]"}`}>
                       {val.name}
                     </h4>
-                    <p className="text-xs text-[#5F5F5F] leading-relaxed font-medium">
+                    <p className={`text-xs leading-relaxed font-medium ${isMaroon ? "text-white/80" : "text-[#3D0710]/80"}`}>
                       {val.desc}
                     </p>
                   </div>
