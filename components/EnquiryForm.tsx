@@ -112,7 +112,7 @@ ${detailsText}`;
         
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-8">
-          <span className="inline-flex rounded-full bg-[#FFF6A3] px-3.5 py-1 text-xs sm:text-sm font-extrabold text-[#6B0F1A] border border-[#F0E2E4]">
+          <span className="inline-flex rounded-full bg-[#FFFBCC] px-3.5 py-1 text-xs sm:text-sm font-extrabold text-[#6B0F1A] border border-[#F0E2E4]">
             Get In Touch
           </span>
           <h2 className="mt-2.5 text-2xl font-extrabold tracking-tight text-[#6B0F1A] md:text-4xl lg:text-[clamp(2.25rem,3.2vw,3.5rem)]">
@@ -125,14 +125,14 @@ ${detailsText}`;
 
         <div className="max-w-3xl mx-auto">
           {/* Role Selector Tabs */}
-          <div className="flex flex-wrap items-center justify-center p-1 bg-[#FFF6A3]/50 rounded-2xl mb-6 gap-1 border border-[#F0E2E4] shadow-xs">
+          <div className="flex flex-wrap items-center justify-center p-1 bg-[#FFFBCC]/50 rounded-2xl mb-6 gap-1 border border-[#F0E2E4] shadow-xs">
             <button
               type="button"
               onClick={() => handleRoleSelect("bunk-owner")}
               className={`flex-1 min-w-[130px] flex items-center justify-center gap-2 py-2.5 px-3.5 rounded-xl text-xs sm:text-sm font-extrabold transition-all cursor-pointer ${
                 role === "bunk-owner"
-                  ? "bg-[#6B0F1A] text-[#FFF6A3] shadow-xs"
-                  : "text-[#6B0F1A] hover:bg-[#FFF6A3]"
+                  ? "bg-[#6B0F1A] text-[#FFFBCC] shadow-xs"
+                  : "text-[#6B0F1A] hover:bg-[#FFFBCC]"
               }`}
             >
               <Building2 className="w-4 h-4" />
@@ -144,8 +144,8 @@ ${detailsText}`;
               onClick={() => handleRoleSelect("brand-merchant")}
               className={`flex-1 min-w-[130px] flex items-center justify-center gap-2 py-2.5 px-3.5 rounded-xl text-xs sm:text-sm font-extrabold transition-all cursor-pointer ${
                 role === "brand-merchant"
-                  ? "bg-[#6B0F1A] text-[#FFF6A3] shadow-xs"
-                  : "text-[#6B0F1A] hover:bg-[#FFF6A3]"
+                  ? "bg-[#6B0F1A] text-[#FFFBCC] shadow-xs"
+                  : "text-[#6B0F1A] hover:bg-[#FFFBCC]"
               }`}
             >
               <Store className="w-4 h-4" />
@@ -157,8 +157,8 @@ ${detailsText}`;
               onClick={() => handleRoleSelect("general")}
               className={`flex-1 min-w-[130px] flex items-center justify-center gap-2 py-2.5 px-3.5 rounded-xl text-xs sm:text-sm font-extrabold transition-all cursor-pointer ${
                 role === "general"
-                  ? "bg-[#6B0F1A] text-[#FFF6A3] shadow-xs"
-                  : "text-[#6B0F1A] hover:bg-[#FFF6A3]"
+                  ? "bg-[#6B0F1A] text-[#FFFBCC] shadow-xs"
+                  : "text-[#6B0F1A] hover:bg-[#FFFBCC]"
               }`}
             >
               <HelpCircle className="w-4 h-4" />
@@ -172,7 +172,7 @@ ${detailsText}`;
             className="space-y-3.5 sm:space-y-4 rounded-3xl border-2 border-[#F0E2E4] bg-white p-5 sm:p-8 shadow-[0_12px_35px_rgba(11,30,54,0.06)]"
           >
             {submitted && (
-              <div className="bg-[#FFF6A3] border border-[#6B0F1A]/30 text-[#6B0F1A] p-4 rounded-2xl flex items-center gap-3 text-sm font-bold">
+              <div className="bg-[#FFFBCC] border border-[#6B0F1A]/30 text-[#6B0F1A] p-4 rounded-2xl flex items-center gap-3 text-sm font-bold">
                 <CheckCircle2 className="w-5 h-5 text-[#6B0F1A] flex-shrink-0" />
                 <span>Opening WhatsApp with your enquiry details...</span>
               </div>
@@ -190,7 +190,7 @@ ${detailsText}`;
                 value={formData.fullName}
                 onChange={handleChange}
                 placeholder="e.g. Rahul Sharma"
-                className={`w-full rounded-xl border border-[#F0E2E4] bg-white px-3.5 py-2.5 h-11 text-[#1F1F1F] outline-none transition placeholder:text-[#5F5F5F]/70 focus:border-[#6B0F1A] focus:ring-4 focus:ring-[#FFF6A3] text-sm ${
+                className={`w-full rounded-xl border border-[#F0E2E4] bg-white px-3.5 py-2.5 h-11 text-[#1F1F1F] outline-none transition placeholder:text-[#5F5F5F]/70 focus:border-[#6B0F1A] focus:ring-4 focus:ring-[#FFFBCC] text-sm ${
                   errors.fullName ? "border-red-500 bg-red-50/30" : ""
                 }`}
               />
@@ -210,7 +210,7 @@ ${detailsText}`;
                   value={formData.bunkName}
                   onChange={handleChange}
                   placeholder="e.g. Highway Fuel Station (HPCL)"
-                  className={`w-full rounded-xl border border-[#F0E2E4] bg-white px-3.5 py-2.5 h-11 text-[#1F1F1F] outline-none transition placeholder:text-[#5F5F5F]/70 focus:border-[#6B0F1A] focus:ring-4 focus:ring-[#FFF6A3] text-sm ${
+                  className={`w-full rounded-xl border border-[#F0E2E4] bg-white px-3.5 py-2.5 h-11 text-[#1F1F1F] outline-none transition placeholder:text-[#5F5F5F]/70 focus:border-[#6B0F1A] focus:ring-4 focus:ring-[#FFFBCC] text-sm ${
                     errors.bunkName ? "border-red-500 bg-red-50/30" : ""
                   }`}
                 />
@@ -231,7 +231,7 @@ ${detailsText}`;
                   value={formData.brandName}
                   onChange={handleChange}
                   placeholder="e.g. Apex Helmets & Rider Gear"
-                  className={`w-full rounded-xl border border-[#F0E2E4] bg-white px-3.5 py-2.5 h-11 text-[#1F1F1F] outline-none transition placeholder:text-[#5F5F5F]/70 focus:border-[#6B0F1A] focus:ring-4 focus:ring-[#FFF6A3] text-sm ${
+                  className={`w-full rounded-xl border border-[#F0E2E4] bg-white px-3.5 py-2.5 h-11 text-[#1F1F1F] outline-none transition placeholder:text-[#5F5F5F]/70 focus:border-[#6B0F1A] focus:ring-4 focus:ring-[#FFFBCC] text-sm ${
                     errors.brandName ? "border-red-500 bg-red-50/30" : ""
                   }`}
                 />
@@ -252,7 +252,7 @@ ${detailsText}`;
                   value={formData.phone}
                   onChange={handleChange}
                   placeholder="7995424477"
-                  className={`w-full rounded-xl border border-[#F0E2E4] bg-white px-3.5 py-2.5 h-11 text-[#1F1F1F] outline-none transition placeholder:text-[#5F5F5F]/70 focus:border-[#6B0F1A] focus:ring-4 focus:ring-[#FFF6A3] text-sm ${
+                  className={`w-full rounded-xl border border-[#F0E2E4] bg-white px-3.5 py-2.5 h-11 text-[#1F1F1F] outline-none transition placeholder:text-[#5F5F5F]/70 focus:border-[#6B0F1A] focus:ring-4 focus:ring-[#FFFBCC] text-sm ${
                     errors.phone ? "border-red-500 bg-red-50/30" : ""
                   }`}
                 />
@@ -270,7 +270,7 @@ ${detailsText}`;
                   value={formData.city || initialSearchValues?.location || ""}
                   onChange={handleChange}
                   placeholder="e.g. Hyderabad"
-                  className={`w-full rounded-xl border border-[#F0E2E4] bg-white px-3.5 py-2.5 h-11 text-[#1F1F1F] outline-none transition placeholder:text-[#5F5F5F]/70 focus:border-[#6B0F1A] focus:ring-4 focus:ring-[#FFF6A3] text-sm ${
+                  className={`w-full rounded-xl border border-[#F0E2E4] bg-white px-3.5 py-2.5 h-11 text-[#1F1F1F] outline-none transition placeholder:text-[#5F5F5F]/70 focus:border-[#6B0F1A] focus:ring-4 focus:ring-[#FFFBCC] text-sm ${
                     errors.city ? "border-red-500 bg-red-50/30" : ""
                   }`}
                 />
@@ -290,7 +290,7 @@ ${detailsText}`;
                     name="availableSpace"
                     value={formData.availableSpace || initialSearchValues?.spaceType || "Forecourt Canopy Display Rack"}
                     onChange={handleChange}
-                    className="w-full rounded-xl border border-[#F0E2E4] bg-white px-4 py-3 text-[#1F1F1F] outline-none transition focus:border-[#6B0F1A] focus:ring-4 focus:ring-[#FFF6A3] text-sm"
+                    className="w-full rounded-xl border border-[#F0E2E4] bg-white px-4 py-3 text-[#1F1F1F] outline-none transition focus:border-[#6B0F1A] focus:ring-4 focus:ring-[#FFFBCC] text-sm"
                   >
                     <option value="Forecourt Canopy Display Rack">Forecourt Canopy Display Rack</option>
                     <option value="In-Store Mart Shelf Unit">In-Store Mart Shelf Unit</option>
@@ -310,7 +310,7 @@ ${detailsText}`;
                     name="rackSize"
                     value={formData.rackSize || initialSearchValues?.rackSize || "Small"}
                     onChange={handleChange}
-                    className="w-full rounded-xl border border-[#F0E2E4] bg-white px-4 py-3 text-[#1F1F1F] outline-none transition focus:border-[#6B0F1A] focus:ring-4 focus:ring-[#FFF6A3] text-sm"
+                    className="w-full rounded-xl border border-[#F0E2E4] bg-white px-4 py-3 text-[#1F1F1F] outline-none transition focus:border-[#6B0F1A] focus:ring-4 focus:ring-[#FFFBCC] text-sm"
                   >
                     <option value="Small">Small (Up to 3x2 ft)</option>
                     <option value="Medium">Medium (3x2 ft to 6x3 ft)</option>
@@ -334,7 +334,7 @@ ${detailsText}`;
                       name="category"
                       value={formData.category || initialSearchValues?.category || "Helmets & Rider Safety Gear"}
                       onChange={handleChange}
-                      className="w-full rounded-xl border border-[#F0E2E4] bg-white px-4 py-3 text-[#1F1F1F] outline-none transition focus:border-[#6B0F1A] focus:ring-4 focus:ring-[#FFF6A3] text-sm"
+                      className="w-full rounded-xl border border-[#F0E2E4] bg-white px-4 py-3 text-[#1F1F1F] outline-none transition focus:border-[#6B0F1A] focus:ring-4 focus:ring-[#FFFBCC] text-sm"
                     >
                       <option value="Helmets & Rider Safety Gear">Helmets & Rider Safety Gear</option>
                       <option value="Packaged Snacks & Munchies">Packaged Snacks & Munchies</option>
@@ -356,7 +356,7 @@ ${detailsText}`;
                       name="requiredSpace"
                       value={formData.requiredSpace || initialSearchValues?.spaceType || "Forecourt Canopy Display Rack"}
                       onChange={handleChange}
-                      className="w-full rounded-xl border border-[#F0E2E4] bg-white px-4 py-3 text-[#1F1F1F] outline-none transition focus:border-[#6B0F1A] focus:ring-4 focus:ring-[#FFF6A3] text-sm"
+                      className="w-full rounded-xl border border-[#F0E2E4] bg-white px-4 py-3 text-[#1F1F1F] outline-none transition focus:border-[#6B0F1A] focus:ring-4 focus:ring-[#FFFBCC] text-sm"
                     >
                       <option value="Forecourt Canopy Display Rack">Forecourt Canopy Display Rack</option>
                       <option value="In-Store Mart Shelf Unit">In-Store Mart Shelf Unit</option>
@@ -377,7 +377,7 @@ ${detailsText}`;
                     name="rackSize"
                     value={formData.rackSize || initialSearchValues?.rackSize || "Small"}
                     onChange={handleChange}
-                    className="w-full rounded-xl border border-[#F0E2E4] bg-white px-4 py-3 text-[#1F1F1F] outline-none transition focus:border-[#6B0F1A] focus:ring-4 focus:ring-[#FFF6A3] text-sm"
+                    className="w-full rounded-xl border border-[#F0E2E4] bg-white px-4 py-3 text-[#1F1F1F] outline-none transition focus:border-[#6B0F1A] focus:ring-4 focus:ring-[#FFFBCC] text-sm"
                   >
                     <option value="Small">Small (Up to 3x2 ft)</option>
                     <option value="Medium">Medium (3x2 ft to 6x3 ft)</option>
@@ -400,7 +400,7 @@ ${detailsText}`;
                 value={formData.message}
                 onChange={handleChange}
                 placeholder="Share any additional notes or space details..."
-                className="w-full rounded-xl border border-[#F0E2E4] bg-white px-3.5 py-2 min-h-[72px] text-[#1F1F1F] outline-none transition placeholder:text-[#5F5F5F]/70 focus:border-[#6B0F1A] focus:ring-4 focus:ring-[#FFF6A3] text-sm"
+                className="w-full rounded-xl border border-[#F0E2E4] bg-white px-3.5 py-2 min-h-[72px] text-[#1F1F1F] outline-none transition placeholder:text-[#5F5F5F]/70 focus:border-[#6B0F1A] focus:ring-4 focus:ring-[#FFFBCC] text-sm"
               />
             </div>
 
@@ -408,7 +408,7 @@ ${detailsText}`;
             <div className="pt-2">
               <button
                 type="submit"
-                className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-[#F4E409] hover:bg-[#3D0710] text-[#3D0710] hover:text-[#F4E409] border border-[#6B0F1A]/20 py-3.5 px-6 font-extrabold text-base shadow-xs transition-all cursor-pointer"
+                className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] hover:bg-[#128C7E] text-white border border-[#128C7E]/40 py-3.5 px-6 font-extrabold text-base shadow-xs transition-all cursor-pointer"
               >
                 <MessageCircle className="w-5 h-5 fill-current" />
                 <span>Submit & Continue on WhatsApp</span>

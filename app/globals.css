@@ -7,12 +7,12 @@
   /* Core Brand Colors from theme.md */
   --color-primary-maroon: #6B0F1A;
   --color-dark-maroon: #3D0710;
-  --color-lemon-yellow: #F4E409;
+  --color-lemon-yellow: #F7E200;
   --color-flipkart-yellow: #FFE500;
   --color-flipkart-yellow-border: #E5CE00;
-  --color-yellow-border: #E2D308;
-  --color-yellow-hover: #EBD904;
-  --color-soft-lemon: #FFF6A3;
+  --color-yellow-border: #D9C800;
+  --color-yellow-hover: #E5D100;
+  --color-soft-lemon: #FFFBCC;
   --color-warm-white: #FFFDF5;
   --color-soft-border: #F0E2E4;
   --color-dark-text: #1F1F1F;
@@ -24,9 +24,9 @@
   --color-heading: #6B0F1A;
   --color-primary-dark: #3D0710;
   --color-background-maroon: #3D0710;
-  --color-accent: #F4E409;
-  --color-accent-light: #FFF6A3;
-  --color-background-soft: #FFF6A3;
+  --color-accent: #F7E200;
+  --color-accent-light: #FFFBCC;
+  --color-background-soft: #FFFBCC;
   --color-background: #FFFDF5;
   --color-surface: #FFFDF5;
   --color-border: #F0E2E4;
@@ -44,12 +44,12 @@
    ═══════════════════════════════════════════ */
 :root {
   /* Yellow scale */
-  --yellow:       #F4E409;
-  --yellow-bright:#FFF6A3;
-  --yellow-soft:  #FFF6A3;
+  --yellow:       #F7E200;
+  --yellow-bright:#FFFBCC;
+  --yellow-soft:  #FFFBCC;
   --yellow-pale:  #FFFDF5;
-  --yellow-hover: #EBD904;
-  --yellow-border:#E2D308;
+  --yellow-hover: #E5D100;
+  --yellow-border:#D9C800;
   --flipkart-yellow: #FFE500;
 
   /* Maroons (Replacing black/charcoal) */
@@ -74,8 +74,8 @@
   --background:       #FFFDF5;
   --primary:          #6B0F1A;
   --primary-dark:     #3D0710;
-  --accent:           #F4E409;
-  --accent-light:     #FFF6A3;
+  --accent:           #F7E200;
+  --accent-light:     #FFFBCC;
 }
 
 /* ═══════════════════════════════════════════
@@ -200,9 +200,9 @@ b, strong {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  background-color: #F4E409;
+  background-color: #F7E200;
   color: #3D0710;
-  border: 2px solid #E2D308;
+  border: 2px solid #D9C800;
   border-radius: 9999px;
   padding: 0.75rem 1.75rem;
   font-family: var(--font-manrope), system-ui, sans-serif;
@@ -218,9 +218,9 @@ b, strong {
 
 @media (hover: hover) and (pointer: fine) {
   .btn-primary:hover {
-    background-color: #EBD904;
+    background-color: #E5D100;
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(244, 228, 9, 0.35);
+    box-shadow: 0 8px 20px rgba(247, 226, 0, 0.35);
   }
 }
 
@@ -229,7 +229,7 @@ b, strong {
 }
 
 .btn-primary:focus-visible {
-  outline: 3px solid #FFF6A3;
+  outline: 3px solid #FFFBCC;
   outline-offset: 2px;
 }
 
@@ -267,7 +267,7 @@ b, strong {
 }
 
 .btn-secondary:focus-visible {
-  outline: 3px solid #F4E409;
+  outline: 3px solid #F7E200;
   outline-offset: 2px;
 }
 

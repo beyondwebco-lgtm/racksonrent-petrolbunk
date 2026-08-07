@@ -25,7 +25,7 @@ export default function Pricing({ onSelectRole }: PricingProps) {
         
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-8 animate-reveal-up">
-          <span className="inline-flex rounded-full bg-[#FFF6A3] px-3.5 py-1 text-xs sm:text-sm font-extrabold text-[#6B0F1A] border border-[#F0E2E4]">
+          <span className="inline-flex rounded-full bg-[#FFFBCC] px-3.5 py-1 text-xs sm:text-sm font-extrabold text-[#6B0F1A] border border-[#F0E2E4]">
             Transparent Pricing
           </span>
           <h2 className="section-title-archivo mt-2.5 text-[#6B0F1A]">
@@ -46,7 +46,7 @@ export default function Pricing({ onSelectRole }: PricingProps) {
                 className={`rounded-3xl border-2 p-6 sm:p-7 flex flex-col justify-between transition-all relative shadow-lg ${
                   isMaroon
                     ? "bg-[#6B0F1A] text-white border-[#520a13]"
-                    : "bg-[#F4E409] text-[#3D0710] border-[#E2D308]"
+                    : "bg-[#F7E200] text-[#3D0710] border-[#D9C800]"
                 }`}
               >
                 {tier.highlighted && (
@@ -58,7 +58,7 @@ export default function Pricing({ onSelectRole }: PricingProps) {
                 <div>
                   <div className="flex items-center justify-between gap-4 mb-3">
                     <div>
-                      <span className={`text-xs font-extrabold uppercase tracking-wider ${isMaroon ? "text-[#F4E409]" : "text-[#6B0F1A]"}`}>
+                      <span className={`text-xs font-extrabold uppercase tracking-wider ${isMaroon ? "text-[#F7E200]" : "text-[#6B0F1A]"}`}>
                         {tier.targetRole}
                       </span>
                       <h3 className={`text-xl sm:text-2xl font-black mt-0.5 ${isMaroon ? "text-white" : "text-[#3D0710]"}`}>
@@ -66,7 +66,7 @@ export default function Pricing({ onSelectRole }: PricingProps) {
                       </h3>
                     </div>
 
-                    <div className={`p-2.5 rounded-2xl ${isMaroon ? "bg-[#F4E409] text-[#3D0710] border border-[#E2D308]" : "bg-[#6B0F1A] text-white border border-[#520a13]"}`}>
+                    <div className={`p-2.5 rounded-2xl ${isMaroon ? "bg-[#F7E200] text-[#3D0710] border border-[#D9C800]" : "bg-[#6B0F1A] text-white border border-[#520a13]"}`}>
                       {tier.roleType === "bunk-owner" ? <Building2 className="w-5 h-5" /> : <Store className="w-5 h-5" />}
                     </div>
                   </div>
@@ -86,7 +86,7 @@ export default function Pricing({ onSelectRole }: PricingProps) {
                   <div className="space-y-2 mb-6">
                     {tier.features.map((feat, fIdx) => (
                       <div key={fIdx} className="flex items-center gap-2.5">
-                        <CheckCircle2 className={`w-4 h-4 flex-shrink-0 ${isMaroon ? "text-[#F4E409]" : "text-[#6B0F1A]"}`} />
+                        <CheckCircle2 className={`w-4 h-4 flex-shrink-0 ${isMaroon ? "text-[#F7E200]" : "text-[#6B0F1A]"}`} />
                         <span className={`text-xs sm:text-sm font-extrabold ${isMaroon ? "text-white/95" : "text-[#3D0710]"}`}>{feat}</span>
                       </div>
                     ))}

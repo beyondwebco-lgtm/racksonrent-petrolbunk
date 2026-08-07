@@ -25,7 +25,7 @@ export default function RoleSelection({ onSelectRole }: RoleSelectionProps) {
         
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-8 animate-reveal-up">
-          <span className="inline-flex rounded-full bg-[#FFF6A3] px-3.5 py-1 text-xs sm:text-sm font-extrabold text-[#6B0F1A] border border-[#F0E2E4]">
+          <span className="inline-flex rounded-full bg-[#FFFBCC] px-3.5 py-1 text-xs sm:text-sm font-extrabold text-[#6B0F1A] border border-[#F0E2E4]">
             Role Selection
           </span>
           <h2 className="section-title-archivo mt-2.5 text-[#6B0F1A]">
@@ -45,14 +45,14 @@ export default function RoleSelection({ onSelectRole }: RoleSelectionProps) {
                 className={`rounded-3xl p-6 sm:p-8 flex flex-col justify-between group shadow-lg transition-all duration-300 ${
                   isMaroon
                     ? "bg-[#6B0F1A] text-white border-2 border-[#520a13]"
-                    : "bg-[#F4E409] text-[#3D0710] border-2 border-[#E2D308]"
+                    : "bg-[#F7E200] text-[#3D0710] border-2 border-[#D9C800]"
                 }`}
               >
                 <div>
                   <div
                     className={`flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-2xl mb-4 sm:mb-5 shadow-xs ${
                       isMaroon
-                        ? "bg-[#F4E409] text-[#3D0710] border border-[#E2D308]"
+                        ? "bg-[#F7E200] text-[#3D0710] border border-[#D9C800]"
                         : "bg-[#6B0F1A] text-white border border-[#520a13]"
                     }`}
                   >
@@ -81,7 +81,7 @@ export default function RoleSelection({ onSelectRole }: RoleSelectionProps) {
                       <div key={bIdx} className="flex items-start gap-2">
                         <CheckCircle2
                           className={`w-4 h-4 flex-shrink-0 mt-0.5 ${
-                            isMaroon ? "text-[#F4E409]" : "text-[#6B0F1A]"
+                            isMaroon ? "text-[#F7E200]" : "text-[#6B0F1A]"
                           }`}
                         />
                         <span

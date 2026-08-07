@@ -114,15 +114,15 @@ export default function Header({ onSelectRole }: HeaderProps) {
             {/* Main Brand Title */}
             <div className="flex items-baseline font-black tracking-tighter leading-none text-xl sm:text-2xl lg:text-3xl">
               <span className="text-[#6B0F1A] font-black italic">Racks</span>
-              <span className="text-[#F4E409] font-bold italic lowercase mx-1 text-[0.8em]" style={{ fontFamily: "Georgia, serif" }}>on</span>
-              <span className="text-[#F4E409] font-black italic">Rent</span>
+              <span className="text-[#F7E200] font-bold italic lowercase mx-1 text-[0.8em]" style={{ fontFamily: "Georgia, serif" }}>on</span>
+              <span className="text-[#F7E200] font-black italic">Rent</span>
             </div>
 
             {/* Tagline */}
             <div className="flex items-center gap-1 mt-0.5 text-[8px] sm:text-[9px] lg:text-[10px] font-black uppercase tracking-[0.18em] leading-none whitespace-nowrap">
               <span className="h-[1.5px] w-3 bg-[#6B0F1A] inline-block" />
               <span className="text-[#6B0F1A]">SUBLET SPACE.</span>
-              <span className="text-[#F4E409]">SHARE SUCCESS.</span>
+              <span className="text-[#F7E200]">SHARE SUCCESS.</span>
               <span className="h-[1.5px] w-3 bg-[#6B0F1A] inline-block" />
             </div>
           </div>
@@ -135,7 +135,7 @@ export default function Header({ onSelectRole }: HeaderProps) {
               key={link.href}
               href={link.href}
               onClick={(e) => handleNavClick(e as any, link.href)}
-              className="nav-link-hover px-2.5 xl:px-3.5 py-2 rounded-xl text-xs xl:text-sm font-bold text-[#1F1F1F] hover:text-[#6B0F1A] hover:bg-[#FFF6A3]/60 transition-colors whitespace-nowrap"
+              className="nav-link-hover px-2.5 xl:px-3.5 py-2 rounded-xl text-xs xl:text-sm font-bold text-[#1F1F1F] hover:text-[#6B0F1A] hover:bg-[#FFFBCC]/60 transition-colors whitespace-nowrap"
             >
               {link.label}
             </Link>
@@ -160,7 +160,7 @@ export default function Header({ onSelectRole }: HeaderProps) {
           <button
             type="button"
             onClick={handleListYourSpace}
-            className="inline-flex items-center gap-1 px-3 py-2 rounded-full bg-[#F4E409] text-[#3D0710] border border-[#E2D308] text-xs font-extrabold shadow-xs cursor-pointer"
+            className="inline-flex items-center gap-1 px-3 py-2 rounded-full bg-[#F7E200] text-[#3D0710] border border-[#D9C800] text-xs font-extrabold shadow-xs cursor-pointer"
           >
             <Store className="w-3.5 h-3.5" />
             <span className="hidden sm:inline">List Space</span>
@@ -171,7 +171,7 @@ export default function Header({ onSelectRole }: HeaderProps) {
             onClick={() => setMobileMenuOpen(true)}
             aria-expanded={mobileMenuOpen}
             aria-label="Open navigation menu"
-            className="p-2.5 rounded-xl text-[#1F1F1F] hover:bg-[#FFF6A3]/60 border border-[#F0E2E4] transition-colors cursor-pointer"
+            className="p-2.5 rounded-xl text-[#1F1F1F] hover:bg-[#FFFBCC]/60 border border-[#F0E2E4] transition-colors cursor-pointer"
           >
             <Menu className="w-6 h-6" />
           </button>
@@ -210,13 +210,13 @@ export default function Header({ onSelectRole }: HeaderProps) {
               <div className="flex flex-col justify-center">
                 <div className="flex items-baseline font-black tracking-tighter leading-none text-2xl">
                   <span className="text-[#6B0F1A] font-black italic">Racks</span>
-                  <span className="text-[#F4E409] font-bold italic lowercase mx-1 text-[0.8em]" style={{ fontFamily: "Georgia, serif" }}>on</span>
-                  <span className="text-[#F4E409] font-black italic">Rent</span>
+                  <span className="text-[#F7E200] font-bold italic lowercase mx-1 text-[0.8em]" style={{ fontFamily: "Georgia, serif" }}>on</span>
+                  <span className="text-[#F7E200] font-black italic">Rent</span>
                 </div>
                 <div className="flex items-center gap-1 mt-0.5 text-[8px] font-black uppercase tracking-[0.18em] leading-none whitespace-nowrap">
                   <span className="h-[1.5px] w-3 bg-[#6B0F1A] inline-block" />
                   <span className="text-[#6B0F1A]">SUBLET SPACE.</span>
-                  <span className="text-[#F4E409]">SHARE SUCCESS.</span>
+                  <span className="text-[#F7E200]">SHARE SUCCESS.</span>
                   <span className="h-[1.5px] w-3 bg-[#6B0F1A] inline-block" />
                 </div>
               </div>
@@ -227,7 +227,7 @@ export default function Header({ onSelectRole }: HeaderProps) {
                 type="button"
                 onClick={closeMenu}
                 aria-label="Close navigation menu"
-                className="p-2.5 rounded-xl text-[#1F1F1F] hover:bg-[#FFF6A3]/50 border border-[#F0E2E4] transition-colors cursor-pointer"
+                className="p-2.5 rounded-xl text-[#1F1F1F] hover:bg-[#FFFBCC]/50 border border-[#F0E2E4] transition-colors cursor-pointer"
               >
                 <X className="w-6 h-6" />
               </button>
@@ -241,7 +241,7 @@ export default function Header({ onSelectRole }: HeaderProps) {
                 key={link.href}
                 href={link.href}
                 onClick={(e) => handleNavClick(e as any, link.href)}
-                className="block px-4 py-3 rounded-xl font-bold text-lg text-[#1F1F1F] hover:bg-[#FFF6A3]/60 transition-colors"
+                className="block px-4 py-3 rounded-xl font-bold text-lg text-[#1F1F1F] hover:bg-[#FFFBCC]/60 transition-colors"
               >
                 {link.label}
               </Link>
@@ -249,11 +249,11 @@ export default function Header({ onSelectRole }: HeaderProps) {
           </nav>
 
           {/* Bottom Action CTA button inside Drawer */}
-          <div className="p-6 border-t border-[#F0E2E4] bg-[#FFF6A3]/30">
+          <div className="p-6 border-t border-[#F0E2E4] bg-[#FFFBCC]/30">
             <button
               type="button"
               onClick={handleListYourSpace}
-              className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-[#F4E409] py-3.5 text-base font-extrabold text-[#3D0710] border border-[#E2D308] shadow-xs cursor-pointer"
+              className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-[#F7E200] py-3.5 text-base font-extrabold text-[#3D0710] border border-[#D9C800] shadow-xs cursor-pointer"
             >
               <Store className="w-5 h-5" />
               <span>List Your Space</span>

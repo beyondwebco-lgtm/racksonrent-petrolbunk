@@ -59,13 +59,13 @@ export default function AboutUs() {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-[#FFF6A3] px-4 py-1.5 text-xs sm:text-sm font-bold text-[#6B0F1A] border border-[#F0E2E4]">
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-[#FFFBCC] px-4 py-1.5 text-xs sm:text-sm font-bold text-[#6B0F1A] border border-[#F0E2E4]">
             <Sparkles className="w-3.5 h-3.5 text-[#6B0F1A]" />
             <span>For Petrol Pump Owners & Startups</span>
           </span>
           
           <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-[#6B0F1A] md:text-5xl leading-tight">
-            One Space. Two Businesses. <span className="bg-[#F4E409] text-[#3D0710] px-3 py-0.5 rounded-xl inline-block border border-[#6B0F1A]/20">Endless Possibilities.</span>
+            One Space. Two Businesses. <span className="bg-[#F7E200] text-[#3D0710] px-3 py-0.5 rounded-xl inline-block border border-[#6B0F1A]/20">Endless Possibilities.</span>
           </h2>
           
           <p className="mt-4 text-lg font-bold text-[#3D0710] sm:text-xl max-w-3xl mx-auto">
@@ -101,7 +101,7 @@ export default function AboutUs() {
               </span>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                 {supportingPoints.map((point, idx) => (
-                  <div key={idx} className="flex items-center gap-2 bg-[#FFF6A3]/60 p-2 rounded-xl border border-[#6B0F1A]/10">
+                  <div key={idx} className="flex items-center gap-2 bg-[#FFFBCC]/60 p-2 rounded-xl border border-[#6B0F1A]/10">
                     <CheckCircle2 className="w-4 h-4 text-[#6B0F1A] flex-shrink-0" />
                     <span className="text-xs font-bold text-[#3D0710]">{point}</span>
                   </div>
@@ -114,17 +114,17 @@ export default function AboutUs() {
           <div className="lg:col-span-5 flex flex-col gap-6">
             
             {/* Our Purpose Card */}
-            <div className="bg-[#6B0F1A] text-[#FFF6A3] rounded-3xl p-6 sm:p-8 shadow-md border-2 border-[#6B0F1A] flex-1 flex flex-col justify-between">
+            <div className="bg-[#6B0F1A] text-[#FFFBCC] rounded-3xl p-6 sm:p-8 shadow-md border-2 border-[#6B0F1A] flex-1 flex flex-col justify-between">
               <div>
                 <div className="flex items-center gap-2 mb-3">
-                  <div className="p-2 rounded-xl bg-[#F4E409] text-[#3D0710]">
+                  <div className="p-2 rounded-xl bg-[#F7E200] text-[#3D0710]">
                     <Compass className="w-5 h-5" />
                   </div>
-                  <span className="text-xs font-extrabold uppercase tracking-wider text-[#F4E409]">
+                  <span className="text-xs font-extrabold uppercase tracking-wider text-[#F7E200]">
                     Our Core Model
                   </span>
                 </div>
-                <h4 className="text-lg sm:text-xl font-extrabold text-[#FFF6A3] mb-3">
+                <h4 className="text-lg sm:text-xl font-extrabold text-[#FFFBCC] mb-3">
                   Sublet Space. Share Success.
                 </h4>
                 <p className="text-xs sm:text-sm text-[#FFFDF5]/90 leading-relaxed font-medium">
@@ -134,9 +134,9 @@ export default function AboutUs() {
             </div>
 
             {/* Win-Win Card */}
-            <div className="bg-[#FFF6A3] text-[#3D0710] rounded-3xl p-6 sm:p-8 shadow-md border-2 border-[#6B0F1A]/30">
+            <div className="bg-[#FFFBCC] text-[#3D0710] rounded-3xl p-6 sm:p-8 shadow-md border-2 border-[#6B0F1A]/30">
               <div className="flex items-center gap-2 mb-3">
-                <div className="p-2 rounded-xl bg-[#6B0F1A] text-[#FFF6A3]">
+                <div className="p-2 rounded-xl bg-[#6B0F1A] text-[#FFFBCC]">
                   <Store className="w-5 h-5" />
                 </div>
                 <span className="text-xs font-extrabold uppercase tracking-wider text-[#6B0F1A]">
@@ -157,11 +157,11 @@ export default function AboutUs() {
           {/* Vision (Maroon Card) */}
           <div className="bg-[#6B0F1A] text-white rounded-3xl border-2 border-[#520a13] p-6 sm:p-8 shadow-md relative overflow-hidden group">
             <div className="flex items-center gap-3 mb-4">
-              <div className="p-3 rounded-2xl bg-[#F4E409] text-[#3D0710] border border-[#E2D308]">
+              <div className="p-3 rounded-2xl bg-[#F7E200] text-[#3D0710] border border-[#D9C800]">
                 <Eye className="w-6 h-6" />
               </div>
               <div>
-                <span className="text-xs font-extrabold text-[#F4E409] uppercase tracking-wider block">
+                <span className="text-xs font-extrabold text-[#F7E200] uppercase tracking-wider block">
                   Future Roadmap
                 </span>
                 <h3 className="text-xl font-extrabold text-white">Our Vision</h3>
@@ -173,7 +173,7 @@ export default function AboutUs() {
           </div>
 
           {/* Mission (Yellow Card) */}
-          <div className="bg-[#F4E409] text-[#3D0710] rounded-3xl border-2 border-[#E2D308] p-6 sm:p-8 shadow-md relative overflow-hidden group">
+          <div className="bg-[#F7E200] text-[#3D0710] rounded-3xl border-2 border-[#D9C800] p-6 sm:p-8 shadow-md relative overflow-hidden group">
             <div className="flex items-center gap-3 mb-4">
               <div className="p-3 rounded-2xl bg-[#6B0F1A] text-white border border-[#520a13]">
                 <Target className="w-6 h-6" />
@@ -213,14 +213,14 @@ export default function AboutUs() {
                   className={`rounded-2xl p-5 shadow-xs transition-all hover:-translate-y-1 flex flex-col justify-between ${
                     isMaroon
                       ? "bg-[#6B0F1A] text-white border border-[#520a13]"
-                      : "bg-[#F4E409] text-[#3D0710] border border-[#E2D308]"
+                      : "bg-[#F7E200] text-[#3D0710] border border-[#D9C800]"
                   }`}
                 >
                   <div>
                     <div
                       className={`w-10 h-10 rounded-xl flex items-center justify-center mb-3 ${
                         isMaroon
-                          ? "bg-[#F4E409] text-[#3D0710] border border-[#E2D308]"
+                          ? "bg-[#F7E200] text-[#3D0710] border border-[#D9C800]"
                           : "bg-[#6B0F1A] text-white border border-[#520a13]"
                       }`}
                     >

@@ -19,9 +19,9 @@ export default function TrustStrip() {
             return (
               <div
                 key={idx}
-                className="group flex items-center justify-center gap-2.5 p-3 rounded-2xl bg-[#6B0F1A]/80 border border-white/10 hover:bg-[#6B0F1A] hover:border-[#F4E409]/40 hover:-translate-y-1 transition-all duration-300 cursor-default"
+                className="group flex items-center justify-center gap-2.5 p-3 rounded-2xl bg-[#6B0F1A]/80 border border-white/10 hover:bg-[#6B0F1A] hover:border-[#F7E200]/40 hover:-translate-y-1 transition-all duration-300 cursor-default"
               >
-                <IconComp className="w-5 h-5 text-[#F4E409] group-hover:scale-110 transition-transform duration-300" />
+                <IconComp className="w-5 h-5 text-[#F7E200] group-hover:scale-110 transition-transform duration-300" />
                 <span className="text-xs sm:text-sm font-bold text-white/90 group-hover:text-white">
                   {item.label}
                 </span>

@@ -79,14 +79,14 @@ function HowItWorksContent() {
           <div className="text-center max-w-3xl mx-auto mb-10">
             <Link 
               href="/" 
-              className="inline-flex items-center gap-2 text-xs sm:text-sm font-extrabold text-[#6B0F1A] hover:text-[#3D0710] bg-[#FFF6A3]/60 px-4 py-1.5 rounded-full border border-[#F0E2E4] mb-6 transition-all hover:bg-[#FFF6A3]"
+              className="inline-flex items-center gap-2 text-xs sm:text-sm font-extrabold text-[#6B0F1A] hover:text-[#3D0710] bg-[#FFFBCC]/60 px-4 py-1.5 rounded-full border border-[#F0E2E4] mb-6 transition-all hover:bg-[#FFFBCC]"
             >
               <ArrowRight className="w-4 h-4 rotate-180" /> Back to Home
             </Link>
             
             <div className="flex justify-center mb-3">
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-[#6B0F1A] px-4 py-1 text-xs font-extrabold text-[#FFF6A3]">
-                <Sparkles className="w-3.5 h-3.5 text-[#F4E409]" /> Step-by-Step Retail Partnership
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-[#6B0F1A] px-4 py-1 text-xs font-extrabold text-[#FFFBCC]">
+                <Sparkles className="w-3.5 h-3.5 text-[#F7E200]" /> Step-by-Step Retail Partnership
               </span>
             </div>
 
@@ -118,8 +118,8 @@ function HowItWorksContent() {
                 <span className="text-xs sm:text-sm font-extrabold text-[#3D0710]">6 Simple Steps</span>
               </div>
 
-              <div className="absolute bottom-4 right-4 sm:right-6 bg-[#6B0F1A] text-[#FFF6A3] px-3.5 py-1.5 rounded-xl border border-[#F4E409]/40 shadow-md flex items-center gap-2">
-                <Sparkles className="w-4 h-4 text-[#F4E409]" />
+              <div className="absolute bottom-4 right-4 sm:right-6 bg-[#6B0F1A] text-[#FFFBCC] px-3.5 py-1.5 rounded-xl border border-[#F7E200]/40 shadow-md flex items-center gap-2">
+                <Sparkles className="w-4 h-4 text-[#F7E200]" />
                 <span className="text-xs sm:text-sm font-extrabold">Win-Win Partnership</span>
               </div>
             </div>
@@ -134,9 +134,9 @@ function HowItWorksContent() {
             {featureCards.map((card, idx) => (
               <div 
                 key={idx} 
-                className="bg-white p-5 rounded-2xl border border-[#F0E2E4] shadow-2xs hover:shadow-md hover:border-[#F4E409]/60 transition-all duration-300"
+                className="bg-white p-5 rounded-2xl border border-[#F0E2E4] shadow-2xs hover:shadow-md hover:border-[#F7E200]/60 transition-all duration-300"
               >
-                <div className="p-2.5 rounded-xl bg-[#FFF6A3]/60 inline-block mb-3">
+                <div className="p-2.5 rounded-xl bg-[#FFFBCC]/60 inline-block mb-3">
                   {card.icon}
                 </div>
                 <h3 className="text-base font-extrabold text-[#6B0F1A] mb-1">{card.title}</h3>
@@ -166,8 +166,8 @@ function HowItWorksContent() {
                 onClick={() => setActiveTab("bunk-owner")}
                 className={`px-6 py-3 rounded-xl text-xs sm:text-sm font-extrabold transition-all cursor-pointer ${
                   activeTab === "bunk-owner"
-                    ? "bg-[#6B0F1A] text-[#FFF6A3] shadow-md"
-                    : "text-[#5F5F5F] hover:text-[#6B0F1A] hover:bg-[#FFF6A3]/40"
+                    ? "bg-[#6B0F1A] text-[#FFFBCC] shadow-md"
+                    : "text-[#5F5F5F] hover:text-[#6B0F1A] hover:bg-[#FFFBCC]/40"
                 }`}
               >
                 For Petrol Pump Owners
@@ -177,8 +177,8 @@ function HowItWorksContent() {
                 onClick={() => setActiveTab("brand")}
                 className={`px-6 py-3 rounded-xl text-xs sm:text-sm font-extrabold transition-all cursor-pointer ${
                   activeTab === "brand"
-                    ? "bg-[#6B0F1A] text-[#FFF6A3] shadow-md"
-                    : "text-[#5F5F5F] hover:text-[#6B0F1A] hover:bg-[#FFF6A3]/40"
+                    ? "bg-[#6B0F1A] text-[#FFFBCC] shadow-md"
+                    : "text-[#5F5F5F] hover:text-[#6B0F1A] hover:bg-[#FFFBCC]/40"
                 }`}
               >
                 For Retail Brands &amp; Startups
@@ -194,7 +194,7 @@ function HowItWorksContent() {
             {/* Header Badge & Title */}
             <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-6 pb-4 border-b border-[#F0E2E4]">
               <div>
-                <span className="inline-flex items-center gap-1.5 text-xs font-extrabold uppercase tracking-widest text-[#6B0F1A] bg-[#FFF6A3] px-3.5 py-1 rounded-full border border-[#F4E409]/40 mb-1.5">
+                <span className="inline-flex items-center gap-1.5 text-xs font-extrabold uppercase tracking-widest text-[#6B0F1A] bg-[#FFFBCC] px-3.5 py-1 rounded-full border border-[#F7E200]/40 mb-1.5">
                   <Sparkles className="w-3.5 h-3.5 text-[#6B0F1A]" />
                   {activeTab === "bunk-owner" ? "Petrol Pump Owners Guide" : "Entrepreneurs & Brands Guide"}
                 </span>
@@ -209,7 +209,7 @@ function HowItWorksContent() {
                 <button
                   type="button"
                   onClick={() => setIsModalOpen(true)}
-                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#FFF6A3] text-[#3D0710] border border-[#F4E409] text-xs font-extrabold hover:bg-[#F4E409] transition-all cursor-pointer shadow-xs"
+                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#FFFBCC] text-[#3D0710] border border-[#F7E200] text-xs font-extrabold hover:bg-[#F7E200] transition-all cursor-pointer shadow-xs"
                 >
                   <Maximize2 className="w-4 h-4 text-[#6B0F1A]" />
                   <span>Full Screen View</span>
@@ -220,7 +220,7 @@ function HowItWorksContent() {
                   download={activeTab === "bunk-owner" ? "RacksOnRent_Owners_Infographic.jpg" : "RacksOnRent_Entrepreneurs_Infographic.jpg"}
                   className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#6B0F1A] text-white border border-[#520a13] text-xs font-extrabold hover:bg-[#3D0710] transition-all cursor-pointer shadow-xs"
                 >
-                  <ArrowRight className="w-4 h-4 text-[#F4E409]" />
+                  <ArrowRight className="w-4 h-4 text-[#F7E200]" />
                   <span>Download Guide</span>
                 </a>
               </div>
@@ -241,8 +241,8 @@ function HowItWorksContent() {
               />
 
               <div className="absolute inset-0 bg-black/0 group-hover/img:bg-black/10 transition-colors flex items-center justify-center pointer-events-none">
-                <span className="opacity-0 group-hover/img:opacity-100 transition-opacity bg-[#3D0710] text-[#FFF6A3] border border-[#F4E409] px-5 py-2.5 rounded-full text-xs font-extrabold shadow-2xl flex items-center gap-2">
-                  <Maximize2 className="w-4 h-4 text-[#F4E409]" />
+                <span className="opacity-0 group-hover/img:opacity-100 transition-opacity bg-[#3D0710] text-[#FFFBCC] border border-[#F7E200] px-5 py-2.5 rounded-full text-xs font-extrabold shadow-2xl flex items-center gap-2">
+                  <Maximize2 className="w-4 h-4 text-[#F7E200]" />
                   Click to Expand Full Screen
                 </span>
               </div>
@@ -266,11 +266,11 @@ function HowItWorksContent() {
       {/* Classic Final CTA Section */}
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
-          <div className="bg-gradient-to-br from-[#6B0F1A] via-[#3D0710] to-[#6B0F1A] rounded-[2.5rem] p-8 sm:p-14 text-center shadow-2xl relative overflow-hidden border-2 border-[#F4E409]/30">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-[#F4E409]/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
+          <div className="bg-gradient-to-br from-[#6B0F1A] via-[#3D0710] to-[#6B0F1A] rounded-[2.5rem] p-8 sm:p-14 text-center shadow-2xl relative overflow-hidden border-2 border-[#F7E200]/30">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-[#F7E200]/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
             
             <div className="relative z-10">
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-[#F4E409] px-4 py-1 text-xs font-extrabold text-[#3D0710] mb-4">
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-[#F7E200] px-4 py-1 text-xs font-extrabold text-[#3D0710] mb-4">
                 <Sparkles className="w-3.5 h-3.5" /> Start Today
               </span>
 
@@ -278,14 +278,14 @@ function HowItWorksContent() {
                 Ready to Turn Space Into Opportunity?
               </h2>
               
-              <p className="text-[#FFF6A3] text-sm sm:text-lg mb-8 max-w-2xl mx-auto font-medium">
+              <p className="text-[#FFFBCC] text-sm sm:text-lg mb-8 max-w-2xl mx-auto font-medium">
                 Whether you own a petrol bunk or want to expand your retail brand, we connect you for mutual success.
               </p>
               
               <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
                 <Link
                   href="/#contact"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-2xl bg-[#F4E409] px-7 py-3.5 text-sm sm:text-base font-black text-[#3D0710] shadow-lg hover:bg-white hover:-translate-y-0.5 transition-all duration-300"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-2xl bg-[#F7E200] px-7 py-3.5 text-sm sm:text-base font-black text-[#3D0710] shadow-lg hover:bg-white hover:-translate-y-0.5 transition-all duration-300"
                 >
                   <Building2 className="w-5 h-5" />
                   List Your Space
@@ -295,7 +295,7 @@ function HowItWorksContent() {
                   href="/#contact"
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-2xl bg-white/10 border-2 border-white/20 px-7 py-3.5 text-sm sm:text-base font-black text-white hover:bg-white/20 hover:-translate-y-0.5 transition-all duration-300"
                 >
-                  <Store className="w-5 h-5 text-[#FFF6A3]" />
+                  <Store className="w-5 h-5 text-[#FFFBCC]" />
                   Showcase Your Brand
                 </Link>
               </div>
@@ -312,7 +312,7 @@ function HowItWorksContent() {
             <a
               href={activeTab === "bunk-owner" ? "/images/how-it-works-owners.jpg" : "/images/how-it-works-entrepreneurs.jpg"}
               download={activeTab === "bunk-owner" ? "RacksOnRent_Owners_Infographic.jpg" : "RacksOnRent_Entrepreneurs_Infographic.jpg"}
-              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#F4E409] text-[#3D0710] text-xs font-black hover:bg-white transition shadow-lg"
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#F7E200] text-[#3D0710] text-xs font-black hover:bg-white transition shadow-lg"
             >
               Download High Res
             </a>

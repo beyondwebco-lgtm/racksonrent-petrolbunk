@@ -31,16 +31,16 @@ export default function Footer() {
                 {/* Main Brand Title */}
                 <div className="flex items-baseline font-black tracking-tighter leading-none text-xl sm:text-2xl">
                   <span className="text-white font-black italic">Racks</span>
-                  <span className="text-[#F4E409] font-bold italic lowercase mx-1 text-[0.8em]" style={{ fontFamily: "Georgia, serif" }}>on</span>
-                  <span className="text-[#F4E409] font-black italic">Rent</span>
+                  <span className="text-[#F7E200] font-bold italic lowercase mx-1 text-[0.8em]" style={{ fontFamily: "Georgia, serif" }}>on</span>
+                  <span className="text-[#F7E200] font-black italic">Rent</span>
                 </div>
 
                 {/* Tagline */}
                 <div className="flex items-center gap-1 mt-0.5 text-[8px] sm:text-[9px] font-black uppercase tracking-[0.18em] leading-none whitespace-nowrap">
-                  <span className="h-[1.5px] w-3 bg-[#F4E409] inline-block" />
+                  <span className="h-[1.5px] w-3 bg-[#F7E200] inline-block" />
                   <span className="text-white">SUBLET SPACE.</span>
-                  <span className="text-[#F4E409]">SHARE SUCCESS.</span>
-                  <span className="h-[1.5px] w-3 bg-[#F4E409] inline-block" />
+                  <span className="text-[#F7E200]">SHARE SUCCESS.</span>
+                  <span className="h-[1.5px] w-3 bg-[#F7E200] inline-block" />
                 </div>
               </div>
             </div>
@@ -52,7 +52,7 @@ export default function Footer() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-white/80 hover:text-[#F4E409] transition-colors"
+                className="text-white/80 hover:text-[#F7E200] transition-colors"
               >
                 {link.label}
               </a>
@@ -63,9 +63,9 @@ export default function Footer() {
           <div className="flex flex-wrap items-center justify-center gap-4 text-xs sm:text-sm font-bold">
             <a
               href={SITE_CONFIG.telLink}
-              className="inline-flex items-center gap-1.5 text-white/90 hover:text-[#F4E409] transition-colors"
+              className="inline-flex items-center gap-1.5 text-white/90 hover:text-[#F7E200] transition-colors"
             >
-              <Phone className="w-4 h-4 text-[#F4E409]" />
+              <Phone className="w-4 h-4 text-[#F7E200]" />
               <span>{SITE_CONFIG.phoneDisplay}</span>
             </a>
 
@@ -75,9 +75,9 @@ export default function Footer() {
               href={SITE_CONFIG.whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-white/90 hover:text-[#F4E409] transition-colors"
+              className="inline-flex items-center gap-1.5 text-white/90 hover:text-[#25D366] transition-colors"
             >
-              <MessageCircle className="w-4 h-4 text-[#F4E409] fill-current" />
+              <MessageCircle className="w-4 h-4 text-[#25D366] fill-current" />
               <span>WhatsApp</span>
             </a>
 
@@ -85,9 +85,9 @@ export default function Footer() {
 
             <a
               href={SITE_CONFIG.mailtoLink}
-              className="inline-flex items-center gap-1.5 text-white/90 hover:text-[#F4E409] transition-colors"
+              className="inline-flex items-center gap-1.5 text-white/90 hover:text-[#F7E200] transition-colors"
             >
-              <Mail className="w-4 h-4 text-[#F4E409]" />
+              <Mail className="w-4 h-4 text-[#F7E200]" />
               <span>{SITE_CONFIG.email}</span>
             </a>
 
@@ -95,9 +95,9 @@ export default function Footer() {
 
             <a
               href={SITE_CONFIG.mailtoSecondaryLink}
-              className="inline-flex items-center gap-1.5 text-white/90 hover:text-[#F4E409] transition-colors"
+              className="inline-flex items-center gap-1.5 text-white/90 hover:text-[#F7E200] transition-colors"
             >
-              <Mail className="w-4 h-4 text-[#F4E409]" />
+              <Mail className="w-4 h-4 text-[#F7E200]" />
               <span>{SITE_CONFIG.emailSecondary}</span>
             </a>
           </div>
