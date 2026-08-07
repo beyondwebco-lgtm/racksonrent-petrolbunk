@@ -317,7 +317,7 @@ export default function PetrolBunkShowcase({
                   alt={activeCategory.title}
                   fill
                   sizes="(max-width: 1024px) 100vw, 45vw"
-                  className={`object-cover object-center transition-all duration-500 group-hover:scale-105 ${
+                  className={`object-contain transition-all duration-500 group-hover:scale-105 ${
                     isAnimating ? "opacity-40 scale-102" : "opacity-100 scale-100"
                   }`}
                 />
