@@ -80,7 +80,7 @@ export default function RootLayout({
     "logo": `${SITE_CONFIG.domain}/images/logo.jpeg`,
     "description": "Sublet space. Share Success. A smart platform connecting petrol pump owners with startups and retail entrepreneurs.",
     "telephone": "+917995424477",
-    "email": "racksonrent@gmail.com"
+    "email": ["support@rentonrack.com", "contact@rentonracks.com"]
   };
 
   return (

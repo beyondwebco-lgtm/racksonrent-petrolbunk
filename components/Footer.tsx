@@ -90,6 +90,16 @@ export default function Footer() {
               <Mail className="w-4 h-4 text-[#F4E409]" />
               <span>{SITE_CONFIG.email}</span>
             </a>
+
+            <span className="text-[#F0E2E4]/40">•</span>
+
+            <a
+              href={SITE_CONFIG.mailtoSecondaryLink}
+              className="inline-flex items-center gap-1.5 text-white/90 hover:text-[#F4E409] transition-colors"
+            >
+              <Mail className="w-4 h-4 text-[#F4E409]" />
+              <span>{SITE_CONFIG.emailSecondary}</span>
+            </a>
           </div>
 
         </div>

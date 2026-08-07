@@ -36,6 +36,14 @@ export default function TopBar() {
             <Mail className="w-3.5 h-3.5 text-[#F4E409]" />
             <span>{SITE_CONFIG.email}</span>
           </a>
+
+          <a
+            href={SITE_CONFIG.mailtoSecondaryLink}
+            className="hidden lg:flex items-center gap-1 text-white/80 hover:text-[#F4E409] transition-colors"
+          >
+            <Mail className="w-3.5 h-3.5 text-[#F4E409]" />
+            <span>{SITE_CONFIG.emailSecondary}</span>
+          </a>
         </div>
 
       </div>
