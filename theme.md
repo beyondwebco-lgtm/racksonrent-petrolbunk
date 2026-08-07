@@ -11,12 +11,12 @@ This document specifies the complete color palette, CSS tokens, Tailwind variabl
 | **Deep Maroon** | `#6B0F1A` | `--color-primary-maroon` | `bg-[#6B0F1A]`, `text-[#6B0F1A]` | Primary Brand Color, Section Headers, Maroon Cards, Primary Buttons |
 | **Dark Maroon** | `#3D0710` | `--color-dark-maroon` | `bg-[#3D0710]`, `text-[#3D0710]` | Primary Headings, Dark Maroon Backgrounds, High-Contrast Text |
 | **Maroon Border / Dark Accent** | `#520a13` | `--color-maroon-dark-border` | `border-[#520a13]` | Card Borders, Hover States on Maroon elements |
-| **Lemon Yellow** | `#F4E409` | `--color-lemon-yellow` | `bg-[#F4E409]`, `text-[#F4E409]` | Accent Brand Color, Yellow Cards, Primary CTA Buttons, Badges |
+| **Lemon Yellow** | `#FFF100` | `--color-lemon-yellow` | `bg-[#FFF100]`, `text-[#FFF100]` | Accent Brand Color, Yellow Cards, Primary CTA Buttons, Badges |
 | **Flipkart Yellow** | `#FFE500` | `--color-flipkart-yellow` | `bg-[#FFE500]`, `text-[#FFE500]` | Popular Product Category Cards (Vibrant Brand Yellow Theme) |
 | **Flipkart Yellow Border** | `#E5CE00` | `--color-flipkart-yellow-border` | `border-[#E5CE00]` | Category Card Border for Flipkart Yellow |
-| **Yellow Border** | `#E2D308` | `--color-yellow-border` | `border-[#E2D308]` | Borders for Lemon Yellow Cards & Buttons |
-| **Hover Lemon Yellow** | `#EBD904` | `--color-yellow-hover` | `hover:bg-[#ebd904]` | Hover States for Yellow Buttons & Interactive Cards |
-| **Soft Lemon** | `#FFF6A3` | `--color-soft-lemon` | `bg-[#FFF6A3]`, `text-[#FFF6A3]` | Light Yellow Highlights, Subtle Badges |
+| **Yellow Border** | `#E6D900` | `--color-yellow-border` | `border-[#E6D900]` | Borders for Lemon Yellow Cards & Buttons |
+| **Hover Lemon Yellow** | `#F2E500` | `--color-yellow-hover` | `hover:bg-[#f2e500]` | Hover States for Yellow Buttons & Interactive Cards |
+| **Soft Lemon** | `#FFFBCC` | `--color-soft-lemon` | `bg-[#FFFBCC]`, `text-[#FFFBCC]` | Light Yellow Highlights, Subtle Badges |
 | **Cream Background** | `#FFFDF5` | `--color-warm-white` | `bg-[#FFFDF5]` | Section Backgrounds, Page Surface Background |
 | **Pure White** | `#FFFFFF` | `--color-pure-white` | `bg-white`, `text-white` | High-contrast Text on Maroon, Card Surfaces, Icons |
 
@@ -41,8 +41,8 @@ This document specifies the complete color palette, CSS tokens, Tailwind variabl
 @theme inline {
   --color-primary-maroon: #6B0F1A;
   --color-dark-maroon: #3D0710;
-  --color-lemon-yellow: #F4E409;
-  --color-soft-lemon: #FFF6A3;
+  --color-lemon-yellow: #FFF100;
+  --color-soft-lemon: #FFFBCC;
   --color-warm-white: #FFFDF5;
   --color-soft-border: #F0E2E4;
   --color-dark-text: #1F1F1F;
@@ -69,12 +69,12 @@ This document specifies the complete color palette, CSS tokens, Tailwind variabl
 
 1. **Alternating Grid Pattern**:
    When rendering cards in a grid layout (e.g. *Popular Product Categories*, *Platform Benefits*, *Featured Opportunities*, *About Us Stats*), alternate card styling between:
-   - **Maroon Card**: `bg-[#6B0F1A] text-white border-[#520a13]` with Lemon Yellow icon box (`bg-[#F4E409] text-[#3D0710] border-[#E2D308]`)
-   - **Yellow Card**: `bg-[#F4E409] text-[#3D0710] border-[#E2D308]` with Deep Maroon icon box (`bg-[#6B0F1A] text-white border-[#520a13]`)
+   - **Maroon Card**: `bg-[#6B0F1A] text-white border-[#520a13]` with Lemon Yellow icon box (`bg-[#FFF100] text-[#3D0710] border-[#E6D900]`)
+   - **Yellow Card**: `bg-[#FFF100] text-[#3D0710] border-[#E6D900]` with Deep Maroon icon box (`bg-[#6B0F1A] text-white border-[#520a13]`)
 
 2. **White Background Replacement Rule**:
-   Sections or cards using `#FFFFFF` (`bg-white`) are styled using the brand palette (**Deep Maroon** `#6B0F1A` or **Lemon Yellow** `#F4E409`), while preserving cream backgrounds (`#FFFDF5`).
+   Sections or cards using `#FFFFFF` (`bg-white`) are styled using the brand palette (**Deep Maroon** `#6B0F1A` or **Lemon Yellow** `#FFF100`), while preserving cream backgrounds (`#FFFDF5`).
 
 3. **CTA Buttons**:
-   - **Primary Action**: `bg-[#F4E409] text-[#3D0710] font-bold border border-[#E2D308] hover:bg-[#ebd904]`
+   - **Primary Action**: `bg-[#FFF100] text-[#3D0710] font-bold border border-[#E6D900] hover:bg-[#f2e500]`
    - **Secondary Action (Dark context)**: `bg-[#6B0F1A] text-white font-bold hover:bg-[#520a13]`

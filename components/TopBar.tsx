@@ -9,13 +9,13 @@ export default function TopBar() {
         
         {/* Left Side */}
         <div className="flex items-center gap-1.5 text-white/80">
-          <Users className="w-3.5 h-3.5 text-[#F7E200]" />
+          <Users className="w-3.5 h-3.5 text-[#FFF100]" />
           <span>{SITE_CONFIG.topBarTextLeft}</span>
         </div>
 
         {/* Centre Side */}
         <div className="hidden md:flex items-center gap-1.5 text-white/70">
-          <ShieldCheck className="w-3.5 h-3.5 text-[#F7E200]" />
+          <ShieldCheck className="w-3.5 h-3.5 text-[#FFF100]" />
           <span>{SITE_CONFIG.topBarTextCenter}</span>
         </div>
 
@@ -23,25 +23,25 @@ export default function TopBar() {
         <div className="flex items-center gap-4 ml-auto sm:ml-0">
           <a
             href={SITE_CONFIG.telLink}
-            className="flex items-center gap-1 text-white/80 hover:text-[#F7E200] transition-colors"
+            className="flex items-center gap-1 text-white/80 hover:text-[#FFF100] transition-colors"
           >
-            <Phone className="w-3.5 h-3.5 text-[#F7E200]" />
+            <Phone className="w-3.5 h-3.5 text-[#FFF100]" />
             <span>{SITE_CONFIG.phoneFormatted}</span>
           </a>
 
           <a
             href={SITE_CONFIG.mailtoLink}
-            className="hidden sm:flex items-center gap-1 text-white/80 hover:text-[#F7E200] transition-colors"
+            className="hidden sm:flex items-center gap-1 text-white/80 hover:text-[#FFF100] transition-colors"
           >
-            <Mail className="w-3.5 h-3.5 text-[#F7E200]" />
+            <Mail className="w-3.5 h-3.5 text-[#FFF100]" />
             <span>{SITE_CONFIG.email}</span>
           </a>
 
           <a
             href={SITE_CONFIG.mailtoSecondaryLink}
-            className="hidden lg:flex items-center gap-1 text-white/80 hover:text-[#F7E200] transition-colors"
+            className="hidden lg:flex items-center gap-1 text-white/80 hover:text-[#FFF100] transition-colors"
           >
-            <Mail className="w-3.5 h-3.5 text-[#F7E200]" />
+            <Mail className="w-3.5 h-3.5 text-[#FFF100]" />
             <span>{SITE_CONFIG.emailSecondary}</span>
           </a>
         </div>

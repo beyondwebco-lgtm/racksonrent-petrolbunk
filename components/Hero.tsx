@@ -74,7 +74,7 @@ export default function Hero({ onSelectRole }: HeroProps) {
             {/* Archivo Black hero heading */}
             <h1 className="font-archivo text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-black tracking-tight text-[#3D0710] leading-[1.08]">
               Turn Unused Petrol Pump Space{" "}
-              <span className="bg-[#F7E200] text-[#3D0710] px-2 py-0.5 rounded-lg inline-block mt-0.5 border border-[#D9C800]">
+              <span className="bg-[#FFF100] text-[#3D0710] px-2 py-0.5 rounded-lg inline-block mt-0.5 border border-[#E6D900]">
                 Into a New Business Opportunity
               </span>
             </h1>
@@ -105,7 +105,7 @@ export default function Hero({ onSelectRole }: HeroProps) {
                   onClick={() => handleRoleClick("bunk-owner")}
                   onMouseMove={(e) => handleMouseMoveBtn(e, setBtn1Pos)}
                   onMouseLeave={() => setBtn1Pos({ x: 0, y: 0 })}
-                  className="animate-cta-btn-1 flex-1 relative overflow-hidden inline-flex flex-col items-center justify-center gap-0.5 rounded-xl bg-[#F7E200] border-2 border-[#D9C800] px-4 py-2 sm:py-2.5 text-[#3D0710] shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#E5D100] hover:shadow-md active:scale-[0.97] focus:outline-none cursor-pointer group"
+                  className="animate-cta-btn-1 flex-1 relative overflow-hidden inline-flex flex-col items-center justify-center gap-0.5 rounded-xl bg-[#FFF100] border-2 border-[#E6D900] px-4 py-2 sm:py-2.5 text-[#3D0710] shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#F2E500] hover:shadow-md active:scale-[0.97] focus:outline-none cursor-pointer group"
                 >
                   <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out bg-gradient-to-r from-transparent via-white/40 to-transparent pointer-events-none" />
                   <div
@@ -130,16 +130,16 @@ export default function Hero({ onSelectRole }: HeroProps) {
                   onMouseLeave={() => setBtn2Pos({ x: 0, y: 0 })}
                   className="animate-cta-btn-2 flex-1 relative overflow-hidden inline-flex flex-col items-center justify-center gap-0.5 rounded-xl border-2 border-[#520a13] bg-[#6B0F1A] px-4 py-2 sm:py-2.5 text-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#3D0710] hover:shadow-md active:scale-[0.97] focus:outline-none cursor-pointer group"
                 >
-                  <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out bg-gradient-to-r from-transparent via-[#F7E200]/20 to-transparent pointer-events-none" />
+                  <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out bg-gradient-to-r from-transparent via-[#FFF100]/20 to-transparent pointer-events-none" />
                   <div
                     style={{ transform: `translate(${btn2Pos.x}px, ${btn2Pos.y}px)` }}
                     className="transition-transform duration-200 ease-out flex flex-col items-center justify-center w-full"
                   >
                     <div className="flex items-center gap-1.5 text-xs sm:text-sm font-black">
-                      <Store className="w-4 h-4 text-[#F7E200] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
+                      <Store className="w-4 h-4 text-[#FFF100] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
                       <span>Showcase Your Brand</span>
                     </div>
-                    <span className="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider text-[#F7E200] mt-0.5">
+                    <span className="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider text-[#FFF100] mt-0.5">
                       For Startups &amp; Retail Brands
                     </span>
                   </div>
@@ -152,7 +152,7 @@ export default function Hero({ onSelectRole }: HeroProps) {
           {/* Right Column: Petrol Bunk Video */}
           <div className="lg:col-span-6 relative mt-3 lg:mt-0">
             <div className="relative mx-auto">
-              <div className="animate-hero-video-entrance rounded-xl sm:rounded-2xl border-2 border-[#F0E2E4] bg-[#FFFDF5] p-1 shadow-[0_16px_40px_rgba(61,7,16,0.1)] relative overflow-hidden transition-all duration-350 hover:scale-[1.015] hover:shadow-[0_20px_50px_rgba(61,7,16,0.15)] hover:border-[#F7E200]/50 group">
+              <div className="animate-hero-video-entrance rounded-xl sm:rounded-2xl border-2 border-[#F0E2E4] bg-[#FFFDF5] p-1 shadow-[0_16px_40px_rgba(61,7,16,0.1)] relative overflow-hidden transition-all duration-350 hover:scale-[1.015] hover:shadow-[0_20px_50px_rgba(61,7,16,0.15)] hover:border-[#FFF100]/50 group">
                 <div className="relative aspect-video max-h-[300px] sm:max-h-[340px] lg:max-h-[350px] w-full rounded-lg sm:rounded-xl overflow-hidden bg-[#FFFBCC]/30">
                   <video
                     src="/videos/hero-video.mp4"
@@ -166,8 +166,8 @@ export default function Hero({ onSelectRole }: HeroProps) {
                   
                   <div className="absolute inset-0 bg-gradient-to-t from-[#3D0710]/70 via-[#3D0710]/20 to-transparent pointer-events-none" />
 
-                  <div className="absolute bottom-3 right-3 bg-[#3D0710] text-white px-3 py-1 rounded-full border border-[#F7E200] shadow-md flex items-center gap-1.5 text-[11px] font-bold tracking-wide z-10">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#F7E200] animate-ping" />
+                  <div className="absolute bottom-3 right-3 bg-[#3D0710] text-white px-3 py-1 rounded-full border border-[#FFF100] shadow-md flex items-center gap-1.5 text-[11px] font-bold tracking-wide z-10">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#FFF100] animate-ping" />
                     <span>Petrol Bunk Retail Partnership</span>
                   </div>
                 </div>

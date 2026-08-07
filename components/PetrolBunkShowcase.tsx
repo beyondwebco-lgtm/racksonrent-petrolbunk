@@ -196,7 +196,7 @@ export default function PetrolBunkShowcase({
                       : "bg-[#FFFDF5] text-[#5F5F5F] border-[#F0E2E4] hover:bg-[#FFFBCC] hover:text-[#6B0F1A]"
                   }`}
                 >
-                  <IconComp className={`w-4 h-4 ${isActive ? "text-[#F7E200]" : ""}`} />
+                  <IconComp className={`w-4 h-4 ${isActive ? "text-[#FFF100]" : ""}`} />
                   <span>{cat.shortName}</span>
                 </button>
               );
@@ -220,7 +220,7 @@ export default function PetrolBunkShowcase({
               }`}
             >
               <div>
-                <span className="inline-flex rounded-full bg-[#F7E200] px-3.5 py-1 text-xs font-black text-[#3D0710] border border-[#D9C800]">
+                <span className="inline-flex rounded-full bg-[#FFF100] px-3.5 py-1 text-xs font-black text-[#3D0710] border border-[#E6D900]">
                   {activeCategory.eyebrow}
                 </span>
                 <h3 className="font-archivo mt-3 text-2xl sm:text-3xl lg:text-4xl font-black text-[#6B0F1A] leading-snug">
@@ -281,7 +281,7 @@ export default function PetrolBunkShowcase({
                   onClick={handleCtaSecondaryClick}
                   className="btn-secondary"
                 >
-                  <Store className="w-4 h-4 text-[#F7E200]" />
+                  <Store className="w-4 h-4 text-[#FFF100]" />
                   <span>{activeCategory.secondaryCta}</span>
                 </button>
               </div>
@@ -296,7 +296,7 @@ export default function PetrolBunkShowcase({
                   type="button"
                   onClick={handlePrev}
                   aria-label="Previous category"
-                  className="absolute left-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-[#6B0F1A]/95 text-white border-2 border-[#F7E200] flex items-center justify-center shadow-lg hover:bg-[#3D0710] hover:text-[#F7E200] hover:scale-110 transition-all cursor-pointer active:scale-95 backdrop-blur-xs"
+                  className="absolute left-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-[#6B0F1A]/95 text-white border-2 border-[#FFF100] flex items-center justify-center shadow-lg hover:bg-[#3D0710] hover:text-[#FFF100] hover:scale-110 transition-all cursor-pointer active:scale-95 backdrop-blur-xs"
                 >
                   <ChevronLeft className="w-6 h-6 stroke-[2.5]" />
                 </button>
@@ -306,7 +306,7 @@ export default function PetrolBunkShowcase({
                   type="button"
                   onClick={handleNext}
                   aria-label="Next category"
-                  className="absolute right-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-[#6B0F1A]/95 text-white border-2 border-[#F7E200] flex items-center justify-center shadow-lg hover:bg-[#3D0710] hover:text-[#F7E200] hover:scale-110 transition-all cursor-pointer active:scale-95 backdrop-blur-xs"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-[#6B0F1A]/95 text-white border-2 border-[#FFF100] flex items-center justify-center shadow-lg hover:bg-[#3D0710] hover:text-[#FFF100] hover:scale-110 transition-all cursor-pointer active:scale-95 backdrop-blur-xs"
                 >
                   <ChevronRight className="w-6 h-6 stroke-[2.5]" />
                 </button>
@@ -324,9 +324,9 @@ export default function PetrolBunkShowcase({
                 
                 <div className="absolute inset-0 bg-gradient-to-t from-[#3D0710]/70 via-[#3D0710]/10 to-transparent pointer-events-none" />
 
-                <div className="absolute bottom-3 left-3 right-3 bg-[#3D0710] text-white px-4 py-2.5 rounded-xl border-2 border-[#F7E200] shadow-xl flex items-center justify-between text-xs sm:text-sm font-bold tracking-wide z-10">
+                <div className="absolute bottom-3 left-3 right-3 bg-[#3D0710] text-white px-4 py-2.5 rounded-xl border-2 border-[#FFF100] shadow-xl flex items-center justify-between text-xs sm:text-sm font-bold tracking-wide z-10">
                   <span className="truncate">{activeCategory.title} Space</span>
-                  <ArrowRight className="w-4 h-4 text-[#F7E200] flex-shrink-0 ml-2" />
+                  <ArrowRight className="w-4 h-4 text-[#FFF100] flex-shrink-0 ml-2" />
                 </div>
               </div>
             </div>

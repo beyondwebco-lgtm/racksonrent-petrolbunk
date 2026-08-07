@@ -140,8 +140,8 @@ export default function PopularCategories() {
                   key={cat.id}
                   className={`category-card flex-shrink-0 w-[85vw] max-w-[300px] sm:w-[calc(50%-12px)] md:w-[calc(33.333%-16px)] lg:w-[calc(25%-18px)] snap-start text-left rounded-[24px] shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group overflow-hidden ${
                     isMaroon
-                      ? "bg-[#6B0F1A] text-white border border-[#520a13] hover:border-[#F7E200]"
-                      : "bg-[#F7E200] text-[#3D0710] border border-[#D9C800] hover:border-[#6B0F1A]"
+                      ? "bg-[#6B0F1A] text-white border border-[#520a13] hover:border-[#FFF100]"
+                      : "bg-[#FFF100] text-[#3D0710] border border-[#E6D900] hover:border-[#6B0F1A]"
                   }`}
                 >
                   {/* Image Container */}
@@ -149,14 +149,14 @@ export default function PopularCategories() {
                     className={`relative w-full aspect-[4/3] p-6 overflow-hidden flex items-center justify-center ${
                       isMaroon
                         ? "bg-[#3D0710]/40 border-b border-[#520a13]"
-                        : "bg-white/60 border-b border-[#D9C800]"
+                        : "bg-white/60 border-b border-[#E6D900]"
                     }`}
                   >
                     {cat.badge && (
                       <span
                         className={`absolute top-3 right-3 text-[10px] font-extrabold px-2.5 py-1 rounded-full z-10 shadow-xs ${
                           isMaroon
-                            ? "bg-[#F7E200] text-[#3D0710] border border-[#D9C800]"
+                            ? "bg-[#FFF100] text-[#3D0710] border border-[#E6D900]"
                             : "bg-[#6B0F1A] text-white border border-[#520a13]"
                         }`}
                       >
@@ -180,7 +180,7 @@ export default function PopularCategories() {
                       <h3
                         className={`font-bold text-lg sm:text-xl transition-colors mb-2 ${
                           isMaroon
-                            ? "text-white group-hover:text-[#F7E200]"
+                            ? "text-white group-hover:text-[#FFF100]"
                             : "text-[#3D0710] group-hover:text-[#6B0F1A]"
                         }`}
                       >
@@ -199,7 +199,7 @@ export default function PopularCategories() {
                     <button
                       className={`flex items-center text-sm font-extrabold transition-colors mt-auto pt-2 ${
                         isMaroon
-                          ? "text-[#F7E200] group-hover:text-white border-t border-white/10"
+                          ? "text-[#FFF100] group-hover:text-white border-t border-white/10"
                           : "text-[#6B0F1A] group-hover:text-[#3D0710] border-t border-[#3D0710]/15"
                       }`}
                     >

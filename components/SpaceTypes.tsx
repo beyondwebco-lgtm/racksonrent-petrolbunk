@@ -90,7 +90,7 @@ export default function SpaceTypes() {
           {/* Navigation Arrows */}
           <button 
             onClick={handlePrev}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 sm:-translate-x-6 z-10 p-2.5 sm:p-3 rounded-full bg-[#6B0F1A] border-2 border-[#F7E200] text-white shadow-lg hover:bg-[#F7E200] hover:text-[#3D0710] hover:border-[#D9C800] transition-colors focus:outline-none focus:ring-2 focus:ring-[#F7E200]"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 sm:-translate-x-6 z-10 p-2.5 sm:p-3 rounded-full bg-[#6B0F1A] border-2 border-[#FFF100] text-white shadow-lg hover:bg-[#FFF100] hover:text-[#3D0710] hover:border-[#E6D900] transition-colors focus:outline-none focus:ring-2 focus:ring-[#FFF100]"
             aria-label="Previous space type"
           >
             <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
@@ -98,7 +98,7 @@ export default function SpaceTypes() {
           
           <button 
             onClick={handleNext}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 sm:translate-x-6 z-10 p-2.5 sm:p-3 rounded-full bg-[#6B0F1A] border-2 border-[#F7E200] text-white shadow-lg hover:bg-[#F7E200] hover:text-[#3D0710] hover:border-[#D9C800] transition-colors focus:outline-none focus:ring-2 focus:ring-[#F7E200]"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 sm:translate-x-6 z-10 p-2.5 sm:p-3 rounded-full bg-[#6B0F1A] border-2 border-[#FFF100] text-white shadow-lg hover:bg-[#FFF100] hover:text-[#3D0710] hover:border-[#E6D900] transition-colors focus:outline-none focus:ring-2 focus:ring-[#FFF100]"
             aria-label="Next space type"
           >
             <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
@@ -131,7 +131,7 @@ export default function SpaceTypes() {
                 {/* Content Section (Overlaid at Bottom) */}
                 <div className="absolute inset-0 p-5 sm:p-6 flex flex-col justify-end z-10 text-white">
                   <div>
-                    <h3 className="font-extrabold text-lg sm:text-xl text-white mb-2 group-hover:text-[#F7E200] transition-colors">
+                    <h3 className="font-extrabold text-lg sm:text-xl text-white mb-2 group-hover:text-[#FFF100] transition-colors">
                       {item.name}
                     </h3>
                     <p className="text-xs sm:text-sm text-white/80 leading-relaxed font-medium mb-4 line-clamp-3">
@@ -139,7 +139,7 @@ export default function SpaceTypes() {
                     </p>
                   </div>
                   
-                  <div className="flex items-center text-xs sm:text-sm font-bold text-[#F7E200] group-hover:text-white transition-colors">
+                  <div className="flex items-center text-xs sm:text-sm font-bold text-[#FFF100] group-hover:text-white transition-colors">
                     Explore Space <ArrowRight className="w-4 h-4 ml-1.5 transform group-hover:translate-x-1 transition-transform" />
                   </div>
                 </div>
@@ -155,7 +155,7 @@ export default function SpaceTypes() {
                 onClick={() => scrollToIndex(index)}
                 className={`transition-all duration-300 rounded-full ${
                   activeIndex === index 
-                    ? 'w-8 h-2.5 bg-[#F7E200]' 
+                    ? 'w-8 h-2.5 bg-[#FFF100]' 
                     : 'w-2.5 h-2.5 bg-[#F0E2E4] hover:bg-[#5F5F5F]'
                 }`}
                 aria-label={`Go to slide ${index + 1}`}

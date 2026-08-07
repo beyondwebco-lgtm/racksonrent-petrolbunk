@@ -7,11 +7,11 @@
   /* Core Brand Colors from theme.md */
   --color-primary-maroon: #6B0F1A;
   --color-dark-maroon: #3D0710;
-  --color-lemon-yellow: #F7E200;
+  --color-lemon-yellow: #FFF100;
   --color-flipkart-yellow: #FFE500;
   --color-flipkart-yellow-border: #E5CE00;
-  --color-yellow-border: #D9C800;
-  --color-yellow-hover: #E5D100;
+  --color-yellow-border: #E6D900;
+  --color-yellow-hover: #F2E500;
   --color-soft-lemon: #FFFBCC;
   --color-warm-white: #FFFDF5;
   --color-soft-border: #F0E2E4;
@@ -24,7 +24,7 @@
   --color-heading: #6B0F1A;
   --color-primary-dark: #3D0710;
   --color-background-maroon: #3D0710;
-  --color-accent: #F7E200;
+  --color-accent: #FFF100;
   --color-accent-light: #FFFBCC;
   --color-background-soft: #FFFBCC;
   --color-background: #FFFDF5;
@@ -44,12 +44,12 @@
    ═══════════════════════════════════════════ */
 :root {
   /* Yellow scale */
-  --yellow:       #F7E200;
+  --yellow:       #FFF100;
   --yellow-bright:#FFFBCC;
   --yellow-soft:  #FFFBCC;
   --yellow-pale:  #FFFDF5;
-  --yellow-hover: #E5D100;
-  --yellow-border:#D9C800;
+  --yellow-hover: #F2E500;
+  --yellow-border:#E6D900;
   --flipkart-yellow: #FFE500;
 
   /* Maroons (Replacing black/charcoal) */
@@ -74,7 +74,7 @@
   --background:       #FFFDF5;
   --primary:          #6B0F1A;
   --primary-dark:     #3D0710;
-  --accent:           #F7E200;
+  --accent:           #FFF100;
   --accent-light:     #FFFBCC;
 }
 
@@ -200,9 +200,9 @@ b, strong {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  background-color: #F7E200;
+  background-color: #FFF100;
   color: #3D0710;
-  border: 2px solid #D9C800;
+  border: 2px solid #E6D900;
   border-radius: 9999px;
   padding: 0.75rem 1.75rem;
   font-family: var(--font-manrope), system-ui, sans-serif;
@@ -218,9 +218,9 @@ b, strong {
 
 @media (hover: hover) and (pointer: fine) {
   .btn-primary:hover {
-    background-color: #E5D100;
+    background-color: #F2E500;
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(247, 226, 0, 0.35);
+    box-shadow: 0 8px 20px rgba(255, 241, 0, 0.35);
   }
 }
 
@@ -267,7 +267,7 @@ b, strong {
 }
 
 .btn-secondary:focus-visible {
-  outline: 3px solid #F7E200;
+  outline: 3px solid #FFF100;
   outline-offset: 2px;
 }
 
