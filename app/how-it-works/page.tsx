@@ -216,8 +216,8 @@ function HowItWorksContent() {
                 </button>
                 
                 <a
-                  href={activeTab === "bunk-owner" ? "/images/how-it-works-owners.jpg" : "/images/how-it-works-entrepreneurs.jpg"}
-                  download={activeTab === "bunk-owner" ? "RacksOnRent_Owners_Infographic.jpg" : "RacksOnRent_Entrepreneurs_Infographic.jpg"}
+                  href={activeTab === "bunk-owner" ? "/images/petrol_pump_owners.png" : "/images/entrepreneurs.png"}
+                  download={activeTab === "bunk-owner" ? "RacksOnRent_Owners_Infographic.png" : "RacksOnRent_Entrepreneurs_Infographic.png"}
                   className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#650000] text-white border border-[#650000] text-xs font-extrabold hover:bg-[#650000] transition-all cursor-pointer shadow-xs"
                 >
                   <ArrowRight className="w-4 h-4 text-[#FAFA33]" />
@@ -232,7 +232,7 @@ function HowItWorksContent() {
               className="relative w-full rounded-2xl overflow-hidden border border-[#F0E2E4] bg-[#FFFDF5] cursor-zoom-in shadow-inner group/img transition-all duration-300 hover:shadow-2xl"
             >
               <Image
-                src={activeTab === "bunk-owner" ? "/images/how-it-works-owners.jpg" : "/images/how-it-works-entrepreneurs.jpg"}
+                src={activeTab === "bunk-owner" ? "/images/petrol_pump_owners.png" : "/images/entrepreneurs.png"}
                 alt={activeTab === "bunk-owner" ? "How It Works for Petrol Pump Owners Infographic" : "How It Works for Entrepreneurs Infographic"}
                 width={1200}
                 height={1800}
@@ -310,8 +310,8 @@ function HowItWorksContent() {
           {/* Close Button Header */}
           <div className="absolute top-4 right-4 sm:top-6 sm:right-6 z-50 flex items-center gap-3">
             <a
-              href={activeTab === "bunk-owner" ? "/images/how-it-works-owners.jpg" : "/images/how-it-works-entrepreneurs.jpg"}
-              download={activeTab === "bunk-owner" ? "RacksOnRent_Owners_Infographic.jpg" : "RacksOnRent_Entrepreneurs_Infographic.jpg"}
+              href={activeTab === "bunk-owner" ? "/images/petrol_pump_owners.png" : "/images/entrepreneurs.png"}
+              download={activeTab === "bunk-owner" ? "RacksOnRent_Owners_Infographic.png" : "RacksOnRent_Entrepreneurs_Infographic.png"}
               className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#FAFA33] text-[#650000] text-xs font-black hover:bg-white transition shadow-lg"
             >
               Download High Res
@@ -329,7 +329,7 @@ function HowItWorksContent() {
           {/* Image Container */}
           <div className="relative max-w-5xl w-full max-h-[90vh] overflow-auto rounded-2xl p-2 bg-[#FFFDF5]/10 border border-white/20">
             <Image
-              src={activeTab === "bunk-owner" ? "/images/how-it-works-owners.jpg" : "/images/how-it-works-entrepreneurs.jpg"}
+              src={activeTab === "bunk-owner" ? "/images/petrol_pump_owners.png" : "/images/entrepreneurs.png"}
               alt="High resolution infographic preview"
               width={1400}
               height={2100}
