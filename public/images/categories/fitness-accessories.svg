@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#F1F5F9"/>
+    </radialGradient>
+    <radialGradient id="shadowGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="rgba(15,23,42,0.18)"/>
+      <stop offset="70%" stop-color="rgba(15,23,42,0.04)"/>
+      <stop offset="100%" stop-color="rgba(15,23,42,0)"/>
+    </radialGradient>
+    <linearGradient id="metalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#475569"/>
+      <stop offset="50%" stop-color="#94A3B8"/>
+      <stop offset="100%" stop-color="#1E293B"/>
+    </linearGradient>
+    <linearGradient id="dumbbellGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="bandGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F4E409"/>
+      <stop offset="100%" stop-color="#EAB308"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Studio Background -->
+  <rect width="400" height="400" fill="url(#bgGrad)"/>
+
+  <!-- Soft Floor Shadow -->
+  <ellipse cx="200" cy="320" rx="140" ry="24" fill="url(#shadowGrad)"/>
+
+  <!-- Coiled Loop Resistance Band (Laid in Background/Around Dumbbells) -->
+  <path d="M 90,260 Q 70,180 150,150 Q 250,120 310,180 Q 340,240 270,270 Q 200,300 90,260 Z"
+        fill="none" stroke="url(#bandGrad)" stroke-width="28" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Band Inner Shadow / Fold Detail -->
+  <path d="M 90,260 Q 70,180 150,150 Q 250,120 310,180"
+        fill="none" stroke="#CA8A04" stroke-width="4" stroke-linecap="round" opacity="0.5"/>
+
+  <!-- Dumbbell 1 (Background - Slightly Angled) -->
+  <g transform="rotate(-20 180 200)">
+    <!-- Left Weight Hexagon -->
+    <rect x="70" y="170" width="35" height="70" rx="10" fill="url(#dumbbellGrad)"/>
+    <rect x="73" y="173" width="29" height="64" rx="8" fill="#334155"/>
+    <!-- Right Weight Hexagon -->
+    <rect x="215" y="170" width="35" height="70" rx="10" fill="url(#dumbbellGrad)"/>
+    <rect x="218" y="173" width="29" height="64" rx="8" fill="#334155"/>
+    <!-- Handle Bar -->
+    <rect x="100" y="193" width="120" height="24" rx="6" fill="url(#metalGrad)"/>
+    <!-- Metal Knurling Textures -->
+    <line x1="130" y1="193" x2="130" y2="217" stroke="#334155" stroke-width="2"/>
+    <line x1="160" y1="193" x2="160" y2="217" stroke="#334155" stroke-width="2"/>
+    <line x1="190" y1="193" x2="190" y2="217" stroke="#334155" stroke-width="2"/>
+  </g>
+
+  <!-- Dumbbell 2 (Foreground - Crosses over Dumbbell 1) -->
+  <g transform="rotate(25 220 220)">
+    <!-- Dumbbell Shadow on Dumbbell 1 -->
+    <rect x="75" y="175" width="170" height="70" rx="12" fill="rgba(15,23,42,0.3)"/>
+
+    <!-- Left Weight -->
+    <rect x="70" y="170" width="40" height="76" rx="12" fill="url(#dumbbellGrad)"/>
+    <rect x="74" y="174" width="32" height="68" rx="9" fill="#1E293B"/>
+    <!-- Right Weight -->
+    <rect x="210" y="170" width="40" height="76" rx="12" fill="url(#dumbbellGrad)"/>
+    <rect x="214" y="174" width="32" height="68" rx="9" fill="#1E293B"/>
+    <!-- Center Steel Shaft -->
+    <rect x="105" y="193" width="110" height="30" rx="8" fill="url(#metalGrad)"/>
+    <!-- Rubber Grip Middle -->
+    <rect x="135" y="191" width="50" height="34" rx="6" fill="#0F172A"/>
+    <!-- Yellow Accent Bands on Dumbbell -->
+    <rect x="106" y="193" width="6" height="30" fill="#F4E409"/>
+    <rect x="208" y="193" width="6" height="30" fill="#F4E409"/>
+  </g>
+</svg>

@@ -1,0 +1,486 @@
+@import "tailwindcss";
+
+/* ═══════════════════════════════════════════
+   DESIGN SYSTEM TOKENS — Tailwind @theme
+   ═══════════════════════════════════════════ */
+@theme {
+  /* Core Brand Colors from theme.md */
+  --color-primary-maroon: #650000;
+  --color-dark-maroon: #650000;
+  --color-lemon-yellow: #FAFA33;
+  --color-flipkart-yellow: #FAFA33;
+  --color-flipkart-yellow-border: #E5CE00;
+  --color-yellow-border: #E6D900;
+  --color-yellow-hover: #F2E500;
+  --color-soft-lemon: #FFFBCC;
+  --color-warm-white: #FFFDF5;
+  --color-soft-border: #F0E2E4;
+  --color-dark-text: #1F1F1F;
+  --color-muted-text: #5F5F5F;
+  --color-maroon-dark-border: #650000;
+
+  /* Mappings */
+  --color-primary: #650000;
+  --color-heading: #650000;
+  --color-primary-dark: #650000;
+  --color-background-maroon: #650000;
+  --color-accent: #FAFA33;
+  --color-accent-light: #FFFBCC;
+  --color-background-soft: #FFFBCC;
+  --color-background: #FFFDF5;
+  --color-surface: #FFFDF5;
+  --color-border: #F0E2E4;
+  --color-text: #1F1F1F;
+  --color-text-muted: #5F5F5F;
+
+  /* Fonts */
+  --font-manrope: var(--font-manrope), sans-serif;
+  --font-archivo: var(--font-archivo), sans-serif;
+  --font-dm-serif: var(--font-dm-serif), serif;
+}
+
+/* ═══════════════════════════════════════════
+   CSS CUSTOM PROPERTIES
+   ═══════════════════════════════════════════ */
+:root {
+  /* Yellow scale */
+  --yellow:       #FAFA33;
+  --yellow-bright:#FFFBCC;
+  --yellow-soft:  #FFFBCC;
+  --yellow-pale:  #FFFDF5;
+  --yellow-hover: #F2E500;
+  --yellow-border:#E6D900;
+  --flipkart-yellow: #FAFA33;
+
+  /* Maroons (Replacing black/charcoal) */
+  --black:        #650000;
+  --charcoal:     #650000;
+  --maroon:       #650000;
+  --maroon-dark:  #650000;
+  --maroon-border:#650000;
+
+  /* Text */
+  --text:         #1F1F1F;
+  --text-muted:   #5F5F5F;
+
+  /* Surfaces */
+  --surface:      #FFFDF5;
+  --surface-warm: #FFFDF5;
+
+  /* Borders */
+  --border:       #F0E2E4;
+
+  /* Legacy aliases */
+  --background:       #FFFDF5;
+  --primary:          #650000;
+  --primary-dark:     #650000;
+  --accent:           #FAFA33;
+  --accent-light:     #FFFBCC;
+}
+
+/* ═══════════════════════════════════════════
+   BASE RESETS
+   ═══════════════════════════════════════════ */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 88px;
+  font-family: var(--font-manrope), system-ui, -apple-system, sans-serif;
+}
+
+section[id] {
+  scroll-margin-top: 88px;
+}
+
+body {
+  background-color: var(--surface);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+/* ═══════════════════════════════════════════
+   FONT FAMILY UTILITIES
+   ═══════════════════════════════════════════ */
+.font-archivo {
+  font-family: var(--font-archivo), system-ui, -apple-system, sans-serif;
+}
+
+.font-dm-serif {
+  font-family: var(--font-dm-serif), Georgia, serif;
+}
+
+/* Headings default to Manrope (body font) unless overridden per section */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-manrope), system-ui, -apple-system, sans-serif;
+}
+
+b, strong {
+  font-weight: 700;
+}
+
+/* ═══════════════════════════════════════════
+   FLUID TYPOGRAPHY SCALE
+   ═══════════════════════════════════════════ */
+.hero-title {
+  font-size: clamp(2.4rem, 5.5vw, 5.5rem);
+  line-height: 0.97;
+  letter-spacing: -0.042em;
+  font-family: var(--font-archivo), system-ui, sans-serif;
+}
+
+.section-title {
+  font-size: clamp(2rem, 4vw, 3.75rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
+.section-title-archivo {
+  font-size: clamp(2rem, 4vw, 3.75rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  font-family: var(--font-archivo), system-ui, sans-serif;
+}
+
+.section-title-dm {
+  font-size: clamp(2rem, 4vw, 3.75rem);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  font-family: var(--font-dm-serif), Georgia, serif;
+}
+
+.card-title {
+  font-size: clamp(1rem, 1.3vw, 1.25rem);
+  line-height: 1.3;
+}
+
+.body-copy {
+  font-size: clamp(0.95rem, 1.1vw, 1.075rem);
+  line-height: 1.7;
+}
+
+/* ═══════════════════════════════════════════
+   SECTION LAYOUT UTILITIES
+   ═══════════════════════════════════════════ */
+.section-padding {
+  padding-top: clamp(4rem, 8vw, 8rem);
+  padding-bottom: clamp(4rem, 8vw, 8rem);
+}
+
+.section-padding-sm {
+  padding-top: clamp(3rem, 5vw, 5rem);
+  padding-bottom: clamp(3rem, 5vw, 5rem);
+}
+
+.container-main {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .container-main {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-main {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* ═══════════════════════════════════════════
+   BUTTON SYSTEM
+   ═══════════════════════════════════════════ */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: #FAFA33;
+  color: #650000;
+  border: 2px solid #E6D900;
+  border-radius: 9999px;
+  padding: 0.75rem 1.75rem;
+  font-family: var(--font-manrope), system-ui, sans-serif;
+  font-weight: 800;
+  font-size: 0.9rem;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  transition: background-color 200ms cubic-bezier(0.22,1,0.36,1),
+              transform 200ms cubic-bezier(0.22,1,0.36,1),
+              box-shadow 200ms cubic-bezier(0.22,1,0.36,1);
+  white-space: nowrap;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .btn-primary:hover {
+    background-color: #F2E500;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 241, 0, 0.35);
+  }
+}
+
+.btn-primary:active {
+  transform: scale(0.97) !important;
+}
+
+.btn-primary:focus-visible {
+  outline: 3px solid #FFFBCC;
+  outline-offset: 2px;
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: #650000;
+  color: #ffffff;
+  border: 2px solid #650000;
+  border-radius: 9999px;
+  padding: 0.75rem 1.75rem;
+  font-family: var(--font-manrope), system-ui, sans-serif;
+  font-weight: 800;
+  font-size: 0.9rem;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  transition: background-color 200ms cubic-bezier(0.22,1,0.36,1),
+              transform 200ms cubic-bezier(0.22,1,0.36,1),
+              box-shadow 200ms cubic-bezier(0.22,1,0.36,1);
+  white-space: nowrap;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .btn-secondary:hover {
+    background-color: #650000;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(107, 15, 26, 0.35);
+  }
+}
+
+.btn-secondary:active {
+  transform: scale(0.97) !important;
+}
+
+.btn-secondary:focus-visible {
+  outline: 3px solid #FAFA33;
+  outline-offset: 2px;
+}
+
+/* ═══════════════════════════════════════════
+   CARD SYSTEM
+   ═══════════════════════════════════════════ */
+.card-base {
+  background-color: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 1.25rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 16px rgba(17, 17, 17, 0.05);
+  transition: transform 300ms cubic-bezier(0.22,1,0.36,1),
+              box-shadow 300ms cubic-bezier(0.22,1,0.36,1),
+              border-color 300ms cubic-bezier(0.22,1,0.36,1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .card-base:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(17, 17, 17, 0.1);
+    border-color: rgba(17, 17, 17, 0.2);
+  }
+}
+
+/* ═══════════════════════════════════════════
+   SCROLL REVEAL ANIMATIONS
+   ═══════════════════════════════════════════ */
+@keyframes revealUp {
+  0%   { opacity: 0; transform: translateY(16px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes ctaEntrance {
+  0%   { opacity: 0; transform: translateY(22px) scale(0.96); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes heroVideoEntrance {
+  0%   { opacity: 0; transform: translateY(18px) scale(0.97); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes ctaAttentionPulse {
+  0%, 100% { transform: scale(1);     opacity: 0.5; }
+  50%       { transform: scale(1.025); opacity: 0.9; }
+}
+
+@keyframes lineReveal {
+  0%   { transform: scaleX(0);    opacity: 0; }
+  100% { transform: scaleX(1); opacity: 1; }
+}
+
+/* Reusable animation utility classes */
+.animate-reveal-up {
+  opacity: 0;
+  animation: revealUp 550ms cubic-bezier(0.22,1,0.36,1) forwards;
+}
+
+.animate-reveal-up-delay-1 {
+  opacity: 0;
+  animation: revealUp 550ms cubic-bezier(0.22,1,0.36,1) 120ms forwards;
+}
+
+.animate-reveal-up-delay-2 {
+  opacity: 0;
+  animation: revealUp 550ms cubic-bezier(0.22,1,0.36,1) 240ms forwards;
+}
+
+.animate-fade-in {
+  opacity: 0;
+  animation: fadeIn 500ms cubic-bezier(0.22,1,0.36,1) 150ms forwards;
+}
+
+.animate-cta-btn-1 {
+  opacity: 0;
+  animation: ctaEntrance 700ms cubic-bezier(0.22,1,0.36,1) 100ms forwards;
+}
+
+.animate-cta-btn-2 {
+  opacity: 0;
+  animation: ctaEntrance 700ms cubic-bezier(0.22,1,0.36,1) 220ms forwards;
+}
+
+.animate-hero-video-entrance {
+  opacity: 0;
+  animation: heroVideoEntrance 1000ms cubic-bezier(0.22,1,0.36,1) 250ms forwards;
+}
+
+.animate-cta-pulse-group {
+  animation: ctaAttentionPulse 800ms cubic-bezier(0.22,1,0.36,1) 1600ms 1 forwards;
+}
+
+.animate-accent-line {
+  opacity: 0;
+  animation: lineReveal 600ms cubic-bezier(0.22,1,0.36,1) 300ms forwards;
+}
+
+/* ═══════════════════════════════════════════
+   NAV LINK HOVER UNDERLINE
+   ═══════════════════════════════════════════ */
+.nav-link-hover {
+  position: relative;
+  transition: color 220ms cubic-bezier(0.22,1,0.36,1),
+              transform 220ms cubic-bezier(0.22,1,0.36,1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .nav-link-hover:hover {
+    transform: translateY(-2px);
+  }
+  .nav-link-hover::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 15%;
+    width: 70%;
+    height: 2px;
+    background-color: var(--yellow);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 220ms cubic-bezier(0.22,1,0.36,1);
+    border-radius: 9999px;
+  }
+  .nav-link-hover:hover::after {
+    transform: scaleX(1);
+  }
+}
+
+/* ═══════════════════════════════════════════
+   CARD HOVER SYSTEM (legacy alias)
+   ═══════════════════════════════════════════ */
+.card-hover-system {
+  transition: transform 300ms cubic-bezier(0.22,1,0.36,1),
+              box-shadow 300ms cubic-bezier(0.22,1,0.36,1),
+              border-color 300ms cubic-bezier(0.22,1,0.36,1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .card-hover-system:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(17, 17, 17, 0.1);
+    border-color: rgba(17, 17, 17, 0.2);
+  }
+}
+
+/* ═══════════════════════════════════════════
+   BUTTON PRESS FEEDBACK
+   ═══════════════════════════════════════════ */
+.btn-press-feedback {
+  transition: transform 140ms cubic-bezier(0.22,1,0.36,1),
+              box-shadow 140ms cubic-bezier(0.22,1,0.36,1);
+}
+.btn-press-feedback:active {
+  transform: scale(0.97) !important;
+}
+
+/* ═══════════════════════════════════════════
+   SCROLLBAR
+   ═══════════════════════════════════════════ */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--surface-warm); }
+::-webkit-scrollbar-thumb {
+  background: var(--yellow);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--yellow-hover);
+}
+
+/* ═══════════════════════════════════════════
+   COMPACT VIEWPORT OVERRIDES
+   ═══════════════════════════════════════════ */
+@media (min-width: 1024px) and (max-height: 850px) {
+  section[id] {
+    scroll-margin-top: 80px;
+  }
+
+  .section-title,
+  .section-title-archivo,
+  .section-title-dm {
+    font-size: clamp(1.75rem, 2.7vw, 2.75rem);
+    line-height: 1.08;
+  }
+}
+
+/* ═══════════════════════════════════════════
+   REDUCED MOTION — accessibility
+   ═══════════════════════════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+  .animate-reveal-up,
+  .animate-reveal-up-delay-1,
+  .animate-reveal-up-delay-2,
+  .animate-fade-in,
+  .animate-cta-btn-1,
+  .animate-cta-btn-2,
+  .animate-hero-video-entrance,
+  .animate-cta-pulse-group,
+  .animate-accent-line,
+  .card-hover-system,
+  .card-base,
+  .nav-link-hover {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .nav-link-hover::after {
+    display: none !important;
+  }
+}

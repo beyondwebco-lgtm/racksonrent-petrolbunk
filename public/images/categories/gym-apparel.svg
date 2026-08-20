@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#F1F5F9"/>
+    </radialGradient>
+    <radialGradient id="shadowGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="rgba(15,23,42,0.16)"/>
+      <stop offset="70%" stop-color="rgba(15,23,42,0.04)"/>
+      <stop offset="100%" stop-color="rgba(15,23,42,0)"/>
+    </radialGradient>
+    <linearGradient id="shirtGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#1E293B"/>
+    </linearGradient>
+    <linearGradient id="shortsGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#334155"/>
+      <stop offset="100%" stop-color="#1E293B"/>
+    </linearGradient>
+    <linearGradient id="yellowAccent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F4E409"/>
+      <stop offset="100%" stop-color="#EAB308"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Studio Background -->
+  <rect width="400" height="400" fill="url(#bgGrad)"/>
+
+  <!-- Soft Floor Shadow -->
+  <ellipse cx="200" cy="325" rx="145" ry="22" fill="url(#shadowGrad)"/>
+
+  <!-- Folded Shorts (Underneath folded shirt) -->
+  <g transform="translate(10, 20)">
+    <rect x="110" y="210" width="180" height="90" rx="12" fill="url(#shortsGrad)"/>
+    <!-- Waistband Detail -->
+    <rect x="110" y="210" width="180" height="18" rx="6" fill="#0F172A"/>
+    <!-- Drawstring -->
+    <path d="M 195,222 C 195,232 190,238 185,242" stroke="#F4E409" stroke-width="3" stroke-linecap="round" fill="none"/>
+    <path d="M 205,222 C 205,232 210,238 215,242" stroke="#F4E409" stroke-width="3" stroke-linecap="round" fill="none"/>
+    <!-- Hem Stitch Line -->
+    <line x1="120" y1="290" x2="280" y2="290" stroke="#475569" stroke-width="2" stroke-dasharray="4,4"/>
+  </g>
+
+  <!-- Folded Fitted Sports Shirt (On Top) -->
+  <g transform="translate(0, -10)">
+    <!-- Shirt Shadow on Shorts -->
+    <rect x="105" y="115" width="190" height="150" rx="16" fill="rgba(15,23,42,0.25)"/>
+    
+    <!-- Main Shirt Body -->
+    <rect x="100" y="110" width="200" height="150" rx="16" fill="url(#shirtGrad)"/>
+    
+    <!-- Collar Detail -->
+    <path d="M 160,110 Q 200,135 240,110 Z" fill="#020617"/>
+    <path d="M 165,110 Q 200,130 235,110" stroke="#475569" stroke-width="2" fill="none"/>
+
+    <!-- Athletic Shoulder Stripe Accent -->
+    <path d="M 100,135 L 300,135" stroke="url(#yellowAccent)" stroke-width="4"/>
+
+    <!-- Fold Lines & Fabric Texture Highlights -->
+    <line x1="100" y1="180" x2="300" y2="180" stroke="#334155" stroke-width="1.5"/>
+    <line x1="100" y1="220" x2="300" y2="220" stroke="#334155" stroke-width="1.5"/>
+    
+    <!-- Left Sleeve Fold -->
+    <path d="M 100,110 L 130,160 L 100,175 Z" fill="#1E293B" opacity="0.6"/>
+    <!-- Right Sleeve Fold -->
+    <path d="M 300,110 L 270,160 L 300,175 Z" fill="#1E293B" opacity="0.6"/>
+  </g>
+
+  <!-- Studio Light Highlight -->
+  <rect x="110" y="105" width="180" height="3" fill="#FFFFFF" opacity="0.3"/>
+</svg>
