@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
-import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { POPULAR_CATEGORIES, CategoryItem } from "@/data/categories";
 
 export default function PopularCategories() {
@@ -190,14 +190,13 @@ export default function PopularCategories() {
                     {/* Explore Spaces Action */}
                     <div className="flex items-center">
                       <div
-                        className={`inline-flex items-center gap-2 text-xs sm:text-sm font-extrabold px-4 py-2.5 rounded-full transition-all duration-300 shadow-lg ${
+                        className={`inline-flex items-center justify-center text-xs sm:text-sm font-extrabold px-4 py-2.5 rounded-full transition-all duration-300 shadow-lg ${
                           isMaroon
                             ? "bg-[#FAFA33] text-[#650000] hover:bg-white group-hover:shadow-[#FAFA33]/30"
                             : "bg-white text-[#650000] hover:bg-[#FAFA33] group-hover:shadow-white/30"
                         }`}
                       >
                         <span>Explore Spaces</span>
-                        <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                       </div>
                     </div>
                   </div>
