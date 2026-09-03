@@ -45,6 +45,13 @@ export const metadata: Metadata = {
   authors: [{ name: "Racks on Rent", url: SITE_CONFIG.domain }],
   creator: "Racks on Rent",
   publisher: "Racks on Rent",
+  icons: {
+    icon: [
+      { url: "/images/favicon.jpeg", type: "image/jpeg" },
+    ],
+    shortcut: "/images/favicon.jpeg",
+    apple: "/images/favicon.jpeg",
+  },
   openGraph: {
     title: "Racks on Rent | Petrol Pump Space Partnership",
     description:
@@ -53,6 +60,14 @@ export const metadata: Metadata = {
     siteName: "Racks on Rent",
     locale: "en_IN",
     type: "website",
+    images: [
+      {
+        url: "/images/opengraph-image.jpeg",
+        width: 1200,
+        height: 1200,
+        alt: "Racks on Rent Logo",
+      },
+    ],
   },
   robots: {
     index: true,
@@ -77,7 +92,7 @@ export default function RootLayout({
     "@type": "Organization",
     "name": "Racks on Rent",
     "url": SITE_CONFIG.domain,
-    "logo": `${SITE_CONFIG.domain}/images/logo.jpeg`,
+    "logo": `${SITE_CONFIG.domain}/images/opengraph-image.jpeg`,
     "description": "Sublet space. Share Success. A smart platform connecting petrol pump owners with startups and retail entrepreneurs.",
     "telephone": "+917995424477",
     "email": ["support@racksonrent.com", "contact@racksonrent.com"]
