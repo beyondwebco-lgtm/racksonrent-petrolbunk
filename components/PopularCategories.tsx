@@ -107,7 +107,7 @@ export default function PopularCategories() {
           </button>
 
           {/* Slideshow Track Container */}
-          <div className="relative w-full h-[450px] sm:h-[490px] flex items-center justify-center overflow-hidden">
+          <div className="relative w-full h-[460px] sm:h-[510px] flex items-center justify-center overflow-hidden">
             {POPULAR_CATEGORIES.map((cat: CategoryItem, index: number) => {
               let diff = index - activeIndex;
 
@@ -140,72 +140,65 @@ export default function PopularCategories() {
                     opacity: opacityVal,
                     filter: filterVal,
                     zIndex: zIndexVal,
-                    transition: "transform 600ms ease, opacity 600ms ease, filter 600ms ease",
+                    transition: "transform 600ms cubic-bezier(0.25, 1, 0.5, 1), opacity 600ms ease, filter 600ms ease",
                   }}
-                  className={`absolute top-1/2 left-1/2 w-[82vw] max-w-[300px] sm:max-w-[340px] cursor-pointer rounded-[24px] shadow-xl overflow-hidden border transition-shadow duration-300 flex flex-col ${
+                  className={`group absolute top-1/2 left-1/2 w-[82vw] max-w-[310px] sm:max-w-[350px] h-[430px] sm:h-[480px] cursor-pointer rounded-[24px] shadow-2xl overflow-hidden border-2 transition-all duration-300 ${
                     isMaroon
-                      ? "bg-[#650000] text-white border-[#650000]"
-                      : "bg-[#FAFA33] text-[#650000] border-[#E6D900]"
+                      ? "border-[#650000] shadow-[#650000]/20"
+                      : "border-[#E6D900] shadow-[#E6D900]/20"
                   }`}
                 >
-                  {/* Image Container */}
-                  <div
-                    className={`relative w-full aspect-[4/3] p-3 overflow-hidden flex items-center justify-center bg-white ${
-                      isMaroon ? "border-b border-[#650000]" : "border-b border-[#E6D900]"
-                    }`}
-                  >
-                    {cat.badge && (
+                  {/* Full-Length Background Image */}
+                  <Image
+                    src={cat.image}
+                    alt={cat.alt}
+                    fill
+                    quality={85}
+                    sizes="(max-width: 640px) 82vw, 350px"
+                    loading="lazy"
+                    className="object-cover group-hover:scale-108 transition-transform duration-700 ease-out"
+                  />
+
+                  {/* Top Subtle Vignette */}
+                  <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-black/60 to-transparent pointer-events-none" />
+
+                  {/* Badge */}
+                  {cat.badge && (
+                    <div className="absolute top-4 left-4 z-20">
                       <span
-                        className={`absolute top-3 right-3 text-[10px] font-extrabold px-2.5 py-1 rounded-full z-10 shadow-xs ${
+                        className={`inline-flex items-center text-[11px] sm:text-xs font-extrabold px-3 py-1 rounded-full shadow-md backdrop-blur-md border ${
                           isMaroon
-                            ? "bg-[#FAFA33] text-[#650000] border border-[#E6D900]"
-                            : "bg-[#650000] text-white border border-[#650000]"
+                            ? "bg-[#650000]/90 text-white border-white/20"
+                            : "bg-[#FAFA33] text-[#650000] border-[#E6D900]"
                         }`}
                       >
                         {cat.badge}
                       </span>
-                    )}
-
-                    <Image
-                      src={cat.image}
-                      alt={cat.alt}
-                      fill
-                      quality={70}
-                      sizes="(max-width: 640px) 82vw, 340px"
-                      loading="lazy"
-                      className="object-contain p-2 hover:scale-105 transition-transform duration-500 z-0"
-                    />
-                  </div>
-
-                  {/* Content Section */}
-                  <div className="p-5 sm:p-6 flex flex-col flex-grow justify-between min-h-[170px]">
-                    <div>
-                      <h3
-                        className={`font-bold text-lg sm:text-xl transition-colors mb-2 ${
-                          isMaroon ? "text-white" : "text-[#650000]"
-                        }`}
-                      >
-                        {cat.name}
-                      </h3>
-
-                      <p
-                        className={`text-xs sm:text-sm leading-relaxed font-medium line-clamp-3 mb-4 ${
-                          isMaroon ? "text-white/80" : "text-[#650000]/80"
-                        }`}
-                      >
-                        {cat.description}
-                      </p>
                     </div>
+                  )}
 
-                    <div
-                      className={`flex items-center text-xs sm:text-sm font-extrabold transition-colors pt-2 ${
-                        isMaroon
-                          ? "text-[#FAFA33] border-t border-white/10"
-                          : "text-[#650000] border-t border-[#650000]/15"
-                      }`}
-                    >
-                      <span>Explore Spaces</span>
-                      <ArrowRight className="w-4 h-4 ml-1.5 transition-transform group-hover:translate-x-1" />
+                  {/* Bottom Gradient Scrim Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#1F0202] via-[#1F0202]/75 via-35% to-transparent pointer-events-none" />
+
+                  {/* Content Overlay: Main Title and Explore Spaces */}
+                  <div className="absolute inset-x-0 bottom-0 p-6 z-20 flex flex-col justify-end">
+                    {/* Main Title */}
+                    <h3 className="font-bold text-xl sm:text-2xl text-white leading-tight mb-4 drop-shadow-md group-hover:text-[#FAFA33] transition-colors">
+                      {cat.name}
+                    </h3>
+
+                    {/* Explore Spaces Action */}
+                    <div className="flex items-center">
+                      <div
+                        className={`inline-flex items-center gap-2 text-xs sm:text-sm font-extrabold px-4 py-2.5 rounded-full transition-all duration-300 shadow-lg ${
+                          isMaroon
+                            ? "bg-[#FAFA33] text-[#650000] hover:bg-white group-hover:shadow-[#FAFA33]/30"
+                            : "bg-white text-[#650000] hover:bg-[#FAFA33] group-hover:shadow-white/30"
+                        }`}
+                      >
+                        <span>Explore Spaces</span>
+                        <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                      </div>
                     </div>
                   </div>
                 </div>
