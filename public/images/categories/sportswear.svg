@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#F1F5F9"/>
+    </radialGradient>
+    <radialGradient id="shadowGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="rgba(15,23,42,0.16)"/>
+      <stop offset="70%" stop-color="rgba(15,23,42,0.04)"/>
+      <stop offset="100%" stop-color="rgba(15,23,42,0)"/>
+    </radialGradient>
+    <linearGradient id="jerseyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284C7"/>
+      <stop offset="100%" stop-color="#0369A1"/>
+    </linearGradient>
+    <linearGradient id="pantsGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#1E293B"/>
+    </linearGradient>
+    <linearGradient id="yellowStripe" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F4E409"/>
+      <stop offset="100%" stop-color="#EAB308"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Studio Background -->
+  <rect width="400" height="400" fill="url(#bgGrad)"/>
+
+  <!-- Soft Floor Shadow -->
+  <ellipse cx="200" cy="325" rx="140" ry="22" fill="url(#shadowGrad)"/>
+
+  <!-- Folded Track Pants (Underneath) -->
+  <g transform="translate(5, 30)">
+    <rect x="110" y="195" width="180" height="105" rx="14" fill="url(#pantsGrad)"/>
+    <!-- Track Pants Side Stripes -->
+    <line x1="120" y1="195" x2="120" y2="300" stroke="url(#yellowStripe)" stroke-width="4"/>
+    <line x1="280" y1="195" x2="280" y2="300" stroke="url(#yellowStripe)" stroke-width="4"/>
+    <!-- Fold Crease Detail -->
+    <line x1="110" y1="245" x2="290" y2="245" stroke="#334155" stroke-width="2"/>
+  </g>
+
+  <!-- Folded Sports Jersey (On Top) -->
+  <g transform="translate(0, 0)">
+    <!-- Shadow under Jersey -->
+    <rect x="95" y="105" width="210" height="150" rx="16" fill="rgba(15,23,42,0.22)"/>
+
+    <!-- Main Folded Jersey Body -->
+    <rect x="90" y="100" width="220" height="150" rx="16" fill="url(#jerseyGrad)"/>
+
+    <!-- Collar / V-Neck Design -->
+    <path d="M 160,100 L 200,130 L 240,100 Z" fill="#0369A1"/>
+    <path d="M 160,100 L 200,130 L 240,100" stroke="#F4E409" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+
+    <!-- Dynamic Sporty Chest Panels & Stripes -->
+    <path d="M 90,165 Q 200,185 310,165" stroke="url(#yellowStripe)" stroke-width="6" fill="none"/>
+    <path d="M 90,180 Q 200,200 310,180" stroke="#FFFFFF" stroke-width="3" opacity="0.8" fill="none"/>
+
+    <!-- Sleeve Folds -->
+    <path d="M 90,100 L 120,150 L 90,165 Z" fill="#0284C7" opacity="0.7"/>
+    <path d="M 310,100 L 280,150 L 310,165 Z" fill="#0284C7" opacity="0.7"/>
+
+    <!-- Soft Fabric Texture Highlight -->
+    <rect x="100" y="95" width="200" height="3" fill="#FFFFFF" opacity="0.4"/>
+  </g>
+</svg>

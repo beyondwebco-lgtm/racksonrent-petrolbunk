@@ -167,9 +167,7 @@ export default function Hero({ onSelectRole }: HeroProps) {
               <div className="animate-hero-video-entrance rounded-[2.5rem] border-2 border-[#F0E2E4] bg-[#FFFDF5] p-3 sm:p-4 shadow-[0_24px_70px_rgba(116,2,2,0.12)] relative overflow-hidden transition-all duration-350 hover:scale-[1.015] hover:shadow-[0_28px_80px_rgba(116,2,2,0.20)] hover:border-[#FAFA33]/60 group">
                 <div className="relative aspect-[2/3] w-full rounded-2xl overflow-hidden bg-[#FFFBCC]/20 flex items-center justify-center">
                   <img
-                    src="/images/main-showcase.webp"
-                    srcSet="/images/main-showcase-400.webp 400w, /images/main-showcase-768.webp 768w, /images/main-showcase.webp 1022w"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 45vw"
+                    src="/images/hero-petrolbunk.png"
                     alt="Petrol pump retail display racks and branded kiosk space"
                     width={1022}
                     height={1536}
