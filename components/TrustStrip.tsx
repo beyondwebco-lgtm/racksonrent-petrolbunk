@@ -1,17 +1,18 @@
 import React from "react";
-import { Building2, Store, MapPin, ShieldCheck } from "lucide-react";
+import { ShoppingBag, Store, MapPin, ShieldCheck } from "lucide-react";
 import { TRUST_STRIP_ITEMS } from "@/data/stats";
 
 export default function TrustStrip() {
   const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
-    Building2,
+    ShoppingBag,
     Store,
     MapPin,
     ShieldCheck,
   };
 
+
   return (
-    <div className="bg-[#650000] text-white py-3 sm:py-4 border-y border-[#650000] shadow-md">
+    <div className="bg-[#740202] text-white py-6 border-y border-[#500101] shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 text-center">
           {TRUST_STRIP_ITEMS.map((item, idx) => {
@@ -19,10 +20,10 @@ export default function TrustStrip() {
             return (
               <div
                 key={idx}
-                className="group flex items-center justify-center gap-2.5 p-3 rounded-2xl bg-[#650000]/80 border border-white/10 hover:bg-[#650000] hover:border-[#FAFA33]/40 hover:-translate-y-1 transition-all duration-300 cursor-default"
+                className="group flex items-center justify-center gap-2.5 p-3 rounded-2xl bg-[#500101]/40 border border-[#FAFA33]/20 hover:bg-[#500101] hover:border-[#FAFA33] hover:-translate-y-1 transition-all duration-300 cursor-default"
               >
                 <IconComp className="w-5 h-5 text-[#FAFA33] group-hover:scale-110 transition-transform duration-300" />
-                <span className="text-xs sm:text-sm font-bold text-white/90 group-hover:text-white">
+                <span className="text-xs sm:text-sm font-extrabold text-white">
                   {item.label}
                 </span>
               </div>

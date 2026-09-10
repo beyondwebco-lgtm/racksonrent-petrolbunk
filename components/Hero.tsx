@@ -1,148 +1,158 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import Image from "next/image";
-import { Store, TrendingUp, ShieldCheck, Lock, CheckCircle2, Building2 } from "lucide-react";
+import React, { useState } from "react";
+
+import { Store, ShoppingBag, TrendingUp, ShieldCheck, Lock, CheckCircle2 } from "lucide-react";
 
 interface HeroProps {
-  onSelectRole?: (role: "bunk-owner" | "brand-merchant") => void;
+  onSelectRole?: (role: "gym-owner" | "wellness") => void;
 }
 
 export default function Hero({ onSelectRole }: HeroProps) {
   const [btn1Pos, setBtn1Pos] = useState({ x: 0, y: 0 });
   const [btn2Pos, setBtn2Pos] = useState({ x: 0, y: 0 });
-  const [scrollY, setScrollY] = useState(0);
 
-  const handleRoleClick = (role: "bunk-owner" | "brand-merchant") => {
-    if (onSelectRole) onSelectRole(role);
+  const handleRoleClick = (role: "gym-owner" | "wellness") => {
+    if (onSelectRole) {
+      onSelectRole(role);
+    }
     const element = document.getElementById("contact");
-    if (element) element.scrollIntoView({ behavior: "smooth" });
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
-  const handleMouseMoveBtn = (
-    e: React.MouseEvent<HTMLButtonElement>,
-    setter: (pos: { x: number; y: number }) => void
-  ) => {
+  const handleMouseMoveBtn1 = (e: React.MouseEvent<HTMLButtonElement>) => {
     if (typeof window !== "undefined" && window.innerWidth < 1024) return;
     const rect = e.currentTarget.getBoundingClientRect();
     const relX = e.clientX - (rect.left + rect.width / 2);
     const relY = e.clientY - (rect.top + rect.height / 2);
-    setter({
-      x: Math.max(-3, Math.min(3, relX * 0.04)),
-      y: Math.max(-3, Math.min(3, relY * 0.04)),
-    });
+    const shiftX = Math.max(-3, Math.min(3, relX * 0.04));
+    const shiftY = Math.max(-3, Math.min(3, relY * 0.04));
+    setBtn1Pos({ x: shiftX, y: shiftY });
   };
 
-  // Parallax scroll listener
-  useEffect(() => {
-    const handleScroll = () => {
-      if (typeof window !== "undefined" && window.innerWidth >= 768 && window.scrollY < 800) {
-        setScrollY(window.scrollY);
-      }
-    };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  const handleMouseLeaveBtn1 = () => {
+    setBtn1Pos({ x: 0, y: 0 });
+  };
+
+  const handleMouseMoveBtn2 = (e: React.MouseEvent<HTMLButtonElement>) => {
+    if (typeof window !== "undefined" && window.innerWidth < 1024) return;
+    const rect = e.currentTarget.getBoundingClientRect();
+    const relX = e.clientX - (rect.left + rect.width / 2);
+    const relY = e.clientY - (rect.top + rect.height / 2);
+    const shiftX = Math.max(-3, Math.min(3, relX * 0.04));
+    const shiftY = Math.max(-3, Math.min(3, relY * 0.04));
+    setBtn2Pos({ x: shiftX, y: shiftY });
+  };
+
+  const handleMouseLeaveBtn2 = () => {
+    setBtn2Pos({ x: 0, y: 0 });
+  };
 
   const benefitItems = [
-    { text: "Extra space, extra earnings",        icon: <TrendingUp    className="w-3.5 h-3.5" /> },
-    { text: "Low investment, high growth",         icon: <ShieldCheck   className="w-3.5 h-3.5" /> },
-    { text: "Ready customer access",               icon: <Lock          className="w-3.5 h-3.5" /> },
-    { text: "More products for customers",         icon: <CheckCircle2  className="w-3.5 h-3.5" /> },
-    { text: "A win-win model for both partners",   icon: <Building2     className="w-3.5 h-3.5" /> },
+    { text: "Extra space, extra earnings", icon: <TrendingUp className="w-4 h-4 text-[#740202]" /> },
+    { text: "Low investment, high growth", icon: <ShieldCheck className="w-4 h-4 text-[#740202]" /> },
+    { text: "Ready customer access", icon: <Lock className="w-4 h-4 text-[#740202]" /> },
+    { text: "More products for customers", icon: <CheckCircle2 className="w-4 h-4 text-[#740202]" /> },
+    { text: "A win-win model for both partners", icon: <CheckCircle2 className="w-4 h-4 text-[#740202]" /> },
   ];
 
   return (
-    <section
-      className="relative py-3 lg:py-5 xl:py-6 bg-white border-b border-[#E8E3D5]"
-      id="hero"
-    >
-      {/* Subtle decorative shape */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-[#FFFBCC]/50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none" />
-
+    <section className="relative pt-8 pb-12 lg:pt-16 lg:pb-20 bg-[radial-gradient(circle_at_80%_20%,rgba(116,2,2,0.08),transparent_40%),linear-gradient(180deg,#fffdf5_0%,#fffbcc_25%,#fffdf5_100%)] border-b border-[#F0E2E4]" id="hero">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
           
           {/* Left Column */}
-          <div className="lg:col-span-6 space-y-2.5 sm:space-y-3 relative z-10">
+          <div className="lg:col-span-7 space-y-6">
             <div>
-              <span className="inline-flex items-center rounded-full bg-[#FFFBCC] px-3 py-0.5 text-[11px] sm:text-xs font-extrabold text-[#650000] border border-[#F0E2E4]">
+              <span className="inline-flex items-center rounded-full bg-[#FAFA33] px-4 py-1.5 text-xs sm:text-sm font-bold text-[#740202] border border-[#740202]/20">
                 Small Space. Big Opportunity.
               </span>
             </div>
 
-            {/* Archivo Black hero heading */}
-            <h1 className="font-archivo text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-black tracking-tight text-[#650000] leading-[1.08]">
+            <h1 className="text-2xl xs:text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold tracking-tight text-[#740202] leading-[1.15] word-break-wrap">
               Turn Unused Petrol Pump Space{" "}
-              <span className="bg-[#FAFA33] text-[#650000] px-2 py-0.5 rounded-lg inline-block mt-0.5 border border-[#E6D900]">
+              <span className="text-[#FAFA33]">
                 Into a New Business Opportunity
               </span>
             </h1>
 
-            <p className="text-xs sm:text-sm text-[#5F5F5F] leading-relaxed max-w-lg font-medium">
+            <p
+              style={{ fontFamily: "'Playfair Display', serif" }}
+              className="text-lg sm:text-[22px] font-medium not-italic text-[#1F1F1F] leading-relaxed max-w-2xl"
+            >
               Racks on Rent connects petrol pump owners with startups and retail brands. Rent unused space, showcase quality products, increase customer footfall, and create an additional source of income.
             </p>
 
-            {/* 5 Highlights */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 pt-0.5">
+            {/* Benefit Items */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
               {benefitItems.map((item, idx) => (
-                <div key={idx} className="flex items-center gap-1.5 bg-[#FFFDF5] px-2 py-1 rounded-lg border border-[#F0E2E4] shadow-xs">
-                  <div className="p-0.5 rounded-md bg-[#FFFBCC] flex-shrink-0 text-[#650000]">
+                <div key={idx} className="flex items-center gap-2.5 bg-[#FFFDF5] p-2.5 rounded-xl border border-[#F0E2E4] shadow-2xs">
+                  <div className="p-1.5 rounded-lg bg-[#FFFBCC] flex-shrink-0">
                     {item.icon}
                   </div>
-                  <span className="text-[11px] sm:text-xs font-bold text-[#1F1F1F] leading-tight">{item.text}</span>
+                  <span className="font-sans text-xs xl:text-sm font-bold italic text-[#740202] leading-snug">{item.text}</span>
                 </div>
               ))}
             </div>
 
-            {/* CTAs */}
-            <div className="relative pt-1">
-              <div className="relative flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 z-10">
+            {/* Animated 2 Primary CTAs */}
+            <div className="relative pt-4">
+              <div className="w-16 h-0.5 bg-[#740202]/30 rounded-full animate-accent-line mb-3" />
+
+              <div className="absolute inset-0 -top-1 bg-[radial-gradient(ellipse_at_center,rgba(250,250,51,0.30),transparent_70%)] pointer-events-none rounded-3xl blur-md animate-cta-pulse-group" />
+
+              <div className="relative flex flex-col sm:flex-row items-stretch sm:items-center gap-4 z-10">
                 
-                {/* Primary CTA: List Your Space */}
+                {/* Button 1: List Your Space (For Petrol Pump Owners) */}
                 <button
                   type="button"
-                  aria-label="List Your Space"
-                  onClick={() => handleRoleClick("bunk-owner")}
-                  onMouseMove={(e) => handleMouseMoveBtn(e, setBtn1Pos)}
-                  onMouseLeave={() => setBtn1Pos({ x: 0, y: 0 })}
-                  className="animate-cta-btn-1 flex-1 relative overflow-hidden inline-flex flex-col items-center justify-center gap-0.5 rounded-xl bg-[#FAFA33] border-2 border-[#E6D900] px-4 py-2 sm:py-2.5 text-[#650000] shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#F2E500] hover:shadow-md active:scale-[0.97] focus:outline-none cursor-pointer group"
+                  onClick={() => handleRoleClick("gym-owner")}
+                  onMouseMove={handleMouseMoveBtn1}
+                  onMouseLeave={handleMouseLeaveBtn1}
+                  className="animate-cta-btn-1 flex-1 relative overflow-hidden inline-flex flex-col items-center justify-center gap-0.5 rounded-2xl bg-[#FAFA33] border-2 border-[#740202]/20 px-6 py-3.5 text-[#740202] shadow-md transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1 hover:scale-[1.018] hover:shadow-[0_14px_30px_rgba(116,2,2,0.22)] active:scale-[0.97] focus:outline-none cursor-pointer group"
                 >
-                  <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out bg-gradient-to-r from-transparent via-white/40 to-transparent pointer-events-none" />
+                  <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out bg-gradient-to-r from-transparent via-white/50 to-transparent pointer-events-none" />
+
                   <div
-                    style={{ transform: `translate(${btn1Pos.x}px, ${btn1Pos.y}px)` }}
+                    style={{
+                      transform: `translate(${btn1Pos.x}px, ${btn1Pos.y}px)`,
+                    }}
                     className="transition-transform duration-200 ease-out flex flex-col items-center justify-center w-full"
                   >
-                    <div className="flex items-center gap-1.5 text-xs sm:text-sm font-black text-[#650000]">
-                      <Building2 className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
+                    <div className="flex items-center gap-2 text-base font-black">
+                      <Store className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform duration-300" />
                       <span>List Your Space</span>
                     </div>
-                    <span className="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider text-[#650000]/80 mt-0.5">
+                    <span className="text-[11px] font-bold uppercase tracking-wider opacity-80 mt-0.5">
                       For Petrol Pump Owners
                     </span>
                   </div>
                 </button>
 
-                {/* Secondary CTA: Showcase Your Brand */}
+                {/* Button 2: Showcase Your Brand (For Startups & Retail Brands) */}
                 <button
                   type="button"
-                  aria-label="Showcase Your Brand"
-                  onClick={() => handleRoleClick("brand-merchant")}
-                  onMouseMove={(e) => handleMouseMoveBtn(e, setBtn2Pos)}
-                  onMouseLeave={() => setBtn2Pos({ x: 0, y: 0 })}
-                  className="animate-cta-btn-2 flex-1 relative overflow-hidden inline-flex flex-col items-center justify-center gap-0.5 rounded-xl border-2 border-[#650000] bg-[#650000] px-4 py-2 sm:py-2.5 text-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#650000] hover:shadow-md active:scale-[0.97] focus:outline-none cursor-pointer group"
+                  onClick={() => handleRoleClick("wellness")}
+                  onMouseMove={handleMouseMoveBtn2}
+                  onMouseLeave={handleMouseLeaveBtn2}
+                  className="animate-cta-btn-2 flex-1 relative overflow-hidden inline-flex flex-col items-center justify-center gap-0.5 rounded-2xl border-2 border-[#740202] bg-[#740202] px-6 py-3.5 text-[#FAFA33] shadow-md transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1 hover:scale-[1.018] hover:shadow-[0_14px_30px_rgba(116,2,2,0.35)] active:scale-[0.97] focus:outline-none cursor-pointer group"
                 >
-                  <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out bg-gradient-to-r from-transparent via-[#FAFA33]/20 to-transparent pointer-events-none" />
+                  <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out bg-gradient-to-r from-transparent via-[#FAFA33]/30 to-transparent pointer-events-none" />
+
                   <div
-                    style={{ transform: `translate(${btn2Pos.x}px, ${btn2Pos.y}px)` }}
+                    style={{
+                      transform: `translate(${btn2Pos.x}px, ${btn2Pos.y}px)`,
+                    }}
                     className="transition-transform duration-200 ease-out flex flex-col items-center justify-center w-full"
                   >
-                    <div className="flex items-center gap-1.5 text-xs sm:text-sm font-black">
-                      <Store className="w-4 h-4 text-[#FAFA33] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
+                    <div className="flex items-center gap-2 text-base font-black">
+                      <ShoppingBag className="w-5 h-5 text-[#FAFA33] group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform duration-300" />
                       <span>Showcase Your Brand</span>
                     </div>
-                    <span className="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider text-[#FAFA33] mt-0.5">
-                      For Startups &amp; Retail Brands
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-[#FAFA33] mt-0.5">
+                      For Startups & Retail Brands
                     </span>
                   </div>
                 </button>
@@ -151,43 +161,29 @@ export default function Hero({ onSelectRole }: HeroProps) {
             </div>
           </div>
 
-          {/* Right Column: Petrol Bunk Video */}
-          <div className="lg:col-span-6 relative mt-3 lg:mt-0">
-            <div className="relative mx-auto">
-              <div className="rounded-xl sm:rounded-2xl border-2 border-[#F0E2E4] bg-[#FFFDF5] p-1 shadow-[0_16px_40px_rgba(61,7,16,0.1)] relative overflow-hidden transition-all duration-350 hover:scale-[1.015] hover:shadow-[0_20px_50px_rgba(61,7,16,0.15)] hover:border-[#FAFA33]/50 group">
-                <div className="relative aspect-video max-h-[300px] sm:max-h-[340px] lg:max-h-[350px] w-full rounded-lg sm:rounded-xl overflow-hidden bg-[#FFFBCC]/30">
-                  <div className="absolute inset-0 w-full h-full z-0">
-                    <Image
-                      src="/images/hero-petrolbunk.png"
-                      alt="Petrol Bunk Retail Space"
-                      fill
-                      priority
-                      quality={60}
-                      fetchPriority="high"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      className="object-cover"
-                    />
-                  </div>
-                  <video
-                    src="/videos/hero-video.mp4"
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    preload="none"
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 ease-out group-hover:scale-105 z-10 mix-blend-normal opacity-0 transition-opacity duration-1000"
-                    onLoadedData={(e) => {
-                      e.currentTarget.style.opacity = '1';
-                    }}
-                    style={{ transform: `translateY(${scrollY * 0.04}px)` }}
-                  >
-                    <track kind="captions" src="/captions.vtt" srcLang="en" label="English" default />
-                  </video>
+          {/* Right Column (High Quality Retail Showcase Image) */}
+          <div className="lg:col-span-5 relative mt-6 lg:mt-0">
+            <div className="relative mx-auto max-w-lg lg:max-w-none">
+              <div className="animate-hero-video-entrance rounded-[2.5rem] border-2 border-[#F0E2E4] bg-[#FFFDF5] p-3 sm:p-4 shadow-[0_24px_70px_rgba(116,2,2,0.12)] relative overflow-hidden transition-all duration-350 hover:scale-[1.015] hover:shadow-[0_28px_80px_rgba(116,2,2,0.20)] hover:border-[#FAFA33]/60 group">
+                <div className="relative aspect-[2/3] w-full rounded-2xl overflow-hidden bg-[#FFFBCC]/20 flex items-center justify-center">
+                  <img
+                    src="/images/main-showcase.webp"
+                    srcSet="/images/main-showcase-400.webp 400w, /images/main-showcase-768.webp 768w, /images/main-showcase.webp 1022w"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 45vw"
+                    alt="Petrol pump retail display racks and branded kiosk space"
+                    width={1022}
+                    height={1536}
+                    fetchPriority="high"
+                    decoding="async"
+                    className="w-full h-full object-contain sm:object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
                   
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#650000]/70 via-[#650000]/20 to-transparent pointer-events-none z-20" />
+                  {/* Subtle Dark Bottom Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent pointer-events-none" />
 
-                  <div className="absolute bottom-3 right-3 bg-[#650000] text-white px-3 py-1 rounded-full border border-[#FAFA33] shadow-md flex items-center gap-1.5 text-[11px] font-bold tracking-wide z-30">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#FAFA33] animate-ping" />
+                  {/* Overlay Badge */}
+                  <div className="absolute bottom-6 right-6 bg-[#740202] text-white px-5 py-2.5 rounded-full border-2 border-[#FAFA33] shadow-xl flex items-center gap-2 text-xs sm:text-sm font-bold tracking-wide z-10">
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#FAFA33] animate-ping" />
                     <span>Petrol Bunk Retail Partnership</span>
                   </div>
                 </div>
@@ -200,3 +196,4 @@ export default function Hero({ onSelectRole }: HeroProps) {
     </section>
   );
 }
+

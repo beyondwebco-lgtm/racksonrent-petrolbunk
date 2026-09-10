@@ -1,10 +1,11 @@
 "use client";
 
 import React, { useState } from "react";
-import { Building2, Store, HelpCircle, CheckCircle2, AlertCircle } from "lucide-react";
+import { Store, ShoppingBag, HelpCircle, MessageCircle, CheckCircle2, AlertCircle } from "lucide-react";
 import { SITE_CONFIG } from "@/data/config";
+import { SectionHeader } from "@/components/ui/SectionHeader";
 
-type RoleType = "bunk-owner" | "brand-merchant" | "general";
+type RoleType = "gym-owner" | "wellness" | "general";
 
 interface EnquiryFormProps {
   selectedRole?: RoleType;
@@ -17,21 +18,21 @@ interface EnquiryFormProps {
   onRoleChange?: (role: RoleType) => void;
 }
 
-export default function EnquiryForm({ selectedRole = "bunk-owner", initialSearchValues, onRoleChange }: EnquiryFormProps) {
+export default function EnquiryForm({ selectedRole = "gym-owner", initialSearchValues, onRoleChange }: EnquiryFormProps) {
   const [internalRole, setInternalRole] = useState<RoleType | null>(null);
 
   const role = internalRole ?? selectedRole;
 
   const [formData, setFormData] = useState({
     fullName: "",
-    bunkName: "",
+    bakeryName: "",
     brandName: "",
     phone: "",
     city: initialSearchValues?.location || "",
     availableSpace: initialSearchValues?.spaceType || "Forecourt Canopy Display Rack",
     requiredSpace: initialSearchValues?.spaceType || "Forecourt Canopy Display Rack",
-    rackSize: initialSearchValues?.rackSize || "Small",
-    category: initialSearchValues?.category || "Helmets & Rider Safety Gear",
+    rackSize: initialSearchValues?.rackSize || "Small (Up to 3x2 ft)",
+    category: initialSearchValues?.category || "Premium Sportswear",
     message: "",
   });
 
@@ -59,8 +60,8 @@ export default function EnquiryForm({ selectedRole = "bunk-owner", initialSearch
   const validate = () => {
     const newErrors: Record<string, string> = {};
     if (!formData.fullName.trim()) newErrors.fullName = "Full Name is required";
-    if (role === "bunk-owner" && !formData.bunkName.trim()) newErrors.bunkName = "Petrol Pump Name is required";
-    if (role === "brand-merchant" && !formData.brandName.trim()) newErrors.brandName = "Brand Name is required";
+    if (role === "gym-owner" && !formData.bakeryName.trim()) newErrors.bakeryName = "Petrol Pump / Station Name is required";
+    if (role === "wellness" && !formData.brandName.trim()) newErrors.brandName = "Startup / Brand Name is required";
     if (!formData.phone.trim()) newErrors.phone = "Phone Number is required";
     if (!formData.city.trim() && !initialSearchValues?.location) newErrors.city = "City is required";
     setErrors(newErrors);
@@ -74,18 +75,18 @@ export default function EnquiryForm({ selectedRole = "bunk-owner", initialSearch
     const activeCity = formData.city || initialSearchValues?.location || "";
     const activeSpaceType = formData.availableSpace || initialSearchValues?.spaceType || "Forecourt Canopy Display Rack";
     const activeRequiredSpace = formData.requiredSpace || initialSearchValues?.spaceType || "Forecourt Canopy Display Rack";
-    const activeRackSize = formData.rackSize || initialSearchValues?.rackSize || "Small";
-    const activeCategory = formData.category || initialSearchValues?.category || "Helmets & Rider Safety Gear";
+    const activeRackSize = formData.rackSize || initialSearchValues?.rackSize || "Small (Up to 3x2 ft)";
+    const activeCategory = formData.category || initialSearchValues?.category || "Premium Sportswear";
 
     let roleText = "Petrol Pump Owner";
     let detailsText = "";
 
-    if (role === "bunk-owner") {
+    if (role === "gym-owner") {
       roleText = "Petrol Pump Owner";
-      detailsText = `Name: ${formData.fullName}\nPetrol Pump Name: ${formData.bunkName}\nPhone: ${formData.phone}\nCity: ${activeCity}\nAvailable Space: ${activeSpaceType}\nRack Size: ${activeRackSize}\nMessage: ${formData.message || "N/A"}`;
-    } else if (role === "brand-merchant") {
-      roleText = "Startup / Retail Brand";
-      detailsText = `Name: ${formData.fullName}\nBrand Name: ${formData.brandName}\nPhone: ${formData.phone}\nCity: ${activeCity}\nProduct Category: ${activeCategory}\nRequired Space: ${activeRequiredSpace}\nPreferred Rack Size: ${activeRackSize}\nMessage: ${formData.message || "N/A"}`;
+      detailsText = `Name: ${formData.fullName}\nPetrol Pump / Station Name: ${formData.bakeryName}\nPhone: ${formData.phone}\nCity: ${activeCity}\nAvailable Space Type: ${activeSpaceType}\nRack Size: ${activeRackSize}\nMessage: ${formData.message || "N/A"}`;
+    } else if (role === "wellness") {
+      roleText = "Startup & Brand";
+      detailsText = `Name: ${formData.fullName}\nStartup / Brand Name: ${formData.brandName}\nPhone: ${formData.phone}\nCity: ${activeCity}\nCategory: ${activeCategory}\nRequired Space Type: ${activeRequiredSpace}\nRack Size: ${activeRackSize}\nMessage: ${formData.message || "N/A"}`;
     } else {
       roleText = "General Enquiry";
       detailsText = `Name: ${formData.fullName}\nPhone: ${formData.phone}\nCity: ${activeCity}\nMessage: ${formData.message || "N/A"}`;
@@ -93,7 +94,7 @@ export default function EnquiryForm({ selectedRole = "bunk-owner", initialSearch
 
     const messageText = `Hello Racks on Rent,
 
-I am interested in your petrol pump rack rental platform.
+I am interested in petrol pump retail space opportunities.
 
 Role: ${roleText}
 ${detailsText}`;
@@ -107,56 +108,64 @@ ${detailsText}`;
   };
 
   return (
-    <section className="py-10 sm:py-14 lg:py-16 bg-[#FFFDF5] border-t border-[#F0E2E4]" id="contact">
+    <section className="py-16 sm:py-24 bg-[#FFFDF5] border-t border-[#F0E2E4]" id="contact">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-        {/* Section Heading */}
-        <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-8">
-          <span className="inline-flex rounded-full bg-[#FFFBCC] px-3.5 py-1 text-xs sm:text-sm font-extrabold text-[#650000] border border-[#F0E2E4]">
-            Get In Touch
-          </span>
-          <h2 className="mt-2.5 text-2xl font-extrabold tracking-tight text-[#650000] md:text-4xl lg:text-[clamp(2.25rem,3.2vw,3.5rem)]">
-            Have Unused Space at Your Petrol Pump?
-          </h2>
-          <p className="mx-auto mt-2 max-w-2xl text-sm leading-relaxed text-[#5F5F5F] md:text-base font-medium">
-            Turn it into an additional source of income by partnering with trusted startups and retail entrepreneurs.
-          </p>
-        </div>
+        
+        <SectionHeader
+          badge="GET IN TOUCH"
+          title={
+            <>
+              Have Unused Space at Your{" "}
+              <span className="text-[#B8913A]">Petrol Pump?</span>
+            </>
+          }
+          subtitle={
+            <span
+              style={{ fontFamily: "'Playfair Display', serif" }}
+              className="text-lg sm:text-[22px] font-medium not-italic text-[#1F1F1F] leading-relaxed block"
+            >
+              Turn it into an additional source of income by partnering with trusted startups and retail entrepreneurs.
+            </span>
+          }
+        />
 
         <div className="max-w-3xl mx-auto">
           {/* Role Selector Tabs */}
-          <div className="flex flex-wrap items-center justify-center p-1 bg-[#FFFBCC]/50 rounded-2xl mb-6 gap-1 border border-[#F0E2E4] shadow-xs">
+          <div className="flex flex-wrap items-center justify-center p-1.5 bg-[#FFFBCC]/30 rounded-2xl mb-8 gap-1.5 border border-[#F0E2E4] shadow-xs">
             <button
               type="button"
-              onClick={() => handleRoleSelect("bunk-owner")}
-              className={`flex-1 min-w-[130px] flex items-center justify-center gap-2 py-2.5 px-3.5 rounded-xl text-xs sm:text-sm font-extrabold transition-all cursor-pointer ${role === "bunk-owner"
-                  ? "bg-[#650000] text-[#FFFBCC] shadow-xs"
-                  : "text-[#650000] hover:bg-[#FFFBCC]"
-                }`}
+              onClick={() => handleRoleSelect("gym-owner")}
+              className={`flex-1 min-w-[140px] flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-xs sm:text-sm font-normal italic transition-all cursor-pointer min-h-[44px] ${
+                role === "gym-owner"
+                  ? "bg-[#740202] text-[#FAFA33] shadow-xs"
+                  : "text-[#740202] hover:bg-[#FFFBCC]"
+              }`}
             >
-              <Building2 className="w-4 h-4" />
+              <Store className="w-4 h-4" />
               <span>Petrol Pump Owner</span>
             </button>
 
             <button
               type="button"
-              onClick={() => handleRoleSelect("brand-merchant")}
-              className={`flex-1 min-w-[130px] flex items-center justify-center gap-2 py-2.5 px-3.5 rounded-xl text-xs sm:text-sm font-extrabold transition-all cursor-pointer ${role === "brand-merchant"
-                  ? "bg-[#650000] text-[#FFFBCC] shadow-xs"
-                  : "text-[#650000] hover:bg-[#FFFBCC]"
-                }`}
+              onClick={() => handleRoleSelect("wellness")}
+              className={`flex-1 min-w-[140px] flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-xs sm:text-sm font-normal italic transition-all cursor-pointer min-h-[44px] ${
+                role === "wellness"
+                  ? "bg-[#740202] text-[#FAFA33] shadow-xs"
+                  : "text-[#740202] hover:bg-[#FFFBCC]"
+              }`}
             >
-              <Store className="w-4 h-4" />
+              <ShoppingBag className="w-4 h-4" />
               <span>Startup & Brand</span>
             </button>
 
             <button
               type="button"
               onClick={() => handleRoleSelect("general")}
-              className={`flex-1 min-w-[130px] flex items-center justify-center gap-2 py-2.5 px-3.5 rounded-xl text-xs sm:text-sm font-extrabold transition-all cursor-pointer ${role === "general"
-                  ? "bg-[#650000] text-[#FFFBCC] shadow-xs"
-                  : "text-[#650000] hover:bg-[#FFFBCC]"
-                }`}
+              className={`flex-1 min-w-[140px] flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-xs sm:text-sm font-normal italic transition-all cursor-pointer min-h-[44px] ${
+                role === "general"
+                  ? "bg-[#740202] text-[#FAFA33] shadow-xs"
+                  : "text-[#740202] hover:bg-[#FFFBCC]"
+              }`}
             >
               <HelpCircle className="w-4 h-4" />
               <span>General Enquiry</span>
@@ -166,18 +175,18 @@ ${detailsText}`;
           {/* Form Box */}
           <form
             onSubmit={handleSubmit}
-            className="space-y-3.5 sm:space-y-4 rounded-3xl border-2 border-[#F0E2E4] bg-white p-5 sm:p-8 shadow-[0_12px_35px_rgba(11,30,54,0.06)]"
+            className="space-y-5 rounded-3xl border-2 border-[#F0E2E4] bg-[#FFFDF5] p-6 sm:p-10 shadow-[0_12px_35px_rgba(116,2,2,0.06)]"
           >
             {submitted && (
-              <div className="bg-[#FFFBCC] border border-[#650000]/30 text-[#650000] p-4 rounded-2xl flex items-center gap-3 text-sm font-bold">
-                <CheckCircle2 className="w-5 h-5 text-[#650000] flex-shrink-0" />
+              <div className="bg-[#FFFBCC] border border-[#740202]/30 text-[#740202] p-4 rounded-2xl flex items-center gap-3 text-sm font-bold">
+                <CheckCircle2 className="w-5 h-5 text-[#740202] flex-shrink-0" />
                 <span>Opening WhatsApp with your enquiry details...</span>
               </div>
             )}
 
             {/* Common Field: Full Name */}
             <div>
-              <label className="block text-xs font-bold text-[#650000] uppercase tracking-wider mb-1.5" htmlFor="fullName">
+              <label className="block text-xs font-bold text-[#740202] uppercase tracking-wider mb-1.5" htmlFor="fullName">
                 Full Name *
               </label>
               <input
@@ -187,37 +196,39 @@ ${detailsText}`;
                 value={formData.fullName}
                 onChange={handleChange}
                 placeholder="e.g. Rahul Sharma"
-                className={`w-full rounded-xl border border-[#F0E2E4] bg-white px-3.5 py-2.5 h-11 text-[#1F1F1F] outline-none transition placeholder:text-[#5F5F5F]/70 focus:border-[#650000] focus:ring-4 focus:ring-[#FFFBCC] text-sm ${errors.fullName ? "border-red-500 bg-red-50/30" : ""
-                  }`}
+                className={`w-full rounded-xl border border-[#F0E2E4] bg-[#FFFDF5] px-4 py-3 text-[#1F1F1F] outline-none transition placeholder:text-[#5F5F5F]/70 focus:border-[#740202] focus:ring-4 focus:ring-[#FFFBCC] text-sm ${
+                  errors.fullName ? "border-red-500 bg-red-50/30" : ""
+                }`}
               />
               {errors.fullName && <p className="text-xs text-red-600 mt-1 font-semibold">{errors.fullName}</p>}
             </div>
 
             {/* Petrol Pump Owner specific field */}
-            {role === "bunk-owner" && (
+            {role === "gym-owner" && (
               <div>
-                <label className="block text-xs font-bold text-[#650000] uppercase tracking-wider mb-1.5" htmlFor="bunkName">
+                <label className="block text-xs font-bold text-[#740202] uppercase tracking-wider mb-1.5" htmlFor="bakeryName">
                   Petrol Pump / Station Name *
                 </label>
                 <input
-                  id="bunkName"
-                  name="bunkName"
+                  id="bakeryName"
+                  name="bakeryName"
                   type="text"
-                  value={formData.bunkName}
+                  value={formData.bakeryName}
                   onChange={handleChange}
-                  placeholder="e.g. Highway Fuel Station (HPCL)"
-                  className={`w-full rounded-xl border border-[#F0E2E4] bg-white px-3.5 py-2.5 h-11 text-[#1F1F1F] outline-none transition placeholder:text-[#5F5F5F]/70 focus:border-[#650000] focus:ring-4 focus:ring-[#FFFBCC] text-sm ${errors.bunkName ? "border-red-500 bg-red-50/30" : ""
-                    }`}
+                  placeholder="e.g. Highway Fuel Station / Indian Oil Outlet"
+                  className={`w-full rounded-xl border border-[#F0E2E4] bg-[#FFFDF5] px-4 py-3 text-[#1F1F1F] outline-none transition placeholder:text-[#5F5F5F]/70 focus:border-[#740202] focus:ring-4 focus:ring-[#FFFBCC] text-sm ${
+                    errors.bakeryName ? "border-red-500 bg-red-50/30" : ""
+                  }`}
                 />
-                {errors.bunkName && <p className="text-xs text-red-600 mt-1 font-semibold">{errors.bunkName}</p>}
+                {errors.bakeryName && <p className="text-xs text-red-600 mt-1 font-semibold">{errors.bakeryName}</p>}
               </div>
             )}
 
-            {/* Startup / Brand specific field */}
-            {role === "brand-merchant" && (
+            {/* Startup & Brand specific field */}
+            {role === "wellness" && (
               <div>
-                <label className="block text-xs font-bold text-[#650000] uppercase tracking-wider mb-1.5" htmlFor="brandName">
-                  Startup or Brand Name *
+                <label className="block text-xs font-bold text-[#740202] uppercase tracking-wider mb-1.5" htmlFor="brandName">
+                  Startup / Brand Name *
                 </label>
                 <input
                   id="brandName"
@@ -225,9 +236,10 @@ ${detailsText}`;
                   type="text"
                   value={formData.brandName}
                   onChange={handleChange}
-                  placeholder="e.g. Apex Helmets & Rider Gear"
-                  className={`w-full rounded-xl border border-[#F0E2E4] bg-white px-3.5 py-2.5 h-11 text-[#1F1F1F] outline-none transition placeholder:text-[#5F5F5F]/70 focus:border-[#650000] focus:ring-4 focus:ring-[#FFFBCC] text-sm ${errors.brandName ? "border-red-500 bg-red-50/30" : ""
-                    }`}
+                  placeholder="e.g. Apex Rider Gear / Turbo Drinks"
+                  className={`w-full rounded-xl border border-[#F0E2E4] bg-[#FFFDF5] px-4 py-3 text-[#1F1F1F] outline-none transition placeholder:text-[#5F5F5F]/70 focus:border-[#740202] focus:ring-4 focus:ring-[#FFFBCC] text-sm ${
+                    errors.brandName ? "border-red-500 bg-red-50/30" : ""
+                  }`}
                 />
                 {errors.brandName && <p className="text-xs text-red-600 mt-1 font-semibold">{errors.brandName}</p>}
               </div>
@@ -236,7 +248,7 @@ ${detailsText}`;
             {/* Phone & City Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-xs font-bold text-[#650000] uppercase tracking-wider mb-1.5" htmlFor="phone">
+                <label className="block text-xs font-bold text-[#740202] uppercase tracking-wider mb-1.5" htmlFor="phone">
                   Phone Number *
                 </label>
                 <input
@@ -246,14 +258,15 @@ ${detailsText}`;
                   value={formData.phone}
                   onChange={handleChange}
                   placeholder="7995424477"
-                  className={`w-full rounded-xl border border-[#F0E2E4] bg-white px-3.5 py-2.5 h-11 text-[#1F1F1F] outline-none transition placeholder:text-[#5F5F5F]/70 focus:border-[#650000] focus:ring-4 focus:ring-[#FFFBCC] text-sm ${errors.phone ? "border-red-500 bg-red-50/30" : ""
-                    }`}
+                  className={`w-full rounded-xl border border-[#F0E2E4] bg-[#FFFDF5] px-4 py-3 text-[#1F1F1F] outline-none transition placeholder:text-[#5F5F5F]/70 focus:border-[#740202] focus:ring-4 focus:ring-[#FFFBCC] text-sm ${
+                    errors.phone ? "border-red-500 bg-red-50/30" : ""
+                  }`}
                 />
                 {errors.phone && <p className="text-xs text-red-600 mt-1 font-semibold">{errors.phone}</p>}
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-[#650000] uppercase tracking-wider mb-1.5" htmlFor="city">
+                <label className="block text-xs font-bold text-[#740202] uppercase tracking-wider mb-1.5" htmlFor="city">
                   City *
                 </label>
                 <input
@@ -263,18 +276,19 @@ ${detailsText}`;
                   value={formData.city || initialSearchValues?.location || ""}
                   onChange={handleChange}
                   placeholder="e.g. Hyderabad"
-                  className={`w-full rounded-xl border border-[#F0E2E4] bg-white px-3.5 py-2.5 h-11 text-[#1F1F1F] outline-none transition placeholder:text-[#5F5F5F]/70 focus:border-[#650000] focus:ring-4 focus:ring-[#FFFBCC] text-sm ${errors.city ? "border-red-500 bg-red-50/30" : ""
-                    }`}
+                  className={`w-full rounded-xl border border-[#F0E2E4] bg-[#FFFDF5] px-4 py-3 text-[#1F1F1F] outline-none transition placeholder:text-[#5F5F5F]/70 focus:border-[#740202] focus:ring-4 focus:ring-[#FFFBCC] text-sm ${
+                    errors.city ? "border-red-500 bg-red-50/30" : ""
+                  }`}
                 />
                 {errors.city && <p className="text-xs text-red-600 mt-1 font-semibold">{errors.city}</p>}
               </div>
             </div>
 
-            {/* Petrol Pump Space & Size Fields */}
-            {role === "bunk-owner" && (
+            {/* Petrol Pump Owner Space & Size Fields */}
+            {role === "gym-owner" && (
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-bold text-[#650000] uppercase tracking-wider mb-1.5" htmlFor="availableSpace">
+                  <label className="block text-xs font-bold text-[#740202] uppercase tracking-wider mb-1.5" htmlFor="availableSpace">
                     Available Space Type
                   </label>
                   <select
@@ -282,99 +296,102 @@ ${detailsText}`;
                     name="availableSpace"
                     value={formData.availableSpace || initialSearchValues?.spaceType || "Forecourt Canopy Display Rack"}
                     onChange={handleChange}
-                    className="w-full rounded-xl border border-[#F0E2E4] bg-white px-4 py-3 text-[#1F1F1F] outline-none transition focus:border-[#650000] focus:ring-4 focus:ring-[#FFFBCC] text-sm"
+                    className="w-full rounded-xl border border-[#F0E2E4] bg-[#FFFDF5] px-4 py-3 text-[#B8913A] font-semibold italic outline-none transition focus:border-[#740202] focus:ring-4 focus:ring-[#FFFBCC] text-sm"
                   >
-                    <option value="Forecourt Canopy Display Rack">Forecourt Canopy Display Rack</option>
-                    <option value="In-Store Mart Shelf Unit">In-Store Mart Shelf Unit</option>
-                    <option value="Countertop Display Stand">Countertop Display Stand</option>
-                    <option value="Compact Branded Kiosk">Compact Branded Kiosk</option>
-                    <option value="EV Charging Lounge Shelf">EV Charging Lounge Shelf</option>
-                    <option value="Auto Care & Helmet Stand">Auto Care & Helmet Stand</option>
+                    <option value="Forecourt Canopy Display Rack" className="text-[#B8913A] font-semibold italic">Forecourt Canopy Display Rack</option>
+                    <option value="In-Store Mart Shelf Unit" className="text-[#B8913A] font-semibold italic">In-Store Mart Shelf Unit</option>
+                    <option value="Countertop Display Stand" className="text-[#B8913A] font-semibold italic">Countertop Display Stand</option>
+                    <option value="Compact Branded Kiosk" className="text-[#B8913A] font-semibold italic">Compact Branded Kiosk</option>
+                    <option value="EV Charging Lounge Shelf" className="text-[#B8913A] font-semibold italic">EV Charging Lounge Shelf</option>
+                    <option value="Auto Care & Helmet Stand" className="text-[#B8913A] font-semibold italic">Auto Care & Helmet Stand</option>
                   </select>
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-[#650000] uppercase tracking-wider mb-1.5" htmlFor="rackSize">
+                  <label className="block text-xs font-bold text-[#740202] uppercase tracking-wider mb-1.5" htmlFor="rackSize">
                     Rack Size
                   </label>
                   <select
                     id="rackSize"
                     name="rackSize"
-                    value={formData.rackSize || initialSearchValues?.rackSize || "Small"}
+                    value={formData.rackSize || initialSearchValues?.rackSize || "Small (Up to 3x2 ft)"}
                     onChange={handleChange}
-                    className="w-full rounded-xl border border-[#F0E2E4] bg-white px-4 py-3 text-[#1F1F1F] outline-none transition focus:border-[#650000] focus:ring-4 focus:ring-[#FFFBCC] text-sm"
+                    className="w-full rounded-xl border border-[#F0E2E4] bg-[#FFFDF5] px-4 py-3 text-[#B8913A] font-semibold italic outline-none transition focus:border-[#740202] focus:ring-4 focus:ring-[#FFFBCC] text-sm"
                   >
-                    <option value="Small">Small (Up to 3x2 ft)</option>
-                    <option value="Medium">Medium (3x2 ft to 6x3 ft)</option>
-                    <option value="Large">Large (6x3 ft to 10x5 ft)</option>
-                    <option value="Custom">Custom Forecourt Area</option>
+                    <option value="Small (Up to 3x2 ft)" className="text-[#B8913A] font-semibold italic">Small (Up to 3x2 ft)</option>
+                    <option value="Medium (3x2 ft to 6x3 ft)" className="text-[#B8913A] font-semibold italic">Medium (3x2 ft to 6x3 ft)</option>
+                    <option value="Large (6x3 ft to 10x5 ft)" className="text-[#B8913A] font-semibold italic">Large (6x3 ft to 10x5 ft)</option>
+                    <option value="Custom Forecourt Area" className="text-[#B8913A] font-semibold italic">Custom Forecourt Area</option>
                   </select>
                 </div>
               </div>
             )}
 
-            {/* Startup Category, Space & Size Fields */}
-            {role === "brand-merchant" && (
+            {/* Startup & Brand Category, Space & Size Fields */}
+            {role === "wellness" && (
               <div className="space-y-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-bold text-[#650000] uppercase tracking-wider mb-1.5" htmlFor="category">
-                      Product Category
+                    <label className="block text-xs font-bold text-[#740202] uppercase tracking-wider mb-1.5" htmlFor="category">
+                      Category
                     </label>
                     <select
                       id="category"
                       name="category"
-                      value={formData.category || initialSearchValues?.category || "Helmets & Rider Safety Gear"}
+                      value={formData.category || initialSearchValues?.category || "Premium Sportswear"}
                       onChange={handleChange}
-                      className="w-full rounded-xl border border-[#F0E2E4] bg-white px-4 py-3 text-[#1F1F1F] outline-none transition focus:border-[#650000] focus:ring-4 focus:ring-[#FFFBCC] text-sm"
+                      className="w-full rounded-xl border border-[#F0E2E4] bg-[#FFFDF5] px-4 py-3 text-[#740202] outline-none transition focus:border-[#740202] focus:ring-4 focus:ring-[#FFFBCC] text-sm"
                     >
-                      <option value="Helmets & Rider Safety Gear">Helmets & Rider Safety Gear</option>
-                      <option value="Packaged Snacks & Munchies">Packaged Snacks & Munchies</option>
-                      <option value="Cold Beverages & Energy Drinks">Cold Beverages & Energy Drinks</option>
-                      <option value="Car Care & Auto Accessories">Car Care & Auto Accessories</option>
-                      <option value="Travel & Phone Accessories">Travel & Phone Accessories</option>
-                      <option value="Bakery & Fresh Quick Bites">Bakery & Fresh Quick Bites</option>
-                      <option value="Hygiene & Personal Care">Hygiene & Personal Care</option>
-                      <option value="Emergency & Car Survival Gear">Emergency & Car Survival Gear</option>
+                      <option value="Premium Sportswear" className="text-[#740202]">Premium Sportswear</option>
+                      <option value="Rider Helmets" className="text-[#740202]">Rider Helmets</option>
+                      <option value="Protein Products" className="text-[#740202]">Protein Products</option>
+                      <option value="Mobile Phone Mounts" className="text-[#740202]">Mobile Phone Mounts</option>
+                      <option value="Packaged Snacks" className="text-[#740202]">Packaged Snacks</option>
+                      <option value="Healthy Snacks" className="text-[#740202]">Healthy Snacks</option>
+                      <option value="Gym Apparel" className="text-[#740202]">Gym Apparel</option>
+                      <option value="Fitness Accessories" className="text-[#740202]">Fitness Accessories</option>
+                      <option value="Cold Beverages" className="text-[#740202]">Cold Beverages</option>
+                      <option value="Helmet Cleaning" className="text-[#740202]">Helmet Cleaning</option>
+                      <option value="Engine Oil & Care" className="text-[#740202]">Engine Oil & Care</option>
                     </select>
                   </div>
 
                   <div>
-                    <label className="block text-xs font-bold text-[#650000] uppercase tracking-wider mb-1.5" htmlFor="requiredSpace">
-                      Required Space Type
+                    <label className="block text-xs font-bold text-[#740202] uppercase tracking-wider mb-1.5" htmlFor="requiredSpace">
+                      Available Space Type
                     </label>
                     <select
                       id="requiredSpace"
                       name="requiredSpace"
                       value={formData.requiredSpace || initialSearchValues?.spaceType || "Forecourt Canopy Display Rack"}
                       onChange={handleChange}
-                      className="w-full rounded-xl border border-[#F0E2E4] bg-white px-4 py-3 text-[#1F1F1F] outline-none transition focus:border-[#650000] focus:ring-4 focus:ring-[#FFFBCC] text-sm"
+                      className="w-full rounded-xl border border-[#F0E2E4] bg-[#FFFDF5] px-4 py-3 text-[#B8913A] font-semibold italic outline-none transition focus:border-[#740202] focus:ring-4 focus:ring-[#FFFBCC] text-sm"
                     >
-                      <option value="Forecourt Canopy Display Rack">Forecourt Canopy Display Rack</option>
-                      <option value="In-Store Mart Shelf Unit">In-Store Mart Shelf Unit</option>
-                      <option value="Countertop Display Stand">Countertop Display Stand</option>
-                      <option value="Compact Branded Kiosk">Compact Branded Kiosk</option>
-                      <option value="EV Charging Lounge Shelf">EV Charging Lounge Shelf</option>
-                      <option value="Auto Care & Helmet Stand">Auto Care & Helmet Stand</option>
+                      <option value="Forecourt Canopy Display Rack" className="text-[#B8913A] font-semibold italic">Forecourt Canopy Display Rack</option>
+                      <option value="In-Store Mart Shelf Unit" className="text-[#B8913A] font-semibold italic">In-Store Mart Shelf Unit</option>
+                      <option value="Countertop Display Stand" className="text-[#B8913A] font-semibold italic">Countertop Display Stand</option>
+                      <option value="Compact Branded Kiosk" className="text-[#B8913A] font-semibold italic">Compact Branded Kiosk</option>
+                      <option value="EV Charging Lounge Shelf" className="text-[#B8913A] font-semibold italic">EV Charging Lounge Shelf</option>
+                      <option value="Auto Care & Helmet Stand" className="text-[#B8913A] font-semibold italic">Auto Care & Helmet Stand</option>
                     </select>
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-[#650000] uppercase tracking-wider mb-1.5" htmlFor="rackSize">
-                    Preferred Rack Size
+                  <label className="block text-xs font-bold text-[#740202] uppercase tracking-wider mb-1.5" htmlFor="rackSize">
+                    Rack Size
                   </label>
                   <select
                     id="rackSize"
                     name="rackSize"
-                    value={formData.rackSize || initialSearchValues?.rackSize || "Small"}
+                    value={formData.rackSize || initialSearchValues?.rackSize || "Small (Up to 3x2 ft)"}
                     onChange={handleChange}
-                    className="w-full rounded-xl border border-[#F0E2E4] bg-white px-4 py-3 text-[#1F1F1F] outline-none transition focus:border-[#650000] focus:ring-4 focus:ring-[#FFFBCC] text-sm"
+                    className="w-full rounded-xl border border-[#F0E2E4] bg-[#FFFDF5] px-4 py-3 text-[#B8913A] font-semibold italic outline-none transition focus:border-[#740202] focus:ring-4 focus:ring-[#FFFBCC] text-sm"
                   >
-                    <option value="Small">Small (Up to 3x2 ft)</option>
-                    <option value="Medium">Medium (3x2 ft to 6x3 ft)</option>
-                    <option value="Large">Large (6x3 ft to 10x5 ft)</option>
-                    <option value="Custom">Custom Forecourt Area</option>
+                    <option value="Small (Up to 3x2 ft)" className="text-[#B8913A] font-semibold italic">Small (Up to 3x2 ft)</option>
+                    <option value="Medium (3x2 ft to 6x3 ft)" className="text-[#B8913A] font-semibold italic">Medium (3x2 ft to 6x3 ft)</option>
+                    <option value="Large (6x3 ft to 10x5 ft)" className="text-[#B8913A] font-semibold italic">Large (6x3 ft to 10x5 ft)</option>
+                    <option value="Custom Forecourt Area" className="text-[#B8913A] font-semibold italic">Custom Forecourt Area</option>
                   </select>
                 </div>
               </div>
@@ -382,7 +399,7 @@ ${detailsText}`;
 
             {/* Message Field */}
             <div>
-              <label className="block text-xs font-bold text-[#650000] uppercase tracking-wider mb-1.5" htmlFor="message">
+              <label className="block text-xs font-bold text-[#740202] uppercase tracking-wider mb-1.5" htmlFor="message">
                 Short Message
               </label>
               <textarea
@@ -391,8 +408,8 @@ ${detailsText}`;
                 rows={3}
                 value={formData.message}
                 onChange={handleChange}
-                placeholder="Share any additional notes or space details..."
-                className="w-full rounded-xl border border-[#F0E2E4] bg-white px-3.5 py-2 min-h-[72px] text-[#1F1F1F] outline-none transition placeholder:text-[#5F5F5F]/70 focus:border-[#650000] focus:ring-4 focus:ring-[#FFFBCC] text-sm"
+                placeholder="Share details about your petrol pump space, products, or rental requirements..."
+                className="w-full rounded-xl border border-[#F0E2E4] bg-[#FFFDF5] px-4 py-3 text-[#1F1F1F] outline-none transition placeholder:text-[#5F5F5F]/70 focus:border-[#740202] focus:ring-4 focus:ring-[#FFFBCC] text-sm"
               />
             </div>
 
@@ -400,29 +417,24 @@ ${detailsText}`;
             <div className="pt-2">
               <button
                 type="submit"
-                className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] hover:bg-[#128C7E] text-white border border-[#128C7E]/40 py-3.5 px-6 font-extrabold text-base shadow-xs transition-all cursor-pointer"
+                className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] hover:bg-[#128C7E] text-white py-3.5 px-6 font-extrabold text-base shadow-xs transition-all cursor-pointer"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  className="w-5 h-5 fill-current"
-                >
-                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-                </svg>
+                <MessageCircle className="w-5 h-5 fill-current" />
                 <span>Submit & Continue on WhatsApp</span>
               </button>
 
-              <p className="text-xs text-[#5F5F5F] text-center mt-3 flex items-center justify-center gap-1 font-semibold">
-                <AlertCircle className="w-3.5 h-3.5 text-[#650000]" />
+              <p
+                style={{ fontFamily: "'Playfair Display', serif" }}
+                className="text-xs text-[#1F1F1F] text-center mt-3 flex items-center justify-center gap-1 font-medium"
+              >
+                <AlertCircle className="w-3.5 h-3.5 text-[#740202]" />
                 <span>Your information is used only to respond to your enquiry.</span>
               </p>
             </div>
           </form>
         </div>
-
       </div>
     </section>
   );
 }
+

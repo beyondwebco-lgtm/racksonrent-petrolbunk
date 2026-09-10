@@ -1,26 +1,25 @@
 "use client";
 
 import React, { useState } from "react";
+import dynamic from "next/dynamic";
 import Hero from "@/components/Hero";
 import HeroStats from "@/components/HeroStats";
-import SpaceSearch from "@/components/SpaceSearch";
+import ScrollReveal from "@/components/ScrollReveal";
 
-import dynamic from "next/dynamic";
-
-const PetrolBunkShowcase = dynamic(() => import("@/components/PetrolBunkShowcase"));
+const SpaceSearch = dynamic(() => import("@/components/SpaceSearch"));
+const GymSpaceShowcase = dynamic(() => import("@/components/GymSpaceShowcase"));
 const PopularCategories = dynamic(() => import("@/components/PopularCategories"));
+const AvailableFormats = dynamic(() => import("@/components/AvailableFormats"));
 const HowItWorks = dynamic(() => import("@/components/HowItWorks"));
-const WhyChooseUs = dynamic(() => import("@/components/WhyChooseUs"));
 const RoleSelection = dynamic(() => import("@/components/RoleSelection"));
-const SpaceTypes = dynamic(() => import("@/components/SpaceTypes"));
+const WhyChooseUs = dynamic(() => import("@/components/WhyChooseUs"));
 const Pricing = dynamic(() => import("@/components/Pricing"));
 const EnquiryForm = dynamic(() => import("@/components/EnquiryForm"));
 const FAQ = dynamic(() => import("@/components/FAQ"));
-import TrustStrip from "@/components/TrustStrip";
-import ScrollReveal from "@/components/ScrollReveal";
+const TrustStrip = dynamic(() => import("@/components/TrustStrip"));
 
 export default function HomePage() {
-  const [selectedRole, setSelectedRole] = useState<"bunk-owner" | "brand-merchant" | "general">("bunk-owner");
+  const [selectedRole, setSelectedRole] = useState<"gym-owner" | "wellness" | "general">("gym-owner");
   const [searchValues, setSearchValues] = useState<{
     location?: string;
     spaceType?: string;
@@ -28,7 +27,7 @@ export default function HomePage() {
     category?: string;
   }>({});
 
-  const handleRoleSelect = (role: "bunk-owner" | "brand-merchant") => {
+  const handleRoleSelect = (role: "gym-owner" | "wellness") => {
     setSelectedRole(role);
   };
 
@@ -39,11 +38,11 @@ export default function HomePage() {
     category: string;
   }) => {
     setSearchValues(params);
-    setSelectedRole("brand-merchant");
+    setSelectedRole("wellness");
   };
 
   const handleShowcaseSelect = (
-    role: "bunk-owner" | "brand-merchant",
+    role: "gym-owner" | "wellness",
     prefillData: { spaceType?: string; category?: string }
   ) => {
     setSelectedRole(role);
@@ -51,6 +50,14 @@ export default function HomePage() {
       ...prev,
       spaceType: prefillData.spaceType || prev.spaceType,
       category: prefillData.category || prev.category,
+    }));
+  };
+
+  const handleSpaceFormatSelect = (spaceName: string) => {
+    setSelectedRole("gym-owner");
+    setSearchValues((prev) => ({
+      ...prev,
+      spaceType: spaceName,
     }));
   };
 
@@ -63,10 +70,8 @@ export default function HomePage() {
         <SpaceSearch onSearch={handleSearchSelect} />
       </ScrollReveal>
 
-
-
       <ScrollReveal>
-        <PetrolBunkShowcase onSelectCategoryAction={handleShowcaseSelect} />
+        <GymSpaceShowcase onSelectCategoryAction={handleShowcaseSelect} />
       </ScrollReveal>
 
       <ScrollReveal>
@@ -74,7 +79,7 @@ export default function HomePage() {
       </ScrollReveal>
 
       <ScrollReveal>
-        <SpaceTypes />
+        <AvailableFormats onSelectSpace={handleSpaceFormatSelect} />
       </ScrollReveal>
 
       <ScrollReveal>

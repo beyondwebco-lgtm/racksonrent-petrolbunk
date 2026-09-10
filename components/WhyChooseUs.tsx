@@ -1,109 +1,63 @@
 import React from "react";
-import {
-  MapPin,
-  Store,
-  IndianRupee,
-  Handshake,
-  Megaphone,
-  ChartNoAxesCombined,
-  ArrowUpRight,
-  ShieldCheck,
-  LucideProps,
-} from "lucide-react";
-import { WHY_CHOOSE_US_REASONS, WhyChooseUsReason } from "@/data/whyChooseUs";
+import { ShieldCheck, Lock, Headphones, TrendingUp } from "lucide-react";
+import { WHY_CHOOSE_US } from "@/data/benefits";
+import { SectionHeader } from "@/components/ui/SectionHeader";
 
 export default function WhyChooseUs() {
-  const iconMap: Record<string, React.ComponentType<LucideProps>> = {
-    MapPin,
-    Store,
-    IndianRupee,
-    Handshake,
-    Megaphone,
-    ChartNoAxesCombined,
+  const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
+    ShieldCheck,
+    Lock,
+    Headphones,
+    TrendingUp,
   };
 
   return (
-    <section
-      className="relative overflow-hidden bg-[var(--surface-warm)] border-t border-[var(--border)] section-padding"
-      id="why-choose-us"
-    >
-      {/* Decorative Ambient Background Shapes */}
-      <div className="absolute -left-20 top-24 h-64 w-64 rounded-full bg-[var(--yellow)]/10 blur-3xl pointer-events-none" />
-      <div className="absolute -right-20 bottom-10 h-72 w-72 rounded-full bg-[var(--maroon)]/5 blur-3xl pointer-events-none" />
+    <section className="py-16 sm:py-24 bg-[#FFFDF5] border-t border-[#F0E2E4]" id="why-choose-us">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <SectionHeader
+          badge="PLATFORM ADVANTAGES"
+          title={
+            <>
+              Why Choose Racks <span className="text-[#FAFA33]">on Rent</span>?
+            </>
+          }
+          subtitle={
+            <span
+              style={{ fontFamily: "'Playfair Display', serif" }}
+              className="text-lg sm:text-[22px] font-medium not-italic text-[#1F1F1F] leading-relaxed block"
+            >
+              A simple platform helping petrol pump owners monetise unused space while giving brands access to high-visibility retail locations.
+            </span>
+          }
+        />
 
-      <div className="relative z-10 container-main">
-        {/* Section Heading */}
-        <div className="text-center max-w-3xl mx-auto mb-10 md:mb-12 animate-reveal-up">
-          <span className="inline-flex items-center rounded-full border border-[var(--yellow-hover)] bg-[var(--yellow-soft)] px-4 py-1.5 text-xs sm:text-sm font-semibold text-[var(--maroon)]">
-            Platform Advantages
-          </span>
-          <h2 className="section-title-archivo mt-3 text-[var(--maroon)]">
-            Why Choose Racks on Rent?
-          </h2>
-          <p className="body-copy mx-auto mt-3 max-w-2xl text-[var(--text-muted)] font-medium">
-            A simple platform helping petrol pump owners monetise unused space while giving brands access to high-visibility retail locations.
-          </p>
-        </div>
-
-        {/* 6 Advantage Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6 animate-reveal-up-delay-1">
-          {WHY_CHOOSE_US_REASONS.map((item: WhyChooseUsReason, idx: number) => {
+        {/* 6 Advantage Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {WHY_CHOOSE_US.map((item) => {
             const IconComp = iconMap[item.iconName] || ShieldCheck;
-            const isMaroon = idx % 2 === 0;
-
             return (
               <div
                 key={item.id}
-                className={`group relative overflow-hidden rounded-3xl p-6 min-h-[210px] lg:min-h-[190px] flex h-full flex-col justify-between shadow-sm hover:shadow-xl transition-all duration-300 ${
-                  isMaroon
-                    ? "bg-[#650000] text-white border border-[#650000] hover:border-[#FAFA33]"
-                    : "bg-[#FAFA33] text-[#650000] border border-[#E6D900] hover:border-[#650000]"
-                }`}
+                className="group rounded-3xl border-2 border-[#F0E2E4] bg-[#FFFDF5] p-6 shadow-[0_12px_35px_rgba(116,2,2,0.06)] hover:shadow-[0_20px_50px_rgba(116,2,2,0.14)] hover:border-[#740202]/50 transition-all duration-300 hover:-translate-y-1.5 hover:scale-[1.01] flex flex-col justify-between relative"
               >
                 <div>
-                  {/* Top Row: Two-Tone Icon + Featured Badge / Hover Arrow */}
-                  <div className="flex items-center justify-between mb-4">
-                    <div
-                      className={`flex h-12 w-12 items-center justify-center rounded-xl transition-all duration-300 flex-shrink-0 ${
-                        isMaroon
-                          ? "bg-[#FAFA33] text-[#650000] border border-[#E6D900] group-hover:bg-white group-hover:scale-105"
-                          : "bg-[#650000] text-white border border-[#650000] group-hover:bg-[#650000] group-hover:scale-105"
-                      }`}
-                    >
-                      <IconComp size={23} strokeWidth={1.8} />
+                  <div className="flex items-center justify-between mb-5">
+                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#FFFBCC] shadow-xs group-hover:bg-[#740202] transition-colors duration-300">
+                      <IconComp className="w-8 h-8 text-[#740202] group-hover:text-[#FAFA33] group-hover:scale-110 transition-all duration-300" />
                     </div>
-
-                    {item.badge ? (
-                      <span
-                        className={`inline-flex items-center rounded-full px-3 py-1 text-[11px] font-bold tracking-wider uppercase shadow-xs ${
-                          isMaroon
-                            ? "bg-[#FAFA33] text-[#650000] border border-[#E6D900]"
-                            : "bg-[#650000] text-white border border-[#650000]"
-                        }`}
-                      >
+                    {item.badge && (
+                      <span className="px-3 py-1 rounded-full bg-[#FAFA33] text-[#740202] text-xs font-bold border border-[#740202]/20 shadow-2xs">
                         {item.badge}
                       </span>
-                    ) : (
-                      <ArrowUpRight
-                        className={`h-5 w-5 opacity-0 transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:opacity-100 ${
-                          isMaroon ? "text-[#FAFA33]" : "text-[#650000]"
-                        }`}
-                      />
                     )}
                   </div>
-
-                  {/* Card Title & Description */}
-                  <h3
-                    className={`card-title font-black transition-colors ${
-                      isMaroon ? "text-white group-hover:text-[#FAFA33]" : "text-[#650000] group-hover:text-[#650000]"
-                    }`}
-                  >
+                  <h3 className="text-xl font-black italic text-[#740202] mb-2.5 group-hover:text-[#B8913A] transition-colors">
                     {item.title}
                   </h3>
                   <p
-                    className={`mt-2.5 text-[15px] leading-6 font-medium ${
-                      isMaroon ? "text-white/80" : "text-[#650000]/80"
-                    }`}
+                    style={{ fontFamily: "'Playfair Display', serif" }}
+                    className="text-sm sm:text-base text-[#1F1F1F] leading-relaxed font-medium"
                   >
                     {item.description}
                   </p>
@@ -112,6 +66,7 @@ export default function WhyChooseUs() {
             );
           })}
         </div>
+
       </div>
     </section>
   );

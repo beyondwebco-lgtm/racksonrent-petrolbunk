@@ -3,78 +3,73 @@ export interface ServiceSupported {
   title: string;
   description: string;
   iconName: string;
-  category: "nutrition" | "beverage" | "consultation" | "display";
+  category: "packaged" | "beverages" | "healthy" | "display";
 }
 
 export const SERVICES_SUPPORTED: ServiceSupported[] = [
   {
-    id: "packaged-snacks",
-    title: "Packaged Snacks & Munchies",
-    description: "Ready-to-eat nuts, chips, muesli bars, and dry fruit mixes packaged for travelers.",
-    iconName: "Cookie",
-    category: "nutrition"
+    id: "womens-fashion",
+    title: "Women's Clothing & Boutique Wear",
+    description: "Dresses, tunics, tops, festive wear, and boutique fashion collections.",
+    iconName: "ShoppingBag",
+    category: "packaged"
   },
   {
-    id: "cold-beverages",
-    title: "Cold Beverages & Energy Drinks",
-    description: "Chilled juices, iced teas, hydration sports drinks, and cold coffee cans.",
-    iconName: "Zap",
-    category: "beverage"
+    id: "mens-wear",
+    title: "Men's Apparel & Streetwear",
+    description: "Shirts, jackets, casual wear, and independent men's streetwear labels.",
+    iconName: "Store",
+    category: "packaged"
   },
   {
-    id: "car-care-products",
-    title: "Car Care & Cleaning Gear",
-    description: "Microfiber cleaning towels, dashboard polishes, car fresheners, and wiper fluids.",
+    id: "ethnic-sarees",
+    title: "Sarees & Traditional Ethnic Wear",
+    description: "Handloom sarees, kurtis, dupattas, and festive traditional ensembles.",
+    iconName: "Sparkles",
+    category: "beverages"
+  },
+  {
+    id: "kids-fashion",
+    title: "Kids' Wear & Apparel",
+    description: "Cute outfits, organic cotton wear, and festive kids' clothing collections.",
+    iconName: "Apple",
+    category: "healthy"
+  },
+  {
+    id: "fashion-accessories",
+    title: "Jewellery & Accessories",
+    description: "Handcrafted earrings, necklaces, scarves, belts, and fashion accessories.",
+    iconName: "HeartHandshake",
+    category: "packaged"
+  },
+  {
+    id: "bags-footwear",
+    title: "Bags, Wallets & Footwear",
+    description: "Handbags, clutches, leather wallets, totes, and designer footwear.",
+    iconName: "ShoppingBag",
+    category: "display"
+  },
+  {
+    id: "clothing-racks",
+    title: "Clothing Rack Spaces",
+    description: "Floor-standing rack spaces inside boutiques and retail stores for apparel.",
+    iconName: "Store",
+    category: "display"
+  },
+  {
+    id: "boutique-corners",
+    title: "Boutique Display Corners",
+    description: "Curated display corners with mannequins and lighting inside retail stores.",
     iconName: "Layers",
     category: "display"
   },
   {
-    id: "helmets-riding-gear",
-    title: "Helmets & Rider Protection",
-    description: "Certified full-face & open-face helmets, riding gloves, and reflective rain jackets.",
-    iconName: "ShieldCheck",
-    category: "display"
-  },
-  {
-    id: "phone-gadgets",
-    title: "Fast Car Chargers & Mounts",
-    description: "High-speed USB-C car chargers, magnetic phone mounts, power banks, and cables.",
-    iconName: "Zap",
-    category: "display"
-  },
-  {
-    id: "bakery-items",
-    title: "Bakery & Packaged Cakes",
-    description: "Fresh packaged cookies, dry cakes, savory rolls, and tea biscuits.",
-    iconName: "Utensils",
-    category: "nutrition"
-  },
-  {
-    id: "travel-hygiene",
-    title: "Travel Hygiene & Personal Care",
-    description: "Pocket perfumes, sanitizing wet wipes, tissues, and refreshing face mists.",
-    iconName: "HeartPulse",
-    category: "display"
-  },
-  {
-    id: "auto-emergency",
-    title: "Emergency Auto Equipment",
-    description: "Multi-tool kits, LED emergency flashlights, tyre pressure gauges, and jumper cables.",
-    iconName: "Trophy",
-    category: "display"
-  },
-  {
-    id: "product-sampling",
-    title: "Brand Sampling & Displays",
-    description: "Live product tasting or demonstration counters inside petrol pump forecourts.",
-    iconName: "Gift",
-    category: "display"
-  },
-  {
-    id: "kiosk-promotions",
-    title: "Promotional Kiosks & Standees",
-    description: "Branded banner standees, promotional kiosks, and digital screen features.",
-    iconName: "Megaphone",
+    id: "window-showcases",
+    title: "Window Display Spaces",
+    description: "Front store window showcase areas attracting street-facing shoppers.",
+    iconName: "Maximize",
     category: "display"
   }
 ];
+
+

@@ -7,13 +7,13 @@ export interface PricingTier {
   description: string;
   features: string[];
   ctaLabel: string;
-  roleType: "bunk-owner" | "brand-merchant";
+  roleType: "gym-owner" | "wellness";
   highlighted?: boolean;
 }
 
 export const PRICING_TIERS: PricingTier[] = [
   {
-    id: "bunk-listing",
+    id: "store-listing",
     title: "Petrol Pump Space Listing",
     targetRole: "For Petrol Pump Owners",
     priceDisplay: "Free",
@@ -26,11 +26,11 @@ export const PRICING_TIERS: PricingTier[] = [
       "100% control over displayed brands"
     ],
     ctaLabel: "List Your Space",
-    roleType: "bunk-owner",
+    roleType: "gym-owner",
     highlighted: true
   },
   {
-    id: "brand-placement",
+    id: "fashion-space-rental",
     title: "Brand Placement",
     targetRole: "For Startups & Brands",
     priceDisplay: "Enquiry-Based",
@@ -43,7 +43,9 @@ export const PRICING_TIERS: PricingTier[] = [
       "Pan-India fuel station matching"
     ],
     ctaLabel: "Find Petrol Pump Space",
-    roleType: "brand-merchant",
+    roleType: "wellness",
     highlighted: false
   }
 ];
+
+

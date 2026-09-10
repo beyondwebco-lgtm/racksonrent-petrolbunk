@@ -1,15 +1,20 @@
 "use client";
 
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback, useRef } from "react";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import {
+  ArrowRight,
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
 import { POPULAR_CATEGORIES, CategoryItem } from "@/data/categories";
+import { SectionHeader } from "@/components/ui/SectionHeader";
 
 export default function PopularCategories() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [touchStartX, setTouchStartX] = useState<number | null>(null);
-
+  const [touchEndX, setTouchEndX] = useState<number | null>(null);
   const totalItems = POPULAR_CATEGORIES.length;
 
   const nextSlide = useCallback(() => {
@@ -20,192 +25,209 @@ export default function PopularCategories() {
     setActiveIndex((prev) => (prev - 1 + totalItems) % totalItems);
   }, [totalItems]);
 
-  // Autoplay timer (4.5 seconds)
+  // Autoplay functionality (every 4.5 seconds)
   useEffect(() => {
     if (isPaused) return;
-    const interval = setInterval(() => {
+    const timer = setInterval(() => {
       nextSlide();
     }, 4500);
-    return () => clearInterval(interval);
-  }, [isPaused, nextSlide]);
+    return () => clearInterval(timer);
+  }, [nextSlide, isPaused]);
 
-  // Mobile swipe gestures
+  // Swipe support for touch devices
   const handleTouchStart = (e: React.TouchEvent) => {
-    setTouchStartX(e.touches[0].clientX);
+    setTouchStartX(e.targetTouches[0].clientX);
+    setIsPaused(true);
   };
 
-  const handleTouchEnd = (e: React.TouchEvent) => {
-    if (touchStartX === null) return;
-    const touchEndX = e.changedTouches[0].clientX;
-    const diffDistance = touchStartX - touchEndX;
+  const handleTouchMove = (e: React.TouchEvent) => {
+    setTouchEndX(e.targetTouches[0].clientX);
+  };
 
-    if (diffDistance > 40) {
-      nextSlide();
-    } else if (diffDistance < -40) {
-      prevSlide();
+  const handleTouchEnd = () => {
+    if (touchStartX !== null && touchEndX !== null) {
+      const distance = touchStartX - touchEndX;
+      if (distance > 40) {
+        nextSlide();
+      } else if (distance < -40) {
+        prevSlide();
+      }
     }
     setTouchStartX(null);
+    setTouchEndX(null);
+    setIsPaused(false);
   };
 
-  // Card click handler
-  const handleCardClick = (diff: number) => {
-    if (diff === 0) {
-      const contactSection = document.getElementById("contact");
-      if (contactSection) {
-        contactSection.scrollIntoView({ behavior: "smooth" });
+  const handleCategoryClick = (index: number) => {
+    if (index === activeIndex) {
+      const element = document.getElementById("contact");
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
       }
-    } else if (diff === 1) {
-      nextSlide();
-    } else if (diff === -1) {
-      prevSlide();
+    } else {
+      setActiveIndex(index);
     }
   };
 
   return (
-    <section className="section-padding bg-[#FFFDF5] overflow-hidden" id="products">
-      <div className="container-main">
+    <section
+      className="py-16 sm:py-24 bg-[#FFFDF5] overflow-hidden"
+      id="products"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Heading */}
-        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-10 animate-reveal-up">
-          <span className="inline-flex rounded-full bg-[#FFFBCC] px-3.5 py-1 text-xs sm:text-sm font-extrabold text-[#650000] border border-[#F0E2E4] shadow-xs">
-            Products &amp; Categories
-          </span>
-          <h2 className="section-title-dm mt-4 text-[#650000]">
-            Popular Product Categories
-          </h2>
-          <p className="body-copy mx-auto mt-3 max-w-2xl text-[#5F5F5F]">
-            Explore example products and health essentials featured across partner retail spaces.
-          </p>
-        </div>
+        <SectionHeader
+          badge="PRODUCTS & CATEGORIES"
+          title={
+            <>
+              Popular <span className="text-[#B8913A]">Product</span> Categories
+            </>
+          }
+          subtitle={
+            <span
+              style={{ fontFamily: "'Playfair Display', serif" }}
+              className="text-lg sm:text-[22px] font-medium not-italic text-[#1F1F1F] leading-relaxed block"
+            >
+              Explore example products and health essentials featured across partner retail spaces.
+            </span>
+          }
+        />
 
-        {/* Slideshow Container */}
-        <div
-          className="relative max-w-5xl mx-auto px-2 sm:px-4 py-4 select-none"
-          onMouseEnter={() => setIsPaused(true)}
-          onMouseLeave={() => setIsPaused(false)}
-          onTouchStart={handleTouchStart}
-          onTouchEnd={handleTouchEnd}
-        >
-          {/* Left Arrow Button */}
+        {/* Center-Focused Carousel Container */}
+        <div className="relative max-w-5xl mx-auto px-4 sm:px-12">
+          
+          {/* Previous Arrow Button */}
           <button
             type="button"
             onClick={prevSlide}
-            aria-label="Previous categories"
-            className="absolute left-1 sm:left-2 top-1/2 -translate-y-1/2 z-40 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#650000] text-white border-2 border-[#650000] flex items-center justify-center shadow-lg transition-all hover:bg-[#800000] hover:scale-105 cursor-pointer"
+            aria-label="Previous category"
+            className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-30 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#740202] text-[#FAFA33] border-2 border-[#FAFA33] flex items-center justify-center shadow-xl transition-all hover:bg-[#500101] hover:text-[#FAFA33] hover:scale-110 active:scale-95 cursor-pointer"
           >
-            <ChevronLeft className="w-6 h-6 sm:w-7 sm:h-7 stroke-[2.5]" />
+            <ChevronLeft className="w-6 h-6 stroke-[3]" />
           </button>
 
-          {/* Right Arrow Button */}
+          {/* Next Arrow Button */}
           <button
             type="button"
             onClick={nextSlide}
-            aria-label="Next categories"
-            className="absolute right-1 sm:right-2 top-1/2 -translate-y-1/2 z-40 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#650000] text-white border-2 border-[#650000] flex items-center justify-center shadow-lg transition-all hover:bg-[#800000] hover:scale-105 cursor-pointer"
+            aria-label="Next category"
+            className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-30 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#740202] text-[#FAFA33] border-2 border-[#FAFA33] flex items-center justify-center shadow-xl transition-all hover:bg-[#500101] hover:text-[#FAFA33] hover:scale-110 active:scale-95 cursor-pointer"
           >
-            <ChevronRight className="w-6 h-6 sm:w-7 sm:h-7 stroke-[2.5]" />
+            <ChevronRight className="w-6 h-6 stroke-[3]" />
           </button>
 
-          {/* Slideshow Track Container */}
-          <div className="relative w-full h-[460px] sm:h-[530px] flex items-center justify-center overflow-hidden">
+          {/* Carousel Stage */}
+          <div
+            className="relative h-[520px] sm:h-[560px] flex items-center justify-center touch-pan-y"
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+          >
             {POPULAR_CATEGORIES.map((cat: CategoryItem, index: number) => {
+              // Calculate relative position with infinite loop wrapping
               let diff = index - activeIndex;
+              if (diff > totalItems / 2) diff -= totalItems;
+              if (diff < -totalItems / 2) diff += totalItems;
 
-              // Handle circular looping so end/start items wrap around smoothly
-              if (diff > totalItems / 2) {
-                diff -= totalItems;
-              } else if (diff < -totalItems / 2) {
-                diff += totalItems;
-              }
+              const isActive = diff === 0;
+              const isPrev = diff === -1;
+              const isNext = diff === 1;
 
-              // Display only active card, previous card, and next card
-              if (Math.abs(diff) > 1) {
+              // Hide items further away than prev/next for clean visual focus
+              if (!isActive && !isPrev && !isNext) {
                 return null;
               }
-
-              const isMaroon = index % 2 === 0;
-              const isCentered = diff === 0;
-              const translateXVal = diff * 75;
-              const scaleVal = isCentered ? 1 : 0.35;
-              const opacityVal = isCentered ? 1 : 0.5;
-              const filterVal = isCentered ? "blur(0px)" : "blur(4px)";
-              const zIndexVal = isCentered ? 30 : 10;
 
               return (
                 <div
                   key={cat.id}
-                  onClick={() => handleCardClick(diff)}
+                  onClick={() => handleCategoryClick(index)}
                   style={{
-                    transform: `translate(-50%, -50%) translateX(${translateXVal}%) scale(${scaleVal})`,
-                    opacity: opacityVal,
-                    filter: filterVal,
-                    zIndex: zIndexVal,
-                    transition: "transform 600ms cubic-bezier(0.25, 1, 0.5, 1), opacity 600ms ease, filter 600ms ease",
+                    transform: isActive
+                      ? "translateX(0%) scale(1)"
+                      : isPrev
+                      ? "translateX(-62%) scale(0.85)"
+                      : "translateX(62%) scale(0.85)",
+                    opacity: isActive ? 1 : 0.4,
+                    filter: isActive ? "blur(0px)" : "blur(2px)",
+                    zIndex: isActive ? 10 : 1,
+                    transition:
+                      "transform 600ms ease, opacity 600ms ease, filter 600ms ease",
                   }}
-                  className={`group absolute top-1/2 left-1/2 w-[82vw] max-w-[320px] sm:max-w-[380px] aspect-[3/4] cursor-pointer rounded-[24px] shadow-xl overflow-hidden border-2 transition-all duration-300 bg-white ${
-                    isMaroon
-                      ? "border-[#650000] shadow-[#650000]/15"
-                      : "border-[#E6D900] shadow-[#E6D900]/15"
+                  className={`absolute w-[260px] xs:w-[290px] sm:w-[360px] cursor-pointer select-none rounded-3xl border-2 bg-[#FFFDF5] p-4 sm:p-6 shadow-2xl flex flex-col justify-between overflow-hidden group ${
+                    isActive
+                      ? "border-[#740202] shadow-[0_20px_50px_rgba(116,2,2,0.22)]"
+                      : "border-[#740202]/20 pointer-events-auto hover:opacity-75"
                   }`}
                 >
-                  {/* Full-Length Background Image - 100% Bright & Transparent */}
-                  <Image
-                    src={cat.image}
-                    alt={cat.alt}
-                    fill
-                    quality={90}
-                    sizes="(max-width: 640px) 82vw, 380px"
-                    loading="lazy"
-                    className="object-cover group-hover:scale-104 transition-transform duration-700 ease-out"
-                  />
+                  <div>
+                    {/* Badge */}
+                    {cat.badge && (
+                      <span className="inline-block rounded-full bg-[#FAFA33] px-3.5 py-1 text-sm font-bold text-[#740202] border border-[#F0E2E4] mb-3">
+                        {cat.badge}
+                      </span>
+                    )}
 
-                  {/* Clean Translucent Bottom Overlay Bar for Title & Explore Spaces */}
-                  <div className="absolute inset-x-3 bottom-3 z-20">
-                    <div
-                      className={`backdrop-blur-md border shadow-lg rounded-2xl p-3 flex items-center justify-between gap-3 transition-all duration-300 ${
-                        isMaroon
-                          ? "bg-[#650000]/90 text-white border-white/20"
-                          : "bg-[#FAFA33]/95 text-[#650000] border-[#E6D900]"
-                      }`}
-                    >
-                      {/* Main Title */}
-                      <h3 className="font-bold text-sm sm:text-base leading-tight truncate">
+                    {/* Image Container */}
+                    <div className="relative w-full aspect-square rounded-2xl overflow-hidden bg-[#F8F8FA] border border-[#F0E2E4] mb-4 flex items-center justify-center">
+                      <Image
+                        src={cat.image}
+                        alt={cat.alt}
+                        fill
+                        sizes="(max-width: 640px) 290px, 360px"
+                        priority={isActive}
+                        loading={isActive ? "eager" : "lazy"}
+                        className="object-contain sm:object-cover object-center transition-transform duration-500 hover:scale-105"
+                      />
+                    </div>
+
+                    {/* Content */}
+                    <div className="px-1">
+                      <h3
+                        style={{ fontFamily: "'Playfair Display', serif" }}
+                        className="font-semibold italic text-base sm:text-lg text-[#740202] group-hover:text-[#B8913A] transition-colors duration-300 leading-relaxed mb-2 whitespace-normal break-words"
+                      >
                         {cat.name}
                       </h3>
 
-                      {/* Explore Spaces Action */}
-                      <div
-                        className={`shrink-0 text-xs sm:text-xs font-extrabold px-3.5 py-1.5 rounded-xl transition-all duration-200 shadow-xs ${
-                          isMaroon
-                            ? "bg-[#FAFA33] text-[#650000] hover:bg-white"
-                            : "bg-[#650000] text-white hover:bg-[#800000]"
-                        }`}
+                      <p
+                        style={{ fontFamily: "'Playfair Display', serif" }}
+                        className="text-sm sm:text-base text-[#1F1F1F] leading-relaxed font-medium line-clamp-2"
                       >
-                        Explore Spaces
-                      </div>
+                        {cat.description}
+                      </p>
                     </div>
+                  </div>
+
+                  {/* Card Footer CTA */}
+                  <div className="mt-5 pt-3 border-t border-[#F0E2E4] px-1 flex items-center justify-between text-sm sm:text-base font-bold text-[#740202] group-hover:text-[#B8913A] transition-colors duration-300">
+                    <span>Explore Spaces</span>
+                    <ArrowRight className="w-4.5 h-4.5" />
                   </div>
                 </div>
               );
             })}
           </div>
 
-          {/* Pagination Dots */}
-          <div className="flex items-center justify-center gap-2 mt-4">
-            {POPULAR_CATEGORIES.map((cat, idx) => (
+          {/* Pagination Indicators */}
+          <div className="flex justify-center items-center gap-2 mt-6">
+            {POPULAR_CATEGORIES.map((_, index) => (
               <button
-                key={cat.id}
+                key={index}
                 type="button"
-                onClick={() => setActiveIndex(idx)}
-                aria-label={`Go to slide ${idx + 1}`}
-                className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
-                  idx === activeIndex
-                    ? "w-8 bg-[#650000]"
-                    : "w-2.5 bg-[#650000]/25 hover:bg-[#650000]/50"
+                onClick={() => setActiveIndex(index)}
+                aria-label={`Go to slide ${index + 1}`}
+                className={`transition-all duration-300 rounded-full cursor-pointer ${
+                  index === activeIndex
+                    ? "w-8 h-2.5 bg-[#740202]"
+                    : "w-2.5 h-2.5 bg-[#F0E2E4] hover:bg-[#740202]/50"
                 }`}
               />
             ))}
           </div>
+
         </div>
 
       </div>

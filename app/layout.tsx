@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Manrope, Archivo_Black, DM_Serif_Display } from "next/font/google";
+import { Manrope } from "next/font/google";
 import "./globals.css";
 import TopBar from "@/components/TopBar";
 import Header from "@/components/Header";
@@ -13,61 +13,57 @@ const manrope = Manrope({
   display: "swap",
 });
 
-const archivoBlack = Archivo_Black({
-  variable: "--font-archivo",
-  subsets: ["latin"],
-  display: "swap",
-  weight: "400",
-});
-
-const dmSerifDisplay = DM_Serif_Display({
-  variable: "--font-dm-serif",
-  subsets: ["latin"],
-  display: "swap",
-  weight: "400",
-});
-
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_CONFIG.domain),
-  title: "Racks on Rent | Turn Unused Petrol Pump Space Into Income",
+  title: "Petrol Pump Retail & Rack Space for Rent in India | Racks on Rent",
   description:
-    "Racks on Rent connects petrol pump owners with startups and retail brands. Rent unused space, showcase quality products, increase customer footfall, and create an additional source of income.",
+    "Turn unused petrol pump space into a new business opportunity. Racks on Rent connects petrol pump owners with startups and retail brands across India.",
   keywords: [
     "Racks on Rent",
-    "Petrol pump space rental",
-    "Petrol bunk retail rack",
-    "Fuel station display space",
-    "Startup retail expansion",
-    "Helmet rack rental petrol pump",
-    "Retail space sublet petrol station",
-    "Petrol pump monetization"
+    "Petrol pump space for rent",
+    "Petrol bunk retail rack space",
+    "Forecourt canopy display rack",
+    "In-store mart shelf unit",
+    "Countertop display stand",
+    "EV charging lounge shelf",
+    "Petrol pump startups",
+    "Automotive retail display India",
+    "Sublet petrol pump space"
   ],
   authors: [{ name: "Racks on Rent", url: SITE_CONFIG.domain }],
   creator: "Racks on Rent",
   publisher: "Racks on Rent",
   icons: {
     icon: [
-      { url: "/images/favicon.jpeg", type: "image/jpeg" },
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon.png", type: "image/png" },
     ],
-    shortcut: "/images/favicon.jpeg",
-    apple: "/images/favicon.jpeg",
+    shortcut: "/favicon.ico",
+    apple: "/apple-icon.png",
   },
   openGraph: {
-    title: "Racks on Rent | Petrol Pump Space Partnership",
+    title: "Petrol Pump Retail & Rack Space for Rent in India | Racks on Rent",
     description:
-      "Racks on Rent connects petrol pump owners with startups and retail brands. Rent unused space, showcase quality products, increase customer footfall, and create an additional source of income.",
+      "Turn unused petrol pump space into a new business opportunity. Racks on Rent connects petrol pump owners with startups and retail brands across India.",
     url: SITE_CONFIG.domain,
     siteName: "Racks on Rent",
-    locale: "en_IN",
-    type: "website",
     images: [
       {
-        url: "/images/opengraph-image.jpeg",
-        width: 1200,
-        height: 1200,
-        alt: "Racks on Rent Logo",
+        url: "/opengraph-image.jpeg",
+        width: 1254,
+        height: 1254,
+        alt: "Racks on Rent - Petrol Pump Retail & Rack Space for Rent",
       },
     ],
+    locale: "en_IN",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Petrol Pump Retail & Rack Space for Rent in India | Racks on Rent",
+    description:
+      "Turn unused petrol pump space into a new business opportunity. Racks on Rent connects petrol pump owners with startups and retail brands across India.",
+    images: ["/opengraph-image.jpeg"],
   },
   robots: {
     index: true,
@@ -92,21 +88,18 @@ export default function RootLayout({
     "@type": "Organization",
     "name": "Racks on Rent",
     "url": SITE_CONFIG.domain,
-    "logo": `${SITE_CONFIG.domain}/images/opengraph-image.jpeg`,
-    "description": "Sublet space. Share Success. A smart platform connecting petrol pump owners with startups and retail entrepreneurs.",
+    "logo": `${SITE_CONFIG.domain}/images/logo.png`,
+    "description": "Sublet Space. Share Success. Connecting petrol pump owners with startups and retail brands.",
     "telephone": "+917995424477",
-    "email": ["support@racksonrent.com", "contact@racksonrent.com"]
+    "email": "support@racksonrent.com"
   };
 
   return (
     <html
       lang="en"
-      className={`${manrope.variable} ${archivoBlack.variable} ${dmSerifDisplay.variable} h-full antialiased`}
+      className={`${manrope.variable} h-full antialiased`}
     >
       <head>
-        <link rel="icon" href="/images/favicon.jpeg?v=2" type="image/jpeg" sizes="any" />
-        <link rel="shortcut icon" href="/images/favicon.jpeg?v=2" type="image/jpeg" />
-        <link rel="apple-touch-icon" href="/images/favicon.jpeg?v=2" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

@@ -2,7 +2,7 @@ export const HERO_STATS = [
   {
     id: "spaces",
     number: "500+",
-    label: "Petrol Pump Spaces Listed",
+    label: "Petrol Pump Spaces",
     iconName: "Layers"
   },
   {
@@ -21,8 +21,9 @@ export const HERO_STATS = [
 
 export const TRUST_STRIP_ITEMS = [
   { label: "Trusted by 500+ Petrol Pump Owners", iconName: "Store" },
-  { label: "1000+ Startups & Brands", iconName: "Store" },
+  { label: "1000+ Startups & Brands", iconName: "ShoppingBag" },
   { label: "Pan India Footprint", iconName: "MapPin" },
   { label: "Win-Win Partnership Model", iconName: "ShieldCheck" }
 ];
+
 
